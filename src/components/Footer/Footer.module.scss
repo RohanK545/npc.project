@@ -1,0 +1,200 @@
+// Government Color Scheme
+:root {
+  --gov-blue: #003366;
+  --gov-dark-blue: #002244;
+  --gov-light-blue: #0066cc;
+  --gov-white: #ffffff;
+  --gov-light-gray: #f8f9fa;
+  --gov-border: #dee2e6;
+  --gov-text: #212529;
+}
+
+.header {
+  background: var(--gov-white);
+  border-bottom: 1px solid var(--gov-border);
+}
+
+// Top Bar with Skip Link
+.topBar {
+  background: var(--gov-blue);
+  padding: 4px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.skipLink {
+  color: var(--gov-white);
+  text-decoration: none;
+  font-size: 12px;
+  
+  &:focus {
+    outline: 2px solid var(--gov-white);
+    outline-offset: 2px;
+  }
+}
+
+// Main Header Section
+.mainHeader {
+  padding: 15px 0;
+  background: var(--gov-white);
+}
+
+.headerMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+// Ministry Information
+.ministryInfo {
+  flex: 1;
+}
+
+.govIndia {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--gov-blue);
+  margin-bottom: 4px;
+}
+
+.ministryName {
+  font-size: 14px;
+  color: var(--gov-text);
+  font-weight: 500;
+}
+
+// Logo Section
+.logoSection {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+// Navigation Menu
+.navigation {
+  background: var(--gov-blue);
+  border-top: 1px solid var(--gov-border);
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navLink {
+  display: block;
+  padding: 12px 25px;
+  color: var(--gov-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background: var(--gov-dark-blue);
+  }
+  
+  // Add tilde for dropdown indication
+  &::after {
+    content: " ~";
+    font-size: 12px;
+    opacity: 0.7;
+    margin-left: 5px;
+  }
+  
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  
+  span {
+    width: 20px;
+    height: 2px;
+    background: var(--gov-white);
+    margin: 2px 0;
+    transition: 0.3s;
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .headerMain {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .ministryInfo {
+    text-align: center;
+  }
+  
+  .logoSection {
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 35px;
+  }
+  
+  .mobileToggle {
+    display: flex;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .navMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--gov-blue);
+    z-index: 1000;
+    
+    &.navMenuOpen {
+      display: flex;
+    }
+  }
+  
+  .navLink {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    
+    &::after {
+      content: "";
+    }
+  }
+}

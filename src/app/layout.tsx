@@ -1,8 +1,11 @@
 import BootstrapClient from '@/components/BootstrapClient';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import './globals.scss';
+import '../styles/SCSS.scss';
+import '../styles/CSS.css';
 
 export const metadata: Metadata = {
   title: 'Ministry of Skill Development and Entrepreneurship',
@@ -31,6 +34,7 @@ export default function RootLayout({
         <main id="main-content">
           {children}
         </main>
+        <Footer/>
         <BootstrapClient />
       </body>
     </html>
