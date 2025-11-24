@@ -2,10 +2,10 @@ export default function Ministry() {
   return (
     <div style={{ padding: "2rem" }}>
       <h1>This is Ministry Page</h1>
-      <p>
+      {/* <p>
         Welcome to the official website. The header should be visible above this
         content.
-      </p>
+      </p> */}
 
       {/* Test content to see if skip link works */}
       <div style={{ marginTop: "2rem" }}>

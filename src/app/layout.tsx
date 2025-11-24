@@ -50,8 +50,8 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "./globals.scss";
 import Script from "next/script";
-import "../styles/SCSS.scss";
-// import "../styles/CSS.css";
+// import "../styles/SCSS.scss";
+import "../styles/CSS.css";
 
 export const metadata: Metadata = {
   title: "Ministry of Skill Development and Entrepreneurship",
