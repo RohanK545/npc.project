@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const bannerImages = [
     "/images/banner.jpg",
@@ -13,94 +14,213 @@ export default function Home() {
   ];
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const goToPrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + bannerImages.length) % bannerImages.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + bannerImages.length) % bannerImages.length
+    );
   };
 
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
   };
 
-  const goToSlide = (index: number) => setCurrentSlide(index);
-
   return (
-    <div className="min-h-screen">
-      <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
-
-        {/* SLIDES */}
-        <div className="relative w-full h-full">
+    <>
+      {/* ======================= BANNER SECTION ======================= */}
+      <section
+        className="position-relative"
+        style={{ width: "100%", height: "450px", overflow: "hidden" }}
+      >
+        {/* Slides */}
+        <div className="position-relative w-100 h-100">
           {bannerImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                }`}
+              className="position-absolute top-0 start-0 w-100 h-100"
+              style={{
+                opacity: index === currentSlide ? 1 : 0,
+                transition: "opacity .7s ease-in-out",
+              }}
             >
               <Image
                 src={image}
                 alt="banner"
                 fill
-                className="object-cover"
-                priority={index === 0}
+                style={{ objectFit: "cover" }}
               />
             </div>
           ))}
         </div>
 
-        {/* NAVIGATION ARROWS */}
-        {/* NAVIGATION ARROWS */}
-        <div className="absolute inset-0 flex justify-between items-center px-4 z-[9999]">
+        {/* LEFT BUTTON */}
+        <button
+          onClick={goToPrevSlide}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "15px",
+            transform: "translateY(-50%)",
+            width: "32px",
+            height: "32px",
+            background: "black",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "18px",
+            cursor: "pointer",
+            zIndex: 98,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            opacity: 0.8,
+          }}
+        >
+          ❮
+        </button>
 
-          {/* LEFT */}
-          <button
-            onClick={goToPrevSlide}
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition z-30 pointer-events-auto"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" strokeWidth={2} stroke="white"
-              className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5" />
-            </svg>
-          </button>
+        {/* RIGHT BUTTON */}
+        <button
+          onClick={goToNextSlide}
+          style={{
+            position: "absolute",
+            top: "50%",
+            right: "15px",
+            transform: "translateY(-50%)",
+            width: "32px",
+            height: "32px",
+            background: "black",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "18px",
+            cursor: "pointer",
+            zIndex: 98,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            opacity: 0.8,
+          }}
+        >
+          ❯
+        </button>
 
-          {/* RIGHT */}
-          <button
-            onClick={goToNextSlide}
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition z-30 pointer-events-auto"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" strokeWidth={2} stroke="white"
-              className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M8.25 4.5 15.75 12l-7.5 7.5" />
-            </svg>
-          </button>
-
-        </div>
-
-
-        {/* DOTS */}
-        <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-[9999]">
+        {/* DOT INDICATORS */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "18px",
+            right: "120px",
+            display: "flex",
+            gap: "10px",
+            zIndex: 98,
+          }}
+        >
           {bannerImages.map((_, index) => (
-            <button
+            <div
               key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-3 w-3 rounded-full transition ${index === currentSlide
-                ? "bg-white"
-                : "bg-white/40 hover:bg-white/60"
-                }`}
+              onClick={() => setCurrentSlide(index)}
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                background:
+                  currentSlide === index ? "#2b62cc" : "rgba(180, 180, 255, 0.6)",
+                cursor: "pointer",
+              }}
             />
           ))}
         </div>
 
+        {/* PAUSE BUTTON */}
+        <button
+          onClick={() => setIsPaused(!isPaused)}
+          style={{
+            position: "absolute",
+            bottom: "10px",
+            right: "70px",
+            background: "#000",
+            color: "#fff",
+            width: "38px",
+            height: "38px",
+            borderRadius: "50%",
+            border: "none",
+            cursor: "pointer",
+            fontSize: "16px",
+            zIndex: 98,
+          }}
+        >
+          {isPaused ? "▶" : "❚❚"}
+        </button>
       </section>
-    </div>
+
+      {/* ======================= ANNOUNCEMENT SECTION ======================= */}
+      <section
+        style={{
+          background: "#f7f7f7",
+          padding: "40px 20px",
+          width: "100%",
+          borderTop: "1px solid #ddd",
+        }}
+      >
+        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex" }}>
+          {/* Left Image */}
+          <div>
+            <Image
+              src="/images/modi.png"
+              alt="PM Modi"
+              width={250}
+              height={250}
+              style={{ borderRadius: "50%" }}
+            />
+          </div>
+
+          {/* Right Text */}
+          <div style={{ marginLeft: "40px" }}>
+            <h3 style={{ fontSize: "22px", color: "#2b4170" }}>Announcements</h3>
+
+            <p
+              style={{
+                fontSize: "20px",
+                color: "#1a2a44",
+                width: "80%",
+                lineHeight: "32px",
+                marginTop: "10px",
+              }}
+            >
+              “India offers the three Ds for business to thrive – Democracy,
+              Demography, and Demand. We are committed to making India the most
+              investment-friendly country in the world.”
+            </p>
+
+            <p style={{ color: "#555", marginTop: "15px" }}>
+              <strong>VIBRANT GUJARAT SUMMIT</strong> <br />
+              17.04.2015
+            </p>
+
+            <button
+              style={{
+                marginTop: "10px",
+                background: "white",
+                border: "1px solid #1a2a44",
+                padding: "10px 20px",
+                borderRadius: "6px",
+                cursor: "pointer",
+              }}
+            >
+              VIEW EVENT
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
