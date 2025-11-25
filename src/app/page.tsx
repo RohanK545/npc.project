@@ -1,11 +1,14 @@
 export default function Home() {
   return (
-    <div style={{ padding: '2rem' }}>
+    <div>
       <h1>Ministry of Skill Development and Entrepreneurship</h1>
-      <p>Welcome to the official website. The header should be visible above this content.</p>
-      
+      <p>
+        Welcome to the official website. The header should be visible above this
+        content.
+      </p>
+
       {/* Test content to see if skip link works */}
-      <div style={{ marginTop: '2rem' }}>
+      <div>
         <h2>Test Content</h2>
         <p>If the header is working correctly, you should see:</p>
         <ul>

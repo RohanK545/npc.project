@@ -4,7 +4,7 @@ export default function AboutUs() {
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Ministry" },
-    { pagetitle: "About Us" },
+    { pagetitle: "Our Division" },
   ];
 
   const navItems = [

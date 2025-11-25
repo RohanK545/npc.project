@@ -3,27 +3,36 @@ import InnerBannerSection from "@/components/InnerBannerSection";
 export default function AboutUs() {
   const breadcrumbs = [
     { title: "Home", href: "/" },
-    { title: "Ministry" },
-    { pagetitle: "About Us" },
+    { title: "Documents" },
+    { pagetitle: "Acts And Policies" },
   ];
 
   const navItems = [
-    { label: "About Us", href: "/ministry/", active: false },
-    { label: "Our Team", href: "/ministry/our-team", active: false },
-    { label: "Our Division", href: "/ministry/division", active: false },
+    { label: "Reports", href: "/documents/", active: false },
     {
-      label: "Our Organization",
-      href: "/ministry/organization",
+      label: "Acts And Policies",
+      href: "/documents/acts-policies",
       active: false,
     },
-    { label: "Our Performance", href: "/ministry/performance", active: false },
-    { label: "Directory", href: "/ministry/directory", active: false },
+    {
+      label: "Orders And Notices",
+      href: "/documents/orders-notices",
+      active: false,
+    },
+    { label: "Publications", href: "/documents/publications", active: false },
+    { label: "Press Release", href: "/documents/press-release", active: false },
+    {
+      label: "Gazettes Notifications",
+      href: "/documents/gazettes",
+      active: false,
+    },
+    { label: "Guidelines", href: "/documents/guidelines", active: false },
   ];
 
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
+        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/09de3fbb2b470481678cdc656ea93d64.png"
         breadcrumbs={breadcrumbs}
         navItems={navItems}
       />

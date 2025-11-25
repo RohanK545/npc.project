@@ -3,27 +3,29 @@ import InnerBannerSection from "@/components/InnerBannerSection";
 export default function AboutUs() {
   const breadcrumbs = [
     { title: "Home", href: "/" },
-    { title: "Ministry" },
-    { pagetitle: "About Us" },
+    { title: "Connect" },
+    { pagetitle: "Directory" },
   ];
 
   const navItems = [
-    { label: "About Us", href: "/ministry/", active: false },
-    { label: "Our Team", href: "/ministry/our-team", active: false },
-    { label: "Our Division", href: "/ministry/division", active: false },
+    { label: "Contact Us", href: "/connect/", active: false },
+    { label: "Directory", href: "/connect/directory", active: false },
+    { label: "RTI", href: "/connect/rti", active: false },
+    { label: "Grievance", href: "/connect/grievance", active: false },
+    { label: "Redressal", href: "/connect/redressal", active: false },
+    { label: "Citizen Engagement", href: "/connect/engagement", active: false },
     {
-      label: "Our Organization",
-      href: "/ministry/organization",
+      label: "Parliament Questions",
+      href: "/connect/parliament",
       active: false,
     },
-    { label: "Our Performance", href: "/ministry/performance", active: false },
-    { label: "Directory", href: "/ministry/directory", active: false },
+    { label: "Visitors Pass", href: "/connect/visitor-pass", active: false },
   ];
 
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
+        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/e45a8e1f3769a54d12e3cb5cb7ef2ec2.png"
         breadcrumbs={breadcrumbs}
         navItems={navItems}
       />
