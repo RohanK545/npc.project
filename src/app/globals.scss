@@ -31,14 +31,18 @@ body {
   min-height: 100vh;
 }
 
-// Focus styles for accessibility
 a:focus,
 button:focus,
 input:focus,
-select:focus {
-  outline: 2px solid var(--gov-blue);
-  outline-offset: 2px;
-}
+// select:focus {
+//   outline: 2px solid var(--gov-blue);
+//   outline-offset: 2px;
+// }
 .nav-item:hover {
   background-color: #a3bbf3; /* change to your desired hover color */
+}
+
+/* styles.css or component CSS */
+.borderbottom-active {
+  border-bottom: 8px solid #1e3568;
 }

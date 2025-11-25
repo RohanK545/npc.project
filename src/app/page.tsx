@@ -13,6 +13,7 @@ export default function Home() {
     "/images/banner-949946_960_720.jpg",
   ];
 
+  // Auto slide
   useEffect(() => {
     if (isPaused) return;
 
@@ -34,8 +35,8 @@ export default function Home() {
   };
 
   return (
-    <>
-      {/* ======================= BANNER SECTION ======================= */}
+    <div className="w-100">
+      {/* ======================= BANNER ======================= */}
       <section
         className="position-relative"
         style={{ width: "100%", height: "450px", overflow: "hidden" }}
@@ -64,53 +65,61 @@ export default function Home() {
         {/* LEFT BUTTON */}
         <button
           onClick={goToPrevSlide}
+          className="position-absolute d-flex justify-content-center align-items-center"
           style={{
-            position: "absolute",
             top: "50%",
-            left: "15px",
             transform: "translateY(-50%)",
-            width: "32px",
-            height: "32px",
-            background: "black",
-            color: "white",
-            border: "none",
+            left: "20px",
+            width: "40px",
+            height: "40px",
+            backgroundColor: "#000",
             borderRadius: "8px",
-            fontSize: "18px",
+            border: "none",
             cursor: "pointer",
             zIndex: 98,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            opacity: 0.8,
+            boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
           }}
         >
-          ❮
+          <span
+            style={{
+              color: "white",
+              fontSize: "26px",
+              fontWeight: "900",
+              lineHeight: "0",
+            }}
+          >
+            ❮
+          </span>
         </button>
 
         {/* RIGHT BUTTON */}
         <button
           onClick={goToNextSlide}
+          className="position-absolute d-flex justify-content-center align-items-center"
           style={{
-            position: "absolute",
             top: "50%",
-            right: "15px",
             transform: "translateY(-50%)",
-            width: "32px",
-            height: "32px",
-            background: "black",
-            color: "white",
-            border: "none",
+            right: "20px",
+            width: "40px",
+            height: "40px",
+            backgroundColor: "#000",
             borderRadius: "8px",
-            fontSize: "18px",
+            border: "none",
             cursor: "pointer",
             zIndex: 98,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            opacity: 0.8,
+            boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
           }}
         >
-          ❯
+          <span
+            style={{
+              color: "white",
+              fontSize: "26px",
+              fontWeight: "900",
+              lineHeight: "0",
+            }}
+          >
+            ❯
+          </span>
         </button>
 
         {/* DOT INDICATORS */}
@@ -183,7 +192,7 @@ export default function Home() {
             />
           </div>
 
-          {/* Right Text */}
+          {/* Right Content */}
           <div style={{ marginLeft: "40px" }}>
             <h3 style={{ fontSize: "22px", color: "#2b4170" }}>Announcements</h3>
 
@@ -197,8 +206,7 @@ export default function Home() {
               }}
             >
               “India offers the three Ds for business to thrive – Democracy,
-              Demography, and Demand. We are committed to making India the most
-              investment-friendly country in the world.”
+              Demography, and Demand…”
             </p>
 
             <p style={{ color: "#555", marginTop: "15px" }}>
@@ -221,6 +229,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

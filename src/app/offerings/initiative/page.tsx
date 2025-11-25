@@ -3,27 +3,26 @@ import InnerBannerSection from "@/components/InnerBannerSection";
 export default function AboutUs() {
   const breadcrumbs = [
     { title: "Home", href: "/" },
-    { title: "Ministry" },
-    { pagetitle: "About Us" },
+    { title: "Offerings" },
+    { pagetitle: "Initiative" },
   ];
 
   const navItems = [
-    { label: "About Us", href: "/ministry/", active: false },
-    { label: "Our Team", href: "/ministry/our-team", active: false },
-    { label: "Our Division", href: "/ministry/division", active: false },
+    { label: "Schemes and Services", href: "/offerings/", active: false },
+    { label: "Tenders", href: "/offerings/tenders", active: false },
+    { label: "For Investors", href: "/offerings/investors", active: false },
     {
-      label: "Our Organization",
-      href: "/ministry/organization",
+      label: "Engagement and Recognition",
+      href: "/offerings/engagement",
       active: false,
     },
-    { label: "Our Performance", href: "/ministry/performance", active: false },
-    { label: "Directory", href: "/ministry/directory", active: false },
+    { label: "Initiative", href: "/offerings/initiative", active: false },
   ];
 
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
+        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9b3eaee6c86383232d03dd247ad6fb2c.png"
         breadcrumbs={breadcrumbs}
         navItems={navItems}
       />
