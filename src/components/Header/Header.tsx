@@ -180,7 +180,7 @@ export default function Header() {
       <header
         tabIndex={0}
         aria-label="header section"
-        className=" header ms-5 "
+        className=" header ps-5 "
       >
         <div className="d-block">
           <div className="row align-items-center mb-flex">
@@ -213,7 +213,7 @@ export default function Header() {
                 </svg>
 
                 <div className="pe-0 logotext">
-                  <p className="mb-1 govtext fs-2 mb-3">Government of India</p>
+                  <p className=" mb-1 govtext fs-2 mb-3">Government of India</p>
                   <p className=" mb-0 fs-1 fw-bold lh-sm mb-1">
                     Ministry Of Skill Development And Entrepreneurship
                   </p>
@@ -367,7 +367,10 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <ul className="nav border-top mt-3">
+      <ul
+        className="nav sticky-top border-top mt-3 bg-white"
+        style={{ margin: 0, padding: 0 }}
+      >
         {navItems.map((item, index) => {
           const active = isActive(item);
           return (
@@ -376,7 +379,7 @@ export default function Header() {
               className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${
                 active ? "borderbottom-active" : ""
               }`}
-              style={{ width: "180px", height: "60px", cursor: "pointer" }}
+              style={{ width: "180px", height: "65px", cursor: "pointer" }}
               onMouseEnter={() => setOpenIndex(index)}
               onMouseLeave={() => setOpenIndex(null)}
               onClick={(e) => {
@@ -393,7 +396,7 @@ export default function Header() {
 
               {openIndex === index && item.links.length > 0 && (
                 <ul
-                  className="innernav position-absolute start-50 translate-middle-x list-unstyled"
+                  className="innernav   start-50 translate-middle-x list-unstyled"
                   style={{ marginTop: "0px" }} //dont remove
                 >
                   {item.links.map((link, idx) => (

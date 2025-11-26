@@ -142,13 +142,13 @@ export default function InnerBannerSection({
               position: "relative",
             }}
           >
-            <div className="">
-              {showLeft && (
+            <div className=" ">
+              {/* {showLeft && (
                 <button className="scroll-btn leftside" onClick={scrollLeft}>
                   &lt;
                 </button>
-              )}
-              <ul className="nav   fs-2 p-3 ms-5 mx-auto" ref={containerRef}>
+              )} */}
+              <ul className="nav fs-2 p-3 ms-5 mx-auto" ref={containerRef}>
                 {navItems.map((item, index) => {
                   return (
                     <li key={index} className="">

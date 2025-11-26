@@ -237,7 +237,7 @@ body .type-size small {
 
 header {
   padding: 12px 24px 0px 24px;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 99;
   background: #ffffff;
@@ -2218,7 +2218,7 @@ footer .footerbox .indbtn {
 }
 @media (max-width: 991.5px) {
   .innernav {
-    padding: 8px;
+    /* padding: 8px; */
   }
 }
 @media (max-width: 575.5px) {

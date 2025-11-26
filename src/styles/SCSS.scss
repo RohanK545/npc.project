@@ -292,7 +292,7 @@ body {
 //Header
 header {
   padding: 24px 16px;
-  position: sticky;
+  // position: sticky;
   top: 0;
   z-index: 99;
   background: $white;
@@ -2543,7 +2543,7 @@ footer {
 // Inner Nav
 .innernav {
   background: $eagle-green;
-  padding: 16px;
+  padding: 160px;
   margin-top: -40px;
   z-index: 9;
   //   border-radius: 12px;
