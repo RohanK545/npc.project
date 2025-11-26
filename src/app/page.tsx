@@ -36,7 +36,6 @@ export default function Home() {
 
   return (
     <div className="w-100">
-      {/* ======================= BANNER ======================= */}
       <section
         className="position-relative"
         style={{ width: "100%", height: "450px", overflow: "hidden" }}
@@ -62,7 +61,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* LEFT BUTTON */}
         <button
           onClick={goToPrevSlide}
           className="position-absolute d-flex justify-content-center align-items-center"
@@ -92,7 +90,6 @@ export default function Home() {
           </span>
         </button>
 
-        {/* RIGHT BUTTON */}
         <button
           onClick={goToNextSlide}
           className="position-absolute d-flex justify-content-center align-items-center"
@@ -121,8 +118,6 @@ export default function Home() {
             ❯
           </span>
         </button>
-
-        {/* DOT INDICATORS */}
         <div
           style={{
             position: "absolute",
@@ -142,14 +137,14 @@ export default function Home() {
                 height: "12px",
                 borderRadius: "50%",
                 background:
-                  currentSlide === index ? "#2b62cc" : "rgba(180, 180, 255, 0.6)",
+                  currentSlide === index
+                    ? "#2b62cc"
+                    : "rgba(180, 180, 255, 0.6)",
                 cursor: "pointer",
               }}
             />
           ))}
         </div>
-
-        {/* PAUSE BUTTON */}
         <button
           onClick={() => setIsPaused(!isPaused)}
           style={{
@@ -171,61 +166,143 @@ export default function Home() {
         </button>
       </section>
 
-      {/* ======================= ANNOUNCEMENT SECTION ======================= */}
+      {/* Announcement Div - Added below banner and above announcement section */}
       <section
         style={{
-          background: "#f7f7f7",
-          padding: "40px 20px",
+          background: "#E5E5E5",
+          padding: "15px 0",
           width: "100%",
-          borderTop: "1px solid #ddd",
         }}
       >
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex" }}>
-          {/* Left Image */}
-          <div>
-            <Image
-              src="/images/modi.png"
-              alt="PM Modi"
-              width={250}
-              height={250}
-              style={{ borderRadius: "50%" }}
-            />
-          </div>
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 20px",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "20px",
+              fontWeight: "700",
+              color: "#432DD7",
+              margin: "0",
+            }}
+          >
+            Announcements
+          </h2>
+        </div>
+      </section>
 
-          {/* Right Content */}
-          <div style={{ marginLeft: "40px" }}>
-            <h3 style={{ fontSize: "22px", color: "#2b4170" }}>Announcements</h3>
+      <section
+        style={{
+          background: "#F5F5F4", 
+          padding: "60px 0",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "40px",
+            padding: "0 20px",
+          }}
+        >
+          {/* LEFT IMAGE */}
+          <Image
+            src="/images/modi.png"
+            alt="PM Modi"
+            width={260}
+            height={260}
+            style={{
+              borderRadius: "50%",
+              border: "6px solid #ffffff",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            }}
+          />
 
+          {/* RIGHT CONTENT */}
+          <div style={{ maxWidth: "600px" }}>
             <p
               style={{
                 fontSize: "20px",
-                color: "#1a2a44",
-                width: "80%",
                 lineHeight: "32px",
-                marginTop: "10px",
+                color: "#1a2a44",
+                fontWeight: 500,
+                marginBottom: "25px",
               }}
             >
-              “India offers the three Ds for business to thrive – Democracy,
-              Demography, and Demand…”
+              India offers the three Ds for business to thrive –{" "}
+              <span style={{ color: "#1a2a44", fontWeight: "bold" }}>
+                Democracy
+              </span>
+              ,{" "}
+              <span style={{ color: "#1a2a44", fontWeight: "bold" }}>
+                Demography
+              </span>
+              , and{" "}
+              <span style={{ color: "#1a2a44", fontWeight: "bold" }}>
+                Demand
+              </span>
+              . We are committed to making India the most investment-friendly
+              country in the world.
             </p>
 
-            <p style={{ color: "#555", marginTop: "15px" }}>
-              <strong>VIBRANT GUJARAT SUMMIT</strong> <br />
-              17.04.2015
-            </p>
-
-            <button
+            <div
               style={{
-                marginTop: "10px",
-                background: "white",
-                border: "1px solid #1a2a44",
-                padding: "10px 20px",
-                borderRadius: "6px",
-                cursor: "pointer",
+                background: "#f0f7ff",
+                borderLeft: "4px solid #1a2a44",
+                padding: "20px",
+                marginBottom: "25px",
               }}
             >
-              VIEW EVENT
-            </button>
+              <p
+                style={{
+                  fontSize: "22px",
+                  fontWeight: "700",
+                  color: "#1a2a44",
+                  marginBottom: "5px",
+                }}
+              >
+                VIBRANT GUJARAT SUMMIT
+              </p>
+              <p
+                style={{
+                  fontSize: "16px",
+                  color: "#666",
+                  marginBottom: "15px",
+                }}
+              >
+                17.04.2015
+              </p>
+              <button
+                style={{
+                  background: "#1a2a44",
+                  color: "#fff",
+                  border: "none",
+                  padding: "10px 20px",
+                  borderRadius: "4px",
+                  fontSize: "15px",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  transition: "background-color 0.3s",
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.currentTarget as HTMLButtonElement;
+                  target.style.background = "#152c6b";
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.currentTarget as HTMLButtonElement;
+                  target.style.background = "#1a2a44";
+                }}
+              >
+                VIEW EVENT
+              </button>
+            </div>
           </div>
         </div>
       </section>
