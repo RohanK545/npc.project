@@ -2309,7 +2309,9 @@ footer .footerbox .indbtn {
 }
 
 .maincontent {
-  padding: 32px 0px;
+  padding: 32px;
+  margin-left: 5%;
+  margin-right: 5%;
   min-height: 50vh;
 }
 @media (max-width: 767.5px) {
@@ -2343,38 +2345,49 @@ footer .footerbox .indbtn {
   border-radius: 10px;
   padding: 32px;
 }
+
 .maincontent .visionbox h2 {
-  color: #22242a;
+  color: #162f6a;
   font-style: normal;
   font-weight: 500;
   line-height: 36px;
-  margin-bottom: 0;
+  margin-bottom: 100px;
 }
-.maincontent .visionbox .h4 {
+
+.maincontent .visionbox h4 {
   color: #22242a;
   letter-spacing: 0.7px;
   text-transform: uppercase;
   margin-top: 20px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
+}
+.maincontent .aboutcontent {
+  padding-right: 5%;
 }
 .maincontent .aboutcontent h2 {
-  color: #22242a;
+  color: #162f6a;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.12px;
   margin-bottom: 10px;
 }
+.maincontent .aboutcontent p {
+  text-align: justify;
+}
+.maincontent .aboutcontent span {
+  text-align: justify;
+}
 .maincontent .aboutcontent .objectivebox {
-  border-radius: 12px;
-  background: #d5d6dc;
-  padding: 12px;
   margin-bottom: 22px;
   height: 100%;
+  border-radius: 12px;
+  background: rgb(210, 223, 255);
+  padding: 12px;
 }
 .maincontent .aboutcontent .objectivebox h3 {
-  color: #22242a;
-  font-size: 3.6rem;
+  color: #162f6a;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 72px;
@@ -2410,7 +2423,7 @@ footer .footerbox .indbtn {
   margin-bottom: 16px;
 }
 .maincontent .aboutcontent .boxbottom .material-symbols-outlined {
-  color: #22242a;
+  color: #162f6a;
 }
 
 .schemebox {
@@ -2587,7 +2600,7 @@ footer .footerbox .indbtn {
   gap: 8px;
   border: none;
   outline: none;
-  background: #d5d6dc;
+  background: #a3bbf3;
   border-radius: 4px;
   color: #22242a;
   font-size: 1.2rem;
@@ -2666,7 +2679,7 @@ footer .footerbox .indbtn {
 
 .link-btn {
   padding: 8px;
-  background: #d5d6dc;
+  background: #a3bbf3;
   border-radius: 4px;
   border: none;
   outline: none;
