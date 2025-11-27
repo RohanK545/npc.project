@@ -237,7 +237,7 @@ body .type-size small {
 
 header {
   padding: 12px 24px 0px 24px;
-  /* position: sticky; */
+  position: sticky;
   top: 0;
   z-index: 99;
   background: #ffffff;
@@ -2218,7 +2218,7 @@ footer .footerbox .indbtn {
 }
 @media (max-width: 991.5px) {
   .innernav {
-    /* padding: 8px; */
+    padding: 8px;
   }
 }
 @media (max-width: 575.5px) {
@@ -2309,9 +2309,7 @@ footer .footerbox .indbtn {
 }
 
 .maincontent {
-  padding: 32px;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding: 32px 0px;
   min-height: 50vh;
 }
 @media (max-width: 767.5px) {
@@ -2345,49 +2343,38 @@ footer .footerbox .indbtn {
   border-radius: 10px;
   padding: 32px;
 }
-
 .maincontent .visionbox h2 {
-  color: #162f6a;
+  color: #22242a;
   font-style: normal;
   font-weight: 500;
   line-height: 36px;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
-
-.maincontent .visionbox h4 {
+.maincontent .visionbox .h4 {
   color: #22242a;
   letter-spacing: 0.7px;
   text-transform: uppercase;
   margin-top: 20px;
-  margin-bottom: 20px;
-}
-.maincontent .aboutcontent {
-  padding-right: 5%;
+  margin-bottom: 0;
 }
 .maincontent .aboutcontent h2 {
-  color: #162f6a;
+  color: #22242a;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.12px;
   margin-bottom: 10px;
 }
-.maincontent .aboutcontent p {
-  text-align: justify;
-}
-.maincontent .aboutcontent span {
-  text-align: justify;
-}
 .maincontent .aboutcontent .objectivebox {
+  border-radius: 12px;
+  background: #d5d6dc;
+  padding: 12px;
   margin-bottom: 22px;
   height: 100%;
-  border-radius: 12px;
-  background: rgb(210, 223, 255);
-  padding: 12px;
 }
 .maincontent .aboutcontent .objectivebox h3 {
-  color: #162f6a;
-  font-size: 2rem;
+  color: #22242a;
+  font-size: 3.6rem;
   font-style: normal;
   font-weight: 600;
   line-height: 72px;
@@ -2423,7 +2410,7 @@ footer .footerbox .indbtn {
   margin-bottom: 16px;
 }
 .maincontent .aboutcontent .boxbottom .material-symbols-outlined {
-  color: #162f6a;
+  color: #22242a;
 }
 
 .schemebox {
@@ -2600,7 +2587,7 @@ footer .footerbox .indbtn {
   gap: 8px;
   border: none;
   outline: none;
-  background: #a3bbf3;
+  background: #d5d6dc;
   border-radius: 4px;
   color: #22242a;
   font-size: 1.2rem;
@@ -2679,7 +2666,7 @@ footer .footerbox .indbtn {
 
 .link-btn {
   padding: 8px;
-  background: #a3bbf3;
+  background: #d5d6dc;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -6060,7 +6047,7 @@ button.filterClearBtn:focus-visible {
   font-weight: 400;
   line-height: 30px;
   letter-spacing: -0.1px;
-  /* margin-bottom: 40px; */
+  margin-bottom: 40px;
   font-size: 1.6rem !important;
   box-sizing: border-box;
   --bs-gutter-x: 3rem;
@@ -6095,7 +6082,7 @@ button.filterClearBtn:focus-visible {
   font-weight: 600;
   line-height: 22px;
   font-size: 1.6rem;
-  margin-left: 3rem;              /* reduced */
+  margin-left: 5rem;              /* reduced */
   box-shadow:
     0 1px 2px rgba(35, 35, 47, 0.06),
     0 4px 8px rgba(35, 35, 47, 0.08);
@@ -6171,3 +6158,4 @@ button.filterClearBtn:focus-visible {
   font-weight: 500;
   color: #495057;
 }
+
