@@ -292,7 +292,7 @@ body {
 //Header
 header {
   padding: 24px 16px;
-  position: sticky;
+  // position: sticky;
   top: 0;
   z-index: 99;
   background: $white;
@@ -2543,7 +2543,7 @@ footer {
 // Inner Nav
 .innernav {
   background: $eagle-green;
-  padding: 16px;
+  padding: 160px;
   margin-top: -40px;
   z-index: 9;
   //   border-radius: 12px;
@@ -2652,24 +2652,20 @@ footer {
 
 // Main Content
 .maincontent {
-  padding: 32px 0px;
+  padding: 32px 0;
+  background-color: #000000;
   min-height: 50vh;
-  // margin-top: 30px;
 
   @media (max-width: 767.5px) {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  // @media (max-width:474.5px) {
-  //     margin-top: 55px;
-  // }
-
   .tableheader {
     background: $azureish-white;
     border-radius: 4px;
     padding: 12px 32px;
-    margin: 0 0 16px 0;
+    margin-bottom: 16px;
 
     @media (max-width: 991.5px) {
       display: none;
@@ -2696,80 +2692,83 @@ footer {
       font-style: normal;
       font-weight: 500;
       line-height: 36px;
-      margin-bottom: 0;
+      margin-bottom: 100px;
     }
 
-    .h4 {
+    h4 {
       color: $eagle-green;
       letter-spacing: 0.7px;
       text-transform: uppercase;
       margin-top: 20px;
-      margin-bottom: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.aboutcontent {
+  h2 {
+    color: $eagle-green;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.12px;
+    // margin-top: 8px;
+    margin-bottom: 10px;
+  }
+  p {
+    text-align: justify;
+  }
+
+  .objectivebox {
+    border-radius: 12px;
+    background: $azureish-white;
+    padding: 12px;
+    margin-bottom: 22px;
+    height: 100%;
+
+    h3 {
+      color: $eagle-green;
+      font-size: 3.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 72px;
+    }
+
+    p {
+      color: $black;
+      text-align: left;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
   }
 
-  .aboutcontent {
-    h2 {
+  .boxbottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 16px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    border: 1px solid $bright-gray;
+    background: $white;
+    padding: 16px;
+    margin-bottom: 16px;
+
+    .material-symbols-outlined {
       color: $eagle-green;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: -0.12px;
-      // margin-top: 8px;
-      margin-bottom: 10px;
-    }
-
-    .objectivebox {
-      border-radius: 12px;
-      background: $azureish-white;
-      padding: 12px;
-      margin-bottom: 22px;
-      height: 100%;
-
-      h3 {
-        color: $eagle-green;
-        font-size: 3.6rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 72px;
-      }
-
-      p {
-        color: $black;
-        text-align: left;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-      }
-    }
-
-    .boxbottom {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      gap: 16px;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      border-radius: 8px;
-      border: 1px solid $bright-gray;
-      background: $white;
-      padding: 16px;
-      margin-bottom: 16px;
-
-      .material-symbols-outlined {
-        color: $eagle-green;
-      }
     }
   }
 }
@@ -2975,7 +2974,8 @@ footer {
   outline: none;
   background: $azureish-white;
   border-radius: 4px;
-  color: $eagle-green;
+  // color: $eagle-green;
+  color: #a3bbf3;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
@@ -3067,7 +3067,8 @@ footer {
   border-radius: 4px;
   border: none;
   outline: none;
-  color: $eagle-green;
+  // color: $eagle-green
+  color: #a3bbf3;
   height: 40px;
   width: 40px;
   text-decoration: none;

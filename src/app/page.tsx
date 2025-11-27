@@ -7,10 +7,9 @@ export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
 
   const bannerImages = [
-    "/images/banner.jpg",
-    "/images/images.jpg",
-    "/images/pngtree.jpg",
-    "/images/banner-949946_960_720.jpg",
+    "https://ccps.digifootprint.gov.in/static//uploads/2025/04/0ff98e1ffaf83a690f2cd3f0b7ac9502.jpg",
+    "https://www.meity.gov.in/static/uploads/2025/10/57abd94ee7b510ee638e9907787c8a6e.jpg",
+    "https://www.meity.gov.in/static/uploads/2025/11/3b31c35215a20d22fb1f2d88941ef884.jpg",
   ];
 
   // Auto slide
@@ -38,7 +37,7 @@ export default function Home() {
     <div className="w-100">
       <section
         className="position-relative"
-        style={{ width: "100%", height: "450px", overflow: "hidden" }}
+        style={{ width: "100%", height: "575px", overflow: "hidden" }}
       >
         {/* Slides */}
         <div className="position-relative w-100 h-100">
@@ -56,6 +55,7 @@ export default function Home() {
                 alt="banner"
                 fill
                 style={{ objectFit: "cover" }}
+                unoptimized
               />
             </div>
           ))}
