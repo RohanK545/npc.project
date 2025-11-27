@@ -44,5 +44,19 @@ input:focus,
 
 /* styles.css or component CSS */
 .borderbottom-active {
-  border-bottom: 6px solid #1e3568;
+  border-bottom: 6px solid #162f6a;
+}
+.navigation-text {
+  color: #162f6a;
+}
+.bordered-table {
+  border-collapse: collapse; /* important to avoid double borders */
+  width: 100%; /* optional: full width */
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 1px solid #000; /* black border for every cell */
+  padding: 8px; /* optional: spacing inside cells */
+  text-align: left; /* optional: alignment */
 }

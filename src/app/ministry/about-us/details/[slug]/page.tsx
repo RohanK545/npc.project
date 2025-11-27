@@ -1,7 +1,11 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { ministryDetailPages } from "@/data/ministryDetails";
 
-export default function AboutUs({ params }: { params: { slug: string } }) {
+export default async function AboutUs({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Ministry" },
@@ -20,11 +24,19 @@ export default function AboutUs({ params }: { params: { slug: string } }) {
     { label: "Our Performance", href: "/ministry/performance", active: false },
     { label: "Directory", href: "/ministry/directory", active: false },
   ];
-  const slug = params.slug as keyof typeof ministryDetailPages;
-  console.log(slug);
-  const pageData = ministryDetailPages[slug];
-  if (!pageData) {
-    return <h2>Page Not Found</h2>;
+  const resolvedParams = await params;
+  const decodedSlug = decodeURIComponent(resolvedParams.slug);
+
+  console.log("DECODED SLUG:", decodedSlug);
+
+  const key = extractKeyFromSlug(decodedSlug);
+  const pageData = ministryDetailPages[key as keyof typeof ministryDetailPages];
+  console.log(pageData);
+  if (!pageData) return <h2>Page Not Found</h2>;
+
+  function extractKeyFromSlug(slug: string) {
+    const match = slug.match(/Title=([^]+)-[A-Za-z0-9]+$/);
+    return match ? match[1] : "";
   }
 
   return (
@@ -40,8 +52,6 @@ export default function AboutUs({ params }: { params: { slug: string } }) {
       <section className="maincontent">
         <div className="container">
           <h2>{pageData.title}</h2>
-
-          {/* Render HTML content */}
           <div
             className="content-box help-editor"
             dangerouslySetInnerHTML={{ __html: pageData.content }}
