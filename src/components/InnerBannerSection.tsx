@@ -66,7 +66,9 @@ export default function InnerBannerSection({
       <div className="Innerbanner position-relative">
         <div
           className="position-relative w-100"
-          style={{ height: "250px", borderTop: "2px solid #162f6a" }}
+          style={{
+            height: "250px",
+          }}
         >
           {/* Image */}
           <img

@@ -858,7 +858,7 @@ footer .feedbackbox .starlist {
   gap: 4px;
 }
 footer .footerbox {
-  background: #22242a;
+  background: #162f6a;
   padding: 24px 20px;
   color: #ffffff;
 }
@@ -2243,6 +2243,7 @@ footer .footerbox .indbtn {
   position: relative;
   min-width: fit-content;
   width: 164px;
+  color: #ff0101;
 }
 .nav-item:hover > .innernav {
   display: block; /* show on hover */
@@ -2310,9 +2311,10 @@ footer .footerbox .indbtn {
 
 .maincontent {
   padding: 32px;
-  margin-left: 5%;
-  margin-right: 5%;
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
   min-height: 50vh;
+  /* margin-top: 16px; */
 }
 @media (max-width: 767.5px) {
   .maincontent {
@@ -2344,6 +2346,7 @@ footer .footerbox .indbtn {
   background: #ebeaea;
   border-radius: 10px;
   padding: 32px;
+  /* margin-left: 20%; */
 }
 
 .maincontent .visionbox h2 {
@@ -4065,7 +4068,7 @@ footer .footerbox .indbtn {
 }
 
 .card-wrapper {
-  background-color: #f1f1f4;
+  background-color: #d2dfff;
   border-radius: 24px;
 }
 .card-wrapper .referencesNodes {
@@ -4087,6 +4090,7 @@ footer .footerbox .indbtn {
   margin-top: 60px;
   border: solid 2px transparent;
   z-index: 1;
+  text-align: center;
 }
 .card-wrapper .profile-card:hover {
   border: solid 2px #22242a;
@@ -4096,6 +4100,7 @@ footer .footerbox .indbtn {
     width: 100%;
     padding: 40px 10px 10px 10px;
     min-height: 120px;
+    text-align: center;
   }
 }
 .card-wrapper .profile-card .profile-img {
@@ -4111,16 +4116,18 @@ footer .footerbox .indbtn {
   }
 }
 .card-wrapper .profile-card small {
-  color: #22242a;
+  color: #162f6a;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.7px;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .card-wrapper .profile-card small {
     font-size: 9px;
+    text-align: center;
   }
 }
 .card-wrapper .profile-card .h4 {
@@ -4129,6 +4136,7 @@ footer .footerbox .indbtn {
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .card-wrapper .profile-card .h4 {
@@ -4441,7 +4449,8 @@ footer .footerbox .indbtn {
 
 .our-team-list-container .our-team-list-header {
   gap: 8px;
-  background-color: #676b7e;
+  /* background-color: #676b7e; */
+  background-color: #214aab;
   color: #ffffff;
   padding: 8px 16px;
   border-radius: 4px;
@@ -4458,8 +4467,9 @@ footer .footerbox .indbtn {
   line-height: normal;
 }
 .our-team-list-container .our-team-list-subheader {
-  background-color: #f1f1f4;
-  color: #454754;
+  /* background-color: #f1f1f4; */
+  background-color: #d2dfff;
+  color: #214aab;
   padding: 4px 8px;
   border-radius: 4px;
   -webkit-border-radius: 4px;

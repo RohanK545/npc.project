@@ -368,8 +368,8 @@ export default function Header() {
         </div>
       </header>
       <ul
-        className="nav sticky-top border-top mt-3 bg-white"
-        style={{ margin: 0, padding: 0 }}
+        className="nav sticky-top  mt-3 bg-white"
+        style={{ margin: 0, padding: 0, borderBottom: "2px solid #162f6a" }}
       >
         {navItems.map((item, index) => {
           const active = isActive(item);
@@ -379,7 +379,11 @@ export default function Header() {
               className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${
                 active ? "borderbottom-active" : ""
               }`}
-              style={{ width: "180px", height: "65px", cursor: "pointer" }}
+              style={{
+                width: "180px",
+                height: "65px",
+                cursor: "pointer",
+              }}
               onMouseEnter={() => setOpenIndex(index)}
               onMouseLeave={() => setOpenIndex(null)}
               onClick={(e) => {
@@ -389,8 +393,29 @@ export default function Header() {
                 }
               }}
             >
-              <span className="fw-bold fs-3" tabIndex={0}>
-                {item.title}
+              <span
+                className={`fw-bold fs-3  ${active ? "navigation-text" : ""}`}
+                tabIndex={0}
+              >
+                {item.title}{" "}
+                {active ? (
+                  ""
+                ) : (
+                  <svg
+                    width="3rem"
+                    height="3rem"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7.293 9.293a1 1 0 0 1 1.414 0L12 12.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414Z"
+                      fill="#162f6a"
+                    />
+                  </svg>
+                )}
                 {/* {item.path} */}
               </span>
 
