@@ -6009,3 +6009,152 @@ button.filterClearBtn:focus-visible {
 }
 
 /*# sourceMappingURL=style.css.map */
+.about-section-heading {
+  font-size: 2rem !important;
+  font-weight: 700;
+  line-height: normal;
+  color: #162f6a;
+  margin-top: 6rem;
+  margin-left: 5rem;
+  margin-bottom: 0;
+  padding: 0%;
+  font-family: Noto Sans, sans-serif;
+  width: 100%;
+  max-width: 100%;
+  padding-left: calc(3rem * .10);
+  padding-right: calc(3rem * .10);
+  box-sizing: border-box;
+  display: block;
+  padding-top: 4rem;           /* Extra padding inside top */
+  padding-left: 4rem;       
+}
+
+.about-section-heading a {
+  text-decoration: none;
+  color: inherit; /* important: same as design */
+}
+
+.headingclr {
+  fill: #13406C;
+}
+
+
+.layout4-about-content {
+  font-family: Noto Sans, sans-serif;
+  color: #150202;
+  text-align: justify;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.1px;
+  /* margin-bottom: 40px; */
+  font-size: 1.6rem !important;
+  box-sizing: border-box;
+  --bs-gutter-x: 3rem;
+  --bs-gutter-y: 3rem;
+  margin-left: 3rem;
+  padding-left: 1.8rem;  
+  margin-top: 0%;
+  padding-top: 0% ;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.about-btn {
+  display: flex !important;
+  width: 60% !important;        /* smaller width */
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  cursor: pointer;
+  text-decoration: none !important;
+
+  padding: 12px 8px;
+  min-height: 60px;
+
+  border: 0.5px solid #162f6a;
+  background: #fff;
+  transition: all 0.3s ease;
+
+  color: #150202;
+  font-family: Noto Sans, sans-serif;
+  font-weight: 600;
+  line-height: 22px;
+  font-size: 1.6rem;
+  margin-left: 3rem;              /* reduced */
+  box-shadow:
+    0 1px 2px rgba(35, 35, 47, 0.06),
+    0 4px 8px rgba(35, 35, 47, 0.08);
+
+  border-radius: 2px;
+}
+
+/* ⭐ Original blue hover effect */
+.about-btn:hover {
+  background: #e7efff; /* light blue hover like your inspected element */
+  border-color: #162f6a; /* darker border */
+  color: #162f6a;  /* text becomes blue */
+  transform: translateY(-2px);
+}
+
+/* Make SVG also turn blue on hover */
+.about-btn:hover svg path {
+  fill: #162f6a !important;
+}
+
+
+.about-section-right {
+  --bs-gutter-x: 3rem;
+  --bs-gutter-y: 3rem;
+
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+
+  font-size: 1.6rem !important;
+  font-family: "Noto Sans", sans-serif;
+  color: #150202;
+}
+
+.about-section-img {
+  color: transparent;
+  box-sizing: border-box;
+  vertical-align: middle;
+  visibility: visible !important;
+  max-width: 100%;
+  border-top-left-radius: 0.375rem; /* from BS variable */
+  border-top-right-radius: 0.375rem;
+  border: 2px solid #ebeaea;
+  border-bottom: 6px solid #162f6a;
+  object-fit: contain;
+  width: 172px !important;
+  height: 172px !important;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.card-body {
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: rgba(0,0,0,0.175);
+  --bs-card-border-radius: 0.375rem;
+  --bs-card-bg: #fff;
+  word-wrap: break-word;
+  font-size: 1.6rem !important;
+  font-family: "Noto Sans", sans-serif;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+.minister-name {
+  font-weight: 600;
+  font-size: 1.6rem !important;
+}
+
+.minister-desg {
+  font-weight: 500;
+  color: #495057;
+}
