@@ -34,7 +34,7 @@ export default function AboutUs() {
                     search
                   </span>
                 </span>
-                <input
+                {/* <input
                   type="search"
                   role="searchbox"
                   name="scheme"
@@ -42,7 +42,7 @@ export default function AboutUs() {
                   className="form-control"
                   placeholder="Search..."
                   defaultValue=""
-                />
+                /> */}
                 <span className="input-group-text filterIconResponsive d-block d-md-none">
                   <span
                     aria-hidden="true"

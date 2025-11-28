@@ -28,7 +28,7 @@ body {
 
 // Ensure main content is accessible
 #main-content {
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 a:focus,
@@ -59,4 +59,48 @@ input:focus,
   border: 1px solid #000; /* black border for every cell */
   padding: 8px; /* optional: spacing inside cells */
   text-align: left; /* optional: alignment */
+}
+
+.navigation-menu-container {
+    padding: 0px 10rem;
+    border-top: 1px solid #ebeaea;
+    box-shadow: 0 4px 8px 0 rgba(35, 35, 47, .08);
+    border-bottom: 2px solid #162f6a;
+}
+
+@media (max-width: 720px) {
+  .navigation-menu-container {
+    display: none !important;
+  }  
+}
+.sidebar-menu{
+    font-weight: bold;
+    font-size: large;
+    margin: 1rem;
+}
+.sidebar-submenu{
+    padding: 0.5rem 1rem;
+    padding-left: 5rem;
+    font-size: 7rem;
+    margin: 2rem;
+    font-size: 1.25rem;
+  }
+
+ul.nav.navigation-menu-container.sticky-top.mt-3.bg-white.border-top{
+  text-wrap-mode: nowrap !important;
+  /* flex-wrap: wrap !important; */
+}
+
+.offcanvas-body a:hover {
+  text-decoration: underline;
+  color: #0d6efd; /* Bootstrap primary color */
+}
+
+/* Cursor pointer on submenu links */
+.offcanvas-body a {
+  cursor: pointer;
+}
+
+h5.fs-5.text-capitalize.mb-0.text-decoration-none.text-dark {
+    font-size: large !important;
 }
