@@ -28,11 +28,9 @@ export default function Home() {
       (prev) => (prev - 1 + bannerImages.length) % bannerImages.length
     );
   };
-
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
   };
-
   return (
     <div className="w-100">
       <section
