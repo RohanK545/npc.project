@@ -104,3 +104,14 @@ ul.nav.navigation-menu-container.sticky-top.mt-3.bg-white.border-top{
 h5.fs-5.text-capitalize.mb-0.text-decoration-none.text-dark {
     font-size: large !important;
 }
+.searchContainer {
+  flex: 1;           
+  max-width: 100%;  
+}
+
+.searchContainer .input-group {
+  width: 100%;      
+}
+a.link-btn.d-flex.align-items-center.text-uppercase.pointer {
+    background-color: #a3bbf3;
+}

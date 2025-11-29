@@ -21,13 +21,13 @@ export default function AboutUs() {
   const navItems = [
     { label: "About Us", href: "/ministry/", active: false },
     { label: "Our Team", href: "/ministry/our-team", active: false },
-    { label: "Our Division", href: "/ministry/division", active: false },
     {
-      label: "Our Organization",
+      label: "Our Organizations",
       href: "/ministry/organization",
       active: false,
     },
     { label: "Our Performance", href: "/ministry/performance", active: false },
+    { label: "Our Groups", href: "/ministry/groups", active: false },
     { label: "Directory", href: "/ministry/directory", active: false },
   ];
 

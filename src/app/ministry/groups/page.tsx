@@ -3,31 +3,19 @@ import InnerBannerSection from "@/components/InnerBannerSection";
 import React, { useState, useEffect } from "react";
 
 export default function AboutUs() {
-  type Directory = {
-    designation: string;
-    name: string;
-    departments: string[] | string;
-    contact?: {
-      phone?: string;
-      email?: string;
-      fax?: string;
-    };
-    address?: string;
-  };
-
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Ministry" },
-    { pagetitle: "Directory" },
+    { pagetitle: "Our Groups" },
   ];
 
   const navItems = [
     { label: "About Us", href: "/ministry/", active: false },
     { label: "Our Team", href: "/ministry/our-team", active: false },
+
     {
       label: "Our Organizations",
       href: "/ministry/organization",
@@ -38,167 +26,145 @@ export default function AboutUs() {
     { label: "Directory", href: "/ministry/directory", active: false },
   ];
 
-  const directories: Directory[] = [
+  const organizations = [
     {
-      designation: "Minister (E&IT)",
-      name: "Shri Ashwini Vaishnaw",
-      departments: [
-        "Hon'ble Minister of Railways; Information and Broadcasting; and Electronics and Information Technology",
-      ],
-      contact: {
-        phone:
-          "+91-11-24369191(Office), +91-11-24362626(Office), +91-11-24366070(Fax)",
-        email: "moeit@gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "Minister of State (E&IT)",
-      name: "Shri Jitin Prasada",
-      departments: [
-        "Hon'ble Minister of State in the Ministry of Commerce and Industry; and Electronics and Information Technology",
-      ],
-      contact: {
-        phone:
-          "+91-11-24368757(Office), +91-11-24368758(Office), +91-11-24360958(Fax)",
-        email: "mos-eit@gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "Office of Minister (E&IT)",
-      name: "Shri Abhas Katra Singh",
-      departments: ["OSD"],
-      contact: {
-        phone:
-          "+91-11-24369191(Office), +91-11-24362626(Office), +91-11-24366070(Fax)",
-        email: "moeit@gov.in, abhas.24@gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "PS to MoS",
-      name: "Shri Neeraj Kumar Singh",
-      departments: ["PS to MoS"],
-      contact: {
-        phone:
-          "+91-11-24368757(Office), +91-11-24368758(Office), +91-11-24360958(Fax)",
-        email: "mos-eit@gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "OSD to MoS",
-      name: "Shri Sandeep Ahuja",
-      departments: ["OSD to MoS"],
-      contact: {
-        phone: "+91-11-24368757(Office), +91-11-24368758(Office)",
-        fax: "+91-11-24360958",
-        email: "mos-eit@gov.in",
-      },
-      address:
-        "1st Floor, Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "Additional PS to MoS",
-      name: "Shri Kunal Pratap Singh",
-      departments: ["Additional PS to MoS"],
-      contact: {
-        phone:
-          "+91-11-24368757(Office), +91-11-24368758(Office), +91-11-24360958(Fax)",
-        email: "mos-eit@gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "Additional PS to MoS",
-      name: "Shri Kumar Sourabh",
-      departments: ["Additional PS to MoS"],
-      contact: {
-        phone:
-          "+91-11-24368757(Office), +91-11-24368758(Office), +91-11-24360958(Fax)",
-        email: "mos-eit@gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "Secretary (E&IT)",
-      name: "Shri S. Krishnan",
-      departments: ["Electronics and Information Technology"],
-      contact: {
-        phone: "+91-11-24364041(Office), +91-11-24363134(Fax)",
-        email: "secretary@meity.gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "MD/CEO DIC",
-      name: "Shri Akhil Kumar",
-      departments: [
-        "Designated Officer (u/s 69A)",
-        "Matters relating to India-AI Summit logistics",
-      ],
-      contact: {
-        phone: "+91-11-24363114, 24301629, 24301628 (Office)",
-        email: "ceo@digitalindia.gov.in",
-      },
-      address:
-        "1028, 1st Floor, Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
-    },
-    {
-      designation: "Additional Secretary",
-      name: "Shri Abhishek Singh",
-      departments: [
-        "Artificial Intelligence & Emerging Technology",
-        "Emerging Technology",
-        "DIBD",
-        "CEO IndiaAI / India AI Mission",
-        "Director General, NIC",
-      ],
-      contact: {
-        phone: "+91-11-24369222 (Office)",
-        email: "as@meity.gov.in",
-      },
-      address:
-        "Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi: 110003",
+      title: "National Informatics Centre (NIC)",
+      description:
+        "National Informatics Centre (NIC) of the Ministry of Electronics and Information Technology is providing network backbone and e-Governance support to Central Government, State Governments, UT Administrations, Districts and other Government bodies.",
+      logo: "https://www.meity.gov.in/static/uploads/2024/02/niclogo-1.svg",
+      link: "https://www.nic.in/",
+      category: "Attached Offices",
     },
   ];
+
+  const divisions = [
+    {
+      id: "btn-5favqq",
+      title: "Electronics System Design and Manufacturing (ESDM)",
+      description:
+        "The ESDM Division fosters growth of the electronics and hardware industry in India by encompassing the entire lifecycle of electronic products, from conception and design to manufacturing and support",
+      link: "/ministry/our-groups/details/electronics-system-design-manufacturing-esdm-wM5kTNtQWa",
+    },
+    {
+      id: "btn-16sukh",
+      title: "Software Industry Promotion",
+      description:
+        "The Software Industry Promotion Division is dedicated to make India a software superpower by supporting the growth of Indian software companies, nurturing new tech startups, and bridging the gap between academia and industry.",
+      link: "/ministry/our-groups/details/software-industry-promotion-gN1EDOtQWa",
+    },
+    {
+      id: "btn-p5prfk",
+      title: "Digital Governance",
+      description:
+        "The Digital Governance Division aims at transforming the way the Indian government operates by driving the adoption of e-governance solutions to make government services more accessible, efficient, and transparent.",
+      link: "/ministry/our-groups/details/digital-governance-wMyMDOtQWa",
+    },
+    {
+      id: "btn-xch7ua",
+      title: "Cyber Laws Division",
+      description:
+        "The Cyber Laws Division is safeguarding India's cyberspace by formulating cyber laws and policies to combat cybercrime and promote cybersecurity awareness.",
+      link: "/ministry/our-groups/details/cyber-laws-AM2MDOtQWa",
+    },
+    {
+      id: "btn-r9g84y",
+      title: "Cyber Security",
+      description:
+        "The Cyber Security Division is building a secure and resilient cyberspace for India by protecting critical infrastructure and digital assets while responding to cyber threats.",
+      link: "/ministry/our-groups/details/cyber-security-division-gNxIDOtQWa",
+    },
+    {
+      id: "btn-u77czr",
+      title: "Infrastructure and Governance",
+      description:
+        "The Infrastructure and Governance Division aims at strengthening the foundation for a digitally empowered India by developing infrastructure needed for digital transformation and setting standards for good governance.",
+      link: "/ministry/our-groups/details/infrastructure-and-governance-gN0EDOtQWa",
+    },
+    {
+      id: "btn-5kgeg6",
+      title: "Economic Planning",
+      description:
+        "The Economic Planning Division focuses on driving India's digital economy forward by formulating policies and strategies to promote digital entrepreneurship, attract investments, and create jobs in the digital sector.",
+      link: "/ministry/our-groups/details/economic-planning-division-wN1EDOtQWa",
+    },
+    {
+      id: "btn-2u7usl",
+      title: "HRD/Knowledge Management",
+      description:
+        "The HRD/Knowledge Management Division aims to ensure availability of trained human resources for the manufacturing & service sectors of electronics and IT industry by driving initiatives that bridge knowledge gaps emerging in the formal sector.",
+      link: "/ministry/our-groups/details/hrd-knowledge-management-ANzIDOtQWa",
+    },
+    {
+      id: "btn-zdtn51",
+      title: "Research and Development",
+      description:
+        "The Research and Development Division focused on pushing the boundaries of technology by funding cutting-edge research in areas like artificial intelligence, cyber security, and e-governance.",
+      link: "/ministry/our-groups/details/research-and-development-gM3EDOtQWa",
+    },
+    {
+      id: "btn-xbz3n0",
+      title: "The International Cooperation Division (ICD)",
+      description:
+        "The International Cooperation Division focused on building a better digital future by partnering  with other countries and international organizations to exchange leading practices and address global challenges in electronics industry.",
+      link: "/ministry/our-groups/details/the-international-cooperation-division-icd-wN0EDOtQWa",
+    },
+    {
+      id: "btn-pxg697",
+      title: "Parliament Matters",
+      description:
+        "The Parliament Matters Division aims to keep Parliament informed about MeitY's activities by providing briefings and reports to Parliamentarians.",
+      link: "/ministry/our-groups/details/parliment-matters-gM0EDOtQWa",
+    },
+    {
+      id: "btn-5ft2dz",
+      title: "Trade and Investment",
+      description:
+        "The Trade and Investment Division aims at promoting India as a digital investment destination by attracting foreign investments in the IT sector and helping Indian companies expand their global footprint.",
+      link: "/ministry/our-groups/details/trade-and-investment-QNxIDOtQWa",
+    },
+    {
+      id: "btn-12dsfb",
+      title: "Human Centered Computing",
+      description:
+        "We're putting people at the center of technology. We design technologies that are user-friendly, accessible, and inclusive.",
+      link: "/ministry/our-groups/details/human-centered-computing-AN0EDOtQWa",
+    },
+    {
+      id: "btn-hhiuny",
+      title: "AI & Emerging Technologies",
+      description:
+        "The AI & Emerging Technologies Division aims at embracing the future of technology by exploring the potential of artificial intelligence & blockchain, and other emerging technologies to transform India.",
+      link: "/ministry/our-groups/details/ai-emerging-technologies-division-QN5EDOtQWa",
+    },
+    {
+      id: "btn-vhdotl",
+      title: "Digital Economy",
+      description:
+        "The Digital Economy vertical under the Digital Economy Division encompasses the following areas : Matters relating to Promotion of Digital Transactions excluding Digital Payments.",
+      link: "/ministry/our-groups/details/digital-economy-division-QN0EDOtQWa",
+    },
+    {
+      id: "btn-t0wv9j",
+      title: "Innovation & IPR and Centre of Excellence (CoE)",
+      description:
+        "The Innovation IPR and Centre of Excellence (CoE) Projects Division aims at fostering a culture of innovation in India by supporting startups and entrepreneurs.",
+      link: "/ministry/our-groups/details/innovation-ipr-and-centre-of-excellence-coe-projects-AOxMDOtQWa",
+    },
+  ];
+
   const [currentPage, setCurrentPage] = useState(1);
-  const filteredOrganizations = directories.filter((org) => {
-    const query = searchQuery.toLowerCase();
+  const filteredOrganizations = divisions.filter((org) => {
+    // Category filter
+    // const matchesCategory =
+    //   !selectedCategory || org.category === selectedCategory;
 
-    const inDesignation = org.designation?.toLowerCase().includes(query);
-    const inName = org.name?.toLowerCase().includes(query);
+    // Search filter (checks title)
+    const matchesSearch = org.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
 
-    const deptArray = Array.isArray(org.departments)
-      ? org.departments
-      : org.departments
-      ? [org.departments]
-      : [];
-
-    const inDepartments = deptArray.some((dep) =>
-      dep.toLowerCase().includes(query)
-    );
-
-    const inPhone = org.contact?.phone?.toLowerCase().includes(query);
-    const inEmail = org.contact?.email?.toLowerCase().includes(query);
-    const inAddress = org.address?.toLowerCase().includes(query);
-
-    return (
-      inDesignation ||
-      inName ||
-      inDepartments ||
-      inPhone ||
-      inEmail ||
-      inAddress
-    );
+    // return matchesCategory && matchesSearch;
+    return matchesSearch;
   });
 
   const totalPages = Math.ceil(filteredOrganizations.length / itemsPerPage);
@@ -311,7 +277,7 @@ export default function AboutUs() {
             <div className="col-md-12 col-lg-8 d-none d-md-block filterIconResponsivebox">
               <div className="d-flex align-items-center justify-content-end flex-wrap gap-2">
                 {/* Category Select */}
-                <div className="input-group sortField" role="combobox">
+                {/* <div className="input-group sortField" role="combobox">
                   <label htmlFor="categorySelect" className="visually-hidden">
                     Filter by Category
                   </label>
@@ -321,7 +287,6 @@ export default function AboutUs() {
                       aria-hidden="true"
                       className="material-symbols-outlined bhashini-skip-translation"
                     >
-                      {/* <img src="/images/icons/Sort_By_Icon.svg" alt="Search" /> */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -360,7 +325,7 @@ export default function AboutUs() {
                       Company registered under Company Act, 1956
                     </option>
                   </select>
-                </div>
+                </div> */}
 
                 {/* Per Page Select */}
                 <div className="input-group perPageField" role="combobox">
@@ -445,160 +410,111 @@ export default function AboutUs() {
           </form>
 
           <div className="row g-4">
-            <div role="region" aria-label="Directory data">
-              {currentItems.map((item, index) => (
-                <div key={index} className="directoryBox row">
-                  {/* Left Column */}
-                  <div className="col-sm-6 col-md-4">
-                    <small className="designation">
-                      {highlightText(item.designation, searchQuery)}
-                    </small>
-                    <p className="name">
-                      {highlightText(item.name, searchQuery)}
+            {currentItems.map(({ id, title, description, link }) => (
+              <div key={id} className="col-md-6">
+                <div className="our-division-card h-100">
+                  <div className="our-division-card-body">
+                    <p className="our-division-organisation-title h3">
+                      {highlightText(title, searchQuery)}
                     </p>
-
-                    <div className="d-flex align-items-center flex-wrap gap-2">
-                      <div className="departmentBadge">
-                        <small className="mb-0">
-                          <div className="d-flex align-items-center flex-wrap gap-2">
-                            {Array.isArray(item.departments)
-                              ? item.departments.map((dep, index) => (
-                                  <div key={index} className="">
-                                    <small className="mb-0">
-                                      {highlightText(dep, searchQuery)}
-                                    </small>
-                                  </div>
-                                ))
-                              : item.departments && (
-                                  <div className="departmentBadge">
-                                    <small className="mb-0">
-                                      {highlightText(
-                                        item.departments,
-                                        searchQuery
-                                      )}
-                                    </small>
-                                  </div>
-                                )}
-                          </div>
-                        </small>
-                      </div>
+                    <div className="our-division-organisation-description">
+                      <p className="text-break">{description}</p>
                     </div>
                   </div>
-
-                  {/* Middle Column */}
-
-                  <div className="col-sm-12 col-md-4">
-                    <div className="d-flex align-items-start gap-2">
-                      <div className="d-flex align-items-center gap-2">
-                        <span className="material-symbols-outlined">
+                  <div className="our-division-card-footer d-flex justify-content-end gap-2">
+                    <div className="scheme-card-footer d-flex justify-content-end">
+                      <a
+                        id={id}
+                        className="link-btn d-flex align-items-center text-uppercase pointer"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="Know more"
+                        aria-label="Know more"
+                        href={link}
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="material-symbols-outlined bhashini-skip-translation"
+                        >
                           <img
-                            src="/images/icons/Phone.svg"
+                            src="/images/icons/Arrow_Forward.svg"
                             alt="Open In New"
                           />
                         </span>
-                        <p className="connect h4">
-                          {item.contact?.phone ?? "N/A"}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="d-flex align-items-start gap-2">
-                      <div className="d-flex align-items-center gap-2 mt-3">
-                        <span className="material-symbols-outlined">
-                          <img
-                            src="/images/icons/E-mail.svg"
-                            alt="Open In New"
-                          />
-                        </span>
-                        <p className="connect h4">
-                          {item.contact?.email ?? "N/A"}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column */}
-                  <div className="col-sm-12 col-md-4">
-                    <div className="d-flex align-items-start gap-2">
-                      <span className="material-symbols-outlined">
-                        <img
-                          src="/images/icons/Location.svg"
-                          alt="Open In New"
-                        />
-                      </span>
-                      <p className="connect h4">{item.address}</p>
+                      </a>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
 
-            {/* -----------------------------
+          {/* -----------------------------
          PAGINATION
     ------------------------------ */}
 
-            <div className="row align-items-center mt-5">
-              <div className="col-md-4"></div>
+          <div className="row align-items-center mt-5">
+            <div className="col-md-4"></div>
 
-              <div className="col-md-4 d-flex justify-content-center">
-                <nav aria-label="Page navigation">
-                  <ul className="pagination pointer">
-                    {/* Previous Button */}
-                    <li>
-                      <button
-                        className="button-item previous mb-2"
-                        disabled={currentPage === 1}
-                        aria-label="Go to previous page"
-                        onClick={goPrev}
+            <div className="col-md-4 d-flex justify-content-center">
+              <nav aria-label="Page navigation">
+                <ul className="pagination pointer">
+                  {/* Previous Button */}
+                  <li>
+                    <button
+                      className="button-item previous mb-2"
+                      disabled={currentPage === 1}
+                      aria-label="Go to previous page"
+                      onClick={goPrev}
+                    >
+                      <img
+                        src="/images/icons/Chevron_Left.svg"
+                        alt="Previous Page"
+                      />
+                    </button>
+                  </li>
+
+                  {/* Page Numbers */}
+                  {Array.from({ length: totalPages }).map((_, index) => {
+                    const page = index + 1;
+
+                    return (
+                      <li
+                        key={page}
+                        className="page-item"
+                        role="link"
+                        aria-label={`Go to page ${page}`}
                       >
-                        <img
-                          src="/images/icons/Chevron_Left.svg"
-                          alt="Previous Page"
-                        />
-                      </button>
-                    </li>
-
-                    {/* Page Numbers */}
-                    {Array.from({ length: totalPages }).map((_, index) => {
-                      const page = index + 1;
-
-                      return (
-                        <li
-                          key={page}
-                          className="page-item"
-                          role="link"
-                          aria-label={`Go to page ${page}`}
+                        <span
+                          className={`page-link pointer hover ${
+                            currentPage === page ? "active" : ""
+                          }`}
+                          onClick={() => goToPage(page)}
                         >
-                          <span
-                            className={`page-link pointer hover ${
-                              currentPage === page ? "active" : ""
-                            }`}
-                            onClick={() => goToPage(page)}
-                          >
-                            {page}
-                          </span>
-                        </li>
-                      );
-                    })}
-
-                    {/* Next Button */}
-                    <li>
-                      <button
-                        className="button-item next mb-2"
-                        disabled={currentPage === totalPages}
-                        aria-label="Go to next page"
-                        onClick={goNext}
-                      >
-                        <span className="material-symbols-outlined">
-                          <img
-                            src="/images/icons/Chevron_Right.svg"
-                            alt="Next Page"
-                          />
+                          {page}
                         </span>
-                      </button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+                      </li>
+                    );
+                  })}
+
+                  {/* Next Button */}
+                  <li>
+                    <button
+                      className="button-item next mb-2"
+                      disabled={currentPage === totalPages}
+                      aria-label="Go to next page"
+                      onClick={goNext}
+                    >
+                      <span className="material-symbols-outlined">
+                        <img
+                          src="/images/icons/Chevron_Right.svg"
+                          alt="Next Page"
+                        />
+                      </span>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>

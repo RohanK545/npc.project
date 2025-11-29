@@ -12,7 +12,7 @@ export default function AboutUs() {
     { label: "Our Team", href: "/ministry/our-team", active: true },
     { label: "Our Division", href: "/ministry/division", active: false },
     {
-      label: "Our Organization",
+      label: "Our Organizations",
       href: "/ministry/our-organization",
       active: false,
     },

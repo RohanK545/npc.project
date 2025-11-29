@@ -3245,6 +3245,7 @@ footer .footerbox .indbtn {
 
 .searchField {
   max-width: 375px;
+  border-color: #ff1e00;
   width: 100%;
 }
 @media (max-width: 991.5px) {
@@ -3287,7 +3288,7 @@ footer .footerbox .indbtn {
   margin-bottom: 24px;
 }
 .filterbox .input-group {
-  border-color: #676b7e;
+  border-color: #5279d7;
 }
 .filterbox .input-group .input-group-text {
   background: transparent;
@@ -3470,8 +3471,8 @@ footer .footerbox .indbtn {
   align-items: center;
 }
 .pagination .page-link.active {
-  background: #d5d6dc;
-  color: #22242a;
+  background: #a3bbf3;
+  color: #162f6a;
   border-radius: 50%;
 }
 .pagination .page-link.hover:hover {
@@ -3903,13 +3904,13 @@ footer .footerbox .indbtn {
 .directoryBox {
   padding: 16px 20px;
   row-gap: 24px;
-  border-bottom: 0.5px solid #676b7e;
+  border-bottom: 0.5px solid #5279d7;
 }
 .directoryBox .material-symbols-outlined {
   color: #22242a;
 }
 .directoryBox .designation {
-  color: #22242a;
+  color: #162f6a;
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
@@ -3925,8 +3926,8 @@ footer .footerbox .indbtn {
 .directoryBox .departmentBadge {
   padding: 4px 8px;
   border-radius: 12px;
-  background: #d5d6dc;
-  color: #22242a;
+  background: #A3BBF3;
+  color: #162f6a;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
@@ -4843,7 +4844,7 @@ footer .footerbox .indbtn {
   height: 40px;
   width: 40px;
   border-radius: 4px;
-  background: #d5d6dc;
+  background: #fff;
 }
 
 .our-division-detail-left-card {
@@ -5281,7 +5282,7 @@ footer .footerbox .indbtn {
 
 .btn.clearbtn:focus-visible,
 .sortField select:focus-visible {
-  outline: 1px rgb(86, 169, 252) solid !important;
+  outline: 1px #5279d7 solid !important;
   border: 1px rgb(0, 0, 0) solid !important;
 }
 

@@ -3722,6 +3722,7 @@ footer {
 // Filter Box
 .searchField {
   max-width: 375px;
+  border-color: #ff1e00;
   width: 100%;
 
   @media (max-width: 991.5px) {
@@ -3761,6 +3762,8 @@ footer {
 
   .input-group {
     border-color: $powder-blue;
+    cursor: pointer;
+
 
     .input-group-text {
       background: transparent;
@@ -6048,7 +6051,7 @@ footer {
 .btn.clearbtn:focus-visible,
 .sortField select:focus-visible {
   outline: 1px rgb(86, 169, 252) solid !important;
-  border: 1px rgb(0, 0, 0) solid !important;
+  border: 1px rgb(17, 115, 212) solid !important;
 }
 
 // .btn.clearbtn:active, .sortField select:active {

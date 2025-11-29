@@ -119,9 +119,9 @@ export default function Header() {
       links: [
         { label: "About Us", path: "/ministry/" },
         { label: "Our Team", path: "/ministry/our-team" },
-        { label: "Our Division", path: "/ministry/division" },
-        { label: "Our Organization", path: "/ministry/organization" },
+        { label: "Our Organizations", path: "/ministry/organization" },
         { label: "Our Performance", path: "/ministry/performance" },
+        { label: "Our Groups", path: "/ministry/groups" },
         { label: "Directory", path: "/ministry/directory" },
       ],
     },
@@ -329,7 +329,7 @@ export default function Header() {
                             }}
                           >
                             <img
-                              src="https://www.meity.gov.in/static/uploads/2023/12/3c456855b01bd15e42e99b93982b5c18.svg"
+                              src="/images/logos/Digital_India.svg"
                               alt="3c456855b01bd15e42e99b93982b5c18"
                               className="skillimg img-fluid"
                             />
@@ -391,7 +391,7 @@ export default function Header() {
                         }}
                       >
                         <img
-                          src="https://www.meity.gov.in/static/uploads/2023/12/3c456855b01bd15e42e99b93982b5c18.svg"
+                          src="/images/logos/Digital_India.svg"
                           alt="3c456855b01bd15e42e99b93982b5c18"
                           className="skillimg img-fluid"
                         />
@@ -433,11 +433,11 @@ export default function Header() {
                 active ? "borderbottom-active" : ""
               }`}
               style={{
-                // width: "180px",
+                width: "5%",
                 // height: "65px",
-                padding: "1rem 2rem", // dynamic spacing
-                height: "6rem", // dynamic height
-                flex: "1", // each item expands equally
+                padding: "1rem 2rem",
+                height: "6rem",
+                flex: "1",
                 minWidth: "120px",
                 cursor: "pointer",
               }}
@@ -467,13 +467,12 @@ export default function Header() {
                   >
                     <path
                       fillRule="evenodd"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                       d="M7.293 9.293a1 1 0 0 1 1.414 0L12 12.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414Z"
                       fill="#162f6a"
                     />
                   </svg>
                 )}
-                {/* {item.path} */}
               </span>
 
               {openIndex === index && item.links.length > 0 && (
