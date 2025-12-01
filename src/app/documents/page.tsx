@@ -1,4 +1,5 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
+import { navigationConfig } from "@/config/naviagtion";
 
 export default function AboutUs() {
   const breadcrumbs = [
@@ -32,13 +33,12 @@ export default function AboutUs() {
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/09de3fbb2b470481678cdc656ea93d64.png"
-        breadcrumbs={breadcrumbs}
-        navItems={navItems}
+        imageSrc={navigationConfig["documents"].imageSrc}
+        breadcrumbs={navigationConfig["documents"].breadcrumbs}
+        navItems={navigationConfig["documents"].navItems}
       />
       <section className="maincontent" role="main">
         <div className="container mt-5">
-
           {/* FILTER FORM */}
           <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
             <div className="col-md-12 col-lg-4">
@@ -63,7 +63,6 @@ export default function AboutUs() {
             {/* RIGHT FILTERS */}
             <div className="col-md-12 col-lg-8 d-none d-md-block filterIconResponsivebox">
               <div className="d-flex align-items-center justify-content-end flex-wrap gap-2">
-
                 {/* Sort */}
                 <div className="input-group sortField">
                   <span className="input-group-text">
@@ -118,15 +117,27 @@ export default function AboutUs() {
 
           {/* TABLE */}
           <div role="table" aria-label="Reports data">
-            <div role="rowgroup" className="row row-gap-2 align-items-center tableheader ms-0 me-0">
+            <div
+              role="rowgroup"
+              className="row row-gap-2 align-items-center tableheader ms-0 me-0"
+            >
               <div className="row align-items-center" role="row">
-                <div className="col-sm-12 col-md-12 col-lg-7" role="columnheader">
+                <div
+                  className="col-sm-12 col-md-12 col-lg-7"
+                  role="columnheader"
+                >
                   <small className="text-uppercase">Title</small>
                 </div>
-                <div className="col-sm-12 col-md-12 col-lg-2" role="columnheader">
+                <div
+                  className="col-sm-12 col-md-12 col-lg-2"
+                  role="columnheader"
+                >
                   <small className="text-uppercase">Published Year</small>
                 </div>
-                <div className="col-sm-12 col-md-12 col-lg-2" role="columnheader">
+                <div
+                  className="col-sm-12 col-md-12 col-lg-2"
+                  role="columnheader"
+                >
                   <small className="text-uppercase">Type/Size</small>
                 </div>
               </div>
@@ -228,7 +239,7 @@ export default function AboutUs() {
                         height="18"
                         viewBox="0 0 68 68"
                         fill="none"
-                      // title="PDF icon"
+                        // title="PDF icon"
                       >
                         <path
                           fillRule="evenodd"
@@ -238,7 +249,10 @@ export default function AboutUs() {
                         />
                       </svg>
 
-                      <small className="text-uppercase mb-0" aria-label="PDF size 3.17 MB">
+                      <small
+                        className="text-uppercase mb-0"
+                        aria-label="PDF size 3.17 MB"
+                      >
                         3.17 MB
                       </small>
                     </div>
@@ -308,7 +322,6 @@ export default function AboutUs() {
                         height="18"
                         viewBox="0 0 68 68"
                         fill="none"
-
                       >
                         <path
                           fillRule="evenodd"
@@ -318,7 +331,10 @@ export default function AboutUs() {
                         />
                       </svg>
 
-                      <small className="text-uppercase mb-0" aria-label="PDF size 77.63 KB">
+                      <small
+                        className="text-uppercase mb-0"
+                        aria-label="PDF size 77.63 KB"
+                      >
                         77.63 KB
                       </small>
                     </div>
@@ -363,7 +379,8 @@ export default function AboutUs() {
                   </span>
 
                   <p className="mb-0">
-                    Scheme-wise Release of Grants-in-Aid to Grantee Organizations
+                    Scheme-wise Release of Grants-in-Aid to Grantee
+                    Organizations
                   </p>
                 </div>
               </div>
@@ -395,7 +412,7 @@ export default function AboutUs() {
                         height="18"
                         viewBox="0 0 68 68"
                         fill="none"
-                      //title="PDF icon"
+                        //title="PDF icon"
                       >
                         <path
                           fillRule="evenodd"
@@ -405,7 +422,10 @@ export default function AboutUs() {
                         />
                       </svg>
 
-                      <small className="text-uppercase mb-0" aria-label="PDF size 800.71 KB">
+                      <small
+                        className="text-uppercase mb-0"
+                        aria-label="PDF size 800.71 KB"
+                      >
                         800.71 KB
                       </small>
                     </div>
@@ -485,7 +505,7 @@ export default function AboutUs() {
                         height="18"
                         viewBox="0 0 68 68"
                         fill="none"
-                      //title="PDF icon"
+                        //title="PDF icon"
                       >
                         <path
                           fillRule="evenodd"
@@ -495,7 +515,10 @@ export default function AboutUs() {
                         />
                       </svg>
 
-                      <small className="text-uppercase mb-0" aria-label="PDF size 466.31 KB">
+                      <small
+                        className="text-uppercase mb-0"
+                        aria-label="PDF size 466.31 KB"
+                      >
                         466.31 KB
                       </small>
                     </div>
@@ -542,7 +565,9 @@ export default function AboutUs() {
                     file_copy
                   </span>
 
-                  <p className="mb-0">Artificial Intelligence Committees Reports (2019)</p>
+                  <p className="mb-0">
+                    Artificial Intelligence Committees Reports (2019)
+                  </p>
 
                   <div className="counter-box d-flex justify-content-center align-items-center">
                     4
@@ -813,16 +838,13 @@ export default function AboutUs() {
                       <span
                         aria-hidden="true"
                         className="material-symbols-outlined bhashini-skip-translation"
-                      >
-                          
-                      </span>
+                      ></span>
                       View All
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </section>

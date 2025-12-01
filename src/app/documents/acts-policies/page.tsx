@@ -1,4 +1,5 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
+import { navigationConfig } from "@/config/naviagtion";
 
 export default function AboutUs() {
   const breadcrumbs = [
@@ -32,9 +33,9 @@ export default function AboutUs() {
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/09de3fbb2b470481678cdc656ea93d64.png"
-        breadcrumbs={breadcrumbs}
-        navItems={navItems}
+        imageSrc={navigationConfig["documents"].imageSrc}
+        breadcrumbs={navigationConfig["documents"].breadcrumbs}
+        navItems={navigationConfig["documents"].navItems}
       />
       <h1 className="mt-5">This is Ministry Page</h1>
       {/* <p>

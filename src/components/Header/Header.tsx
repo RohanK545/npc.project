@@ -114,65 +114,242 @@ export default function Header() {
       links: [],
     },
     {
-      title: "Ministry",
-      path: "/ministry",
+      title: "About Us",
+      path: "/aboutUs",
       links: [
-        { label: "About Us", path: "/ministry/" },
-        { label: "Our Team", path: "/ministry/our-team" },
-        { label: "Our Organizations", path: "/ministry/organization" },
-        { label: "Our Performance", path: "/ministry/performance" },
-        { label: "Our Groups", path: "/ministry/groups" },
-        { label: "Directory", path: "/ministry/directory" },
+        { label: "About NPC", path: "/aboutUs/" },
+        {
+          label: "Offices",
+          path: "/aboutUs/offices",
+        },
+        {
+          label: "All Offices ",
+          path: "/aboutUs/all-offices",
+        },
       ],
     },
     {
-      title: "Offerings",
-      path: "/offerings",
+      title: "Services",
+      path: "/services",
       links: [
-        { label: "Schemes and Services", path: "/offerings/" },
-        { label: "Tenders", path: "/offerings/tenders" },
-        { label: "For Investors", path: "/offerings/investors" },
-        { label: "Engagement and Recognition", path: "/offerings/engagement" },
-        { label: "Initiative", path: "/offerings/initiative" },
+        { label: "Consultancy", path: "/services/" },
+        {
+          label: "Productivity Promotion",
+          path: "/services/productivity-promottion",
+        },
+        { label: "Training", path: "/services/training" },
+        {
+          label: "International Services",
+          path: "/services/international-services",
+        },
       ],
     },
     {
-      title: "Documents",
-      path: "/documents",
+      title: "Training Programmes",
+      path: "/trainingProgrammes",
       links: [
-        { label: "Reports", path: "/documents/" },
-        { label: "Acts And Policies", path: "/documents/acts-policies" },
-        { label: "Orders And Notices", path: "/documents/orders-notices" },
-        { label: "Publications", path: "/documents/publications" },
-        { label: "Press Release", path: "/documents/press-release" },
-        { label: "Gazettes Notifications", path: "/documents/gazettes" },
-        { label: "Guidelines", path: "/documents/guidelines" },
+        {
+          label: "Annual Training Calendar (Financial Year Wise)",
+          path: "/trainingProgrammes/",
+        },
+        { label: "E-Learning", path: "/trainingProgrammes/e-learning" },
+        {
+          label: "Online Training",
+          path: "/trainingProgrammes/online-training",
+        },
       ],
     },
     {
-      title: "Media",
-      path: "/media",
+      title: "Domain Expertise",
+      path: "/domainExpertise",
       links: [
-        { label: "Photos", path: "/media/" },
-        { label: "Videos", path: "/media/videos" },
-        { label: "Brochures", path: "/media/brochures" },
-        { label: "Presentations", path: "/media/presentations" },
+        { label: " Agri Business Group", path: "/domainExpertise/" },
+        {
+          label: "Economic Services & Productivity Promotion",
+          path: "/domainExpertise/economic-service",
+        },
+        {
+          label: "Energy Management",
+          path: "/domainExpertise/energy-management",
+        },
+        {
+          label: "Environment and Climate Action Group",
+          path: "/domainExpertise/environment-climate",
+        },
+        {
+          label: "Information Technology",
+          path: "/domainExpertise/information-technology",
+        },
+        {
+          label: "Industrial Engineering",
+          path: "/domainExpertise/industrial-engineering",
+        },
+        {
+          label: "Human Resource Management",
+          path: "/domainExpertise/human-resource-management",
+        },
       ],
     },
     {
-      title: "Connect",
-      path: "/connect",
+      title: "Facilities",
+      path: "/facilities",
       links: [
-        { label: "Contact Us", path: "/connect/" },
-        { label: "Directory", path: "/connect/directory" },
-        { label: "RTI", path: "/connect/rti" },
-        { label: "Grievance", path: "/connect/grievance" },
-        { label: "Redressal", path: "/connect/redressal" },
-        { label: "Citizen Engagement", path: "/connect/engagement" },
-        { label: "Parliament Questions", path: "/connect/parliament" },
-        { label: "Visitors Pass", path: "/connect/visitor-pass" },
+        { label: "Conference Hall", path: "/facilities/" },
+        { label: "Library", path: "/facilities/library" },
+        {
+          label: "Hostel & Training Facility",
+          path: "/facilities/hostel-training-facility",
+        },
       ],
     },
+    {
+      title: "Publications & Media",
+      path: "/publicationMedia",
+      links: [
+        { label: "Publications", path: "/publicationMedia/" },
+        { label: "Press Releases", path: "/publicationMedia/press-releases" },
+        {
+          label: "News & Updates",
+          path: "/publicationMedia/news-updates",
+        },
+        { label: "Photo Gallery", path: "/publicationMedia/photo-gallery" },
+      ],
+    },
+    {
+      title: "Initiatives & Projects",
+      path: "/initiativesProjects",
+      links: [
+        { label: "5S-Certification", path: "/initiativesProjects/" },
+        {
+          label: "Inspection Division",
+          path: "/initiativesProjects/inspection-division",
+        },
+        {
+          label: "Water Audit",
+          path: "/initiativesProjects/water-audit",
+        },
+        {
+          label: "Centre of Excellence",
+          path: "/initiativesProjects/centre-of-excellence",
+        },
+        {
+          label: "Plastic Free River",
+          path: "/initiativesProjects/plastic-free-river",
+        },
+      ],
+    },
+    {
+      title: "Tenders & Careers",
+      path: "/tendersCareers",
+      links: [
+        { label: "Tender Notices", path: "/tendersCareers/" },
+        {
+          label: " Career Opportunities",
+          path: "/tendersCareers/career-opportunities",
+        },
+      ],
+    },
+    {
+      title: "Notices",
+      path: "/notices",
+      links: [
+        { label: "Latest News", path: "/notices/" },
+        { label: "Notices", path: "/notices/notices" },
+        { label: "Empanelment", path: "/notices/empanelment" },
+      ],
+    },
+    {
+      title: "Local Productivity Councils",
+      path: "/localProductivityCouncils",
+      links: [
+        { label: "LPC List", path: "/localProductivityCouncils/" },
+        {
+          label: "LPC Notices",
+          path: "/localProductivityCouncils/LPC-notices",
+        },
+      ],
+    },
+    {
+      title: "Key Links",
+      path: "/keyLinks",
+      links: [
+        { label: "Contact Us", path: "/keyLinks/" },
+        {
+          label: "Feedback & Grievance Redressal",
+          path: "/keyLinks/feedback",
+        },
+        { label: "Sitemap", path: "/keyLinks/sitemap" },
+        { label: "External Links", path: "/keyLinks/external-links" },
+        { label: "Website Policies", path: "/keyLinks/website-policies" },
+        { label: "Archive", path: "/keyLinks/archive" },
+      ],
+    },
+    // {
+    //   title: "RTI",
+    //   path: "/rti",
+    //   links: [],
+    // },
+
+    // {
+    //   title: "Ministry",
+    //   path: "/ministry",
+    //   links: [
+    //     { label: "About Us", path: "/ministry/" },
+    //     { label: "Our Team", path: "/ministry/our-team" },
+    //     { label: "Our Organizations", path: "/ministry/organization" },
+    //     { label: "Our Performance", path: "/ministry/performance" },
+    //     { label: "Our Groups", path: "/ministry/groups" },
+    //     { label: "Directory", path: "/ministry/directory" },
+    //   ],
+    // },
+    // {
+    //   title: "Offerings",
+    //   path: "/offerings",
+    //   links: [
+    //     { label: "Schemes and Services", path: "/offerings/" },
+    //     { label: "Tenders", path: "/offerings/tenders" },
+    //     { label: "For Investors", path: "/offerings/investors" },
+    //     { label: "Engagement and Recognition", path: "/offerings/engagement" },
+    //     { label: "Initiative", path: "/offerings/initiative" },
+    //   ],
+    // },
+    // {
+    //   title: "Documents",
+    //   path: "/documents",
+    //   links: [
+    //     { label: "Reports", path: "/documents/" },
+    //     { label: "Acts And Policies", path: "/documents/acts-policies" },
+    //     { label: "Orders And Notices", path: "/documents/orders-notices" },
+    //     { label: "Publications", path: "/documents/publications" },
+    //     { label: "Press Release", path: "/documents/press-release" },
+    //     { label: "Gazettes Notifications", path: "/documents/gazettes" },
+    //     { label: "Guidelines", path: "/documents/guidelines" },
+    //   ],
+    // },
+    // {
+    //   title: "Media",
+    //   path: "/media",
+    //   links: [
+    //     { label: "Photos", path: "/media/" },
+    //     { label: "Videos", path: "/media/videos" },
+    //     { label: "Brochures", path: "/media/brochures" },
+    //     { label: "Presentations", path: "/media/presentations" },
+    //   ],
+    // },
+    // {
+    //   title: "Connect",
+    //   path: "/connect",
+    //   links: [
+    //     { label: "Contact Us", path: "/connect/" },
+    //     { label: "Directory", path: "/connect/directory" },
+    //     { label: "RTI", path: "/connect/rti" },
+    //     { label: "Grievance", path: "/connect/grievance" },
+    //     { label: "Redressal", path: "/connect/redressal" },
+    //     { label: "Citizen Engagement", path: "/connect/engagement" },
+    //     { label: "Parliament Questions", path: "/connect/parliament" },
+    //     { label: "Visitors Pass", path: "/connect/visitor-pass" },
+    //   ],
+    // },
   ];
 
   const menuItems = ["Ministry", "Offerings", "Documents", "Media", "Connect"];
@@ -433,11 +610,11 @@ export default function Header() {
                 active ? "borderbottom-active" : ""
               }`}
               style={{
-                width: "5%",
+                width: "",
                 // height: "65px",
                 padding: "1rem 2rem",
                 height: "6rem",
-                flex: "1",
+                // flex: "1",
                 minWidth: "120px",
                 cursor: "pointer",
               }}
@@ -609,7 +786,7 @@ export default function Header() {
                         href={subItem.path}
                         className="d-block py-1 text-decoration-none text-dark"
                       >
-                        {subItem.label}
+                        {/* {subItem.label} */}
                       </a>
                     ))}
                   </div>

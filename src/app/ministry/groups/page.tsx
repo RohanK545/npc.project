@@ -1,6 +1,7 @@
 "use client";
 import InnerBannerSection from "@/components/InnerBannerSection";
 import React, { useState, useEffect } from "react";
+import { navigationConfig } from "@/config/naviagtion";
 
 export default function AboutUs() {
   const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -221,9 +222,9 @@ export default function AboutUs() {
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
-        breadcrumbs={breadcrumbs}
-        navItems={navItems}
+        imageSrc={navigationConfig["ministry"].imageSrc}
+        breadcrumbs={navigationConfig["ministry"].breadcrumbs}
+        navItems={navigationConfig["ministry"].navItems}
       />
       <section className="maincontent" role="main">
         <div className="container mt-5">
