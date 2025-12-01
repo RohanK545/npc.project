@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import { navigationConfig } from "@/config/naviagtion";
 
 export default function AboutUs() {
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   type Directory = {
     designation: string;
     name: string;
@@ -15,10 +18,6 @@ export default function AboutUs() {
     };
     address?: string;
   };
-
-  const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
 
   const breadcrumbs = [
     { title: "Home", href: "/" },
@@ -259,6 +258,7 @@ export default function AboutUs() {
         imageSrc={navigationConfig["ministry"].imageSrc}
         breadcrumbs={navigationConfig["ministry"].breadcrumbs}
         navItems={navigationConfig["ministry"].navItems}
+        pageTilte="Library"
       />
       <section className="maincontent" role="main">
         <div className="container mt-5">
