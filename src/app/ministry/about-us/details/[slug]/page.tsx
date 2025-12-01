@@ -1,5 +1,6 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { ministryDetailPages } from "@/data/ministryDetails";
+import { navigationConfig } from "@/config/naviagtion";
 
 export default async function AboutUs({
   params,
@@ -43,9 +44,9 @@ export default async function AboutUs({
     <>
       <div style={{}}>
         <InnerBannerSection
-          imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
-          breadcrumbs={breadcrumbs}
-          navItems={navItems}
+          imageSrc={navigationConfig["ministry"].imageSrc}
+          breadcrumbs={navigationConfig["ministry"].breadcrumbs}
+          navItems={navigationConfig["ministry"].navItems}
         />
       </div>
 

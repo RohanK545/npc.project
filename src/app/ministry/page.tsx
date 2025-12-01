@@ -1,33 +1,34 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
+import { navigationConfig } from "@/config/naviagtion";
 
 export default function AboutUs() {
-  const breadcrumbs = [
-    { title: "Home", href: "/" },
-    { title: "Ministry" },
+  // const breadcrumbs = [
+  //   { title: "Home", href: "/" },
+  //   { title: "Ministry" },
 
-    { pagetitle: "About Us" },
-  ];
+  //   { pagetitle: "About Us" },
+  // ];
 
-  const navItems = [
-    { label: "About Us", href: "/ministry/", active: false },
-    { label: "Our Team", href: "/ministry/our-team", active: false },
-    {
-      label: "Our Organizations",
-      href: "/ministry/organization",
-      active: false,
-    },
-    { label: "Our Performance", href: "/ministry/performance", active: false },
-    { label: "Our Groups", href: "/ministry/groups", active: false },
-    { label: "Directory", href: "/ministry/directory", active: false },
-  ];
+  // const navItems = [
+  //   { label: "About Us", href: "/ministry/", active: false },
+  //   { label: "Our Team", href: "/ministry/our-team", active: false },
+  //   {
+  //     label: "Our Organizations",
+  //     href: "/ministry/organization",
+  //     active: false,
+  //   },
+  //   { label: "Our Performance", href: "/ministry/performance", active: false },
+  //   { label: "Our Groups", href: "/ministry/groups", active: false },
+  //   { label: "Directory", href: "/ministry/directory", active: false },
+  // ];
 
   return (
     <>
-      <div style={{}}>
+      <div>
         <InnerBannerSection
-          imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
-          breadcrumbs={breadcrumbs}
-          navItems={navItems}
+          imageSrc={navigationConfig["ministry"].imageSrc}
+          breadcrumbs={navigationConfig["ministry"].breadcrumbs}
+          navItems={navigationConfig["ministry"].navItems}
         />
       </div>
 

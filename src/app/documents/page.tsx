@@ -1,6 +1,7 @@
 "use client";
 
 import InnerBannerSection from "@/components/InnerBannerSection";
+import { navigationConfig } from "@/config/naviagtion";
 import { useState } from "react";
 
 export default function AboutUs() {
@@ -349,13 +350,12 @@ export default function AboutUs() {
   return (
     <div>
       <InnerBannerSection
-        imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/09de3fbb2b470481678cdc656ea93d64.png"
-        breadcrumbs={breadcrumbs}
-        navItems={navItems}
+        imageSrc={navigationConfig["documents"].imageSrc}
+        breadcrumbs={navigationConfig["documents"].breadcrumbs}
+        navItems={navigationConfig["documents"].navItems}
       />
       <section className="maincontent" role="main">
         <div className="container mt-5">
-
           {/* FILTER FORM */}
           <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
             <div className="col-md-12 col-lg-4">
@@ -447,13 +447,22 @@ export default function AboutUs() {
             {/* Table Header */}
             <div role="rowgroup" className="row row-gap-2 align-items-center tableheader ms-0 me-0">
               <div className="row align-items-center" role="row">
-                <div className="col-sm-12 col-md-12 col-lg-7" role="columnheader">
+                <div
+                  className="col-sm-12 col-md-12 col-lg-7"
+                  role="columnheader"
+                >
                   <small className="text-uppercase">Title</small>
                 </div>
-                <div className="col-sm-12 col-md-12 col-lg-2" role="columnheader">
+                <div
+                  className="col-sm-12 col-md-12 col-lg-2"
+                  role="columnheader"
+                >
                   <small className="text-uppercase">Published Year</small>
                 </div>
-                <div className="col-sm-12 col-md-12 col-lg-2" role="columnheader">
+                <div
+                  className="col-sm-12 col-md-12 col-lg-2"
+                  role="columnheader"
+                >
                   <small className="text-uppercase">Type/Size</small>
                 </div>
               </div>

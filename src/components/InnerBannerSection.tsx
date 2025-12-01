@@ -19,12 +19,14 @@ interface InnerBannerProps {
   imageSrc: string;
   breadcrumbs: Breadcrumb[];
   navItems?: NavItem[];
+  pageTilte: string;
 }
 
 export default function InnerBannerSection({
   imageSrc,
   breadcrumbs,
   navItems = [],
+  pageTilte,
 }: InnerBannerProps) {
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
@@ -35,7 +37,6 @@ export default function InnerBannerSection({
 
     console.log(breadcrumbs);
 
-    console.log(navItems[0].label === breadcrumbs[0].pagetitle);
     const handleScroll = () => {
       if (!containerRef.current) return;
       setShowLeft(containerRef.current.scrollLeft > 0);
@@ -59,7 +60,7 @@ export default function InnerBannerSection({
     if (containerRef.current) containerRef.current.scrollLeft -= 50;
   };
 
-  const pageTitle = breadcrumbs.find((crumb) => crumb.pagetitle)?.pagetitle;
+  // const pageTitle = navItems.find((crumb) => crumb.label);
 
   return (
     <>
@@ -123,7 +124,7 @@ export default function InnerBannerSection({
             {breadcrumbs.map((crumb, index) =>
               crumb.pagetitle ? (
                 <h1 key={index} className="pagename fs-1 fw-bold">
-                  {crumb.pagetitle}
+                  {pageTilte}
                 </h1>
               ) : null
             )}
@@ -151,28 +152,19 @@ export default function InnerBannerSection({
                 </button>
               )} */}
               <ul className="nav fs-2 p-3 ms-5 mx-auto" ref={containerRef}>
-                {navItems.map((item, index) => {
-                  return (
-                    <li key={index} className="">
-                      {/* {isSelected && (
-                        <img
-                          src="/images/icons/bannerDots.png" 
-                          alt="selected"
-                          className="indicator-img mt-1"
-                          style={{ width: "24px", height: "auto" }} // adjust size
-                        />
-                      )} */}
+                {navItems?.length > 0 &&
+                  navItems.map((item, index) => (
+                    <li key={index}>
                       <Link
                         href={item.href}
                         className={`nav-link text-white me-4 ms-4 ${
                           item.active ? "active" : ""
-                        } ${item.label === pageTitle ? "fw-bold " : ""}`}
+                        } ${item.label === pageTilte ? "fw-bold" : ""}`}
                       >
                         {item.label}
                       </Link>
                     </li>
-                  );
-                })}
+                  ))}
               </ul>
               {/* {showRight && (
                 <button className="scroll-btn" onClick={scrollRight}>

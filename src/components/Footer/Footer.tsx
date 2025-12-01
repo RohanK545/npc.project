@@ -213,7 +213,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src="images/icons/twitter-icon.png"
+                          src="/images/icons/twitter-icon.png"
                           alt="Twitter"
                         />
                       </a>
@@ -225,7 +225,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src="images/icons/youtube-icon.png" alt="YouTube" />
+                      <img src="/images/icons/youtube-icon.png" alt="YouTube" />
                     </a>
 
                     <li>
@@ -236,7 +236,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src="images/icons/facebook-icon.png"
+                          src="/images/icons/facebook-icon.png"
                           alt="Facebook"
                         />
                       </a>
@@ -250,7 +250,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src="images/icons/instagram-icon.png"
+                          src="/images/icons/instagram-icon.png"
                           alt="Instagram"
                         />
                       </a>

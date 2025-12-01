@@ -1,5 +1,6 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { documentDetailsPage } from "@/data/documentDetails";
+import { navigationConfig } from "@/config/naviagtion";
 
 export default async function AboutUs({
   params,
@@ -16,11 +17,23 @@ export default async function AboutUs({
 
   const navItems = [
     { label: "Reports", href: "/documents/", active: false },
-    { label: "Acts And Policies", href: "/documents/acts-policies", active: false },
-    { label: "Orders And Notices", href: "/documents/orders-notices", active: false },
+    {
+      label: "Acts And Policies",
+      href: "/documents/acts-policies",
+      active: false,
+    },
+    {
+      label: "Orders And Notices",
+      href: "/documents/orders-notices",
+      active: false,
+    },
     { label: "Publications", href: "/documents/publications", active: false },
     { label: "Press Release", href: "/documents/press-release", active: false },
-    { label: "Gazettes Notifications", href: "/documents/gazettes", active: false },
+    {
+      label: "Gazettes Notifications",
+      href: "/documents/gazettes",
+      active: false,
+    },
     { label: "Guidelines", href: "/documents/guidelines", active: false },
   ];
 
@@ -34,7 +47,7 @@ export default async function AboutUs({
   // Use pageTitle from searchParams as the key
   const key = resolvedSearchParams.pageTitle as string;
   const pageData = documentDetailsPage[key as keyof typeof documentDetailsPage];
-  
+
   console.log("KEY:", key);
   console.log("PAGE DATA:", pageData);
 
@@ -43,16 +56,18 @@ export default async function AboutUs({
       <>
         <div style={{}}>
           <InnerBannerSection
-            imageSrc="https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg"
-            breadcrumbs={breadcrumbs}
-            navItems={navItems}
+            imageSrc={navigationConfig["documents"].imageSrc}
+            breadcrumbs={navigationConfig["documents"].breadcrumbs}
+            navItems={navigationConfig["documents"].navItems}
           />
         </div>
         <section className="maincontent">
           <div className="container">
             <h2>Page Not Found</h2>
             <p>The requested page "{key}" could not be found.</p>
-            <p>Available pages: {Object.keys(documentDetailsPage).join(', ')}</p>
+            <p>
+              Available pages: {Object.keys(documentDetailsPage).join(", ")}
+            </p>
           </div>
         </section>
       </>
