@@ -2247,7 +2247,8 @@ footer .footerbox .indbtn {
   color: #ff0101;
 }
 .nav-item:hover > .innernav {
-  display: block; /* show on hover */
+  display: block; 
+  padding: unset;
 }
 .innernav .nav::-webkit-scrollbar {
   width: 0;
