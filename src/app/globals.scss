@@ -115,3 +115,16 @@ h5.fs-5.text-capitalize.mb-0.text-decoration-none.text-dark {
 a.link-btn.d-flex.align-items-center.text-uppercase.pointer {
     background-color: #a3bbf3;
 }
+
+.organogram-card {
+  width: 350px;
+  background-color: #ffffff;
+  padding: 12px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  // margin-top: 60px;
+  border: solid 2px transparent;
+  z-index: 1;
+  text-align: center;
+}

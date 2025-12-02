@@ -122,6 +122,11 @@ export default function AboutUs() {
     },
   ];
 
+  interface ReadMoreProps {
+    text: string;
+    limit?: number;
+  }
+
   const [currentPage, setCurrentPage] = useState(1);
   const filteredOrganizations = divisions.filter((org) => {
     // Category filter
@@ -188,6 +193,206 @@ export default function AboutUs() {
     );
   };
 
+  const contactIcons: any = {
+    call: "/images/icons/Phone.svg",
+    mail: "/images/icons/E-mail.svg",
+    // print: "/icons/print.png",
+  };
+  const ReadMore: React.FC<ReadMoreProps> = ({ text, limit = 150 }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    if (text.length <= limit) {
+      return <p className="mb-0">{text}</p>;
+    }
+
+    return (
+      <p className="mb-0">
+        {isExpanded ? text : text.substring(0, limit) + "... "}
+        <span
+          style={{ color: "#007bff", cursor: "pointer", fontWeight: 500 }}
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? "Read Less" : "Read More"}
+        </span>
+      </p>
+    );
+  };
+
+  const tables = [
+    {
+      title: "Deputy Director General - I",
+      members: [
+        {
+          photo: "/images/employeeImages/us_prasad.jpg",
+          name: "Mr. Uma Shankar Prasad",
+          designation: "Deputy Director General & GH (HRM)	",
+          contacts: [
+            {
+              type: "call",
+              value: "9968283459",
+            },
+            { type: "mail", value: "us.prasad@npcindia.gov.in" },
+          ],
+          Discipline: "",
+          AreaofExpertise: "",
+          ProfessionalSummary: "",
+        },
+      ],
+    },
+
+    {
+      title: "Deputy Director General - II",
+      members: [
+        {
+          photo: "/images/employeeImages/shirish_paliwal.jpg",
+          name: "Sh. Shirish Paliwal",
+          designation:
+            "Deputy Director General & Group Head (Finance), charge of Training Coordination & PMC Cell",
+          contacts: [
+            {
+              type: "call",
+              value: "9824267246",
+            },
+            {
+              type: "mail",
+              value: "shirish.p@npcindia.gov.in",
+            },
+          ],
+          Discipline: "IE",
+          AreaofExpertise:
+            "With a strong academic founda?on including a B.E. in Mechanical Engineering, a Post Graduate Diploma in Industrial Engineering, and cer?fica?ons such as Advance Level Produc?vity Prac??oner (ALPP) from the Asian Produc?vity Organiza?on (APO), Japan, and Cer?fied in Project Management (CIPM) from i2P2M, the professional exper?se spans across mul?ple domains of produc?vity and organiza?onal development.",
+          ProfessionalSummary:
+            "A seasoned professional with approximately 30 years of diverse experience in productivity improvement, consultancy, and organizational leadership, currently serving as Deputy Director General at the National Productivity Council (NPC), India. His responsibilities include strategic oversight of Finance, Energy, and Environment Management groups, and supervision of regional directorates across India, working under the leadership of the Director General to implement NPCs national mission.",
+        },
+      ],
+    },
+  ];
+
+  const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
+    return (
+      <div
+        role="table"
+        className=" our-team-list-container mx-auto my-4 me-5 ms-5"
+      >
+        {/* Title */}
+        <div className="our-team-list-header d-flex align-items-center mb-2">
+          <span className="material-symbols-outlined bhashini-skip-translation me-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24 "
+              viewBox="0 -960 960 960"
+              width="24"
+              fill="2d2d2d"
+            >
+              <path
+                d="M120-120v-555h165v-165h390v330h165v390H533v-165H427v165H120Zm60-60h105v-105H180v105Zm0-165h105v-105H180v105Zm0-165h105v-105H180v105Zm165 165h105v-105H345v105Zm0-165h105v-105H345v105Zm0-165h105v-105H345v105Zm165 330h105v-105H510v105Zm0-165h105v-105H510v105Zm0-165h105v-105H510v105Zm165 495h105v-105H675v105Zm0-165h105v-105H675v105Z"
+                fill="#ffffffff"
+              />
+            </svg>
+          </span>
+          <p className="text-uppercase mb-0">{title}</p>
+        </div>
+
+        {/* Header Row */}
+        <div role="rowgroup">
+          <div className="row row-gap-4 me-0 ms-0 our-team-list-subheader fw-bold">
+            <div className="col-lg-1 col-sm-12">Photo</div>
+            <div className="col-lg-2 col-sm-12 ps-1">Name and Designation</div>
+            <div className="col-lg-2 col-sm-12">Contact</div>
+            <div className="col-lg-1 col-sm-12">Discipline</div>
+            <div className="col-lg-3 col-sm-12">Area of Expertise</div>
+            <div className="col-lg-3 col-sm-12">Professional Summary</div>
+          </div>
+        </div>
+
+        {/* Members */}
+        <div role="rowgroup">
+          {members.map((m, idx) => (
+            <div
+              key={idx}
+              role="row"
+              className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
+            >
+              {/* Photo */}
+              <div className="col-lg-1 col-md-12">
+                <div className="d-flex gap-2 align-items-center">
+                  <div className="d-flex flex-column d-flex justify-content-center align-items-center">
+                    <img
+                      src={m.photo}
+                      alt={m.name}
+                      className="img-fluid rounded"
+                      style={{
+                        width: "80%",
+                        height: "80%",
+                        // objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* Name & Designation */}
+              <div className="col-lg-2 col-md-12">
+                <div className="d-flex gap-2 align-items-center">
+                  <div className="d-flex flex-column">
+                    <p className="name mb-0">{m.name}</p>
+                    <p className="designation mb-0">{m.designation}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contacts */}
+              <div className="col-lg-2 col-md-12">
+                <div className="d-flex flex-column gap-2">
+                  {m.contacts.map((c: any, i: number) => (
+                    <div key={i} className="d-flex align-items-center gap-2">
+                      <img
+                        src={contactIcons[c.type]}
+                        alt={c.type}
+                        className="me-2"
+                      />
+                      <p className="contact mb-0">{c.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Discipline */}
+              <div className="col-lg-1 col-md-12">
+                <div className="d-flex gap-2 align-items-center">
+                  <div className="d-flex flex-column">
+                    <p className="designation mb-0">{m.Discipline}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Area of Expertise */}
+              <div className="col-lg-3 col-md-12">
+                <div className="d-flex gap-2 align-items-center">
+                  <div className="d-flex flex-column">
+                    <p className="designation mb-0">
+                      <ReadMore text={m.AreaofExpertise} limit={200} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Professional summary */}
+              <div className="col-lg-3 col-md-12">
+                <div className="d-flex gap-2 align-items-center">
+                  <div className="d-flex flex-column">
+                    <p className="designation mb-0">
+                      <ReadMore text={m.ProfessionalSummary} limit={200} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div style={{}}>
@@ -198,299 +403,185 @@ export default function AboutUs() {
           pageTilte="All Offices"
         />
       </div>
-      <section className="maincontent" role="main">
-        <div className="container mt-5">
-          <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
-            <div className="col-md-12 col-lg-4">
-              <div className="input-group searchField">
-                <span className="input-group-text">
-                  <span
-                    aria-hidden="true"
-                    className="material-symbols-outlined bhashini-skip-translation"
-                  >
-                    {/* <img src="/images/icons/Search_Icon.svg" alt="Search" /> */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24 "
-                      viewBox="0 0 64 64"
-                      fill="none"
-                      // style={{display: flex; justify-content: center}}
-                    >
-                      <path
-                        d="M25.3333 42.6667C20.4889 42.6667 16.3889 40.9889 13.0333 37.6333C9.67778 34.2778 8 30.1778 8 25.3333C8 20.4889 9.67778 16.3889 13.0333 13.0333C16.3889 9.67778 20.4889 8 25.3333 8C30.1778 8 34.2778 9.67778 37.6333 13.0333C40.9889 16.3889 42.6667 20.4889 42.6667 25.3333C42.6667 27.2889 42.3556 29.1333 41.7333 30.8667C41.1111 32.6 40.2667 34.1333 39.2 35.4667L54.1333 50.4C54.6222 50.8889 54.8667 51.5111 54.8667 52.2667C54.8667 53.0222 54.6222 53.6444 54.1333 54.1333C53.6444 54.6222 53.0222 54.8667 52.2667 54.8667C51.5111 54.8667 50.8889 54.6222 50.4 54.1333L35.4667 39.2C34.1333 40.2667 32.6 41.1111 30.8667 41.7333C29.1333 42.3556 27.2889 42.6667 25.3333 42.6667ZM25.3333 37.3333C28.6667 37.3333 31.5 36.1667 33.8333 33.8333C36.1667 31.5 37.3333 28.6667 37.3333 25.3333C37.3333 22 36.1667 19.1667 33.8333 16.8333C31.5 14.5 28.6667 13.3333 25.3333 13.3333C22 13.3333 19.1667 14.5 16.8333 16.8333C14.5 19.1667 13.3333 22 13.3333 25.3333C13.3333 28.6667 14.5 31.5 16.8333 33.8333C19.1667 36.1667 22 37.3333 25.3333 37.3333Z"
-                        fill="#5279d7"
-                      />
-                    </svg>
-                  </span>
-                </span>
+      <section className="maincontent">
+        <div className="card-wrapper p-2 py-4 p-md-4">
+          <div className="card-wrapper p-2 py-4 p-md-4">
+            <div className="d-flex justify-content-center align-content-center align-items-center flex-column">
+              <div className="reactFamilyTree d-flex align-content-center justify-content-center w-100">
+                <div
+                  style={{
+                    position: "relative",
+                    width: "344px",
+                    height: "652.5px",
+                  }}
+                >
+                  <div>
+                    <i
+                      style={{
+                        position: "absolute",
+                        width: "1px",
+                        height: "176px",
+                        background: "rgb(153, 153, 153)",
+                        transform: "translate(172px, 175px)",
+                        pointerEvents: "none",
+                      }}
+                    ></i>
+                    <i
+                      style={{
+                        position: "absolute",
+                        width: "1px",
+                        height: "176px",
+                        background: "rgb(153, 153, 153)",
+                        transform: "translate(172px, 350px)",
+                        pointerEvents: "none",
+                      }}
+                    ></i>
+                  </div>
 
-                <input
-                  type="search"
-                  role="searchbox"
-                  name="scheme"
-                  aria-label="search"
-                  className="form-control"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-
-                <span className="input-group-text filterIconResponsive d-block d-md-none">
-                  <span
-                    aria-hidden="true"
-                    className="material-symbols-outlined bhashini-skip-translation"
-                  >
-                    filter_alt
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="col-md-12 col-lg-8 d-none d-md-block filterIconResponsivebox">
-              <div className="d-flex align-items-center justify-content-end flex-wrap gap-2">
-                {/* Category Select */}
-                {/* <div className="input-group sortField" role="combobox">
-                  <label htmlFor="categorySelect" className="visually-hidden">
-                    Filter by Category
-                  </label>
-
-                  <span className="input-group-text">
-                    <span
-                      aria-hidden="true"
-                      className="material-symbols-outlined bhashini-skip-translation"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24 "
-                        viewBox="0 0 64 64"
-                        fill="none"
-                      >
-                        <path
-                          d="M8 48V42.6667H24V48H8ZM8 34.6667V29.3333H40V34.6667H8ZM8 21.3333V16H56V21.3333H8Z"
-                          fill="#5279d7"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-
-                  <select
-                    className="form-select"
-                    id="categorySelect"
-                    role="combobox"
-                    aria-label="Filter by Category"
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                  >
-                    <option value="">Category</option>
-                    <option value="Attached Offices">Attached Offices</option>
-                    <option value="Autonomous Societies">
-                      Autonomous Societies
-                    </option>
-                    <option value="Section 8 Companies">
-                      Section 8 Companies
-                    </option>
-                    <option value="Statutory Organisations">
-                      Statutory Organisations
-                    </option>
-                    <option value="Company Registered Under Company Act, 1956">
-                      Company registered under Company Act, 1956
-                    </option>
-                  </select>
-                </div> */}
-
-                {/* Per Page Select */}
-                <div className="input-group perPageField" role="combobox">
-                  <label htmlFor="pageLimitSelect" className="visually-hidden">
-                    Items per page
-                  </label>
-
-                  <span className="input-group-text">
-                    <span
-                      className="material-symbols-outlined bhashini-skip-translation"
-                      aria-hidden="true"
-                    >
-                      {/* <img src="/images/icons/List_Icon.svg" alt="List" /> */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24 "
-                        viewBox="0 0 64 64"
-                        fill="none"
-                      >
-                        <path
-                          d="M18.1605 50.9548C19.1048 50.9548 19.8957 50.6354 20.5332 49.9967C21.17 49.358 21.4885 48.5664 21.4885 47.6221C21.4885 46.6778 21.1691 45.8869 20.5304 45.2494C19.8916 44.6125 19.1001 44.2941 18.1558 44.2941C17.2115 44.2941 16.4209 44.6135 15.784 45.2522C15.1465 45.891 14.8278 46.6825 14.8278 47.6268C14.8278 48.5711 15.1471 49.3617 15.7859 49.9986C16.4253 50.6361 17.2168 50.9548 18.1605 50.9548ZM18.1605 36.3299C19.1048 36.3299 19.8957 36.0105 20.5332 35.3718C21.17 34.733 21.4885 33.9415 21.4885 32.9972C21.4885 32.0529 21.1691 31.2623 20.5304 30.6254C19.8916 29.9885 19.1001 29.6701 18.1558 29.6701C17.2115 29.6701 16.4209 29.9895 15.784 30.6282C15.1465 31.267 14.8278 32.0585 14.8278 33.0028C14.8278 33.9471 15.1471 34.7377 15.7859 35.3746C16.4253 36.0115 17.2168 36.3299 18.1605 36.3299ZM18.1605 21.7059C19.1048 21.7059 19.8957 21.3865 20.5332 20.7478C21.17 20.109 21.4885 19.3175 21.4885 18.3732C21.4885 17.4289 21.1691 16.6383 20.5304 16.0014C19.8916 15.3639 19.1001 15.0452 18.1558 15.0452C17.2115 15.0452 16.4209 15.3645 15.784 16.0033C15.1465 16.642 14.8278 17.4336 14.8278 18.3779C14.8278 19.3222 15.1471 20.1131 15.7859 20.7506C16.4253 21.3874 17.2168 21.7059 18.1605 21.7059ZM29.5976 50.4475H51.0273V44.8014H29.5976V50.4475ZM29.5976 35.8235H51.0273V30.1765H29.5976V35.8235ZM29.5976 21.1986H51.0273V15.5525H29.5976V21.1986ZM7.80565 65C5.90384 65 4.29412 64.3412 2.97647 63.0235C1.65882 61.7059 1 60.0962 1 58.1944V7.80565C1 5.90384 1.65882 4.29412 2.97647 2.97647C4.29412 1.65882 5.90384 1 7.80565 1H58.1944C60.0962 1 61.7059 1.65882 63.0235 2.97647C64.3412 4.29412 65 5.90384 65 7.80565V58.1944C65 60.0962 64.3412 61.7059 63.0235 63.0235C61.7059 64.3412 60.0962 65 58.1944 65H7.80565ZM7.80565 59.3529H58.1944C58.4842 59.3529 58.7497 59.2322 58.9906 58.9906C59.2322 58.7497 59.3529 58.4842 59.3529 58.1944V7.80565C59.3529 7.51576 59.2322 7.25035 58.9906 7.00941C58.7497 6.76784 58.4842 6.64706 58.1944 6.64706H7.80565C7.51576 6.64706 7.25035 6.76784 7.00941 7.00941C6.76784 7.25035 6.64706 7.51576 6.64706 7.80565V58.1944C6.64706 58.4842 6.76784 58.7497 7.00941 58.9906C7.25035 59.2322 7.51576 59.3529 7.80565 59.3529Z"
-                          fill="#5279d7"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-
-                  <select
-                    className="form-select"
-                    id="pageLimitSelect"
-                    aria-label="pages"
-                    value={itemsPerPage}
-                    onChange={(e) => {
-                      setItemsPerPage(Number(e.target.value));
-                      setCurrentPage(1); // reset to page 1 whenever per-page changes
+                  {/* HON’BLE MINISTER */}
+                  <div
+                    className="FamilyNode_root__LylyV"
+                    style={{
+                      width: "344px",
+                      transform: "translate(0px, 0px)",
+                      height: "350px",
+                      paddingInline: "12px",
                     }}
                   >
-                    <option value="10">10 per page</option>
-                    <option value="15">15 per page</option>
-                    <option value="20">20 per page</option>
-                  </select>
-                </div>
-                {/* Clear Button */}
-                {(itemsPerPage !== 10 || selectedCategory !== "") && (
-                  <div className="input-group perPageField">
-                    <button
-                      className="btn d-flex align-items-center justify-content-center w-100"
-                      title="Clear All"
-                      type="button"
-                      aria-label="Clear all filter"
-                      onClick={handleClearAll}
-                      style={{
-                        padding: "0.85rem 1.2rem",
-                        border: "1px solid #5279d7",
-                        borderRadius: "0.375rem",
-                        backgroundColor: "white",
-                      }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 66 66"
-                        fill="none"
-                        className="me-2"
-                      >
-                        <path
-                          d="M5.92308 65L1 60.0769L28.0769 33L1 5.92308L5.92308 1L33 28.0769L60.0769 1L65 5.92308L37.9231 33L65 60.0769L60.0769 65L33 37.9231L5.92308 65Z"
-                          fill="#162F6A"
-                        />
-                      </svg>
-
-                      <span style={{ all: "unset", fontSize: "1.5rem" }}>
-                        Clear All
-                      </span>
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </form>
-
-          <div className="row g-4">
-            {currentItems.map(({ id, title, description, link }) => (
-              <div key={id} className="col-md-6">
-                <div className="our-division-card h-100">
-                  <div className="our-division-card-body">
-                    <p className="our-division-organisation-title h3">
-                      {highlightText(title, searchQuery)}
-                    </p>
-                    <div className="our-division-organisation-description">
-                      <p className="text-break">{description}</p>
+                    <div style={{ width: "100%" }}>
+                      <div className="d-flex justify-content-center mx-auto">
+                        <div
+                          className="profile-card pointer position-relative"
+                          tabIndex={0}
+                          aria-label="View Profile HON’BLE MINISTER"
+                          role="link"
+                        >
+                          <div className="position-absolute top-0 start-50 translate-middle">
+                            <span
+                              style={{
+                                color: "transparent",
+                                display: "inline-block",
+                              }}
+                            >
+                              <img
+                                src="https://www.meity.gov.in/static/uploads/2024/02/c2d2716758c356c9137b4db8ffa9ac50.png"
+                                alt="profile picture Shri Ashwini Vaishnaw"
+                                className="img-fluid profile-img object-fit-cover bg-white"
+                              />
+                            </span>
+                          </div>
+                          <small className="text-uppercase">
+                            HON’BLE MINISTER
+                          </small>
+                          <p className="h4">Shri Ashwini Vaishnaw</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="our-division-card-footer d-flex justify-content-end gap-2">
-                    <div className="scheme-card-footer d-flex justify-content-end">
-                      <a
-                        id={id}
-                        className="link-btn d-flex align-items-center text-uppercase pointer"
-                        target="_blank"
-                        rel="noreferrer"
-                        title="Know more"
-                        aria-label="Know more"
-                        href={link}
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="material-symbols-outlined bhashini-skip-translation"
+
+                  {/* HON’BLE MINISTER OF STATE */}
+                  <div
+                    className="FamilyNode_root__LylyV"
+                    style={{
+                      width: "344px",
+                      transform: "translate(0px, 100px)",
+                      height: "350px",
+                      paddingInline: "12px",
+                    }}
+                  >
+                    <div style={{ width: "100%" }}>
+                      <div className="d-flex justify-content-center mx-auto">
+                        <div
+                          className="profile-card pointer position-relative"
+                          tabIndex={0}
+                          aria-label="View Profile HON’BLE MINISTER OF STATE"
+                          role="link"
                         >
-                          <img
-                            src="/images/icons/Arrow_Forward.svg"
-                            alt="Open In New"
-                          />
-                        </span>
-                      </a>
+                          <div className="position-absolute top-0 start-50 translate-middle">
+                            <span
+                              style={{
+                                color: "transparent",
+                                display: "inline-block",
+                              }}
+                            >
+                              <img
+                                src="https://www.meity.gov.in/static/uploads/2024/06/a0c681e6f425566b66d4fecfe80f9380.png"
+                                alt="profile picture Shri Jitin Prasada"
+                                className="img-fluid profile-img object-fit-cover bg-white"
+                              />
+                            </span>
+                          </div>
+                          <small className="text-uppercase">
+                            HON’BLE MINISTER OF STATE
+                          </small>
+                          <p className="h4">Shri Jitin Prasada</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* -----------------------------
-         PAGINATION
-    ------------------------------ */}
+              <hr style={{ width: "100%" }} />
 
-          <div className="row align-items-center mt-5">
-            <div className="col-md-4"></div>
-
-            <div className="col-md-4 d-flex justify-content-center">
-              <nav aria-label="Page navigation">
-                <ul className="pagination pointer">
-                  {/* Previous Button */}
-                  <li>
-                    <button
-                      className="button-item previous mb-2"
-                      disabled={currentPage === 1}
-                      aria-label="Go to previous page"
-                      onClick={goPrev}
+              {/* PDF Links */}
+              <div className="d-flex flex-wrap justify-content-start gap-2">
+                {[
+                  {
+                    title: "Former Ministers",
+                    href: "https://www.meity.gov.in/static/uploads/2024/03/Former-Ministers.pdf",
+                    size: "66.37 KB",
+                  },
+                  {
+                    title: "List of Council of Ministers",
+                    href: "https://www.meity.gov.in/static/uploads/2024/06/6283a888427e8a72919476d50982d09a.pdf",
+                    size: "3.30 MB",
+                  },
+                  {
+                    title: "List of Officers/Staff",
+                    href: "https://www.meity.gov.in/static/uploads/2025/05/ddc5d5c3d50f686a16fbe238c37dc0b7.pdf",
+                    size: "461.13 KB",
+                  },
+                  {
+                    title: "Foreign Deputation JS Level and Above",
+                    href: "https://www.meity.gov.in/static/uploads/2024/07/2cda2f40953c1c89b6d316afbd597e69.pdf",
+                    size: "365.60 KB",
+                  },
+                ].map((link, index) => (
+                  <a
+                    key={index}
+                    className="detailsBtn pointer d-flex align-items-center text-uppercase"
+                    title={link.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link.href}
+                  >
+                    <span>{link.title}</span>
+                    <span>|</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 68 68"
+                      fill="none"
                     >
-                      <img
-                        src="/images/icons/Chevron_Left.svg"
-                        alt="Previous Page"
-                      />
-                    </button>
-                  </li>
-
-                  {/* Page Numbers */}
-                  {Array.from({ length: totalPages }).map((_, index) => {
-                    const page = index + 1;
-
-                    return (
-                      <li
-                        key={page}
-                        className="page-item"
-                        role="link"
-                        aria-label={`Go to page ${page}`}
-                      >
-                        <span
-                          className={`page-link pointer hover ${
-                            currentPage === page ? "active" : ""
-                          }`}
-                          onClick={() => goToPage(page)}
-                        >
-                          {page}
-                        </span>
-                      </li>
-                    );
-                  })}
-
-                  {/* Next Button */}
-                  <li>
-                    <button
-                      className="button-item next mb-2"
-                      disabled={currentPage === totalPages}
-                      aria-label="Go to next page"
-                      onClick={goNext}
-                    >
-                      <span className="material-symbols-outlined">
-                        <img
-                          src="/images/icons/Chevron_Right.svg"
-                          alt="Next Page"
-                        />
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M15.13 47.8714C12.7254 46.6379 9.88617 46.145 7.0975 46.4771H0V67.9281H5.6525V59.741H8.075C10.5846 59.9579 13.1063 59.4402 15.215 58.2752C17.0049 56.9837 17.9917 55.0731 17.8925 53.0912C18.025 51.0785 16.9966 49.1354 15.13 47.8714ZM10.5825 55.701C9.51486 56.0964 8.34103 56.2445 7.1825 56.1301H5.525V50.0523H7.1825C8.38607 49.9447 9.6003 50.144 10.6675 50.6243C11.6614 51.2066 12.2246 52.1813 12.155 53.1984C12.2838 54.2239 11.6623 55.213 10.5825 55.701ZM30.0475 46.4771H22.9925V67.9281H29.75C33.1938 68.2116 36.6618 67.653 39.7375 66.3193C43.1218 64.1975 44.9299 60.7346 44.4975 57.2026C44.7508 54.1767 43.4692 51.2021 40.97 49.0155C37.8829 46.9686 33.9459 46.0537 30.0475 46.4771ZM35.6575 63.0659C33.8869 63.9031 31.8595 64.2766 29.835 64.1384H28.73V50.2668H29.75C33.32 50.2668 34.7225 50.5528 36.125 51.6254C37.8271 53.1161 38.7062 55.1399 38.5475 57.2026C38.7661 59.4349 37.6898 61.6187 35.6575 63.0659ZM50.7025 67.9281H56.44V58.9544H68V55.1648H56.44V50.2668H68V46.4771H50.7025V67.9281ZM46.75 0H0V39.3268H8.5V32.1765V28.4226V7.15033H43.2225L59.5 20.8432V28.4226V32.1765V39.3268H68V17.8758L46.75 0Z"
+                        fill="#085858"
+                      ></path>
+                    </svg>
+                    <span>{link.size}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
+        {tables.map((tbl, idx) => (
+          <InfoTable key={idx} title={tbl.title} members={tbl.members} />
+        ))}
       </section>
     </>
   );

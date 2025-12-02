@@ -52,7 +52,7 @@ export default function Home() {
                 src={image}
                 alt="banner"
                 fill
-                style={{ objectFit: "cover" }}
+                // style={{ objectFit: "cover" }}
                 unoptimized
               />
             </div>

@@ -354,11 +354,39 @@ export default function Header() {
 
   const menuItems = ["Ministry", "Offerings", "Documents", "Media", "Connect"];
 
+  // const isActive = (item: any) => {
+  //   console.log("--------------------");
+  //   console.log("pathname", pathname);
+  //   console.log("path:", item.path);
+  //   if (item.path) return item.path === pathname; // top-level with path
+  //   if (item.links && item.links.length > 0) {
+  //     return item.links.some((link: any) => link.path === pathname); // parent with children
+  //   }
+  //   return false;
+  // };
+  const normalize = (p: string) => p?.replace(/\/+$/, "");
+
   const isActive = (item: any) => {
-    if (item.path) return item.path === pathname; // top-level with path
-    if (item.links && item.links.length > 0) {
-      return item.links.some((link: any) => link.path === pathname); // parent with children
+    const current = normalize(pathname);
+    const itemPath = normalize(item.path);
+
+    // 🔥 Special condition: Home should only be active on "/"
+    if (itemPath === "" || itemPath === "/") {
+      return current === "";
     }
+
+    // Normal items:
+    if (item.path) {
+      return current === itemPath || current.startsWith(itemPath + "/");
+    }
+
+    if (item.links?.length > 0) {
+      return item.links.some((link: any) => {
+        const linkPath = normalize(link.path);
+        return current === linkPath || current.startsWith(linkPath + "/");
+      });
+    }
+
     return false;
   };
 
@@ -628,13 +656,13 @@ export default function Header() {
               }}
             >
               <span
-                className={`fw-bold fs-3  ${active ? "navigation-text" : ""}`}
+                className={`fw-bold fs-3 ${active ? "navigation-text" : ""}`}
                 tabIndex={0}
               >
-                {item.title}{" "}
-                {active ? (
-                  ""
-                ) : (
+                {item.title}
+
+                {/* Show expand icon for all except Home */}
+                {item.title !== "Home" && (
                   <svg
                     width="3rem"
                     height="3rem"
@@ -653,9 +681,16 @@ export default function Header() {
               </span>
 
               {openIndex === index && item.links.length > 0 && (
+                // <ul
+                //   className="innernav   start-50 translate-middle-x list-unstyled"
+                //   style={{ marginTop: "0px", width: "100%" }} //dont remove
+                // >
                 <ul
-                  className="innernav   start-50 translate-middle-x list-unstyled"
-                  style={{ marginTop: "0px", width: "100%" }} //dont remove
+                  className="innernav list-unstyled"
+                  style={{
+                    display: "block", // Override CSS to show it
+                    width: "100%",
+                  }}
                 >
                   {item.links.map((link, idx) => (
                     <li key={idx} style={{ minWidth: "10rem" }}>
