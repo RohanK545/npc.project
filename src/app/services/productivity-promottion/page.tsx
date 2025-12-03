@@ -9,16 +9,14 @@ export default function AboutUs() {
         {
           SrNo: "1",
           name: "Shri Rajesh Sund",
-          designation:
-            "Director Gr-I & Group Head (ES & PP), HQ DELHI",
+          designation: "Director Gr-I & Group Head (ES & PP), HQ DELHI",
           Telephone: "011-24607303",
           Mail: "rajesh.sund@npcindia.gov.in",
         },
         {
           SrNo: "2",
           name: "C Narendra",
-          designation:
-            "Director Gr-II & Regional Director (Bangalore)",
+          designation: "Director Gr-II & Regional Director (Bangalore)",
           Telephone: "080-23467294",
           Mail: "c.narendra@npcindia.gov.in",
         },
