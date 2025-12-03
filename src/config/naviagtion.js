@@ -123,7 +123,7 @@ export const navigationConfig = {
       },
     ],
     imageSrc:
-      "https://www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg",
+      "/images/banners/training.png",
   },
 
   trainingProgrammes: {

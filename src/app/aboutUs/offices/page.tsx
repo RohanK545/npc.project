@@ -5,19 +5,17 @@ import { navigationConfig } from "@/config/naviagtion";
 import React, { useState, useEffect } from "react";
 
 export default function AboutUs() {
-  
-
   const tables = [
     {
       title: "BENGALURU",
       members: [
         {
           name: "Shri Swarupan Das",
-          designation:
-            "RegionalDirector",
-          Telephone:"	080-23467294, 9019883123",
-          Mail:"swarupan.das@npcindia.gov.in; bangalore@npcindia.gov.in" ,
-          Address :"National Productivity Council 2nd Floor, Abhaya Complex KSDB Building, 55, Risaldar Street Seshadripuram Bangalore 560 020",
+          designation: "RegionalDirector",
+          Telephone: "	080-23467294, 9019883123",
+          Mail: "swarupan.das@npcindia.gov.in; bangalore@npcindia.gov.in",
+          Address:
+            "National Productivity Council 2nd Floor, Abhaya Complex KSDB Building, 55, Risaldar Street Seshadripuram Bangalore 560 020",
         },
       ],
     },
@@ -27,46 +25,46 @@ export default function AboutUs() {
       members: [
         {
           name: "Shri Avijit Nayak",
-          designation:
-            "Director Gr-II & Regional Director (Bhubaneswar)",
-          Telephone:"0674-2397381/26",
-          Mail:"avijit.nayak@npcindia.gov.in" ,
-          Address :"National Productivity Council A/7, Surya Nagar, Bhubaneswar-751003, Odisha",
+          designation: "Director Gr-II & Regional Director (Bhubaneswar)",
+          Telephone: "0674-2397381/26",
+          Mail: "avijit.nayak@npcindia.gov.in",
+          Address:
+            "National Productivity Council A/7, Surya Nagar, Bhubaneswar-751003, Odisha",
         },
         {
           name: "Shri Shyama Prasad",
-          designation:
-            "Deputy Director (Bhubaneswar )",
-          Telephone:"0674 2397326",
-          Mail:"shyama.prasad1@npcindia.gov.in" ,
-          Address :"National Productivity Council A/7, Surya Nagar, Bhubaneswar-751003, Odisha",
+          designation: "Deputy Director (Bhubaneswar )",
+          Telephone: "0674 2397326",
+          Mail: "shyama.prasad1@npcindia.gov.in",
+          Address:
+            "National Productivity Council A/7, Surya Nagar, Bhubaneswar-751003, Odisha",
         },
       ],
     },
-     {
+    {
       title: "CHANDIGARH",
       members: [
         {
           name: "Ashok Kumar",
-          designation:
-            "In charge -Regional Director",
-          Telephone:"9888481938",
-          Mail:"ashok.kumar@npcindia.gov.in" ,
-          Address :"National Productivity Council, Chandigarh CRRID Campus, Centre for Research in Rural and Industrial Development, Plot 2-A, Madhya Marg, Sector 19A, Chandigarh, 160019",
+          designation: "In charge -Regional Director",
+          Telephone: "9888481938",
+          Mail: "ashok.kumar@npcindia.gov.in",
+          Address:
+            "National Productivity Council, Chandigarh CRRID Campus, Centre for Research in Rural and Industrial Development, Plot 2-A, Madhya Marg, Sector 19A, Chandigarh, 160019",
         },
         {
           name: "Shri Suvyendu Shivakar",
-          designation:
-            "Deputy Director",
-          Telephone:"6287872655",
-          Mail:"suvyendu.s@npcindia.gov.in	" ,
-          Address :"National Productivity Council, Chandigarh CRRID Campus, Centre for Research in Rural and Industrial Development, Plot 2-A, Madhya Marg, Sector 19A, Chandigarh, 160019",
+          designation: "Deputy Director",
+          Telephone: "6287872655",
+          Mail: "suvyendu.s@npcindia.gov.in	",
+          Address:
+            "National Productivity Council, Chandigarh CRRID Campus, Centre for Research in Rural and Industrial Development, Plot 2-A, Madhya Marg, Sector 19A, Chandigarh, 160019",
         },
       ],
     },
   ];
 
-   const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
+  const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
     return (
       <div
         role="table"
@@ -121,7 +119,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-               <div className="col-lg-3 col-md-12">
+              <div className="col-lg-3 col-md-12">
                 <div className="d-flex gap-2 align-items-center">
                   <div className="d-flex flex-column">
                     <p className="designation mb-0">{m.Mail}</p>
@@ -157,4 +155,3 @@ export default function AboutUs() {
     </div>
   );
 }
-

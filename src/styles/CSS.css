@@ -2373,13 +2373,13 @@ footer .footerbox .indbtn {
 }
 .maincontent .aboutcontent .objectivebox {
   border-radius: 12px;
-  background: #d5d6dc;
+  background: #d2dfff;
   padding: 12px;
   margin-bottom: 22px;
   height: 100%;
 }
 .maincontent .aboutcontent .objectivebox h3 {
-  color: #22242a;
+  color: #162f6a;
   font-size: 3.6rem;
   font-style: normal;
   font-weight: 600;

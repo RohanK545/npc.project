@@ -27,9 +27,9 @@ body {
 }
 
 // Ensure main content is accessible
-#main-content {
+// #main-content {
   // min-height: 100vh;
-}
+// }
 
 a:focus,
 button:focus,
@@ -127,4 +127,91 @@ a.link-btn.d-flex.align-items-center.text-uppercase.pointer {
   border: solid 2px transparent;
   z-index: 1;
   text-align: center;
+}
+.organogram-card-large {
+  width: 550px;
+  // height: 600px;
+  background-color: #ffffff;
+  padding: 12px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  // margin-top: 60px;
+  border: solid 2px transparent;
+  z-index: 1;
+  // text-align: center;
+}
+
+.organogram-card-medium {
+  width: 350px;
+  background-color: #ffffff;
+  padding: 12px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  // margin-top: 60px;
+  border: solid 2px transparent;
+  z-index: 1;
+}
+
+.text-blue {
+  color: #162f6a;
+}
+
+.book-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.book-card .photos-img,
+.book-card .videos-img {
+  width: 100%;
+  height: 340px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.book-card .photos-btn {
+  bottom: 10px;
+  right: 10px;
+  color: #ffffff;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6196078431);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+}
+.book-card .internal-photos-btn {
+  bottom: 25px;
+}
+.book-card .book-card-body .photos-card-title {
+  color: #150202;
+  white-space: wrap;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 4px;
+  margin-bottom: 0px !important;
+}
+.book-card .book-card-body .book-card-title a {
+  color: #150202;
+  text-decoration: none;
+}
+.book-card .book-card-footer {
+  margin-top: 8px;
 }
