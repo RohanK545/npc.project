@@ -2324,7 +2324,7 @@ footer .footerbox .indbtn {
   }
 }
 .maincontent .tableheader {
-  background: #d5d6dc;
+  background: #a3bbf3;
   border-radius: 4px;
   padding: 12px 32px;
   margin: 0 0 16px 0;
@@ -2335,7 +2335,7 @@ footer .footerbox .indbtn {
   }
 }
 .maincontent .tableheader small {
-  color: #22242a;
+  color: #162f6a;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -2593,9 +2593,9 @@ footer .footerbox .indbtn {
   gap: 8px;
   border: none;
   outline: none;
-  background: #d5d6dc;
+  background: #d2dfff;
   border-radius: 4px;
-  color: #22242a;
+  color: #162f6a;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
@@ -3381,6 +3381,9 @@ footer .footerbox .indbtn {
   text-transform: uppercase;
   margin-bottom: 0;
 }
+.announcementbox .text-uppercase {
+  color: #162f6a;
+}
 .announcementbox .material-symbols-outlined {
   color: #22242a;
 }
@@ -3390,7 +3393,7 @@ footer .footerbox .indbtn {
 }
 .announcementbox .counter-box {
   padding: 2px 6px;
-  background: #d5d6dc;
+  background: #a3bbf3;
   border-radius: 4px;
   color: #22242a;
   text-align: center;
@@ -3403,7 +3406,7 @@ footer .footerbox .indbtn {
   height: 25px;
 }
 .announcementbox .announcementbox-title {
-  color: #150202;
+  color: #162f6a;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
@@ -5104,7 +5107,7 @@ footer .footerbox .indbtn {
 .carousel-header,
 .carousel-body,
 .carousel-footer {
-  background-color: #22242a;
+  background-color: #162f6a;
 }
 
 .close-btn {

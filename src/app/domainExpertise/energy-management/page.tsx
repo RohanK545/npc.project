@@ -531,15 +531,9 @@ export default function AboutUs() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const filteredOrganizations = members.filter((org) => {
-    // Category filter
-    // const matchesCategory =
-    //   !selectedCategory || org.category === selectedCategory;
-
-    // Search filter (checks title)
     const matchesSearch = org.projectTitle
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
-
     return matchesSearch;
   });
 

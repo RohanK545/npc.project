@@ -3,40 +3,30 @@ import { navigationConfig } from "@/config/naviagtion";
 const photos = [
   {
     id: "1",
-    imgSrc: "/images/energyManagement/Chlor-alkaliSector.png",
-    alt: "Meity Performance Smartboard picture",
     title: "Meity Performance Smartboard",
     link: "/images/energyManagement/Chlor-alkaliSecto.png",
     date: null,
   },
   {
     id: "2",
-    imgSrc: "/images/energyManagement/ThermalPowerPlant.png",
-    alt: "Meity Performance Smartboard picture",
     title: "Meity Performance Smartboard",
     link: "/images/energyManagement/ThermalPowerPlant.png",
     date: null,
   },
   {
     id: "3",
-    imgSrc: "/images/energyManagement/PulpandPaper.png",
-    alt: "Meity Performance Smartboard picture",
     title: "Meity Performance Smartboard",
     link: "/images/energyManagement/PulpandPaper.png",
     date: null,
   },
   {
     id: "4",
-    imgSrc: "/images/energyManagement/Iron&Steel.png",
-    alt: "Meity Performance Smartboard picture",
     title: "Meity Performance Smartboard",
     link: "/images/energyManagement/Iron&Steel.png",
     date: null,
   },
   {
     id: "5",
-    imgSrc: "/images/energyManagement/CementSector.png",
-    alt: "Meity Performance Smartboard picture",
     title: "Meity Performance Smartboard",
     link: "/images/energyManagement/CementSector.png",
     date: null,
@@ -145,17 +135,10 @@ export default function AboutUs() {
           </div>
           <br />
           <div className="row photos-row-gap">
-            {photos.map(({ id, imgSrc, alt, title, link, date }) => (
+            {photos.map(({ id, title, link, date }) => (
               <div key={id} className="col-sm-12 col-md-6 col-lg-3">
                 <div className="photos-card h-100">
                   <div className="img-fluid position-relative">
-                    {/* <img
-                      className="photos-img img-fluid performimg"
-                      src={imgSrc}
-                      alt={alt}
-                      width={100}
-                      height={100}
-                    /> */}
                     <div className="photos-img img-fluid performimg d-flex justify-content-center align-items-center border border-dark">
                       {" "}
                       <svg

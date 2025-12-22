@@ -227,7 +227,6 @@ export default function AboutUs() {
           area: "Energy Management",
           Scope: "",
         },
-
       ],
     },
   ];
@@ -265,10 +264,7 @@ export default function AboutUs() {
   const prevPage = () => page > 1 && setPage(page - 1);
   const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
     return (
-      <div
-        role="table"
-        className="our-team-list-container mx-auto my-4"
-      >
+      <div role="table" className="our-team-list-container mx-auto my-4">
         {/* Title */}
         <div className="our-team-list-header d-flex align-items-center mt-0 mb-2">
           <p className="text-uppercase mb-0">{title}</p>
@@ -376,43 +372,58 @@ export default function AboutUs() {
       />
 
       <section className="maincontent">
-
         <div className="">
-          <div style={{
-
-          }}>
-
+          <div style={{}}>
             <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
               <ul className="nav nav-pills tabfont mlf-5 mt-4"></ul>
             </div>
 
-            <div style={{
-              marginBottom: "15px"
-            }}>
-              <p style={{
-                fontSize: "18px",
-                color: "#000"
-              }}>Professional consultancy services are provided by NPC covering major sectors of Indian economy with emphasis on improvement of productivity, quality, profitability, and growth at entire organizational level.
-                NPC’s consultancy services rely on problem solving and total solutions; a participative and holistic approach; developmental attitude, with Identifying frontier areas in the field of productivity and quality, catalysing work on them suiting to the local needs and promoting new institutions where needed apart from providing inputs to policy making.</p>
+            <div
+              style={{
+                marginBottom: "15px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "18px",
+                  color: "#000",
+                }}
+              >
+                Professional consultancy services are provided by NPC covering
+                major sectors of Indian economy with emphasis on improvement of
+                productivity, quality, profitability, and growth at entire
+                organizational level. NPC’s consultancy services rely on problem
+                solving and total solutions; a participative and holistic
+                approach; developmental attitude, with Identifying frontier
+                areas in the field of productivity and quality, catalysing work
+                on them suiting to the local needs and promoting new
+                institutions where needed apart from providing inputs to policy
+                making.
+              </p>
             </div>
 
-            <div style={{
-              marginBottom: "15px"
-            }}>
-              <h5 style={{
-                fontSize: "16px",
-                // fontWeight: "bold",
-                margin: "0 0 5px 0",
-                color: "#000"
-              }}>
+            <div
+              style={{
+                marginBottom: "15px",
+              }}
+            >
+              <h5
+                style={{
+                  fontSize: "16px",
+                  // fontWeight: "bold",
+                  margin: "0 0 5px 0",
+                  color: "#000",
+                }}
+              >
                 <b>NPC offers consultancy services in the areas of:</b>
               </h5>
-              <h5 style={{
-                fontSize: "14px",
-                margin: "0",
-                color: "#0066cc"
-              }}>
-              </h5>
+              <h5
+                style={{
+                  fontSize: "14px",
+                  margin: "0",
+                  color: "#0066cc",
+                }}
+              ></h5>
               <div className="row listclass g-0">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 p-0">
                   <ul className="outside pl-3 m-0">
@@ -478,7 +489,6 @@ export default function AboutUs() {
             {/* Desktop Filter Section */}
             <div className="col-md-12 col-lg-8 d-none d-md-block filterIconResponsivebox">
               <div className="d-flex align-items-center justify-content-end flex-wrap gap-2">
-
                 {/* Per Page Select */}
                 <div className="input-group perPageField" role="combobox">
                   <label htmlFor="pageLimitSelect" className="visually-hidden">
@@ -515,8 +525,8 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-
-          </form></div>
+          </form>
+        </div>
 
         {tables.map((tbl, idx) => (
           <InfoTable key={idx} title={tbl.title} members={tbl.members} />
@@ -527,7 +537,6 @@ export default function AboutUs() {
           <div className="col-md-4 d-flex justify-content-center">
             <nav aria-label="Page navigation">
               <ul className="pagination pointer">
-
                 {/* Previous Button */}
                 <li>
                   <button
@@ -554,22 +563,26 @@ export default function AboutUs() {
                 </li>
 
                 {/* Dynamic Page Numbers */}
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
-                  <li
-                    key={num}
-                    className="page-item"
-                    tabIndex={0}
-                    role="link"
-                    aria-label={`Go to page ${num}`}
-                    onClick={() => setPage(num)}
-                  >
-                    <span
-                      className={`${page === num ? "active" : "false"} page-link pointer hover`}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (num) => (
+                    <li
+                      key={num}
+                      className="page-item"
+                      tabIndex={0}
+                      role="link"
+                      aria-label={`Go to page ${num}`}
+                      onClick={() => setPage(num)}
                     >
-                      {num}
-                    </span>
-                  </li>
-                ))}
+                      <span
+                        className={`${
+                          page === num ? "active" : "false"
+                        } page-link pointer hover`}
+                      >
+                        {num}
+                      </span>
+                    </li>
+                  )
+                )}
 
                 {/* Next Button */}
                 <li>
@@ -601,7 +614,6 @@ export default function AboutUs() {
             </nav>
           </div>
         </div>
-
       </section>
     </div>
   );

@@ -2,6 +2,23 @@
 // @import 'bootstrap/scss/bootstrap'; // REMOVE THIS LINE
 
 // Government Color Scheme
+$banner-transparency: rgba(69, 71, 84, 0.95);
+$eagle-green: #22242a;
+$wintergreen-dream: #454754;
+$powder-blue: #676b7e;
+$columbia-blue: #8a8e9f;
+$azureish-white: #d5d6dc;
+$azureish-white-bg: #f1f1f4;
+$deep-blue: #1d0a69;
+$bright-gray: #ebeaea;
+$anti-flash-white: #f1f1f1;
+$rhythm: #3d4043;
+$white: #ffffff;
+$black: #150202;
+$black-pure: #000000;
+$profile-border-color: #d5cbbd;
+$profile-card-secondary: #dbebeb;
+
 :root {
   --gov-blue: #003366;
   --gov-dark-blue: #002244;
@@ -214,4 +231,154 @@ a.link-btn.d-flex.align-items-center.text-uppercase.pointer {
 }
 .book-card .book-card-footer {
   margin-top: 8px;
+}
+
+.team-card {
+    width: 200px;
+    background-color: $white;
+    padding: 72px 24px 24px 24px;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    margin-top: 60px;
+    border: solid 2px transparent;
+    z-index: 1;
+
+    &:hover {
+      border: solid 2px $eagle-green;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 40px 10px 10px 10px;
+      min-height: 120px;
+    }
+
+    // @media (min-width: 769px) and (max-width: 1300px) {
+    //     padding: 55px 10px 10px 10px;
+    // }
+
+    .team-img {
+      border: 1px solid $white;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+
+      @media (max-width: 768px) {
+        width: 65px;
+        height: 65px;
+      }
+
+      // @media (min-width: 769px) and (max-width: 1300px) {
+      //     width: 90px;
+      //     height: 90px;
+      // }
+    }
+
+    small {
+      // color: $eagle-green;
+      color: #162f6a;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.7px;
+
+      @media (max-width: 768px) {
+        font-size: 9px;
+      }
+
+      // @media (min-width: 769px) and (max-width: 1300px) {
+      //     font-size: 10px;
+      // }
+    }
+
+    .h4 {
+      color: $black;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      // @media (min-width: 769px) and (max-width: 1300px) {
+      //     font-size: 14px;
+      // }
+    }
+
+    .tag {
+      margin-top: 10px;
+
+      span {
+        border-radius: 4px;
+        padding: 2px 4px;
+        color: $powder-blue;
+        background-color: $azureish-white-bg;
+        text-align: center;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0.12px;
+        text-transform: uppercase;
+      }
+    }
+
+    .number-box {
+      color: $eagle-green;
+      background-color: $powder-blue;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.7px;
+      width: 30px;
+      height: 30px;
+
+      &.active {
+        background-color: $eagle-green;
+        color: $azureish-white-bg;
+      }
+    }
+
+    &.transform {
+      -webkit-transform: translateX(-9px);
+      -ms-transform: translateX(-9px);
+      transform: translateX(-9px);
+    }
+  }
+
+.publication-card {
+  border: 1px solid #ebeaea;
+  border-radius: 8px;
+  padding: 16px 32px;
+  gap: 8px;
+}
+.publication-card .publication-card-title {
+  gap: 10px;
+  min-height: 30px;
+}
+@media (max-width: 991.5px) {
+  .publication-card .publication-card-title {
+    flex-wrap: wrap;
+  }
+}
+.publication-card .publication-card-title h3 {
+  color: #454754;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.publication-card .publication-card-title img {
+  max-width: 191px;
+  width: auto;
+  height: 84px;
+}
+.publication-card .publication-description {
+  min-height: 30px;
 }
