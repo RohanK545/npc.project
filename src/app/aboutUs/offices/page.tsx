@@ -4,7 +4,7 @@ import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
 import React, { useState, useEffect } from "react";
 
-export default function AboutUs() {
+export default function Offices() {
   const tables = [
     {
       title: "BENGALURU",
@@ -73,7 +73,18 @@ export default function AboutUs() {
         {/* Title */}
         <div className="our-team-list-header d-flex align-items-center mb-2">
           <span className="material-symbols-outlined bhashini-skip-translation me-2">
-            apartment
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24 "
+              viewBox="0 -960 960 960"
+              width="24"
+              fill="2d2d2d"
+            >
+              <path
+                d="M120-120v-555h165v-165h390v330h165v390H533v-165H427v165H120Zm60-60h105v-105H180v105Zm0-165h105v-105H180v105Zm0-165h105v-105H180v105Zm165 165h105v-105H345v105Zm0-165h105v-105H345v105Zm0-165h105v-105H345v105Zm165 330h105v-105H510v105Zm0-165h105v-105H510v105Zm0-165h105v-105H510v105Zm165 495h105v-105H675v105Zm0-165h105v-105H675v105Z"
+                fill="#ffffffff"
+              />
+            </svg>
           </span>
           <p className="text-uppercase mb-0">{title}</p>
         </div>
@@ -142,9 +153,9 @@ export default function AboutUs() {
   return (
     <div style={{}}>
       <InnerBannerSection
-        imageSrc={navigationConfig["ministry"].imageSrc}
-        breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-        navItems={navigationConfig["ministry"].navItems}
+        imageSrc={navigationConfig["aboutUs"].imageSrc}
+        breadcrumbs={navigationConfig["aboutUs"].breadcrumbs}
+        navItems={navigationConfig["aboutUs"].navItems}
         pageTilte="Offices"
       />
       <section className="maincontent">

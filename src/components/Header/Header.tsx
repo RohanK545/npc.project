@@ -98,6 +98,8 @@ export default function Header() {
   const [openIndexSidebar, setOpenIndexSidebar] = useState(null);
 
   const toggleSubMenu = (index: any) => {
+    console.log("Toggling submenu for index:", index);
+
     setOpenIndex(openIndex === index ? null : index); // toggle open/close
   };
 
@@ -284,72 +286,6 @@ export default function Header() {
         { label: "Archive", path: "/keyLinks/archive" },
       ],
     },
-    // {
-    //   title: "RTI",
-    //   path: "/rti",
-    //   links: [],
-    // },
-
-    // {
-    //   title: "Ministry",
-    //   path: "/ministry",
-    //   links: [
-    //     { label: "About Us", path: "/ministry/" },
-    //     { label: "Our Team", path: "/ministry/our-team" },
-    //     { label: "Our Organizations", path: "/ministry/organization" },
-    //     { label: "Our Performance", path: "/ministry/performance" },
-    //     { label: "Our Groups", path: "/ministry/groups" },
-    //     { label: "Directory", path: "/ministry/directory" },
-    //   ],
-    // },
-    // {
-    //   title: "Offerings",
-    //   path: "/offerings",
-    //   links: [
-    //     { label: "Schemes and Services", path: "/offerings/" },
-    //     { label: "Tenders", path: "/offerings/tenders" },
-    //     { label: "For Investors", path: "/offerings/investors" },
-    //     { label: "Engagement and Recognition", path: "/offerings/engagement" },
-    //     { label: "Initiative", path: "/offerings/initiative" },
-    //   ],
-    // },
-    // {
-    //   title: "Documents",
-    //   path: "/documents",
-    //   links: [
-    //     { label: "Reports", path: "/documents/" },
-    //     { label: "Acts And Policies", path: "/documents/acts-policies" },
-    //     { label: "Orders And Notices", path: "/documents/orders-notices" },
-    //     { label: "Publications", path: "/documents/publications" },
-    //     { label: "Press Release", path: "/documents/press-release" },
-    //     { label: "Gazettes Notifications", path: "/documents/gazettes" },
-    //     { label: "Guidelines", path: "/documents/guidelines" },
-    //   ],
-    // },
-    // {
-    //   title: "Media",
-    //   path: "/media",
-    //   links: [
-    //     { label: "Photos", path: "/media/" },
-    //     { label: "Videos", path: "/media/videos" },
-    //     { label: "Brochures", path: "/media/brochures" },
-    //     { label: "Presentations", path: "/media/presentations" },
-    //   ],
-    // },
-    // {
-    //   title: "Connect",
-    //   path: "/connect",
-    //   links: [
-    //     { label: "Contact Us", path: "/connect/" },
-    //     { label: "Directory", path: "/connect/directory" },
-    //     { label: "RTI", path: "/connect/rti" },
-    //     { label: "Grievance", path: "/connect/grievance" },
-    //     { label: "Redressal", path: "/connect/redressal" },
-    //     { label: "Citizen Engagement", path: "/connect/engagement" },
-    //     { label: "Parliament Questions", path: "/connect/parliament" },
-    //     { label: "Visitors Pass", path: "/connect/visitor-pass" },
-    //   ],
-    // },
   ];
 
   const menuItems = ["Ministry", "Offerings", "Documents", "Media", "Connect"];
@@ -821,7 +757,7 @@ export default function Header() {
                         href={subItem.path}
                         className="d-block py-1 text-decoration-none text-dark"
                       >
-                        {/* {subItem.label} */}
+                        {subItem.label}
                       </a>
                     ))}
                   </div>

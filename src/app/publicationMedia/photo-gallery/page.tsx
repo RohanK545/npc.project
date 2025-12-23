@@ -5,39 +5,44 @@ import { useState, useEffect } from "react";
 export default function AboutUs() {
   const images = [
     {
-      src: "https://www.meity.gov.in/static/uploads/2024/02/WhatsApp-Image-2022-10-28-at-3.10.46-PM-768x512.jpeg",
+      src: "https://www.npcindia.gov.in/NPC/Uploads/image/Media/5173446.jpg",
       alt: "Special Campaign Image having Minister of MEITY",
       title: "Special Campaign",
       date: "16.03.2024",
       items: 6,
+      href: "/publicationMedia/photo-gallery/album-1-ifshdfhsdfhsdoh",
     },
     {
-      src: "https://www.meity.gov.in/static/uploads/2024/02/WhatsApp-Image-2022-10-4-768x512.jpeg",
+      src: "https://www.npcindia.gov.in/NPC/Uploads/image/Media/3212101.JPG",
       alt: "FIT India Freedom Run 2.0",
       title: "FIT India Freedom Run 2.0",
       date: "03.11.2022",
       items: 6,
+      href: "/publicationMedia/photo-gallery/album-2-ifshdfhsdfhsdoh",
     },
     {
-      src: "https://www.meity.gov.in/static/uploads/2024/02/WhatsApp-Image-2022-10-29--768x432.jpeg",
+      src: "https://www.npcindia.gov.in/NPC/Uploads/image/Media/4318560.jpg",
       alt: "Fire Hydrant Check",
       title: "Fire Hydrant Check",
       date: "01.11.2022",
       items: 10,
+      href: "/publicationMedia/photo-gallery/album-1-ifshdfhsdfhsdoh",
     },
     {
-      src: "https://www.meity.gov.in/static/uploads/2024/02/ba2f00d153a139202836b88804bc7ab9-768x432.jpeg",
+      src: "https://www.npcindia.gov.in/NPC/Uploads/image/Media/5412645.jpg",
       alt: "Dengue Smoke Fogging",
       title: "Dengue Smoke Fogging",
       date: "01.11.2022",
       items: 4,
+      href: "/publicationMedia/photo-gallery/album-1-ifshdfhsdfhsdoh",
     },
     {
-      src: "https://www.meity.gov.in/static/uploads/2024/02/WhatsApp-Image-2022-10-28-at-5.3-768x512.jpeg",
+      src: "https://www.npcindia.gov.in/NPC/Images/MediaPhotos/event2_5.JPG",
       alt: "Blood Donation Camp",
       title: "Blood Donation Camp",
       date: "01.11.2022",
       items: 5,
+      href: "/publicationMedia/photo-gallery/album-1-ifshdfhsdfhsdoh",
     },
   ];
   const [itemsPerPage, setItemsPerPage] = useState<number>(10);
@@ -314,9 +319,13 @@ export default function AboutUs() {
                       width={100}
                       height={100}
                     />
-                    <button
+                    <a
                       className="position-absolute photos-btn pointer"
-                      aria-label={`View More of ${photo.title}`}
+                      // target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Know More about ${photo.title}`}
+                      aria-label={`Know More about ${photo.title}`}
+                      href={photo.href}
                     >
                       <span className="material-symbols-outlined bhashini-skip-translation">
                         <svg
@@ -332,7 +341,7 @@ export default function AboutUs() {
                           />
                         </svg>
                       </span>
-                    </button>
+                    </a>
                   </div>
                   <div className="photos-card-body">
                     <p className="photos-card-title h4">

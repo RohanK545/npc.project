@@ -7,7 +7,7 @@ export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
 
   const bannerImages = [
-    "https://ccps.digifootprint.gov.in/static//uploads/2025/04/0ff98e1ffaf83a690f2cd3f0b7ac9502.jpg",
+    "https://www.npcindia.gov.in/NPC/Uploads/image/Media/WhatsApp%20Image%202025-10-28%20at%209.47.46%20AM405832.jpeg",
     "https://www.meity.gov.in/static/uploads/2025/10/57abd94ee7b510ee638e9907787c8a6e.jpg",
     "https://www.meity.gov.in/static/uploads/2025/11/3b31c35215a20d22fb1f2d88941ef884.jpg",
   ];
