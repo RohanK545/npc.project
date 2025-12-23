@@ -40,7 +40,7 @@ export default function AboutUs() {
       id: "btn-r9g84y",
       title: "Cyber Security",
       description:
-        "The Cyber Security Division is building a secure and resilient cyberspace for India by protecting critical infrastructure and digital assets while responding to cyber threats.",
+        "The Cyber Security Division is building  secure and resilient cyberspace for India by protecting critical infrastructure and digital assets while responding to cyber threats.",
       link: "/ministry/our-groups/details/cyber-security-division-gNxIDOtQWa",
     },
     {
