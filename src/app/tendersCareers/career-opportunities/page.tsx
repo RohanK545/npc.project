@@ -30,9 +30,7 @@ export default function AboutUs() {
       />
       <section className="maincontent" role="main">
         <div className="container mt-5">
-          <h1 className=" m-4 p-4">
-            Care<span className="text-primary">er</span>
-          </h1>
+         
           <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
             <div className="col-md-12 col-lg-4">
               <div className="input-group searchField">
