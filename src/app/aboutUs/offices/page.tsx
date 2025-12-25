@@ -3,73 +3,53 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+interface Member {
+  name: string;
+  designation: string;
+  telephone: string;
+  mail: string;
+  address: string;
+}
+
+interface Table {
+  title: string;
+  members: Member[];
+}
 
 export default function Offices() {
-  const tables = [
-    {
-      title: "BENGALURU",
-      members: [
-        {
-          name: "Shri Swarupan Das",
-          designation: "RegionalDirector",
-          Telephone: "	080-23467294, 9019883123",
-          Mail: "swarupan.das@npcindia.gov.in; bangalore@npcindia.gov.in",
-          Address:
-            "National Productivity Council 2nd Floor, Abhaya Complex KSDB Building, 55, Risaldar Street Seshadripuram Bangalore 560 020",
-        },
-      ],
-    },
+  const [HeadQuartertables, setHeadQuarterTables] = useState<Table[]>([]);
+  const [Officetables, setOfficeTables] = useState<Table[]>([]);
 
-    {
-      title: "BHUBANESWAR",
-      members: [
-        {
-          name: "Shri Avijit Nayak",
-          designation: "Director Gr-II & Regional Director (Bhubaneswar)",
-          Telephone: "0674-2397381/26",
-          Mail: "avijit.nayak@npcindia.gov.in",
-          Address:
-            "National Productivity Council A/7, Surya Nagar, Bhubaneswar-751003, Odisha",
-        },
-        {
-          name: "Shri Shyama Prasad",
-          designation: "Deputy Director (Bhubaneswar )",
-          Telephone: "0674 2397326",
-          Mail: "shyama.prasad1@npcindia.gov.in",
-          Address:
-            "National Productivity Council A/7, Surya Nagar, Bhubaneswar-751003, Odisha",
-        },
-      ],
-    },
-    {
-      title: "CHANDIGARH",
-      members: [
-        {
-          name: "Ashok Kumar",
-          designation: "In charge -Regional Director",
-          Telephone: "9888481938",
-          Mail: "ashok.kumar@npcindia.gov.in",
-          Address:
-            "National Productivity Council, Chandigarh CRRID Campus, Centre for Research in Rural and Industrial Development, Plot 2-A, Madhya Marg, Sector 19A, Chandigarh, 160019",
-        },
-        {
-          name: "Shri Suvyendu Shivakar",
-          designation: "Deputy Director",
-          Telephone: "6287872655",
-          Mail: "suvyendu.s@npcindia.gov.in	",
-          Address:
-            "National Productivity Council, Chandigarh CRRID Campus, Centre for Research in Rural and Industrial Development, Plot 2-A, Madhya Marg, Sector 19A, Chandigarh, 160019",
-        },
-      ],
-    },
-  ];
+  const handleGetHeadquarters = async () => {
+    try {
+      const response = await axios.get("/api/aboutUs/getHeadquarters");
+      console.log("This is response:", response.data);
+      setHeadQuarterTables(response.data);
+    } catch (error) {
+      console.error(error);
+      console.log(error, "error is this");
+    }
+  };
+  const handleGetOffices = async () => {
+    try {
+      const response = await axios.get("/api/aboutUs/getOffices");
+      console.log("This is response:", response.data);
+      setOfficeTables(response.data);
+    } catch (error) {
+      console.error(error);
+      console.log(error, "error is this");
+    }
+  };
+  useEffect(() => {
+    handleGetHeadquarters();
+    handleGetOffices();
+  }, []);
 
   const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
     return (
-      <div
-        role="table"
-        className="container our-team-list-container mx-auto my-4"
-      >
+      <div role="table" className="our-team-list-container mx-auto my-4">
         {/* Title */}
         <div className="our-team-list-header d-flex align-items-center mb-2">
           <span className="material-symbols-outlined bhashini-skip-translation me-2">
@@ -159,9 +139,16 @@ export default function Offices() {
         pageTilte="Offices"
       />
       <section className="maincontent">
-        {tables.map((tbl, idx) => (
-          <InfoTable key={idx} title={tbl.title} members={tbl.members} />
-        ))}
+        <div className="container">
+          <h2>HEADQUARTER</h2>
+          {HeadQuartertables.map((tbl, idx) => (
+            <InfoTable key={idx} title={tbl.title} members={tbl.members} />
+          ))}
+          <h2>OFFICES</h2>
+          {Officetables.map((tbl, idx) => (
+            <InfoTable key={idx} title={tbl.title} members={tbl.members} />
+          ))}
+        </div>
       </section>
     </div>
   );

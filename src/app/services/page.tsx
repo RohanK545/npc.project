@@ -2,253 +2,51 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
 import { useState, useMemo } from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
+
+interface Row {
+  srNo: number;
+  projectTitle: string;
+  typeOfStudy: string;
+  clientName: string;
+  clientType: string;
+  yearOfStudy: string;
+  nameOfGroup: string;
+  area: string;
+  Scope: string;
+}
+
+interface Table {
+  title: string;
+  row: Row[];
+}
 export default function AboutUs() {
-  const tables = [
-    {
-      title: "CONSULTANCY PROJECTS",
-      members: [
-        {
-          SrNo: "1",
-          projectTitle: "Water Balance Study",
-          typeOfStudy: "",
-          clientName: "NTPC-Karakka",
-          clientType: "Central Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "2",
-          projectTitle: "Details Energy Audit",
-          typeOfStudy: "",
-          clientName: "MCC-PTA, Haldia",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "3",
-          projectTitle: "Details Energy Audit",
-          typeOfStudy: "",
-          clientName: "Andrew Yule Tea State",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "4",
-          projectTitle: "Insulation Survey Study",
-          typeOfStudy: "",
-          clientName: "Mangalore Chemical & Fertiliser",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Technology Management",
-          Scope: "",
-        },
-        {
-          SrNo: "5",
-          projectTitle: "Manpower Assessment Study",
-          typeOfStudy: "",
-          clientName: "Oil India Ltd, Kolkata Branch Office",
-          clientType: "Central Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "6",
-          projectTitle: "Energy Audit",
-          typeOfStudy: "",
-          clientName: "Kanti Bijlee Utpadan Ltd.",
-          clientType: "State Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "7",
-          projectTitle: "Manpower Assessment Study",
-          typeOfStudy: "",
-          clientName: "Electro Steel Casting Pvt. Ltd.",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "8",
-          projectTitle: "Change over ISO 9001:2000 to ISO 9001:2008",
-          typeOfStudy: "",
-          clientName: "Govt. of Mizoram",
-          clientType: "State Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "9",
-          projectTitle: "Energy Audit",
-          typeOfStudy: "",
-          clientName: "DPSCL, West Bengal",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "10",
-          projectTitle: "Productivity Study",
-          typeOfStudy: "",
-          clientName: "Marathan Electroic Motors, Kolkata",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "11",
-          projectTitle: "Water Balance Study at Colonies",
-          typeOfStudy: "",
-          clientName: "Reserve Bank of India, Kolkata",
-          clientType: "Central Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "12",
-          projectTitle: "Occupational Heath & Safety",
-          typeOfStudy: "",
-          clientName: "DPSC Ltd., West Bengal",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Technology Management",
-          Scope: "",
-        },
-        {
-          SrNo: "13",
-          projectTitle: "Details Energy Audit",
-          typeOfStudy: "",
-          clientName: "Andrew Yule , Kalyani",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "14",
-          projectTitle: "Implementation of ISO 9001:2008",
-          typeOfStudy: "",
-          clientName: "West Bengal Minorities Development & Finance",
-          clientType: "State Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "15",
-          projectTitle: "Implementation of ISO 9001:2008",
-          typeOfStudy: "",
-          clientName: "DM Office, Hoogly, West Bengal",
-          clientType: "State Government",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "16",
-          projectTitle: "Energy Audit",
-          typeOfStudy: "",
-          clientName: "Electro Steel Casting Pvt. Ltd.",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "17",
-          projectTitle: "Safety Audit",
-          typeOfStudy: "",
-          clientName: "Bokaro Power Supply Cop. Ltd.",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Technology Management",
-          Scope: "",
-        },
-        {
-          SrNo: "18",
-          projectTitle: "QMS ISO 9001:2008",
-          typeOfStudy: "",
-          clientName: "Bokaro Power Supply Cop. Ltd.",
-          clientType: "Private Sector",
-          yearOfStudy: "2010-11",
-          nameOfGroup: "RD Kolkata",
-          area: "Industrial Engineering",
-          Scope: "",
-        },
-        {
-          SrNo: "19",
-          projectTitle: "Energy optimization of Conveyor Belt",
-          typeOfStudy: "",
-          clientName: "Poniex Yule",
-          clientType: "Private Sector",
-          yearOfStudy: "2011-12",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-        {
-          SrNo: "20",
-          projectTitle: "Energy Audit",
-          typeOfStudy: "",
-          clientName: "DVC-DTPS, Durgapur",
-          clientType: "Central Government",
-          yearOfStudy: "2011-12",
-          nameOfGroup: "RD Kolkata",
-          area: "Energy Management",
-          Scope: "",
-        },
-      ],
-    },
-  ];
+  const [tableData, setTableData] = useState<Table[]>([]);
+
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
-
-  const members = tables[0].members;
-
-  // 🔹 Filter + Pagination
-  const filtered = useMemo(() => {
-    return members.filter((m) =>
-      JSON.stringify(m).toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search, members]);
-
-  const totalPages = Math.ceil(filtered.length / perPage);
-
-  const paginatedData = useMemo(() => {
-    const start = (page - 1) * perPage;
-    return filtered.slice(start, start + perPage);
-  }, [page, perPage, filtered]);
+  const [totalCount, setTotalCount] = useState(0);
+  const handleGetConsultancyProjects = async () => {
+    try {
+      const response = await axios.get("/api/Service/getConsultancyProjects", {
+        params: {
+          search,
+          page,
+          pageSize: perPage,
+        },
+      });
+      console.log("This is response:", response.data.data);
+      setTableData(response.data.data);
+      setTotalCount(response.data.totalCount);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    handleGetConsultancyProjects();
+  }, [search, page, perPage]);
 
   const handleSearchChange = (e: any) => {
     setSearch(e.target.value);
@@ -259,21 +57,42 @@ export default function AboutUs() {
     setPerPage(Number(e.target.value));
     setPage(1);
   };
+  const highlightText = (text: string | undefined, query: string) => {
+    if (!query) return text || "";
+
+    const safeText = text || "";
+
+    const regex = new RegExp(`(${query})`, "gi");
+    const parts = safeText.split(regex);
+
+    return parts.map((part, index) =>
+      regex.test(part) ? (
+        <span key={index} style={{ backgroundColor: "yellow" }}>
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
 
   const nextPage = () => page < totalPages && setPage(page + 1);
   const prevPage = () => page > 1 && setPage(page - 1);
-  const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
+  const totalPages = Math.ceil(totalCount / perPage);
+  // const allRows = tableData.flatMap((tbl) => tbl.row);
+  // console.log(allRows);
+  const InfoTable = ({ members }: { members: any[] }) => {
     return (
       <div role="table" className="our-team-list-container mx-auto my-4">
-        {/* Title */}
+        {/* Hardcoded Title */}
         <div className="our-team-list-header d-flex align-items-center mt-0 mb-2">
-          <p className="text-uppercase mb-0">{title}</p>
+          <p className="text-uppercase mb-0">CONSULTANCY PROJECTS</p>
         </div>
 
         {/* Header Row */}
         <div role="rowgroup">
           <div className="row row-gap-4 me-0 ms-0 our-team-list-subheader fw-bold">
-            <div className="col-lg-1 col-sm-12 ">S.No.</div>
+            <div className="col-lg-1 col-sm-12">Sr.No.</div>
             <div className="col-lg-2 col-sm-12 ps-1">Project Title</div>
             <div className="col-lg-1 col-sm-12 ps-1">Type of Study</div>
             <div className="col-lg-2 col-sm-12 ps-1">Client Name</div>
@@ -284,84 +103,55 @@ export default function AboutUs() {
             <div className="col-lg-1 col-sm-12">Scope of Study</div>
           </div>
         </div>
+
         {/* Members */}
         <div role="rowgroup">
-          {paginatedData.map((m, idx) => (
-            <div
-              key={idx}
-              role="row"
-              className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
-            >
-              {/* Name & Designation */}
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.SrNo}</p>
-                  </div>
+          {members.length === 0 ? (
+            <div className="text-center py-3">No data found</div>
+          ) : (
+            members.map((m, idx) => (
+              <div
+                key={idx}
+                role="row"
+                className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
+              >
+                <div className="col-lg-1 col-md-12">
+                  <p className="mb-0">{m.srNo}</p>
+                </div>
+                <div className="col-lg-2 col-md-12">
+                  <p className="name mb-0">
+                    {highlightText(m.projectTitle, search)}
+                  </p>
+                </div>
+                <div className="col-lg-1 col-md-12">
+                  <p className="mb-0">{highlightText(m.typeOfStudy, search)}</p>
+                </div>
+                <div className="col-lg-2 col-md-12">
+                  <p className="mb-0">{highlightText(m.clientName, search)}</p>
+                </div>
+                <div className="col-lg-1 col-md-12">
+                  <p className="mb-0">{highlightText(m.clientType, search)}</p>
+                </div>
+                <div className="col-lg-1 col-md-12">
+                  <p className="mb-0">{highlightText(m.yearOfStudy, search)}</p>
+                </div>
+                <div className="col-lg-1 col-md-12">
+                  <p className="mb-0">{highlightText(m.nameOfGroup, search)}</p>
+                </div>
+                <div className="col-lg-2 col-md-12">
+                  <p className="mb-0">{highlightText(m.area, search)}</p>
+                </div>
+                <div className="col-lg-1 col-md-12">
+                  <p className="mb-0">{highlightText(m.Scope, search)}</p>
                 </div>
               </div>
-              <div className="col-lg-2 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="name mb-0">{m.projectTitle}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.typeOfStudy}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.clientName}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.clientType}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.yearOfStudy}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.nameOfGroup}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.area}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.Scope}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     );
   };
+
   return (
     <div style={{}}>
       <InnerBannerSection
@@ -528,9 +318,7 @@ export default function AboutUs() {
           </form>
         </div>
 
-        {tables.map((tbl, idx) => (
-          <InfoTable key={idx} title={tbl.title} members={tbl.members} />
-        ))}
+        <InfoTable members={tableData} />
         <div className="row align-items-center mt-5">
           <div className="col-md-4"></div>
 

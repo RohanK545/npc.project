@@ -12,9 +12,7 @@ export default function AboutUs() {
          />
    
          <div className="container">
-           <h1 className="pghdng2 pghdng1 headingcontrast display-4 fw-bold mb-4 p-4">
-             AIP-Chennai <span className="text-primary">Executive Hostel and Training Facilities</span> 
-           </h1>
+          
    
            <div 
              className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
