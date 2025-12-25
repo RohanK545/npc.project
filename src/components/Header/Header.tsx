@@ -84,6 +84,8 @@
 //     </header>
 //   );
 // }
+
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -395,7 +397,7 @@ export default function Header() {
                       aria-label="Accessibility panel"
                       title="Accessibility panel"
                       aria-haspopup="dialog"
-                      className="jsx-1785232235 accessibility-btn pointer"
+                      className="jsx-1785232235 accessibility-btn pointer "
                     >
                       <svg
                         width="32"
@@ -463,16 +465,23 @@ export default function Header() {
                           href="https://digitalindia.gov.in/"
                         >
                           <span
-                            className=" lazy-load-image-background blur lazy-load-image-loaded"
+                            className="lazy-load-image-background blur lazy-load-image-loaded"
                             style={{
                               color: "transparent",
                               display: "inline-block",
+                              width: "280px", /* Increased size for better visibility */
+                              height: "auto"  /* Keeps aspect ratio */
                             }}
                           >
                             <img
                               src="/images/logos/Digital_India.svg"
-                              alt="3c456855b01bd15e42e99b93982b5c18"
+                              alt="Digital India Logo"
                               className="skillimg img-fluid"
+                              style={{
+                                width: "100%",
+                                height: "auto",
+                                maxWidth: "100%"
+                              }}
                             />
                           </span>
                         </a>
@@ -570,9 +579,8 @@ export default function Header() {
           return (
             <li
               key={index}
-              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${
-                active ? "borderbottom-active" : ""
-              }`}
+              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${active ? "borderbottom-active" : ""
+                }`}
               style={{
                 width: "",
                 // height: "65px",

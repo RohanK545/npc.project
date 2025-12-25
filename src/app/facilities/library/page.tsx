@@ -17,8 +17,7 @@ export default function AboutUs() {
             <div 
               className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
               style={{
-                backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
-                backgroundSize: "cover",
+              
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundAttachment: "fixed",
