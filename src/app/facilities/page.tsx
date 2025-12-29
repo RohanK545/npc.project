@@ -2058,6 +2058,13 @@
 //   );
 // }
 
+
+
+
+
+
+
+
 "use client";
 import { useState } from "react";
 import InnerBannerSection from "@/components/InnerBannerSection";
@@ -2078,6 +2085,7 @@ function TabNavigation() {
     "Additional charges of Rs. 5000/- per hour for Video Conferencing",
     "Additional charges for catering services (paid directly to empanelled caterer)",
     "Additional charges of Rs. 2000/- per day for lawn usage",
+    
   ];
 
   const internationalFacilities = [...nationalFacilities];

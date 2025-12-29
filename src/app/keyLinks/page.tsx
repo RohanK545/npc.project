@@ -111,11 +111,44 @@ export default function AboutUs() {
 
                 <button
                   type="submit"
-                  className="btn btn-primary w-100"
-                  style={{ borderRadius: "20px" }}
+                  className="btn btn-primary  w-100"
+                  // style={{ borderRadius: "20px" }}
                 >
                   Submit
                 </button>
+              </div>
+              <div className="addressbox mt-5">
+                <div className="d-flex justify-content-start align-items-start gap-2">
+                  <span
+                    className="material-symbols-outlined bhashini-skip-translation"
+                    anuvadak-no-localization="true"
+                  >
+                    <img src="/images/icons/Deskphone.svg" alt="Search" />
+                  </span>
+
+                  <div
+                    aria-label="location: Ministry of Electronics and Information Technology, Government of India,
+Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi – 110003"
+                  >
+                    <p>011 - 24690331</p>
+                  </div>
+                </div>
+
+                <div className="d-flex justify-content-start align-items-start gap-2">
+                  <span
+                    className="material-symbols-outlined bhashini-skip-translation"
+                    anuvadak-no-localization="true"
+                  >
+                    <img src="/images/icons/E-mail.svg" alt="Search" />
+                  </span>
+
+                  <div
+                    aria-label="location: Ministry of Electronics and Information Technology, Government of India,
+Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi – 110003"
+                  >
+                    <p>npcinfo@npcindia.gov.in</p>
+                  </div>
+                </div>
               </div>
             </div>
 

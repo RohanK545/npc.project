@@ -223,7 +223,7 @@ export default function Header() {
       title: "Initiatives & Projects",
       path: "/initiativesProjects",
       links: [
-        { label: "5S-Certification", path: "/initiativesProjects/" },
+        { label: "5S-Certification", path: "https://www.npcindia.gov.in/NPC/Uploads/domestic%20services/NPC%205S%20certification%20Guidelines%2023443727.pdf", },
         {
           label: "Inspection Division",
           path: "/initiativesProjects/inspection-division",
@@ -638,20 +638,39 @@ export default function Header() {
                 >
                   {item.links.map((link, idx) => (
                     <li key={idx} style={{ minWidth: "10rem" }}>
-                      <Link
-                        href={link.path}
-                        className="nav-link d-flex justify-content-center align-items-center text-center"
-                        // style={{ width: "180px", height: "52px" }}
-                        style={{
-                          padding: "0.8rem 1.2rem",
-                          height: "auto",
-                          whiteSpace: "normal",
-                          wordBreak: "break-word",
-                          textAlign: "left",
-                        }}
-                      >
-                        {link.label}
-                      </Link>
+                      {link.path.startsWith("http") ? (
+                        // ✅ External link (PDF)
+                        <a
+                          href={link.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="nav-link d-flex justify-content-center align-items-center text-center"
+                          style={{
+                            padding: "0.8rem 1.2rem",
+                            height: "auto",
+                            whiteSpace: "normal",
+                            wordBreak: "break-word",
+                            textAlign: "left",
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        // ✅ Internal route
+                        <Link
+                          href={link.path}
+                          className="nav-link d-flex justify-content-center align-items-center text-center"
+                          style={{
+                            padding: "0.8rem 1.2rem",
+                            height: "auto",
+                            whiteSpace: "normal",
+                            wordBreak: "break-word",
+                            textAlign: "left",
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

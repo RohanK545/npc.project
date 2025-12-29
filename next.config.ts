@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",               // Frontend request path
+        destination: "http://localhost:5169/api/:path*", // Backend URL
+      },
+    ];
+  },
 };
 
 export default nextConfig;
