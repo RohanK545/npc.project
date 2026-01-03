@@ -84,6 +84,8 @@
 //     </header>
 //   );
 // }
+
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -221,7 +223,7 @@ export default function Header() {
       title: "Initiatives & Projects",
       path: "/initiativesProjects",
       links: [
-        { label: "5S-Certification", path: "/initiativesProjects/" },
+        { label: "5S-Certification", path: "https://www.npcindia.gov.in/NPC/Uploads/domestic%20services/NPC%205S%20certification%20Guidelines%2023443727.pdf", },
         {
           label: "Inspection Division",
           path: "/initiativesProjects/inspection-division",
@@ -395,7 +397,7 @@ export default function Header() {
                       aria-label="Accessibility panel"
                       title="Accessibility panel"
                       aria-haspopup="dialog"
-                      className="jsx-1785232235 accessibility-btn pointer"
+                      className="jsx-1785232235 accessibility-btn pointer "
                     >
                       <svg
                         width="32"
@@ -463,16 +465,23 @@ export default function Header() {
                           href="https://digitalindia.gov.in/"
                         >
                           <span
-                            className=" lazy-load-image-background blur lazy-load-image-loaded"
+                            className="lazy-load-image-background blur lazy-load-image-loaded"
                             style={{
                               color: "transparent",
                               display: "inline-block",
+                              width: "280px", /* Increased size for better visibility */
+                              height: "auto"  /* Keeps aspect ratio */
                             }}
                           >
                             <img
                               src="/images/logos/Digital_India.svg"
-                              alt="3c456855b01bd15e42e99b93982b5c18"
+                              alt="Digital India Logo"
                               className="skillimg img-fluid"
+                              style={{
+                                width: "100%",
+                                height: "auto",
+                                maxWidth: "100%"
+                              }}
                             />
                           </span>
                         </a>
@@ -570,9 +579,8 @@ export default function Header() {
           return (
             <li
               key={index}
-              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${
-                active ? "borderbottom-active" : ""
-              }`}
+              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${active ? "borderbottom-active" : ""
+                }`}
               style={{
                 width: "",
                 // height: "65px",
@@ -630,20 +638,39 @@ export default function Header() {
                 >
                   {item.links.map((link, idx) => (
                     <li key={idx} style={{ minWidth: "10rem" }}>
-                      <Link
-                        href={link.path}
-                        className="nav-link d-flex justify-content-center align-items-center text-center"
-                        // style={{ width: "180px", height: "52px" }}
-                        style={{
-                          padding: "0.8rem 1.2rem",
-                          height: "auto",
-                          whiteSpace: "normal",
-                          wordBreak: "break-word",
-                          textAlign: "left",
-                        }}
-                      >
-                        {link.label}
-                      </Link>
+                      {link.path.startsWith("http") ? (
+                        // ✅ External link (PDF)
+                        <a
+                          href={link.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="nav-link d-flex justify-content-center align-items-center text-center"
+                          style={{
+                            padding: "0.8rem 1.2rem",
+                            height: "auto",
+                            whiteSpace: "normal",
+                            wordBreak: "break-word",
+                            textAlign: "left",
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        // ✅ Internal route
+                        <Link
+                          href={link.path}
+                          className="nav-link d-flex justify-content-center align-items-center text-center"
+                          style={{
+                            padding: "0.8rem 1.2rem",
+                            height: "auto",
+                            whiteSpace: "normal",
+                            wordBreak: "break-word",
+                            textAlign: "left",
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

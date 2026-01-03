@@ -34,57 +34,57 @@ export const navigationConfig = {
     imageSrc: "https://www.dpiit.gov.in/static/uploads/2025/06/e45a8e1f3769a54d12e3cb5cb7ef2ec2.png",
   },
   documents: {
-    breadcrumbs : [
-    { title: "Home", href: "/" },
-    { title: "Documents" },
-    { pagetitle: "Reports" },
-  ],
-   navItems: [
-    { label: "Reports", href: "/documents/", active: false },
-    {label: "Acts And Policies", href: "/documents/acts-policies", active: false, },
-    { label: "Orders And Notices", href: "/documents/orders-notices", active: false, },
-    { label: "Publications", href: "/documents/publications", active: false },
-    { label: "Press Release", href: "/documents/press-release", active: false },
-    {
-      label: "Gazettes Notifications",
-      href: "/documents/gazettes",
-      active: false,
-    },
-    { label: "Guidelines", href: "/documents/guidelines", active: false },
-  ],
-  imageSrc: "https:/www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg",
-},
+    breadcrumbs: [
+      { title: "Home", href: "/" },
+      { title: "Documents" },
+      { pagetitle: "Reports" },
+    ],
+    navItems: [
+      { label: "Reports", href: "/documents/", active: false },
+      { label: "Acts And Policies", href: "/documents/acts-policies", active: false, },
+      { label: "Orders And Notices", href: "/documents/orders-notices", active: false, },
+      { label: "Publications", href: "/documents/publications", active: false },
+      { label: "Press Release", href: "/documents/press-release", active: false },
+      {
+        label: "Gazettes Notifications",
+        href: "/documents/gazettes",
+        active: false,
+      },
+      { label: "Guidelines", href: "/documents/guidelines", active: false },
+    ],
+    imageSrc: "https:/www.dpiit.gov.in/static/uploads/2025/06/9474b41fcf967c101e7d4939b7b03d5e.jpg",
+  },
   media: {
-    breadcrumbs :[
-    { title: "Home", href: "/" },
-    { title: "Media" },
-    { pagetitle: "Photos" },
-  ],
-     navItems :[
-    { label: "Photos", href: "/media/", active: false },
-    { label: "Videos", href: "/media/videos", active: false },
-    { label: "Brochures", href: "/media/brochures", active: false },
-    { label: "Presentations", href: "/media/presentations", active: false },
-  ],
+    breadcrumbs: [
+      { title: "Home", href: "/" },
+      { title: "Media" },
+      { pagetitle: "Photos" },
+    ],
+    navItems: [
+      { label: "Photos", href: "/media/", active: false },
+      { label: "Videos", href: "/media/videos", active: false },
+      { label: "Brochures", href: "/media/brochures", active: false },
+      { label: "Presentations", href: "/media/presentations", active: false },
+    ],
     imageSrc: "https://www.dpiit.gov.in/static/uploads/2025/06/e45a8e1f3769a54d12e3cb5cb7ef2ec2.png",
   },
   offerings: {
-     breadcrumbs : [
-    { title: "Home", href: "/" },
-    { title: "Offerings" },
-    { pagetitle: "Schemes And Services" },
-  ],
-    navItems :[
-    { label: "Schemes and Services", href: "/offerings/", active: false },
-    { label: "Tenders", href: "/offerings/tenders", active: false },
-    { label: "For Investors", href: "/offerings/investors", active: false },
-    {
-      label: "Engagement and Recognition",
-      href: "/offerings/engagement",
-      active: false,
-    },
-    { label: "Initiative", href: "/offerings/initiative", active: false },
-  ],
+    breadcrumbs: [
+      { title: "Home", href: "/" },
+      { title: "Offerings" },
+      { pagetitle: "Schemes And Services" },
+    ],
+    navItems: [
+      { label: "Schemes and Services", href: "/offerings/", active: false },
+      { label: "Tenders", href: "/offerings/tenders", active: false },
+      { label: "For Investors", href: "/offerings/investors", active: false },
+      {
+        label: "Engagement and Recognition",
+        href: "/offerings/engagement",
+        active: false,
+      },
+      { label: "Initiative", href: "/offerings/initiative", active: false },
+    ],
     imageSrc: "https://www.dpiit.gov.in/static/uploads/2025/06/e45a8e1f3769a54d12e3cb5cb7ef2ec2.png",
   },
   aboutUs: {
@@ -234,7 +234,12 @@ export const navigationConfig = {
       { pagetitle: "Initiatives & Projects" },
     ],
     navItems: [
-      { label: "5S-Certification", href: "/initiativesProjects/", active: false },
+      {
+        label: "5S-Certification",
+        href: "https://www.npcindia.gov.in/NPC/Uploads/domestic%20services/NPC%205S%20certification%20Guidelines%2023443727.pdf",
+        active: false,
+      },
+
       {
         label: "Inspection Division",
         href: "/initiativesProjects/inspection-division",
