@@ -234,8 +234,8 @@ export default function Footer() {
                         <Image
                           src="/images/icons/twitter-icon.png"
                           alt="Twitter"
-                          width={32} // example width in pixels
-                          height={32} // example height in pixels
+                          width={24} // example width in pixels
+                          height={24} // example height in pixels
                         />
                       </a>
                     </li>
@@ -249,6 +249,8 @@ export default function Footer() {
                       <Image
                         src="/images/icons/youtube-icon.png"
                         alt="YouTube"
+                        width={24} // example width in pixels
+                        height={24}
                       />
                     </a>
 
@@ -262,6 +264,8 @@ export default function Footer() {
                         <Image
                           src="/images/icons/facebook-icon.png"
                           alt="Facebook"
+                          width={24} // example width in pixels
+                          height={24}
                         />
                       </a>
                     </li>
@@ -276,6 +280,8 @@ export default function Footer() {
                         <Image
                           src="/images/icons/instagram-icon.png"
                           alt="Instagram"
+                          width={24} // example width in pixels
+                          height={24}
                         />
                       </a>
                     </li>

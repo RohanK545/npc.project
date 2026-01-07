@@ -5,21 +5,22 @@ import PageRenderer from "@/components/PageRenderer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function AboutUs() {
-  const [content, setContent] = useState<any>(null);
+import Image from "next/image";
 
-  const handleGetHeadquarters = async () => {
-    try {
-      const response = await axios.get("/api/page-content/about-us");
-      console.log("This is response:", response.data.blocks);
-      setContent(response.data);
-    } catch (error) {
-      console.error(error);
-      console.log(error, "error is this");
-    }
-  };
+export default function AboutUs() {
+  const [content, setContent] = useState<string>("");
+
   useEffect(() => {
-    handleGetHeadquarters();
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/page-content/about-us");
+        setContent(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
   return (
     <>
@@ -101,7 +102,7 @@ export default function AboutUs() {
                                   display: "inline-block",
                                 }}
                               >
-                                <img
+                                <Image
                                   src="/images/aboutUs/PiyushGoyal.jpg"
                                   alt="profile picture Sh. Piyush Goyal"
                                   className="img-fluid profile-img object-fit-cover bg-white"
@@ -134,7 +135,7 @@ export default function AboutUs() {
                                   display: "inline-block",
                                 }}
                               >
-                                <img
+                                <Image
                                   src="/images/aboutUs/chairmanNPC.jpg"
                                   alt="profile picture Sh. Amardeep Singh Bhatia"
                                   className="img-fluid profile-img object-fit-cover bg-white"
@@ -167,7 +168,7 @@ export default function AboutUs() {
                                   display: "inline-block",
                                 }}
                               >
-                                <img
+                                <Image
                                   src="/images/aboutUs/Smt.NeerjaSekhar.jpg"
                                   alt="profile picture Smt. Neerja Sekhar"
                                   className="img-fluid profile-img object-fit-cover bg-white"
@@ -214,7 +215,7 @@ export default function AboutUs() {
             <div className="col-md-12 col-lg-8 ps-5 pe-5">
               <div className="aboutcontent text-justify">
                 {content && <PageRenderer data={content} />}
-                <h1>Citizen's Charter</h1>
+                <h1>Citizen&apos;s Charter</h1>
                 <p>
                   National Productivity Council of India (NPC), established in
                   the year 1958, is an autonomous organization under Department
