@@ -175,14 +175,14 @@ export default function AboutUs() {
                     of Japan.
                   </p>
                   <p className="text-justify">
-                    {" "}
                     CETEE aims to achieve these objectives through its state of
                     the art Hands-on Training facility to impart the advanced
                     Energy Efficiency Technology and Techniques in the field of
-                    energy efficiency. CETEE is based on "learning by doing"
-                    pedagogy where trainees are exposed to "real-industry"
-                    projects.{" "}
+                    energy efficiency. CETEE is based on &ldquo;learning by
+                    doing&rdquo; pedagogy where trainees are exposed to
+                    &ldquo;real-industry&rdquo; projects.
                   </p>
+
                   <br />
                   <p className="text-justify">
                     {" "}

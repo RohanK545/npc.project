@@ -1,4 +1,5 @@
-<header
+{
+  /* <header
         tabIndex={0}
         aria-label="header section"
         className=" header ps-5 "
@@ -91,9 +92,7 @@
 
             <div className="col-lg-3 col-md-12 d-flex justify-content-end">
               <div className="menuright ms-0">
-                {/* <Link href="#" target="_blank" className="d-none d-lg-block">
-                <img src="..." alt="..." className="skillimg" />
-              </Link> */}
+                
 
                 <ul className="menutop">
                   <li>
@@ -237,7 +236,6 @@
                     />
                   </svg>
                 )}
-                {/* {item.path} */}
               </span>
 
               {openIndex === index && item.links.length > 0 && (
@@ -261,4 +259,5 @@
             </li>
           );
         })}
-      </ul>
+      </ul> */
+}

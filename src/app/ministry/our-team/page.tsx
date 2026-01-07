@@ -105,11 +105,6 @@ export default function AboutUs() {
   ];
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["ministry"].imageSrc}
-        breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-        navItems={navigationConfig["ministry"].navItems}
-      />
       <section className="maincontent">
         <div className="card-wrapper p-2 py-4 p-md-4">
           <div className="card-wrapper p-2 py-4 p-md-4">

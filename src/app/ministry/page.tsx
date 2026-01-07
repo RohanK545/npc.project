@@ -24,13 +24,7 @@ export default function AboutUs() {
 
   return (
     <>
-      <div>
-        <InnerBannerSection
-          imageSrc={navigationConfig["ministry"].imageSrc}
-          breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-          navItems={navigationConfig["ministry"].navItems}
-        />
-      </div>
+      <div></div>
 
       <div className="container-fluid maincontent mx-5 justify-content">
         <div className="row">

@@ -3,6 +3,7 @@
 // import "../../styles/SCSS.scss";
 // import "../../styles/CSS.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -15,7 +16,8 @@ export default function Footer() {
     //         <li>
     //           <i className="bi bi-chevron-right"></i> Archives
     //         </li>
-    //         <li>
+    //         <li>import Image from "next/image";
+
     //           <i className="bi bi-chevron-right"></i> Site Map
     //         </li>
     //         <li>
@@ -193,7 +195,7 @@ export default function Footer() {
                     </span>{" "}
                     Contact Us
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="material-symbols-outlined me-2">
                       <svg
                         width="12"
@@ -209,7 +211,7 @@ export default function Footer() {
                       </svg>
                     </span>{" "}
                     <a href="/admin">Admin Panel</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -229,9 +231,11 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
+                        <Image
                           src="/images/icons/twitter-icon.png"
                           alt="Twitter"
+                          width={32} // example width in pixels
+                          height={32} // example height in pixels
                         />
                       </a>
                     </li>
@@ -242,7 +246,10 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img src="/images/icons/youtube-icon.png" alt="YouTube" />
+                      <Image
+                        src="/images/icons/youtube-icon.png"
+                        alt="YouTube"
+                      />
                     </a>
 
                     <li>
@@ -252,7 +259,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
+                        <Image
                           src="/images/icons/facebook-icon.png"
                           alt="Facebook"
                         />
@@ -266,7 +273,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
+                        <Image
                           src="/images/icons/instagram-icon.png"
                           alt="Instagram"
                         />

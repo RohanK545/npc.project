@@ -68,11 +68,6 @@ export default function AboutUs() {
 
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["ministry"].imageSrc}
-        breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-        navItems={navigationConfig["ministry"].navItems}
-      />
       <section className="maincontent" role="main">
         <div className="container my-5">
           <p className="performance-title h3" role="heading" aria-level={2}>

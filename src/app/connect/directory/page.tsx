@@ -1,6 +1,3 @@
-import InnerBannerSection from "@/components/InnerBannerSection";
-import { navigationConfig } from "@/config/naviagtion";
-
 export default function AboutUs() {
   // const breadcrumbs = [
   //   { title: "Home", href: "/" },
@@ -25,13 +22,7 @@ export default function AboutUs() {
 
   return (
     <div style={{}}>
-      <div>
-        <InnerBannerSection
-          imageSrc={navigationConfig["ministry"].imageSrc}
-          breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-          navItems={navigationConfig["ministry"].navItems}
-        />
-      </div>
+      <div></div>
       <h1 className="mt-5">This is Ministry Page</h1>
       {/* <p>
         Welcome to the official website. The header should be visible above this

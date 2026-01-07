@@ -162,7 +162,7 @@
 // //           </li>
 // //         </ul>
 // //       </div>
-      
+
 // //       {/* Tab Content */}
 // //       <div className="tab-content mt-4">
 // //         {/* National Programs Table */}
@@ -178,7 +178,7 @@
 // //                     <th className ="width= 15%">Tariff</th>
 // //                     <th className ="width= 15%">Half & Full-Day Slot</th>
 // //                     <th className ="width= 15%">Half-Day Slot</th>
-                    
+
 // //                   </tr>
 // //                 </thead>
 // //                 <tbody>
@@ -196,14 +196,12 @@
 // //                 </tbody>
 // //                 <tfoot>
 // //                   <tr className="table-warning">
-                   
+
 // //                   </tr>
 // //                 </tfoot>
 // //               </table>
 // //             </div>
-            
-      
-           
+
 // //           </div>
 // //         </div>
 
@@ -219,7 +217,7 @@
 // //                     <th className="width=45%" >Facilities Provided</th>
 // //                     <th className="width=15%" >Tariff</th>
 // //                     <th className="width=15%" >Full & Half Day Slots Timing</th>
-                 
+
 // //                   </tr>
 // //                 </thead>
 // //                 <tbody>
@@ -236,15 +234,12 @@
 // //                 </tbody>
 // //                 <tfoot>
 // //                   <tr className="table-warning">
-                   
-                    
+
 // //                   </tr>
 // //                 </tfoot>
 // //               </table>
 // //             </div>
-            
-          
-           
+
 // //           </div>
 // //         </div>
 // //       </div>
@@ -264,10 +259,10 @@
 
 // //       <div className="container">
 // //         <h1 className="pghdng2 pghdng1 headingcontrast display-4 fw-bold mb-4 p-4">
-// //           Sang<span className="text-primary">am Hall</span> 
+// //           Sang<span className="text-primary">am Hall</span>
 // //         </h1>
 
-// //         <div 
+// //         <div
 // //           className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
 // //           style={{
 // //             backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
@@ -282,8 +277,8 @@
 // //           }}
 // //         >
 // //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-// //             <img 
-// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg" 
+// //             <img
+// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg"
 // //               className="imgclass"
 // //               style={{
 // //                 width: "100%",
@@ -297,8 +292,8 @@
 // //             />
 // //           </div>
 // //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-// //             <img 
-// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg" 
+// //             <img
+// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg"
 // //               className="imgclass"
 // //               style={{
 // //                 width: "100%",
@@ -312,8 +307,8 @@
 // //             />
 // //           </div>
 // //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-// //             <img 
-// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg" 
+// //             <img
+// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg"
 // //               className="imgclass"
 // //               style={{
 // //                 width: "100%",
@@ -326,7 +321,7 @@
 // //               alt="Sangam Hall Stage"
 // //             />
 // //           </div>
-          
+
 // //           <div className="col-12 mt-4">
 // //             <h2 className="text-left text-white fw-bold" style={{textShadow: "2px 2px 4px rgba(0,0,0,0.8)"}}>
 // //               NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources
@@ -337,22 +332,17 @@
 // //         <div className="row">
 // //           <div className="col-12">
 // //             <p className="p-4 mb-0 fs-5">Information for hall booking are as follows:</p>
-            
-           
+
 // //             <TabNavigation />
 
-
 // //              <div>
-     
 
-      
-      
 // //       <div className="container">
 // //         <h1 className="pghdng2 pghdng1 headingcontrast display-4 fw-bold mb-4 p-4">
-// //           Mant<span className="text-primary">han Hall</span> 
+// //           Mant<span className="text-primary">han Hall</span>
 // //         </h1>
 
-// //         <div 
+// //         <div
 // //           className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
 // //           style={{
 // //             backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
@@ -367,8 +357,8 @@
 // //           }}
 // //         >
 // //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-// //             <img 
-// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture5.jpg" 
+// //             <img
+// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture5.jpg"
 // //               className="imgclass"
 // //               style={{
 // //                 width: "100%",
@@ -382,8 +372,8 @@
 // //             />
 // //           </div>
 // //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-// //             <img 
-// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture8.jpg" 
+// //             <img
+// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture8.jpg"
 // //               className="imgclass"
 // //               style={{
 // //                 width: "100%",
@@ -397,8 +387,8 @@
 // //             />
 // //           </div>
 // //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-// //             <img 
-// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture7.jpg" 
+// //             <img
+// //               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture7.jpg"
 // //               className="imgclass"
 // //               style={{
 // //                 width: "100%",
@@ -411,7 +401,7 @@
 // //               alt="Sangam Hall Stage"
 // //             />
 // //           </div>
-          
+
 // //           <div className="col-12 mt-4">
 // //             <h2 className="text-left text-white fw-bold" style={{textShadow: "2px 2px 4px rgba(0,0,0,0.8)"}}>
 // //               NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources
@@ -420,16 +410,13 @@
 // //         </div>
 // //         </div>
 // //         </div>
-            
-           
-            
+
 // //           </div>
 // //         </div>
 // //       </div>
 // //     </div>
 // //   );
 // // }
-
 
 // "use client";
 // import { useState } from 'react';
@@ -587,7 +574,7 @@
 //           </li>
 //         </ul>
 //       </div>
-      
+
 //       {/* Tab Content */}
 //       <div className="tab-content mt-4">
 //         {/* National Programs Table */}
@@ -796,7 +783,7 @@
 //           </li>
 //         </ul>
 //       </div>
-      
+
 //       {/* Tab Content */}
 //       <div className="tab-content mt-4">
 //         {/* National Programs Table */}
@@ -876,9 +863,8 @@
 //       />
 
 //       <div className="container">
-        
 
-//         <div 
+//         <div
 //           className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
 //           style={{
 //             backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
@@ -893,8 +879,8 @@
 //           }}
 //         >
 //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//             <img 
-//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg" 
+//             <img
+//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg"
 //               className="imgclass"
 //               style={{
 //                 width: "100%",
@@ -908,8 +894,8 @@
 //             />
 //           </div>
 //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//             <img 
-//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg" 
+//             <img
+//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg"
 //               className="imgclass"
 //               style={{
 //                 width: "100%",
@@ -923,8 +909,8 @@
 //             />
 //           </div>
 //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//             <img 
-//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg" 
+//             <img
+//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg"
 //               className="imgclass"
 //               style={{
 //                 width: "100%",
@@ -937,7 +923,7 @@
 //               alt="Sangam Hall Stage"
 //             />
 //           </div>
-          
+
 //           <div className="col-12 mt-4">
 //             <h2 className="text-left text-white fw-bold" style={{textShadow: "2px 2px 4px rgba(0,0,0,0.8)"}}>
 //               NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources
@@ -948,14 +934,13 @@
 //         <div className="row">
 //           <div className="col-12">
 //             <p className="p-4 mb-0 fs-5">Information for hall booking are as follows:</p>
-            
+
 //             <TabNavigation />
 
 //             {/* Manthan Hall Section */}
 //             <div>
-             
 
-//               <div 
+//               <div
 //                 className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
 //                 style={{
 //                   backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
@@ -970,8 +955,8 @@
 //                 }}
 //               >
 //                 <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//                   <img 
-//                     src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture5.jpg" 
+//                   <img
+//                     src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture5.jpg"
 //                     className="imgclass"
 //                     style={{
 //                       width: "100%",
@@ -985,8 +970,8 @@
 //                   />
 //                 </div>
 //                 <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//                   <img 
-//                     src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture8.jpg" 
+//                   <img
+//                     src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture8.jpg"
 //                     className="imgclass"
 //                     style={{
 //                       width: "100%",
@@ -1000,8 +985,8 @@
 //                   />
 //                 </div>
 //                 <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//                   <img 
-//                     src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture7.jpg" 
+//                   <img
+//                     src="https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture7.jpg"
 //                     className="imgclass"
 //                     style={{
 //                       width: "100%",
@@ -1014,7 +999,7 @@
 //                     alt="Manthan Hall Stage"
 //                   />
 //                 </div>
-                
+
 //                 <div className="col-12 mt-4">
 //                   <h2 className="text-left text-white fw-bold" style={{textShadow: "2px 2px 4px rgba(0,0,0,0.8)"}}>
 //                     NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources
@@ -1025,7 +1010,6 @@
 //               <p className="p-4 mb-0 fs-5">Information for hall booking are as follows:</p>
 //               <ManthanTabNavigation />
 
-              
 //             </div>
 //           </div>
 //         </div>
@@ -1034,14 +1018,10 @@
 //   );
 // }
 
-
 // "use client";
 // import InnerBannerSection from "@/components/InnerBannerSection";
 // import { navigationConfig } from "@/config/naviagtion";
 // import { useState, useEffect } from "react";
-
-
-
 
 // export default function AboutUs() {
 //   const images = [
@@ -1050,7 +1030,7 @@
 //       alt: " Image having Minister of MEITY",
 //       title: "",
 //       date: "",
-     
+
 //       href: "/publicationMedia/photo-gallery/album-1-ifshdfhsdfhsdoh",
 //     },
 //     {
@@ -1058,7 +1038,7 @@
 //       alt: "",
 //       title: "",
 //       date: "",
-      
+
 //       href: "/publicationMedia/photo-gallery/album-2-ifshdfhsdfhsdoh",
 //     },
 //     {
@@ -1066,11 +1046,10 @@
 //       alt: "",
 //       title: "",
 //       date: "",
-      
+
 //       href: "/publicationMedia/photo-gallery/album-1-ifshdfhsdfhsdoh",
 //     },
-    
-   
+
 //   ];
 //   const [itemsPerPage, setItemsPerPage] = useState<number>(10);
 //   const [selectedCategory, setSelectedCategory] = useState<string>("");
@@ -1171,8 +1150,6 @@
 //         pageTilte="Photo Gallery"
 //       />
 
-   
-      
 //       <section className="mainContent">
 //         <div className="container mt-5">
 //           <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
@@ -1221,7 +1198,6 @@
 //                 </span>
 //               </div>
 //             </div>
-            
 
 //             <div className="col-md-12 col-lg-8 d-none d-md-block filterIconResponsivebox">
 //               <div className="d-flex align-items-center justify-content-end flex-wrap gap-2">
@@ -1338,7 +1314,6 @@
 //             </div>
 //           </form>
 //                 {/* Add this after the pagination section */}
-          
 
 //           <div className="row photos-row-gap">
 //             {currentItems.map((photo, idx) => (
@@ -1403,8 +1378,6 @@
 // </div>
 //              </div>
 
-          
-
 //           <div className="row align-items-center mt-5">
 //             <div className="col-md-4"></div>
 
@@ -1466,51 +1439,11 @@
 //               </nav>
 //             </div>
 //           </div>
-     
+
 //       </section>
 //     </div>
 //   );
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // NEW ONE
 
@@ -1636,7 +1569,7 @@
 //         {/* Title */}
 //         <div className="our-team-list-header d-flex align-items-center mb-2">
 //           <span className="material-symbols-outlined bhashini-skip-translation me-2">
-          
+
 //           </span>
 //           <p className="text-uppercase mb-0">{title}</p>
 //         </div>
@@ -1650,7 +1583,7 @@
 //             <div className="col-lg-4 col-sm-12">Full & Half Day Slots Timing</div>
 //           </div>
 //         </div>
-        
+
 //         {/* Table Rows */}
 //         <div role="rowgroup">
 //           {members.map((row, idx) => (
@@ -1667,7 +1600,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Facilities Provided */}
 //               <div className="col-lg-4 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1676,7 +1609,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Tariff */}
 //               <div className="col-lg-3 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1685,7 +1618,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Timing */}
 //               <div className="col-lg-4 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1745,7 +1678,7 @@
 //           </li>
 //         </ul>
 //       </div>
-      
+
 //       {/* Tab Content */}
 //       <div className="tab-content mt-4">
 //         {/* National Programs Table */}
@@ -1878,7 +1811,7 @@
 //         {/* Title */}
 //         <div className="our-team-list-header d-flex align-items-center mb-2">
 //           <span className="material-symbols-outlined bhashini-skip-translation me-2">
-         
+
 //           </span>
 //           <p className="text-uppercase mb-0">{title}</p>
 //         </div>
@@ -1893,7 +1826,7 @@
 //             <div className="col-lg-3 col-sm-12">E-mail</div>
 //           </div>
 //         </div>
-        
+
 //         {/* Table Rows */}
 //         <div role="rowgroup">
 //           {members.map((row, idx) => (
@@ -1910,7 +1843,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Name */}
 //               <div className="col-lg-2 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1919,7 +1852,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Designation */}
 //               <div className="col-lg-4 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1928,7 +1861,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Telephone */}
 //               <div className="col-lg-2 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1937,7 +1870,7 @@
 //                   </div>
 //                 </div>
 //               </div>
-              
+
 //               {/* Email */}
 //               <div className="col-lg-3 col-md-12">
 //                 <div className="d-flex gap-2 align-items-center">
@@ -1973,10 +1906,10 @@
 //       />
 
 //       <div className="container">
-//         <div 
+//         <div
 //           className="row py-5 px-3 px-md-5 imgopacity d-flex justify-content-between align-items-center"
 //           style={{
-          
+
 //             backgroundSize: "cover",
 //             backgroundPosition: "center",
 //             backgroundRepeat: "no-repeat",
@@ -1988,8 +1921,8 @@
 //           }}
 //         >
 //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//             <img 
-//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg" 
+//             <img
+//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg"
 //               className="imgclass"
 //               style={{
 //                 width: "100%",
@@ -2003,8 +1936,8 @@
 //             />
 //           </div>
 //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//             <img 
-//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg" 
+//             <img
+//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg"
 //               className="imgclass"
 //               style={{
 //                 width: "100%",
@@ -2018,8 +1951,8 @@
 //             />
 //           </div>
 //           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 imgdiv d-flex justify-content-center">
-//             <img 
-//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg" 
+//             <img
+//               src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg"
 //               className="imgclass"
 //               style={{
 //                 width: "100%",
@@ -2032,7 +1965,7 @@
 //               alt="Sangam Hall Stage"
 //             />
 //           </div>
-          
+
 //           <div className="py-4 mt-4">
 //             <h2 className="text-left text-black " >
 //               NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources
@@ -2050,7 +1983,7 @@
 //         {/* Contact Person Details Table */}
 //         <div className="row mt-5">
 //           <div className="col-12">
-          
+
 //           </div>
 //         </div>
 //       </div>
@@ -2058,20 +1991,84 @@
 //   );
 // }
 
-
-
-
-
-
-
-
 "use client";
 import { useState } from "react";
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
+import Image from "next/image";
 
 /* ===============================
-   TAB NAVIGATION COMPONENT
+   TYPES
+================================ */
+type Tariff = {
+  full: string | number;
+  half: string | number;
+};
+
+type TableLayoutProps = {
+  title: string;
+  facilities: string[];
+  tariff?: Tariff;
+};
+
+type HallSectionProps = {
+  hallName: string;
+  images: string[];
+  description: string;
+};
+
+/* ===============================
+   TABLE LAYOUT (MOVED OUTSIDE)
+================================ */
+const TableLayout = ({ title, facilities, tariff }: TableLayoutProps) => (
+  <div className="container my-4">
+    <div className="p-3 fw-bold" style={{ background: "#e6f7fb" }}>
+      {title}
+    </div>
+
+    <div
+      className="row text-center fw-bold text-white"
+      style={{ background: "#007bff" }}
+    >
+      <div className="col-1 py-2">S.No.</div>
+      <div className="col-5 py-2">Facilities Provided</div>
+      <div className="col-3 py-2">Tariff</div>
+      <div className="col-3 py-2">Timing</div>
+    </div>
+
+    <div className="row border">
+      <div className="col-6 p-0">
+        {facilities.map((item, idx) => (
+          <div key={idx} className="row border-bottom">
+            <div className="col-2 text-center py-2">{idx + 1}</div>
+            <div className="col-10 py-2">{item}</div>
+          </div>
+        ))}
+      </div>
+
+      {tariff && (
+        <div className="col-3 text-center d-flex flex-column justify-content-center border-start">
+          <h6>Full-Day Slot</h6>
+          <p>{tariff.full}</p>
+          <h6>Half-Day Slot</h6>
+          <p>{tariff.half}</p>
+        </div>
+      )}
+
+      <div className="col-3 text-center d-flex flex-column justify-content-center border-start">
+        <h6>Full-Day Slot</h6>
+        <p>09 AM – 05 PM</p>
+        <p>11 AM – 07 PM</p>
+        <h6>Half-Day Slots</h6>
+        <p>09 AM – 01 PM</p>
+        <p>02 PM – 06 PM</p>
+      </div>
+    </div>
+  </div>
+);
+
+/* ===============================
+   TAB NAVIGATION
 ================================ */
 function TabNavigation() {
   const [activeTab, setActiveTab] = useState("national");
@@ -2085,76 +2082,12 @@ function TabNavigation() {
     "Additional charges of Rs. 5000/- per hour for Video Conferencing",
     "Additional charges for catering services (paid directly to empanelled caterer)",
     "Additional charges of Rs. 2000/- per day for lawn usage",
-    
   ];
 
   const internationalFacilities = [...nationalFacilities];
 
-  const TableLayout = ({ title, facilities, tariff }) => (
-    <div className="container my-4">
-
-      {/* Title */}
-      <div
-        className="p-3 fw-bold"
-        style={{ background: "#e6f7fb" }}
-      >
-        {title}
-      </div>
-
-      {/* Header */}
-      <div
-        className="row text-center fw-bold text-white"
-        style={{ background: "#007bff" }}
-      >
-        <div className="col-1 py-2">S.No.</div>
-        <div className="col-5 py-2">Facilities Provided</div>
-        <div className="col-3 py-2">Tariff</div>
-        <div className="col-3 py-2">Timing</div>
-      </div>
-
-      {/* Body */}
-      <div className="row border">
-
-        {/* Facilities */}
-        <div className="col-6 p-0">
-          {facilities.map((item, idx) => (
-            <div key={idx} className="row border-bottom">
-              <div className="col-2 text-center py-2">
-                {idx + 1}
-              </div>
-              <div className="col-10 py-2">
-                {item}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Tariff */}
-        <div className="col-3 text-center d-flex flex-column justify-content-center border-start">
-          <h6>Full-Day Slot</h6>
-          <p>{tariff.full}</p>
-
-          <h6>Half-Day Slot</h6>
-          <p>{tariff.half}</p>
-        </div>
-
-        {/* Timing */}
-        <div className="col-3 text-center d-flex flex-column justify-content-center border-start">
-          <h6>Full-Day Slot</h6>
-          <p>09 AM – 05 PM</p>
-          <p>11 AM – 07 PM</p>
-
-          <h6>Half-Day Slots</h6>
-          <p>09 AM – 01 PM</p>
-          <p>02 PM – 06 PM</p>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <>
-      {/* Tabs */}
       <ul className="nav nav-pills mb-4">
         <li className="nav-item">
           <button
@@ -2167,7 +2100,9 @@ function TabNavigation() {
 
         <li className="nav-item">
           <button
-            className={`nav-link ${activeTab === "international" ? "active" : ""}`}
+            className={`nav-link ${
+              activeTab === "international" ? "active" : ""
+            }`}
             onClick={() => setActiveTab("international")}
           >
             International Programs
@@ -2179,10 +2114,7 @@ function TabNavigation() {
         <TableLayout
           title="For National Programs"
           facilities={nationalFacilities}
-          tariff={{
-            full: "₹20,000 + Taxes",
-            half: "₹10,000 + Taxes",
-          }}
+          tariff={{ full: "₹20,000 + Taxes", half: "₹10,000 + Taxes" }}
         />
       )}
 
@@ -2190,10 +2122,7 @@ function TabNavigation() {
         <TableLayout
           title="For International Programs"
           facilities={internationalFacilities}
-          tariff={{
-            full: "$350 + Taxes",
-            half: "$175 + Taxes",
-          }}
+          tariff={{ full: "$350 + Taxes", half: "$175 + Taxes" }}
         />
       )}
     </>
@@ -2203,15 +2132,15 @@ function TabNavigation() {
 /* ===============================
    HALL SECTION
 ================================ */
-const HallSection = ({ hallName, images, description }) => (
+const HallSection = ({ hallName, images, description }: HallSectionProps) => (
   <div className="row py-5 px-3 mb-5 bg-light rounded">
-
-    {/* Images */}
     {images.map((img, index) => (
       <div key={index} className="col-md-4 mb-3">
-        <img
+        <Image
           src={img}
           alt={hallName}
+          width={350} // set width (example)
+          height={250} // set height
           style={{
             width: "100%",
             height: "250px",
@@ -2223,18 +2152,12 @@ const HallSection = ({ hallName, images, description }) => (
       </div>
     ))}
 
-    {/* Description */}
     <div className="col-12 mt-3">
-      <p className="text-center text-muted px-4">
-        {description}
-      </p>
+      <p className="text-center text-muted px-4">{description}</p>
     </div>
 
-    {/* Title + Table */}
     <div className="col-12 mt-3">
-      <h2 className="text-center mb-4">
-        {hallName}
-      </h2>
+      <h2 className="text-center mb-4">{hallName}</h2>
       <TabNavigation />
     </div>
   </div>
@@ -2253,17 +2176,7 @@ export default function AboutUs() {
         "https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg",
       ],
       description:
-        "NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources.",
-    },
-    {
-      hallName: "Manthan Conference Hall",
-      images: [
-        "https://npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture5.jpg",
-        "https://npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture8.jpg",
-        "https://npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture7.jpg",
-      ],
-      description:
-        "Modern conference hall equipped with advanced audio-visual facilities suitable for national and international programs.",
+        "NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc.",
     },
   ];
 

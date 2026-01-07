@@ -1,32 +1,6 @@
-import InnerBannerSection from "@/components/InnerBannerSection";
-import { navigationConfig } from "@/config/naviagtion";
-
 export default function AboutUs() {
-  const breadcrumbs = [
-    { title: "Home", href: "/" },
-    { title: "Offerings" },
-    { pagetitle: "Schemes And Services" },
-  ];
-
-  const navItems = [
-    { label: "Schemes and Services", href: "/offerings/", active: false },
-    { label: "Tenders", href: "/offerings/tenders", active: false },
-    { label: "For Investors", href: "/offerings/investors", active: false },
-    {
-      label: "Engagement and Recognition",
-      href: "/offerings/engagement",
-      active: false,
-    },
-    { label: "Initiative", href: "/offerings/initiative", active: false },
-  ];
-
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["offerings"].imageSrc}
-        breadcrumbs={navigationConfig["offerings"].breadcrumbs}
-        navItems={navigationConfig["offerings"].navItems}
-      />
       <h1 className="mt-5">This is Ministry Page</h1>
       {/* <p>
         Welcome to the official website. The header should be visible above this

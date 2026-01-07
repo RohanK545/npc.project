@@ -1,35 +1,6 @@
-import InnerBannerSection from "@/components/InnerBannerSection";
-import { navigationConfig } from "@/config/naviagtion";
-
 export default function AboutUs() {
-  const breadcrumbs = [
-    { title: "Home", href: "/" },
-    { title: "Connect" },
-    { pagetitle: "Grievance" },
-  ];
-
-  const navItems = [
-    { label: "Contact Us", href: "/connect/", active: false },
-    { label: "Directory", href: "/connect/directory", active: false },
-    { label: "RTI", href: "/connect/rti", active: false },
-    { label: "Grievance", href: "/connect/grievance", active: false },
-    { label: "Redressal", href: "/connect/redressal", active: false },
-    { label: "Citizen Engagement", href: "/connect/engagement", active: false },
-    {
-      label: "Parliament Questions",
-      href: "/connect/parliament",
-      active: false,
-    },
-    { label: "Visitors Pass", href: "/connect/visitor-pass", active: false },
-  ];
-
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["ministry"].imageSrc}
-        breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-        navItems={navigationConfig["ministry"].navItems}
-      />
       <h1 className="mt-5">This is Ministry Page</h1>
       {/* <p>
         Welcome to the official website. The header should be visible above this

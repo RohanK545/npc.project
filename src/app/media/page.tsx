@@ -1,27 +1,8 @@
-import InnerBannerSection from "@/components/InnerBannerSection";
-import { navigationConfig } from "@/config/naviagtion";
+import Image from "next/image";
 
 export default function AboutUs() {
-  const breadcrumbs = [
-    { title: "Home", href: "/" },
-    { title: "Media" },
-    { pagetitle: "Photos" },
-  ];
-
-  const navItems = [
-    { label: "Photos", href: "/media/", active: false },
-    { label: "Videos", href: "/media/videos", active: false },
-    { label: "Brochures", href: "/media/brochures", active: false },
-    { label: "Presentations", href: "/media/presentations", active: false },
-  ];
-
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["media"].imageSrc}
-        breadcrumbs={navigationConfig["media"].breadcrumbs}
-        navItems={navigationConfig["media"].navItems}
-      />
       <section className="mainContent">
         <div className="container mt-5">
           <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
@@ -121,13 +102,15 @@ export default function AboutUs() {
               <div className="col-sm-12 col-md-6 col-lg-4" key={idx}>
                 <div className="photos-card h-100">
                   <div className="img-fluid position-relative">
-                    <img
+                    <Image
                       src={photo.src}
-                      className="photos-img img-fluid"
-                      alt={photo.alt}
+                      alt={photo.alt || "Gallery photo"}
                       width={100}
                       height={100}
+                      sizes="100px"
+                      className="photos-img"
                     />
+
                     <button
                       className="position-absolute photos-btn pointer"
                       aria-label={`View More of ${photo.title}`}

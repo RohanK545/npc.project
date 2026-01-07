@@ -42,13 +42,7 @@ export default async function AboutUs({
 
   return (
     <>
-      <div style={{}}>
-        <InnerBannerSection
-          imageSrc={navigationConfig["ministry"].imageSrc}
-          breadcrumbs={navigationConfig["ministry"].breadcrumbs}
-          navItems={navigationConfig["ministry"].navItems}
-        />
-      </div>
+      <div style={{}}></div>
 
       <section className="maincontent">
         <div className="container">

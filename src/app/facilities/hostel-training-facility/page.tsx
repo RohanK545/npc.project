@@ -1,8 +1,8 @@
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
+import Image from "next/image";
 
 export default function AboutUs() {
-
   const images = [
     {
       src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_6.jpg",
@@ -41,7 +41,7 @@ export default function AboutUs() {
 
       <div className="container">
         <div
-          className="row py-5 px-3 px-md-5 imgopacity"
+          className="row py-5 px-3 px-md-5 Imageopacity"
           style={{
             minHeight: "70vh",
             marginBottom: "2rem",
@@ -53,18 +53,20 @@ export default function AboutUs() {
               key={index}
               className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 d-flex flex-column align-items-center"
             >
-              <img
+              <Image
                 src={item.src}
-                className="imgclass"
+                alt={item.title}
+                width={350} // fixed width in pixels
+                height={250} // fixed height in pixels
+                className="Imageclass"
                 style={{
-                  width: "100%",
+                  width: "100%", // this will make it responsive, can also use layout="responsive" instead
                   maxWidth: "350px",
                   height: "250px",
                   objectFit: "cover",
                   borderRadius: "8px",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
                 }}
-                alt={item.title}
               />
 
               {/* Image Title */}
@@ -86,14 +88,27 @@ export default function AboutUs() {
           <div className="">
             <h1 className="py-4"></h1>
             <ul>
-              <p>The executive hostel facilities include 27 single and 4 double air-conditioned rooms furnished with TV and provisioned with supply of hot and cold water and attached with a modern Dining & Kitchen Hall facility with seating capacity of 30 the executive hostel provides serene and green ambience for seminars, trainings and workshops.</p>
-              <p>The training facilities include air-conditioned conference and lecture rooms with audio-visual facilities. An air conditioned auditorium with a seating capacity of 80 is available.</p>
+              <p>
+                The executive hostel facilities include 27 single and 4 double
+                air-conditioned rooms furnished with TV and provisioned with
+                supply of hot and cold water and attached with a modern Dining &
+                Kitchen Hall facility with seating capacity of 30 the executive
+                hostel provides serene and green ambience for seminars,
+                trainings and workshops.
+              </p>
+              <p>
+                The training facilities include air-conditioned conference and
+                lecture rooms with audio-visual facilities. An air conditioned
+                auditorium with a seating capacity of 80 is available.
+              </p>
             </ul>
-            <h3>Institutions and organizations can avail these facilities at the following rates:</h3>
+            <h3>
+              Institutions and organizations can avail these facilities at the
+              following rates:
+            </h3>
 
             {/* ===== Charges Footer Section ===== */}
             <div className="row mt-5 mb-4">
-
               {/* Executive Hostel Charges */}
               <div className="col-12 col-md-6 mb-4">
                 <div
@@ -133,14 +148,8 @@ export default function AboutUs() {
                   </ul>
                 </div>
               </div>
-
             </div>
-
           </div>
-
-
-
-
         </div>
       </div>
     </div>

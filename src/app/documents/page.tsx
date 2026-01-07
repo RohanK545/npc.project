@@ -1,38 +1,8 @@
 "use client";
 
-import InnerBannerSection from "@/components/InnerBannerSection";
-import { navigationConfig } from "@/config/naviagtion";
 import { useState } from "react";
 
 export default function AboutUs() {
-  const breadcrumbs = [
-    { title: "Home", href: "/" },
-    { title: "Documents" },
-    { pagetitle: "Reports" },
-  ];
-
-  const navItems = [
-    { label: "Reports", href: "/documents/", active: false },
-    {
-      label: "Acts And Policies",
-      href: "/documents/acts-policies",
-      active: false,
-    },
-    {
-      label: "Orders And Notices",
-      href: "/documents/orders-notices",
-      active: false,
-    },
-    { label: "Publications", href: "/documents/publications", active: false },
-    { label: "Press Release", href: "/documents/press-release", active: false },
-    {
-      label: "Gazettes Notifications",
-      href: "/documents/gazettes",
-      active: false,
-    },
-    { label: "Guidelines", href: "/documents/guidelines", active: false },
-  ];
-
   // Table data array
   const tableData = [
     {
@@ -142,7 +112,8 @@ export default function AboutUs() {
     },
     {
       id: 12,
-      title: "Task Force Reports - Study on Semiconductor Design, Embedded Software and Services Industry",
+      title:
+        "Task Force Reports - Study on Semiconductor Design, Embedded Software and Services Industry",
       icon: "draft",
       year: "2011",
       type: "pdf",
@@ -158,14 +129,16 @@ export default function AboutUs() {
   // Calculate paginated data
   const totalItems = tableData.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  
+
   // Get current page data
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = tableData.slice(startIndex, endIndex);
 
   // Handle items per page change
-  const handleItemsPerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleItemsPerPageChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const value = parseInt(e.target.value);
     setItemsPerPage(value);
     setCurrentPage(1); // Reset to first page when changing items per page
@@ -180,7 +153,7 @@ export default function AboutUs() {
   const getPageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 3; // Show only 3 pages as in your example
-    
+
     if (totalPages <= maxVisiblePages) {
       // Show all pages if total pages is less than or equal to maxVisiblePages
       for (let i = 1; i <= totalPages; i++) {
@@ -189,44 +162,44 @@ export default function AboutUs() {
     } else {
       // Always show first page
       pages.push(1);
-      
+
       // Show pages around current page
       let start = Math.max(2, currentPage - 1);
       let end = Math.min(totalPages - 1, currentPage + 1);
-      
+
       // Adjust if at the beginning
       if (currentPage <= 2) {
         start = 2;
         end = Math.min(totalPages - 1, 3);
       }
-      
+
       // Adjust if at the end
       if (currentPage >= totalPages - 1) {
         start = Math.max(2, totalPages - 2);
         end = totalPages - 1;
       }
-      
+
       // Add ellipsis if needed
       if (start > 2) {
-        pages.push('...');
+        pages.push("...");
       }
-      
+
       // Add middle pages
       for (let i = start; i <= end; i++) {
         pages.push(i);
       }
-      
+
       // Add ellipsis if needed
       if (end < totalPages - 1) {
-        pages.push('...');
+        pages.push("...");
       }
-      
+
       // Always show last page
       if (totalPages > 1) {
         pages.push(totalPages);
       }
     }
-    
+
     return pages;
   };
 
@@ -328,8 +301,8 @@ export default function AboutUs() {
                   href={item.href}
                   target={isArchive ? "_self" : "_blank"}
                   rel={!isArchive ? "noopener noreferrer" : undefined}
-                  title={`${isArchive ? 'View' : 'View'} ${item.title}`}
-                  aria-label={`${isArchive ? 'View' : 'View'} ${item.title}`}
+                  title={`${isArchive ? "View" : "View"} ${item.title}`}
+                  aria-label={`${isArchive ? "View" : "View"} ${item.title}`}
                 >
                   <span
                     aria-hidden="true"
@@ -349,11 +322,6 @@ export default function AboutUs() {
 
   return (
     <div>
-      <InnerBannerSection
-        imageSrc={navigationConfig["documents"].imageSrc}
-        breadcrumbs={navigationConfig["documents"].breadcrumbs}
-        navItems={navigationConfig["documents"].navItems}
-      />
       <section className="maincontent" role="main">
         <div className="container mt-5">
           {/* FILTER FORM */}
@@ -438,14 +406,18 @@ export default function AboutUs() {
           {/* Results count */}
           <div className="mb-3">
             <small className="text-muted">
-              Showing {startIndex + 1} to {Math.min(endIndex, totalItems)} of {totalItems} entries
+              Showing {startIndex + 1} to {Math.min(endIndex, totalItems)} of{" "}
+              {totalItems} entries
             </small>
           </div>
 
           {/* TABLE */}
           <div role="table" aria-label="Reports data">
             {/* Table Header */}
-            <div role="rowgroup" className="row row-gap-2 align-items-center tableheader ms-0 me-0">
+            <div
+              role="rowgroup"
+              className="row row-gap-2 align-items-center tableheader ms-0 me-0"
+            >
               <div className="row align-items-center" role="row">
                 <div
                   className="col-sm-12 col-md-12 col-lg-7"
@@ -478,7 +450,6 @@ export default function AboutUs() {
               <div className="col-md-4 d-flex justify-content-center mx-auto">
                 <nav aria-label="Page navigation">
                   <ul className="pagination pointer mb-0">
-
                     {/* Previous Button */}
                     <li>
                       <button
@@ -501,33 +472,40 @@ export default function AboutUs() {
 
                     {/* Page Numbers */}
                     {getPageNumbers().map((pageNum, index) => {
-                      if (pageNum === '...') {
+                      if (pageNum === "...") {
                         return (
-                          <li key={`ellipsis-${index}`} className="page-item disabled">
+                          <li
+                            key={`ellipsis-${index}`}
+                            className="page-item disabled"
+                          >
                             <span className="page-link">...</span>
                           </li>
                         );
                       }
-                      
+
                       const page = pageNum as number;
                       const isActive = currentPage === page;
-                      
+
                       return (
                         <li
                           key={page}
                           className="page-item"
                           tabIndex={0}
                           role="button"
-                          aria-label={`Go to page ${page}${isActive ? ' (Current Page)' : ''}`}
+                          aria-label={`Go to page ${page}${
+                            isActive ? " (Current Page)" : ""
+                          }`}
                           onClick={() => handlePageChange(page)}
                           onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
+                            if (e.key === "Enter" || e.key === " ") {
                               handlePageChange(page);
                             }
                           }}
                         >
-                          <span 
-                            className={`page-link pointer hover ${isActive ? 'active' : ''}`}
+                          <span
+                            className={`page-link pointer hover ${
+                              isActive ? "active" : ""
+                            }`}
                           >
                             {page}
                           </span>

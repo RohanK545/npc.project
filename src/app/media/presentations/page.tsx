@@ -17,11 +17,6 @@ export default function AboutUs() {
 
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["media"].imageSrc}
-        breadcrumbs={navigationConfig["media"].breadcrumbs}
-        navItems={navigationConfig["media"].navItems}
-      />
       <h1 className="mt-5">This is Ministry Page</h1>
       {/* <p>
         Welcome to the official website. The header should be visible above this

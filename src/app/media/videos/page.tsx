@@ -17,11 +17,6 @@ export default function AboutUs() {
 
   return (
     <div style={{}}>
-      <InnerBannerSection
-        imageSrc={navigationConfig["media"].imageSrc}
-        breadcrumbs={navigationConfig["media"].breadcrumbs}
-        navItems={navigationConfig["media"].navItems}
-      />
       <section className="maincontent" role="main">
         <div className="container mt-5">
           <form className="form-group row align-items-start row-gap-2 filterbox filterBoxResponsive">
