@@ -32,8 +32,6 @@ export default async function Page({
 //   slugParts.pop(); // remove last part (random code)
 //   const cleanSlug = slugParts.join("-"); // "blood-donation-camp"
 
-//   console.log("Clean slug:", cleanSlug);
-
 //   // Now use cleanSlug to get album data
 //   const pageData = albumPhotos[cleanSlug as keyof typeof albumPhotos];
 

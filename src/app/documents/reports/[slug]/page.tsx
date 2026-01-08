@@ -11,15 +11,9 @@ export default async function AboutUs({
   const resolvedSearchParams = await searchParams;
   const decodedSlug = decodeURIComponent(resolvedParams.slug);
 
-  console.log("DECODED SLUG:", decodedSlug);
-  console.log("SEARCH PARAMS:", resolvedSearchParams);
-
   // Use pageTitle from searchParams as the key
   const key = resolvedSearchParams.pageTitle as string;
   const pageData = documentDetailsPage[key as keyof typeof documentDetailsPage];
-
-  console.log("KEY:", key);
-  console.log("PAGE DATA:", pageData);
 
   if (!pageData) {
     return (

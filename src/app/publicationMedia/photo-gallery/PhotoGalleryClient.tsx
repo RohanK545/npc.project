@@ -3,8 +3,23 @@
 import { useState } from "react";
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
+import Image from "next/image";
+interface GalleryImage {
+  src: string;
+}
 
-export default function PhotoGalleryClient({ pageData }: any) {
+interface GalleryPageData {
+  title: string;
+  date: string;
+  images: GalleryImage[];
+}
+
+interface PhotoGalleryClientProps {
+  pageData: GalleryPageData;
+}
+export default function PhotoGalleryClient({
+  pageData,
+}: PhotoGalleryClientProps) {
   const [showModal, setShowModal] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -26,8 +41,6 @@ export default function PhotoGalleryClient({ pageData }: any) {
     if (activeIndex === pageData.images.length - 1) return;
     setActiveIndex(activeIndex + 1);
   };
-  console.log(pageData.images);
-
   return (
     <>
       <InnerBannerSection
@@ -46,10 +59,10 @@ export default function PhotoGalleryClient({ pageData }: any) {
             <p className="h4">{pageData.title}</p>
 
             {/* IMAGES GRID */}
-            {pageData.images.map((img: any, index: number) => (
+            {pageData.images.map((img, index) => (
               <div key={index} className="col-md-4 photos-card">
                 <div className="gallerybox mb-4 position-relative">
-                  <img
+                  <Image
                     src={img.src}
                     className="img-fluid w-100 mb-3 pointer"
                     alt={`${pageData.title} image ${index + 1}`}

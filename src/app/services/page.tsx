@@ -4,6 +4,17 @@ import { navigationConfig } from "@/config/naviagtion";
 import { useState, useMemo } from "react";
 import React, { useEffect } from "react";
 import axios from "axios";
+interface Members {
+  srNo: number;
+  projectTitle: string;
+  typeOfStudy: string;
+  clientName: string;
+  clientType: string;
+  yearOfStudy: string;
+  nameOfGroup: string;
+  area: string;
+  Scope: string;
+}
 
 interface Row {
   srNo: number;
@@ -19,8 +30,85 @@ interface Row {
 
 interface Table {
   title: string;
-  row: Row[];
+  members: Members[];
 }
+interface InfoTableProps {
+  members: Members[];
+  search: string;
+  highlightText: (text: string, search: string) => React.ReactNode;
+}
+
+const InfoTable = ({ members, search, highlightText }: InfoTableProps) => {
+  return (
+    <div role="table" className="our-team-list-container mx-auto my-4">
+      {/* Hardcoded Title */}
+      <div className="our-team-list-header d-flex align-items-center mt-0 mb-2">
+        <p className="text-uppercase mb-0">CONSULTANCY PROJECTS</p>
+      </div>
+
+      {/* Header Row */}
+      <div role="rowgroup">
+        <div className="row row-gap-4 me-0 ms-0 our-team-list-subheader fw-bold">
+          <div className="col-lg-1 col-sm-12">Sr.No.</div>
+          <div className="col-lg-2 col-sm-12 ps-1">Project Title</div>
+          <div className="col-lg-1 col-sm-12 ps-1">Type of Study</div>
+          <div className="col-lg-2 col-sm-12 ps-1">Client Name</div>
+          <div className="col-lg-1 col-sm-12 ps-1">Client Type</div>
+          <div className="col-lg-1 col-sm-12 ps-1">Year of Study</div>
+          <div className="col-lg-1 col-sm-12">Name of Group/RD</div>
+          <div className="col-lg-2 col-sm-12">Area</div>
+          <div className="col-lg-1 col-sm-12">Scope of Study</div>
+        </div>
+      </div>
+
+      {/* Members */}
+      <div role="rowgroup">
+        {members.length === 0 ? (
+          <div className="text-center py-3">No data found</div>
+        ) : (
+          members.map((m, idx) => (
+            <div
+              key={idx}
+              role="row"
+              className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
+            >
+              <div className="col-lg-1 col-md-12">
+                <p className="mb-0">{m.srNo}</p>
+              </div>
+              <div className="col-lg-2 col-md-12">
+                <p className="name mb-0">
+                  {highlightText(m.projectTitle, search)}
+                </p>
+              </div>
+              <div className="col-lg-1 col-md-12">
+                <p className="mb-0">{highlightText(m.typeOfStudy, search)}</p>
+              </div>
+              <div className="col-lg-2 col-md-12">
+                <p className="mb-0">{highlightText(m.clientName, search)}</p>
+              </div>
+              <div className="col-lg-1 col-md-12">
+                <p className="mb-0">{highlightText(m.clientType, search)}</p>
+              </div>
+              <div className="col-lg-1 col-md-12">
+                <p className="mb-0">{highlightText(m.yearOfStudy, search)}</p>
+              </div>
+              <div className="col-lg-1 col-md-12">
+                <p className="mb-0">{highlightText(m.nameOfGroup, search)}</p>
+              </div>
+              <div className="col-lg-2 col-md-12">
+                <p className="mb-0">{highlightText(m.area, search)}</p>
+              </div>
+              <div className="col-lg-1 col-md-12">
+                <p className="mb-0">{highlightText(m.Scope, search)}</p>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
 export default function AboutUs() {
   const [tableData, setTableData] = useState<Table[]>([]);
 
@@ -28,32 +116,44 @@ export default function AboutUs() {
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
-  const handleGetConsultancyProjects = async () => {
-    try {
-      const response = await axios.get("/api/Service/getConsultancyProjects", {
-        params: {
-          search,
-          page,
-          pageSize: perPage,
-        },
-      });
-      console.log("This is response:", response.data.data);
-      setTableData(response.data.data);
-      setTotalCount(response.data.totalCount);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   useEffect(() => {
-    handleGetConsultancyProjects();
+    let isMounted = true;
+
+    const fetchConsultancyProjects = async () => {
+      try {
+        const response = await axios.get(
+          "/api/Service/getConsultancyProjects",
+          {
+            params: {
+              search,
+              page,
+              pageSize: perPage,
+            },
+          }
+        );
+
+        if (!isMounted) return;
+
+        setTableData(response.data.data);
+        setTotalCount(response.data.totalCount);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchConsultancyProjects();
+
+    return () => {
+      isMounted = false;
+    };
   }, [search, page, perPage]);
 
-  const handleSearchChange = (e: any) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSearch(e.target.value);
     setPage(1); // reset page
   };
 
-  const handlePerPageChange = (e: any) => {
+  const handlePerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPerPage(Number(e.target.value));
     setPage(1);
   };
@@ -79,78 +179,6 @@ export default function AboutUs() {
   const nextPage = () => page < totalPages && setPage(page + 1);
   const prevPage = () => page > 1 && setPage(page - 1);
   const totalPages = Math.ceil(totalCount / perPage);
-  // const allRows = tableData.flatMap((tbl) => tbl.row);
-  // console.log(allRows);
-  const InfoTable = ({ members }: { members: any[] }) => {
-    return (
-      <div role="table" className="our-team-list-container mx-auto my-4">
-        {/* Hardcoded Title */}
-        <div className="our-team-list-header d-flex align-items-center mt-0 mb-2">
-          <p className="text-uppercase mb-0">CONSULTANCY PROJECTS</p>
-        </div>
-
-        {/* Header Row */}
-        <div role="rowgroup">
-          <div className="row row-gap-4 me-0 ms-0 our-team-list-subheader fw-bold">
-            <div className="col-lg-1 col-sm-12">Sr.No.</div>
-            <div className="col-lg-2 col-sm-12 ps-1">Project Title</div>
-            <div className="col-lg-1 col-sm-12 ps-1">Type of Study</div>
-            <div className="col-lg-2 col-sm-12 ps-1">Client Name</div>
-            <div className="col-lg-1 col-sm-12 ps-1">Client Type</div>
-            <div className="col-lg-1 col-sm-12 ps-1">Year of Study</div>
-            <div className="col-lg-1 col-sm-12">Name of Group/RD</div>
-            <div className="col-lg-2 col-sm-12">Area</div>
-            <div className="col-lg-1 col-sm-12">Scope of Study</div>
-          </div>
-        </div>
-
-        {/* Members */}
-        <div role="rowgroup">
-          {members.length === 0 ? (
-            <div className="text-center py-3">No data found</div>
-          ) : (
-            members.map((m, idx) => (
-              <div
-                key={idx}
-                role="row"
-                className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
-              >
-                <div className="col-lg-1 col-md-12">
-                  <p className="mb-0">{m.srNo}</p>
-                </div>
-                <div className="col-lg-2 col-md-12">
-                  <p className="name mb-0">
-                    {highlightText(m.projectTitle, search)}
-                  </p>
-                </div>
-                <div className="col-lg-1 col-md-12">
-                  <p className="mb-0">{highlightText(m.typeOfStudy, search)}</p>
-                </div>
-                <div className="col-lg-2 col-md-12">
-                  <p className="mb-0">{highlightText(m.clientName, search)}</p>
-                </div>
-                <div className="col-lg-1 col-md-12">
-                  <p className="mb-0">{highlightText(m.clientType, search)}</p>
-                </div>
-                <div className="col-lg-1 col-md-12">
-                  <p className="mb-0">{highlightText(m.yearOfStudy, search)}</p>
-                </div>
-                <div className="col-lg-1 col-md-12">
-                  <p className="mb-0">{highlightText(m.nameOfGroup, search)}</p>
-                </div>
-                <div className="col-lg-2 col-md-12">
-                  <p className="mb-0">{highlightText(m.area, search)}</p>
-                </div>
-                <div className="col-lg-1 col-md-12">
-                  <p className="mb-0">{highlightText(m.Scope, search)}</p>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div style={{}}>
@@ -263,7 +291,7 @@ export default function AboutUs() {
                   className="form-control"
                   placeholder="Search..."
                   value={search}
-                  onChange={handleSearchChange}
+                  onChange={() => handleSearchChange}
                 />
                 <span className="input-group-text filterIconResponsive d-block d-md-none">
                   <span
@@ -318,7 +346,15 @@ export default function AboutUs() {
           </form>
         </div>
 
-        <InfoTable members={tableData} />
+        {tableData.map((tbl, idx) => (
+          <InfoTable
+            key={idx}
+            members={tbl.members}
+            search={search}
+            highlightText={highlightText}
+          />
+        ))}
+
         <div className="row align-items-center mt-5">
           <div className="col-md-4"></div>
 

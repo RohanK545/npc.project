@@ -1,4 +1,16 @@
-export const albumPhotos = {
+interface AlbumImage {
+  src: string;
+}
+
+interface Album {
+  title: string;
+  date: string;
+  images: AlbumImage[];
+}
+
+type AlbumPhotos = Record<string, Album>;
+
+export const albumPhotos: AlbumPhotos = {
   "album-1": {
     title: "Special Campaign",
     date: "16.03.2024",

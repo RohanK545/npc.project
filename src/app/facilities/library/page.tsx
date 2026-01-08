@@ -8,7 +8,7 @@ export default function AboutUs() {
         imageSrc={navigationConfig["facilities"].imageSrc}
         breadcrumbs={navigationConfig["facilities"].breadcrumbs}
         navItems={navigationConfig["facilities"].navItems}
-        pageTilte="Conference Hall"
+        pageTilte="Library  "
       />
 
       <div className="container">
@@ -26,13 +26,15 @@ export default function AboutUs() {
         >
           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 Imagediv d-flex justify-content-center">
             <Image
-              src="https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg"
+              src="/images/facilities/LibraryImg1.png"
               className="Imageclass"
+              width={350}
+              height={250}
               style={{
                 width: "100%",
                 maxWidth: "350px",
                 height: "250px",
-                objectFit: "cover",
+                // objectFit: "cover",
                 borderRadius: "8px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
               }}
@@ -41,13 +43,15 @@ export default function AboutUs() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 Imagediv d-flex justify-content-center">
             <Image
-              src="https://www.npcindia.gov.in/NPC/Images/Facilities/Library/Library%203.jpeg"
+              src="/images/facilities/LibraryImg2.png"
               className="Imageclass"
+              width={350}
+              height={250}
               style={{
                 width: "100%",
                 maxWidth: "350px",
                 height: "250px",
-                objectFit: "cover",
+                // objectFit: "cover",
                 borderRadius: "8px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
               }}
@@ -56,13 +60,15 @@ export default function AboutUs() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 Imagediv d-flex justify-content-center">
             <Image
-              src="https://www.npcindia.gov.in/NPC/Images/Facilities/Library/Library%204.jpeg"
+              src="/images/facilities/LibraryImg3.png"
               className="Imageclass"
+              width={350}
+              height={250}
               style={{
                 width: "100%",
                 maxWidth: "350px",
                 height: "250px",
-                objectFit: "cover",
+                // objectFit: "cover",
                 borderRadius: "8px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
               }}
@@ -71,13 +77,15 @@ export default function AboutUs() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 Imagediv d-flex justify-content-center">
             <Image
-              src="https://www.npcindia.gov.in/NPC/Images/Facilities/Library/Library%205.jpeg"
+              src="/images/facilities/LibraryImg4.png"
               className="Imageclass"
+              width={350}
+              height={250}
               style={{
                 width: "100%",
                 maxWidth: "350px",
                 height: "250px",
-                objectFit: "cover",
+                // objectFit: "cover",
                 borderRadius: "8px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
               }}
@@ -86,13 +94,15 @@ export default function AboutUs() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 Imagediv d-flex justify-content-center">
             <Image
-              src="https://www.npcindia.gov.in/NPC/Images/Facilities/Library/Library%206.jpeg"
+              src="/images/facilities/LibraryImg5.png"
               className="Imageclass"
+              width={350}
+              height={250}
               style={{
                 width: "100%",
                 maxWidth: "350px",
                 height: "250px",
-                objectFit: "cover",
+                // objectFit: "cover",
                 borderRadius: "8px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
               }}
@@ -101,13 +111,15 @@ export default function AboutUs() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-4 Imagediv d-flex justify-content-center">
             <Image
-              src="https://www.npcindia.gov.in/NPC/Images/Facilities/Library/Library%201.JPG"
-              className="Imageclass"
+              src="/images/facilities/LibraryImg6.png"
+              // className="Imageclass"
+              width={350}
+              height={250}
               style={{
                 width: "100%",
                 maxWidth: "350px",
                 height: "250px",
-                objectFit: "cover",
+                // objectFit: "cover",
                 borderRadius: "8px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
               }}

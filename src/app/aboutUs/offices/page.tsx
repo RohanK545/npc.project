@@ -21,33 +21,31 @@ interface Table {
 export default function Offices() {
   const [HeadQuartertables, setHeadQuarterTables] = useState<Table[]>([]);
   const [Officetables, setOfficeTables] = useState<Table[]>([]);
-
-  const handleGetHeadquarters = async () => {
-    try {
-      const response = await axios.get("/api/aboutUs/getHeadquarters");
-      console.log("This is response:", response.data);
-      setHeadQuarterTables(response.data);
-    } catch (error) {
-      console.error(error);
-      console.log(error, "error is this");
-    }
-  };
-  const handleGetOffices = async () => {
-    try {
-      const response = await axios.get("/api/aboutUs/getOffices");
-      console.log("This is response:", response.data);
-      setOfficeTables(response.data);
-    } catch (error) {
-      console.error(error);
-      console.log(error, "error is this");
-    }
-  };
   useEffect(() => {
-    handleGetHeadquarters();
-    handleGetOffices();
+    const fetchData = async () => {
+      try {
+        const [hqRes, officeRes] = await Promise.all([
+          axios.get("/api/aboutUs/getHeadquarters"),
+          axios.get("/api/aboutUs/getOffices"),
+        ]);
+
+        setHeadQuarterTables(hqRes.data);
+        setOfficeTables(officeRes.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
+  const InfoTable = ({
+    title,
+    members,
+  }: {
+    title: string;
+    members: Member[];
+  }) => {
     return (
       <div role="table" className="our-team-list-container mx-auto my-4">
         {/* Title */}
@@ -106,21 +104,21 @@ export default function Offices() {
               <div className="col-lg-2 col-md-12">
                 <div className="d-flex gap-2 align-items-center">
                   <div className="d-flex flex-column">
-                    <p className="designation mb-0">{m.Telephone}</p>
+                    <p className="designation mb-0">{m.telephone}</p>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-12">
                 <div className="d-flex gap-2 align-items-center">
                   <div className="d-flex flex-column">
-                    <p className="designation mb-0">{m.Mail}</p>
+                    <p className="designation mb-0">{m.mail}</p>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-12">
                 <div className="d-flex gap-2 align-items-center">
                   <div className="d-flex flex-column">
-                    <p className="designation mb-0">{m.Address}</p>
+                    <p className="designation mb-0">{m.address}</p>
                   </div>
                 </div>
               </div>

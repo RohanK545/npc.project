@@ -5,27 +5,27 @@ import Image from "next/image";
 export default function AboutUs() {
   const images = [
     {
-      src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_6.jpg",
+      src: "/images/facilities/conImg1.png",
       title: "Single Occupancy Size-11 Sq.m/ 114 Sq.ft",
     },
     {
-      src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_1.png",
+      src: "/images/facilities/conImg2.png",
       title: "Double Occupancy Size- 14 Sq.m/ 145 Sq.ft",
     },
     {
-      src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_2.jpg",
+      src: "/images/facilities/conImg3.png",
       title: "Capacity-30 Persons",
     },
     {
-      src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_3.jpg",
+      src: "/images/facilities/conImg4.png",
       title: "Capacity-30 Persons",
     },
     {
-      src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_4.png",
+      src: "/images/facilities/conImg5.png",
       title: "Capacity-80 Persons",
     },
     {
-      src: "https://www.npcindia.gov.in/NPC/Images/Facilities/AIP/AIP_5.jpg",
+      src: "/images/facilities/conImg6.png",
       title: "Dining Hall Capacity-30 Persons",
     },
   ];
@@ -36,7 +36,7 @@ export default function AboutUs() {
         imageSrc={navigationConfig["facilities"].imageSrc}
         breadcrumbs={navigationConfig["facilities"].breadcrumbs}
         navItems={navigationConfig["facilities"].navItems}
-        pageTilte="Conference Hall"
+        pageTilte="Hostel & Training Facility"
       />
 
       <div className="container">
@@ -63,7 +63,7 @@ export default function AboutUs() {
                   width: "100%", // this will make it responsive, can also use layout="responsive" instead
                   maxWidth: "350px",
                   height: "250px",
-                  objectFit: "cover",
+                  // objectFit: "cover",
                   borderRadius: "8px",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.8)",
                 }}

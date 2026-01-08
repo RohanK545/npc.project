@@ -33,10 +33,6 @@ export default function InnerBannerSection({
   const containerRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    console.log(navItems[0].label);
-
-    console.log(breadcrumbs);
-
     const handleScroll = () => {
       if (!containerRef.current) return;
       setShowLeft(containerRef.current.scrollLeft > 0);

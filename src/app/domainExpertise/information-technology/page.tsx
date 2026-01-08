@@ -253,12 +253,12 @@ export default function AboutUs() {
     return filtered.slice(start, start + perPage);
   }, [page, perPage, filtered]);
 
-  const handleSearchChange = (e: any) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSearch(e.target.value);
     setPage(1); // reset page
   };
 
-  const handlePerPageChange = (e: any) => {
+  const handlePerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPerPage(Number(e.target.value));
     setPage(1);
   };
@@ -281,7 +281,7 @@ export default function AboutUs() {
 
   const nextPage = () => page < totalPages && setPage(page + 1);
   const prevPage = () => page > 1 && setPage(page - 1);
-  const InfoTable = ({ title, members }: { title: string; members: any[] }) => {
+  const InfoTable = ({ title }: { title: string }) => {
     return (
       <div role="table" className="our-team-list-container mx-auto my-4">
         {/* Title */}
@@ -657,7 +657,7 @@ export default function AboutUs() {
                 className="form-control"
                 placeholder="Search..."
                 value={search}
-                onChange={handleSearchChange}
+                onChange={() => handleSearchChange}
               />
               <span className="input-group-text filterIconResponsive d-block d-md-none">
                 <span
@@ -711,7 +711,7 @@ export default function AboutUs() {
           </div>
         </form>
         {tables.map((tbl, idx) => (
-          <InfoTable key={idx} title={tbl.title} members={tbl.projects} />
+          <InfoTable key={idx} title={tbl.title} />
         ))}
         <div className="row align-items-center mt-5">
           <div className="col-md-4"></div>

@@ -52,6 +52,7 @@ import "./globals.scss";
 import Script from "next/script";
 // import "../styles/SCSS.scss";
 import "../styles/CSS.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Ministry of Skill Development and Entrepreneurship",

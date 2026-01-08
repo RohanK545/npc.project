@@ -7,9 +7,9 @@ export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
 
   const bannerImages = [
-    "https://www.npcindia.gov.in/NPC/Uploads/image/Media/WhatsApp%20Image%202025-10-28%20at%209.47.46%20AM405832.jpeg",
-    "https://www.meity.gov.in/static/uploads/2025/10/57abd94ee7b510ee638e9907787c8a6e.jpg",
-    "https://www.meity.gov.in/static/uploads/2025/11/3b31c35215a20d22fb1f2d88941ef884.jpg",
+    "/images/banner1.png",
+    "/images/banner2.png",
+    "/images/banner3.png",
   ];
 
   // Auto slide
@@ -21,7 +21,7 @@ export default function Home() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, bannerImages.length]);
 
   const goToPrevSlide = () => {
     setCurrentSlide(
@@ -54,6 +54,8 @@ export default function Home() {
                 fill
                 // style={{ objectFit: "cover" }}
                 unoptimized
+                // width={300}
+                // height={300}
               />
             </div>
           ))}
@@ -302,15 +304,17 @@ export default function Home() {
                 borderRadius: "50%",
               }}
             >
-              <img
+              {/* <Image
                 src="https://www.dpiit.gov.in/static/uploads/2025/06/a6d342f52e8462b0d187a7654c97529a.png"
                 alt="Pm Image"
-                style={{
-                  width: "260px",
-                  height: "260px",
-                  objectFit: "cover",
-                }}
-              />
+                height={300}
+                width={300}
+                // style={{
+                //   width: "260px",
+                //   height: "260px",
+                //   objectFit: "cover",
+                // }}
+              /> */}
             </div>
           </div>
 
@@ -587,10 +591,12 @@ export default function Home() {
                   className="lazy-load-image-background blur lazy-load-image-loaded"
                   style={{ color: "transparent", display: "inline-block" }}
                 >
-                  <img
+                  <Image
                     src="https://www.meity.gov.in/static/uploads/2024/02/c2d2716758c356c9137b4db8ffa9ac50.png"
                     alt="Shri Ashwini Vaishnaw"
                     className="card-img-top img-fluid about-section-img"
+                    width={300}
+                    height={300}
                   />
                 </span>
                 <div className="card-body h-100 p-0">
@@ -609,10 +615,12 @@ export default function Home() {
                   className="lazy-load-image-background blur lazy-load-image-loaded"
                   style={{ color: "transparent", display: "inline-block" }}
                 >
-                  <img
+                  <Image
                     src="https://www.meity.gov.in/static/uploads/2024/06/a0c681e6f425566b66d4fecfe80f9380.png"
                     alt="Shri Jitin Prasada"
                     className="card-img-top img-fluid about-section-img"
+                    width={300}
+                    height={300}
                   />
                 </span>
                 <div className="card-body h-100 p-0">
@@ -620,7 +628,7 @@ export default function Home() {
                     Shri Jitin Prasada
                   </p>
                   <p className="minister-desg text-center mb-0">
-                    HON’BLE MINISTER OF STATE
+                    HONBLE MINISTER OF STATE
                   </p>
                 </div>
               </div>
@@ -628,10 +636,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
-
-
-

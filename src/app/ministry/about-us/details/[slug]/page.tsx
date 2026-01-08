@@ -28,11 +28,8 @@ export default async function AboutUs({
   const resolvedParams = await params;
   const decodedSlug = decodeURIComponent(resolvedParams.slug);
 
-  console.log("DECODED SLUG:", decodedSlug);
-
   const key = extractKeyFromSlug(decodedSlug);
   const pageData = ministryDetailPages[key as keyof typeof ministryDetailPages];
-  console.log(pageData);
   if (!pageData) return <h2>Page Not Found</h2>;
 
   function extractKeyFromSlug(slug: string) {

@@ -85,32 +85,34 @@
 //   );
 // }
 
-
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+interface Link {
+  path: string;
+}
+
+interface Item {
+  path?: string;
+  links?: Link[];
+}
 
 export default function Header() {
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [openIndexSidebar, setOpenIndexSidebar] = useState(null);
+  // const [openIndexSidebar, setOpenIndexSidebar] = useState(null);
 
-  const toggleSubMenu = (index: any) => {
-    console.log("Toggling submenu for index:", index);
-
-    setOpenIndex(openIndex === index ? null : index); // toggle open/close
+  const toggleSubMenu = (index: number) => {
+    -setOpenIndex(openIndex === index ? null : index); // toggle open/close
   };
 
   const router = useRouter();
   const pathname = usePathname();
-  useEffect(() => {
-    console.log(pathname);
-    console.log();
-  }, []);
   const navItems = [
     {
       title: "Home",
@@ -223,7 +225,10 @@ export default function Header() {
       title: "Initiatives & Projects",
       path: "/initiativesProjects",
       links: [
-        { label: "5S-Certification", path: "https://www.npcindia.gov.in/NPC/Uploads/domestic%20services/NPC%205S%20certification%20Guidelines%2023443727.pdf", },
+        {
+          label: "5S-Certification",
+          path: "https://www.npcindia.gov.in/NPC/Uploads/domestic%20services/NPC%205S%20certification%20Guidelines%2023443727.pdf",
+        },
         {
           label: "Inspection Division",
           path: "/initiativesProjects/inspection-division",
@@ -290,23 +295,11 @@ export default function Header() {
     },
   ];
 
-  const menuItems = ["Ministry", "Offerings", "Documents", "Media", "Connect"];
-
-  // const isActive = (item: any) => {
-  //   console.log("--------------------");
-  //   console.log("pathname", pathname);
-  //   console.log("path:", item.path);
-  //   if (item.path) return item.path === pathname; // top-level with path
-  //   if (item.links && item.links.length > 0) {
-  //     return item.links.some((link: any) => link.path === pathname); // parent with children
-  //   }
-  //   return false;
-  // };
   const normalize = (p: string) => p?.replace(/\/+$/, "");
 
-  const isActive = (item: any) => {
+  const isActive = (item: Item) => {
     const current = normalize(pathname);
-    const itemPath = normalize(item.path);
+    const itemPath = normalize(item.path ?? "");
 
     // 🔥 Special condition: Home should only be active on "/"
     if (itemPath === "" || itemPath === "/") {
@@ -318,8 +311,8 @@ export default function Header() {
       return current === itemPath || current.startsWith(itemPath + "/");
     }
 
-    if (item.links?.length > 0) {
-      return item.links.some((link: any) => {
+    if (item.links && item.links.length > 0) {
+      return item.links.some((link: Link) => {
         const linkPath = normalize(link.path);
         return current === linkPath || current.startsWith(linkPath + "/");
       });
@@ -427,7 +420,7 @@ export default function Header() {
             <div className="col-lg-8 pe-0">
               <div className="d-flex justify-content-start align-items-end mobilescr">
                 <div className="col-lg-8 col-md-12 col-sm-12 col-12 pe-2">
-                  <a className="logobox" href="/">
+                  <a className="logobox" href="#">
                     <svg
                       width="66"
                       height="74"
@@ -469,20 +462,21 @@ export default function Header() {
                             style={{
                               color: "transparent",
                               display: "inline-block",
-                              width: "280px", /* Increased size for better visibility */
-                              height: "auto"  /* Keeps aspect ratio */
+                              width:
+                                "280px" /* Increased size for better visibility */,
+                              height: "auto" /* Keeps aspect ratio */,
                             }}
                           >
-                            <img
+                            {/* <Image
                               src="/images/logos/Digital_India.svg"
                               alt="Digital India Logo"
                               className="skillimg img-fluid"
                               style={{
                                 width: "100%",
                                 height: "auto",
-                                maxWidth: "100%"
+                                maxWidth: "100%",
                               }}
-                            />
+                            /> */}
                           </span>
                         </a>
                       </div>
@@ -515,7 +509,7 @@ export default function Header() {
                           className="btn d-block d-md-none"
                           onClick={() => setIsOpen(true)}
                         >
-                          <img src="/images/icons/Menu_Icon.svg" alt="Menu" />
+                          {/* <Image src="/images/icons/Menu_Icon.svg" alt="Menu" /> */}
                         </button>
                       </li>
                     </ul>
@@ -540,11 +534,16 @@ export default function Header() {
                           display: "inline-block",
                         }}
                       >
-                        <img
-                          src="/images/logos/Digital_India.svg"
-                          alt="3c456855b01bd15e42e99b93982b5c18"
-                          className="skillimg img-fluid"
-                        />
+                        {/* <Image
+                            src="/images/logos/Digital_India.svg"
+                            alt="Digital India Logo"
+                            className="skillimg img-fluid"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              maxWidth: "100%",
+                            }}
+                          /> */}
                       </span>
                     </a>
                   </div>
@@ -579,8 +578,9 @@ export default function Header() {
           return (
             <li
               key={index}
-              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${active ? "borderbottom-active" : ""
-                }`}
+              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${
+                active ? "borderbottom-active" : ""
+              }`}
               style={{
                 width: "",
                 // height: "65px",
@@ -762,9 +762,10 @@ export default function Header() {
                         className="material-icons justify-content-between"
                         style={{ fontSize: "1.5rem", userSelect: "none" }}
                       >
-                        <img
+                        <Image
                           src="/images/icons/expand_more-.svg"
-                          style={{ width: "18px", height: "18px" }}
+                          width={300}
+                          height={300}
                           alt="expand"
                         />
                       </span>

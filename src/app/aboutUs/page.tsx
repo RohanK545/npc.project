@@ -106,6 +106,8 @@ export default function AboutUs() {
                                   src="/images/aboutUs/PiyushGoyal.jpg"
                                   alt="profile picture Sh. Piyush Goyal"
                                   className="img-fluid profile-img object-fit-cover bg-white"
+                                  width={300}
+                                  height={300}
                                 />
                               </span>
                             </div>
@@ -138,7 +140,9 @@ export default function AboutUs() {
                                 <Image
                                   src="/images/aboutUs/chairmanNPC.jpg"
                                   alt="profile picture Sh. Amardeep Singh Bhatia"
-                                  className="img-fluid profile-img object-fit-cover bg-white"
+                                  className="img-fluid profile-img object-fit-cover bg-white "
+                                  width={300}
+                                  height={300}
                                 />
                               </span>
                             </div>
@@ -172,6 +176,8 @@ export default function AboutUs() {
                                   src="/images/aboutUs/Smt.NeerjaSekhar.jpg"
                                   alt="profile picture Smt. Neerja Sekhar"
                                   className="img-fluid profile-img object-fit-cover bg-white"
+                                  width={300}
+                                  height={300}
                                 />
                               </span>
                             </div>

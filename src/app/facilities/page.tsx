@@ -2171,9 +2171,9 @@ export default function AboutUs() {
     {
       hallName: "Sangam Conference Hall",
       images: [
-        "https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture1.jpg",
-        "https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture2.jpg",
-        "https://www.npcindia.gov.in/NPC/Images/Facilities/Sangam%20Conference%20Hall/Picture6.jpg",
+        "/images/facilities/image1.png",
+        "/images/facilities/image2.png",
+        "/images/facilities/image3.png",
       ],
       description:
         "NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc.",

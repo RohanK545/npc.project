@@ -8,10 +8,8 @@ export default function AboutUs() {
   const handleGet = async () => {
     try {
       const response = await axios.get("/api/WeatherForecast");
-      console.log("This is response:", response.data);
     } catch (error) {
       console.error(error);
-      console.log(error, "error is this");
     }
   };
 
