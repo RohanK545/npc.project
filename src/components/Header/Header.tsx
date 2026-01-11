@@ -125,6 +125,10 @@ export default function Header() {
       links: [
         { label: "About NPC", path: "/aboutUs/" },
         {
+          label: "Organization Structure",
+          path: "/aboutUs/organization-structure",
+        },
+        {
           label: "Offices",
           path: "/aboutUs/offices",
         },
@@ -578,9 +582,8 @@ export default function Header() {
           return (
             <li
               key={index}
-              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${
-                active ? "borderbottom-active" : ""
-              }`}
+              className={`nav-item position-relative d-flex justify-content-center align-items-center text-center ${active ? "borderbottom-active" : ""
+                }`}
               style={{
                 width: "",
                 // height: "65px",

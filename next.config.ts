@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
         hostname: "meity.gov.in",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.dpiit.gov.in",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "dpiit.gov.in",
+        pathname: "/**",
+      },
     ],
   },
   async rewrites() {

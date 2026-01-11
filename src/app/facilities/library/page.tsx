@@ -152,74 +152,85 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="">
-          <h1 className="py-4">FUNCTIONS/OBJECTIVES</h1>
-          <ul>
-            <p>
-              Organizing, maintaining and delivering in-house Library services
-              with the help of computer and allied equipments.
-            </p>
-            <p>
-              National Productivity Council Library is functioning as a resource
-              centre for research in productivity awareness and management.
-            </p>
+        <div className="py-4">
+          <h2 className="display-6 fw-bold text-primary mb-4">FUNCTIONS/OBJECTIVES</h2>
+          <ul className="list-unstyled">
+            <li className="d-flex align-items-start mb-3">
+              <span className="text-primary me-2">•</span>
+              <p className="mb-0">
+                Organizing, maintaining and delivering in-house Library services
+                with the help of computer and allied equipments.
+              </p>
+            </li>
+            <li className="d-flex align-items-start mb-3">
+              <span className="text-primary me-2">•</span>
+              <p className="mb-0">
+                National Productivity Council Library is functioning as a resource
+                centre for research in productivity awareness and management.
+              </p>
+            </li>
           </ul>
         </div>
-        <div>
-          <h2 className="py-4">LIBRARY SERVICES</h2>
-          <h4 className="py-4">NPC Library provides the following services:</h4>
 
-          <p>Reading facility to access/read</p>
-          <p>Daily Newspapers,</p>
-          <p>Regular Magazines and periodicals,</p>
-          <p>
-            Latest Books of Economic Services, Industrial Engineering, Human
-            Resource Management, Information Technology, Publicity, Energy
-            Management, Environment
-          </p>
-          <p>Management, Agribusiness, Govt. Policy, etc.</p>
-          <p>Hindi Books on drama, poetry, fiction, etc.</p>
-          <p>NPC Reports, Dictionary, Encyclopedia etc.</p>
-          <p>
-            Free access to the subscribed libraries, websites and consortium
-            through desktop access at NPC Library.
-          </p>
-          <p>
-            Free access to the audio –video material through desktops at NPC
-            Library.
-          </p>
-          <p>
-            Issues of Books or Periodicals and free access to e-Granthalya
-            software and e-repository/e-Books through Knowledge Management
-            Portal (applicable to permanent employees of NPC only). The access
-            to e-books to other members shall be provided through Desktop at NPC
-            Library premises.
-          </p>
+        <div className="py-4">
+          <h2 className="display-6 fw-bold text-primary mb-4">LIBRARY SERVICES</h2>
+          <h4 className="fw-bold mb-4">NPC Library provides the following services:</h4>
 
-          <h2 className="py-4">LIBRARY MEMBERSHIP</h2>
+          <ul className="list-unstyled ms-3">
+            {[
+              "Reading facility to access/read",
+              "Daily Newspapers,",
+              "Regular Magazines and periodicals,",
+              "Latest Books of Economic Services, Industrial Engineering, Human Resource Management, Information Technology, Publicity, Energy Management, Environment",
+              "Management, Agribusiness, Govt. Policy, etc.",
+              "Hindi Books on drama, poetry, fiction, etc.",
+              "NPC Reports, Dictionary, Encyclopedia etc.",
+              "Free access to the subscribed libraries, websites and consortium through desktop access at NPC Library.",
+              "Free access to the audio –video material through desktops at NPC Library.",
+              "Issues of Books or Periodicals and free access to e-Granthalya software and e-repository/e-Books through Knowledge Management Portal (applicable to permanent employees of NPC only). The access to e-books to other members shall be provided through Desktop at NPC Library premises."
+            ].map((service, index) => (
+              <li key={index} className="d-flex align-items-start mb-2">
+                <span className="text-primary me-2">✔</span>
+                <p className="mb-0">{service}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <h4 className="py-4">
+        <div className="py-4">
+          <h2 className="display-6 fw-bold text-primary mb-4">LIBRARY MEMBERSHIP</h2>
+          <h4 className="fw-bold mb-4">
             Membership of the Library is open to the following categories of
             bonafide Professionals/Research Scholars/Industry Professionals only
             who are actively involved in research on productivity:
           </h4>
 
-          <p>All officials of NPC.</p>
-          <p>
-            Faculties and Research Scholars of Universities in India and abroad.
-          </p>
-          <p>
-            Industry Professionals working in engineering and management
-            disciplines.
-          </p>
+          <ul className="list-unstyled ms-3">
+            {[
+              "All officials of NPC.",
+              "Faculties and Research Scholars of Universities in India and abroad.",
+              "Industry Professionals working in engineering and management disciplines."
+            ].map((category, index) => (
+              <li key={index} className="d-flex align-items-start mb-2">
+                <span className="text-primary me-2">▹</span>
+                <p className="mb-0">{category}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <h3 className="p-4">LIBRARY TIMINGS</h3>
-          <p>
-            The Library shall open from 9.00 am to 5.30 pm throughout the year
+        <div className="py-4 bg-light p-4 rounded-3 border-start border-4 border-primary">
+          <h3 className="fw-bold text-primary mb-3">LIBRARY TIMINGS</h3>
+          <p className="fs-5 mb-0">
+            The Library shall open from <strong>9.00 am to 5.30 pm</strong> throughout the year
             except Saturdays/Sundays and Holidays.
           </p>
+        </div>
 
-          <p>NPC library provides the following services.Click below</p>
+        <div className="mt-5 text-center p-4 bg-primary text-white rounded-3 shadow">
+          <p className="fs-4 mb-0 fw-bold animate-pulse">
+            NPC library provides the following services. Click below
+          </p>
         </div>
       </div>
     </div>

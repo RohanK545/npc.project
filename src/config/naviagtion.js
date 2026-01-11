@@ -95,6 +95,7 @@ export const navigationConfig = {
     ],
     navItems: [
       { label: "About NPC", href: "/aboutUs/", active: false },
+      { label: "Organization Structure", href: "/aboutUs/organization-structure", active: false },
       { label: "Offices", href: "/aboutUs/offices", active: false },
       { label: "All Offices", href: "/aboutUs/all-offices", active: false },
     ],

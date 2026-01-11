@@ -2004,150 +2004,339 @@ type Tariff = {
   full: string | number;
   half: string | number;
 };
-
-type TableLayoutProps = {
-  title: string;
-  facilities: string[];
-  tariff?: Tariff;
+type Timing = {
+  full: string | number;
+  half: string | number;
 };
-
+type FacilityMember = {
+  SrNo: string;
+  facility: string;
+};
+type TableItem = {
+  title: string;
+  members: FacilityMember[];
+  tariff?: Tariff;
+  timing?: Timing;
+};
 type HallSectionProps = {
   hallName: string;
   images: string[];
   description: string;
+  tables: TableItem[];
 };
 
-/* ===============================
-   TABLE LAYOUT (MOVED OUTSIDE)
-================================ */
-const TableLayout = ({ title, facilities, tariff }: TableLayoutProps) => (
-  <div className="container my-4">
-    <div className="p-3 fw-bold" style={{ background: "#e6f7fb" }}>
-      {title}
+const sangamTables = [
+  {
+    title: "For National Programs",
+    members: [
+      {
+        SrNo: "1",
+        facility: "Sitting capacity up to 125 delegates in classroom layout",
+      },
+      {
+        SrNo: "2",
+        facility: "Podium with microphone for speaker",
+      },
+      {
+        SrNo: "3",
+        facility: "Adequate space for display",
+      },
+      {
+        SrNo: "4",
+        facility: "Epson Full HD Projector with 8×6 feet projection screen",
+      },
+      {
+        SrNo: "5",
+        facility: "Dining space for catering services (Tea/High Tea/Lunch/Dinner) inside the hall",
+      },
+      {
+        SrNo: "6",
+        facility: "Attached Ladies and Gents toilets",
+      },
+      {
+        SrNo: "7",
+        facility: "Reception area inside the hall",
+      },
+      {
+        SrNo: "8",
+        facility:
+          "Audio sound system (Bosch), video recording, table microphones (3 nos), Internet Wi-Fi connection, collar cordless microphones (2 nos), cordless hand microphones (2 nos), air conditioning, thermal efficiency sound-proof windows, dais with five chairs, flip chart board, laser pointer",
+      },
+    ],
+    tariff: { full: "₹20,000 + Taxes", half: "₹10,000 + Taxes" },
+    timing: { full: "09 AM - 05 PM\n11 AM - 07 PM\n", half: "09 AM – 01 PM\n02 PM – 06 PM" }
+  },
+  {
+    title: "For International Programs",
+    members: [
+      {
+        SrNo: "1",
+        facility: "Sitting capacity up to 125 delegates in classroom layout",
+      },
+      {
+        SrNo: "2",
+        facility: "Podium with microphone for speaker",
+      },
+      {
+        SrNo: "3",
+        facility: "Adequate space for display",
+      },
+      {
+        SrNo: "4",
+        facility: "Epson Full HD Projector with 8×6 feet projection screen",
+      },
+      {
+        SrNo: "5",
+        facility: "Dining space for catering services (Tea/High Tea/Lunch/Dinner) inside the hall",
+      },
+      {
+        SrNo: "6",
+        facility: "Attached Ladies and Gents toilets",
+      },
+      {
+        SrNo: "7",
+        facility: "Reception area inside the hall",
+      },
+      {
+        SrNo: "8",
+        facility:
+          "Audio sound system (Bosch), video recording, table microphones (3 nos), Internet Wi-Fi connection, collar cordless microphones (2 nos), cordless hand microphones (2 nos), air conditioning, thermal efficiency sound-proof windows, dais with five chairs, flip chart board, laser pointer",
+      },
+    ],
+    tariff: { full: "$US 500 + Taxes", half: "$US 250 + Taxes" },
+    timing: { full: "09 AM - 05 PM\n11 AM - 07 PM\n", half: "09 AM – 01 PM\n02 PM – 06 PM" }
+  },
+];
+
+const manthanTables = [
+  {
+    title: "For National Programs",
+    members: [
+      {
+        SrNo: "1",
+        facility: "Rectangular shaped Hall multi-purpose table & chairs",
+      },
+      {
+        SrNo: "2",
+        facility: "30 seats around the table in U-type layout and 40 at the back row",
+      },
+      {
+        SrNo: "3",
+        facility: "Around 100 delegates in class-room layout",
+      },
+      {
+        SrNo: "4",
+        facility: "	1 nos podium with mike for speaker",
+      },
+      {
+        SrNo: "5",
+        facility: "Audio sound system (Bosch), Video recording, Table (3 nos) Micro-phone, Collar cordless mike (1.nos), Cordless mike (2nos), Internet Wi-Fi Connection, Tower ACs, Thermal Efficiency Sound-proof windows, Dias with three chairs, Laser Pointer",
+      },
+      {
+        SrNo: "6",
+        facility: "Additional charges of Rs. 5000/- per hour plus applicable taxes for availing Video Conferencing facility by the client",
+      },
+      {
+        SrNo: "7",
+        facility: "Additional charges for availing catering services by the client and actual amount to be paid directly to the catering Agency who is empanelled caterer of NPC for catering services at reasonable rates.Catering Charges",
+      },
+      {
+        SrNo: "8",
+        facility: "Additional charges of Rs. 2000/- per day plus applicable taxes for use of Lawn for serving tea, lunch etc. In case of additional requirements such as tent, crockery, tables etc charges will be as per actual",
+      }
+    ],
+    tariff: { full: "₹15,000 + Taxes", half: "₹8,000 + Taxes" },
+    timing: { full: "09 AM - 05 PM\n11 AM - 07 PM\n", half: "09 AM – 01 PM\n02 PM – 06 PM" }
+  },
+  {
+    title: "For International Programs",
+    members: [
+      {
+        SrNo: "1",
+        facility: "Rectangular shaped Hall multi-purpose table & chairs",
+      },
+      {
+        SrNo: "2",
+        facility: "30 seats around the table in U-type layout and 40 at the back row",
+      },
+      {
+        SrNo: "3",
+        facility: "Around 100 delegates in class-room layout",
+      },
+      {
+        SrNo: "4",
+        facility: "	1 nos podium with mike for speaker",
+      },
+      {
+        SrNo: "5",
+        facility: "	Audio sound system (Bosch), Video recording, Table (3 nos) Micro-phone, Collar cordless mike (1.nos), Cordless mike (2nos), Internet Wi-Fi Connection, Tower ACs, Thermal Efficiency Sound-proof windows, Dias with three chairs, Laser Pointer",
+      },
+      {
+        SrNo: "6",
+        facility: "Additional charges of $ US 170 per hour plus applicable taxes for availing Video Conferencing facility by the client",
+      },
+      {
+        SrNo: "7",
+        facility: "	Additional charges for availing catering services by the client and actual amount to be paid directly to the catering Agency who is empanelled caterer of NPC for catering services at reasonable rates.Catering Charges",
+      },
+      {
+        SrNo: "8",
+        facility: "	Additional charges of $ US 50 per day plus applicable taxes for use of Lawn for serving tea, lunch etc. In case of additional requirements such as tent, crockery, tables etc charges will be as per actual",
+      }
+    ],
+    tariff: { full: "$US 350 + Taxes", half: "$US 175 + Taxes" },
+    timing: { full: "09 AM - 05 PM\n11 AM - 07 PM\n", half: "09 AM – 01 PM\n02 PM – 06 PM" }
+  },
+];
+
+const TableLayout = ({
+  title,
+  members,
+  tariff,
+  timing,
+}: {
+  title: string;
+  members: any[];
+  tariff?: Tariff;
+  timing?: Timing;
+}) => (
+  <div
+    role="table"
+    className="container our-team-list-container mx-auto my-4"
+  >
+    {/* Title */}
+    <div className="our-team-list-header d-flex align-items-center mb-2">
+      <span className="material-symbols-outlined bhashini-skip-translation me-2">
+        apartment
+      </span>
+      <p className="text-uppercase mb-0">{title}</p>
     </div>
 
-    <div
-      className="row text-center fw-bold text-white"
-      style={{ background: "#007bff" }}
-    >
-      <div className="col-1 py-2">S.No.</div>
-      <div className="col-5 py-2">Facilities Provided</div>
-      <div className="col-3 py-2">Tariff</div>
-      <div className="col-3 py-2">Timing</div>
-    </div>
-
-    <div className="row border">
-      <div className="col-6 p-0">
-        {facilities.map((item, idx) => (
-          <div key={idx} className="row border-bottom">
-            <div className="col-2 text-center py-2">{idx + 1}</div>
-            <div className="col-10 py-2">{item}</div>
-          </div>
-        ))}
+    {/* Header */}
+    <div role="rowgroup">
+      <div className="row me-0 ms-0 our-team-list-subheader fw-bold">
+        <div className="col-lg-1 text-center px-1">S.No.</div>
+        <div className="col-lg-4 text-center px-1">Facilities Provided</div>
+        <div className="col-lg-4 text-center px-1">Tariff</div>
+        <div className="col-lg-3 text-center px-1">Timing</div>
       </div>
+    </div>
 
-      {tariff && (
-        <div className="col-3 text-center d-flex flex-column justify-content-center border-start">
-          <h6>Full-Day Slot</h6>
-          <p>{tariff.full}</p>
-          <h6>Half-Day Slot</h6>
-          <p>{tariff.half}</p>
+    {/* Body */}
+    <div role="rowgroup">
+      <div className="row me-0 ms-0 border-bottom border-start border-end">
+        {/* Left Side: Items Block (SNo + Facility) */}
+        <div className="col-lg-5 col-md-12 p-0">
+          {members.map((m, idx) => (
+            <div
+              key={idx}
+              className={`row mx-0 border-bottom ${idx === members.length - 1 ? "border-bottom-0" : ""}`}
+            >
+              <div className="col-lg-2 col-md-2 py-3 px-1 border-end d-flex align-items-center justify-content-center">
+                <p className="mb-0">{m.SrNo}</p>
+              </div>
+              <div className="col-lg-10 col-md-10 py-3 px-1 d-flex align-items-center justify-content-center text-center">
+                <p className="mb-0">{m.facility}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      )}
 
-      <div className="col-3 text-center d-flex flex-column justify-content-center border-start">
-        <h6>Full-Day Slot</h6>
-        <p>09 AM – 05 PM</p>
-        <p>11 AM – 07 PM</p>
-        <h6>Half-Day Slots</h6>
-        <p>09 AM – 01 PM</p>
-        <p>02 PM – 06 PM</p>
+        {/* Right Side: Common Columns (Tariff & Timing) */}
+        <div className="col-lg-4 col-md-12 border-start border-end d-flex align-items-center justify-content-center text-center py-3 bg-light-subtle">
+          <div>
+            <p className="mb-1">
+              <strong>Full Tariff:</strong>
+              <br /> {tariff?.full}
+            </p>
+            <hr className="w-50 mx-auto my-2" />
+            <p className="mb-0">
+              <strong>Half Tariff:</strong>
+              <br />{tariff?.half}
+            </p>
+          </div>
+        </div>
+
+        <div className="col-lg-3 col-md-12 d-flex align-items-center justify-content-center text-center py-3">
+          <div>
+            <p className="fw-bold mb-1">Full-Day Slots</p>
+            <p className="mb-2" style={{ whiteSpace: "pre-line" }}>{timing?.full}</p>
+
+            <hr className="w-50 mx-auto my-2" />
+
+            <p className="fw-bold mb-1">Half-Day Slots</p>
+            <p className="mb-0" style={{ whiteSpace: "pre-line" }}>{timing?.half}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 );
 
 /* ===============================
-   TAB NAVIGATION
+   CORRECTED SAFE IMAGE COMPONENT
 ================================ */
-function TabNavigation() {
-  const [activeTab, setActiveTab] = useState("national");
-
-  const nationalFacilities = [
-    "Rectangular shaped Hall multi-purpose table & chairs",
-    "30 seats around the table in U-type layout and 40 at the back row",
-    "Around 100 delegates in class-room layout",
-    "1 nos podium with mike for speaker",
-    "Audio sound system (Bosch), Video recording, Table Mic, Cordless Mic, Wi-Fi, ACs, Sound-proof windows, Dias, Laser Pointer",
-    "Additional charges of Rs. 5000/- per hour for Video Conferencing",
-    "Additional charges for catering services (paid directly to empanelled caterer)",
-    "Additional charges of Rs. 2000/- per day for lawn usage",
-  ];
-
-  const internationalFacilities = [...nationalFacilities];
-
+const SafeImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [imageError, setImageError] = useState(false);
+  
+  // Check if it's a local or external image
+  const isExternalImage = src.startsWith('http');
+  
+  // For local images, use Next.js Image with fixed dimensions
+  if (!isExternalImage) {
+    return (
+      <div style={{ 
+        position: 'relative', 
+        width: '100%', 
+        height: '250px',
+        borderRadius: '8px',
+        overflow: 'hidden',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.4)'
+      }}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          style={{
+            objectFit: 'cover',
+          }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+    );
+  }
+  
+  // For external images, use regular img tag
   return (
-    <>
-      <ul className="nav nav-pills mb-4">
-        <li className="nav-item">
-          <button
-            className={`nav-link ${activeTab === "national" ? "active" : ""}`}
-            onClick={() => setActiveTab("national")}
-          >
-            National Programs
-          </button>
-        </li>
-
-        <li className="nav-item">
-          <button
-            className={`nav-link ${
-              activeTab === "international" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("international")}
-          >
-            International Programs
-          </button>
-        </li>
-      </ul>
-
-      {activeTab === "national" && (
-        <TableLayout
-          title="For National Programs"
-          facilities={nationalFacilities}
-          tariff={{ full: "₹20,000 + Taxes", half: "₹10,000 + Taxes" }}
-        />
-      )}
-
-      {activeTab === "international" && (
-        <TableLayout
-          title="For International Programs"
-          facilities={internationalFacilities}
-          tariff={{ full: "$350 + Taxes", half: "$175 + Taxes" }}
-        />
-      )}
-    </>
+    <img
+      src={imageError ? '/images/placeholder.jpg' : src}
+      alt={alt}
+      style={{
+        width: "100%",
+        height: "250px",
+        objectFit: "cover",
+        borderRadius: "8px",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
+      }}
+      onError={() => {
+        console.warn(`Failed to load image: ${src}`);
+        setImageError(true);
+      }}
+      loading="lazy"
+    />
   );
-}
+};
 
 /* ===============================
    HALL SECTION
 ================================ */
-const HallSection = ({ hallName, images, description }: HallSectionProps) => (
+const HallSection = ({ hallName, images, description, tables }: HallSectionProps) => (
   <div className="row py-5 px-3 mb-5 bg-light rounded">
     {images.map((img, index) => (
       <div key={index} className="col-md-4 mb-3">
-        <Image
+        <SafeImage
           src={img}
-          alt={hallName}
-          width={350} // set width (example)
-          height={250} // set height
-          style={{
-            width: "100%",
-            height: "250px",
-            objectFit: "cover",
-            borderRadius: "8px",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.4)",
-          }}
+          alt={`${hallName} - Image ${index + 1}`}
         />
       </div>
     ))}
@@ -2158,7 +2347,9 @@ const HallSection = ({ hallName, images, description }: HallSectionProps) => (
 
     <div className="col-12 mt-3">
       <h2 className="text-center mb-4">{hallName}</h2>
-      <TabNavigation />
+      {tables.map((tbl, idx) => (
+        <TableLayout key={idx} title={tbl.title} members={tbl.members} tariff={tbl.tariff} timing={tbl.timing} />
+      ))}
     </div>
   </div>
 );
@@ -2176,7 +2367,19 @@ export default function AboutUs() {
         "/images/facilities/image3.png",
       ],
       description:
-        "NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc.",
+        "NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources",
+      tables: sangamTables,
+    },
+    {
+      hallName: "Manthan Hall",
+      images: [
+        "https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture5.jpg",
+        "https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture8.jpg",
+        "https://www.npcindia.gov.in/NPC/Images/Facilities/Manthan%20Conference%20Hall/Picture7.jpg",
+      ],
+      description:
+        "NPC observes the principles of Circular Economy on World Environment Day to promote waste management by re-use, recycle, etc. to enhance optimal use & sustainability of resources",
+      tables: manthanTables,
     },
   ];
 
