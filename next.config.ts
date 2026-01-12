@@ -2,8 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: "export", // ⬅ REQUIRED for IIS
   reactCompiler: true,
   images: {
+    unoptimized: true, // ⬅ REQUIRED for static export
     remotePatterns: [
       {
         protocol: "https",
@@ -20,15 +22,17 @@ const nextConfig: NextConfig = {
         hostname: "meity.gov.in",
         pathname: "/**",
       },
-    ],
-  },
-  async rewrites() {
-    return [
       {
-        source: "/api/:path*",               // Frontend request path
-        destination: "http://localhost:5169/api/:path*", // Backend URL
+        protocol: "https",
+        hostname: "www.dpiit.gov.in",
+        pathname: "/**",
       },
-    ];
+      {
+        protocol: "https",
+        hostname: "dpiit.gov.in",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
