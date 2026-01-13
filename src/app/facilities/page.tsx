@@ -1996,6 +1996,7 @@ import { useState } from "react";
 import InnerBannerSection from "@/components/InnerBannerSection";
 import { navigationConfig } from "@/config/naviagtion";
 import Image from "next/image";
+import DocumentModal from "@/components/DocumentModal";
 
 /* ===============================
    TYPES
@@ -2023,6 +2024,7 @@ type HallSectionProps = {
   images: string[];
   description: string;
   tables: TableItem[];
+  onCateringClick: (title: string, url: string) => void;
 };
 
 const sangamTables = [
@@ -2061,6 +2063,17 @@ const sangamTables = [
         SrNo: "8",
         facility:
           "Audio sound system (Bosch), video recording, table microphones (3 nos), Internet Wi-Fi connection, collar cordless microphones (2 nos), cordless hand microphones (2 nos), air conditioning, thermal efficiency sound-proof windows, dais with five chairs, flip chart board, laser pointer",
+      },
+      {
+        SrNo: "9",
+        facility:
+          "\tAdditional charges of Rs 5000/-per hour plus applicable taxes for availing Video Conferencing facility by the client",
+      },
+      {
+        SrNo: "10",
+        facility:
+          "Additional charges for availing catering services by the client and actual amount to be paid directly to the catering Agency who is empanelled caterer of NPC for catering services at reasonable rates.Catering Charges",
+        pdfUrl: "/pdf/NationalSangamCatering-Charges.pdf"
       },
     ],
     tariff: { full: "₹20,000 + Taxes", half: "₹10,000 + Taxes" },
@@ -2102,6 +2115,17 @@ const sangamTables = [
         facility:
           "Audio sound system (Bosch), video recording, table microphones (3 nos), Internet Wi-Fi connection, collar cordless microphones (2 nos), cordless hand microphones (2 nos), air conditioning, thermal efficiency sound-proof windows, dais with five chairs, flip chart board, laser pointer",
       },
+      {
+        SrNo: "9",
+        facility:
+          "\tAdditional charges of Rs $ US 170 per hour plus applicable taxes for availing Video Conferencing facility by the client",
+      },
+      {
+        SrNo: "10",
+        facility:
+          "Additional charges for availing catering services by the client and actual amount to be paid directly to the catering Agency who is empanelled caterer of NPC for catering services at reasonable rates.Catering Charges",
+        pdfUrl: "/pdf/InternationalSangamCatering-Charges.pdf"
+      },
     ],
     tariff: { full: "$US 500 + Taxes", half: "$US 250 + Taxes" },
     timing: { full: "09 AM - 05 PM\n11 AM - 07 PM\n", half: "09 AM – 01 PM\n02 PM – 06 PM" }
@@ -2139,11 +2163,14 @@ const manthanTables = [
       {
         SrNo: "7",
         facility: "Additional charges for availing catering services by the client and actual amount to be paid directly to the catering Agency who is empanelled caterer of NPC for catering services at reasonable rates.Catering Charges",
+        pdfUrl: "/pdf/ManthanNationalCatering-Charges.pdf"
       },
       {
         SrNo: "8",
         facility: "Additional charges of Rs. 2000/- per day plus applicable taxes for use of Lawn for serving tea, lunch etc. In case of additional requirements such as tent, crockery, tables etc charges will be as per actual",
-      }
+      },
+
+
     ],
     tariff: { full: "₹15,000 + Taxes", half: "₹8,000 + Taxes" },
     timing: { full: "09 AM - 05 PM\n11 AM - 07 PM\n", half: "09 AM – 01 PM\n02 PM – 06 PM" }
@@ -2178,6 +2205,7 @@ const manthanTables = [
       {
         SrNo: "7",
         facility: "	Additional charges for availing catering services by the client and actual amount to be paid directly to the catering Agency who is empanelled caterer of NPC for catering services at reasonable rates.Catering Charges",
+        pdfUrl: "/pdf/InternationalManthanCatering-Charges.pdf"
       },
       {
         SrNo: "8",
@@ -2189,105 +2217,285 @@ const manthanTables = [
   },
 ];
 
+/* ===============================
+   ACCORDION ITEM COMPONENT
+================================ */
+const AccordionItem = ({
+  srNo,
+  facility,
+  isOpen,
+  onToggle
+}: {
+  srNo: string;
+  facility: any;
+  isOpen: boolean;
+  onToggle: () => void
+}) => {
+  return (
+    <div className="accordion-item border rounded mb-2">
+      <h3 className="accordion-header">
+        <button
+          className={`accordion-button ${isOpen ? '' : 'collapsed'} d-flex align-items-center`}
+          type="button"
+          onClick={onToggle}
+          aria-expanded={isOpen}
+        >
+          <div className="badge bg-primary rounded-circle me-3" style={{
+            width: '32px',
+            height: '32px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <span className="text-white fw-bold">{srNo}</span>
+          </div>
+          <div className="text-start" style={{ flex: 1 }}>
+            <span className="fw-bold">Facility {srNo}</span>
+            <div className="text-muted small mt-1" style={{
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical'
+            }}>
+              {facility}
+            </div>
+          </div>
+          <span className="material-symbols-outlined ms-2">
+            {isOpen ? 'expand_less' : 'expand_more'}
+          </span>
+        </button>
+      </h3>
+      <div className={`accordion-collapse collapse ${isOpen ? 'show' : ''}`}>
+        <div className="accordion-body pt-3">
+          <p className="mb-0">{facility}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ===============================
+   TABLE LAYOUT WITH ACCORDION FOR MOBILE
+================================ */
 const TableLayout = ({
   title,
   members,
   tariff,
   timing,
+  onCateringClick,
 }: {
   title: string;
   members: any[];
   tariff?: Tariff;
   timing?: Timing;
-}) => (
-  <div
-    role="table"
-    className="container our-team-list-container mx-auto my-4"
-  >
-    {/* Title */}
-    <div className="our-team-list-header d-flex align-items-center mb-2">
-      <span className="material-symbols-outlined bhashini-skip-translation me-2">
-        apartment
-      </span>
-      <p className="text-uppercase mb-0">{title}</p>
-    </div>
+  onCateringClick: (title: string, url: string) => void;
+}) => {
+  // State to track which accordion items are open
+  const [openItems, setOpenItems] = useState<number[]>([]);
 
-    {/* Header */}
-    <div role="rowgroup">
-      <div className="row me-0 ms-0 our-team-list-subheader fw-bold">
-        <div className="col-lg-1 text-center px-1">S.No.</div>
-        <div className="col-lg-4 text-center px-1">Facilities Provided</div>
-        <div className="col-lg-4 text-center px-1">Tariff</div>
-        <div className="col-lg-3 text-center px-1">Timing</div>
+  const toggleItem = (index: number) => {
+    setOpenItems(prev =>
+      prev.includes(index)
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  return (
+    <div className="container our-team-list-container mx-auto my-4">
+      {/* Title */}
+      <div className="our-team-list-header d-flex align-items-center mb-2">
+        <span className="material-symbols-outlined bhashini-skip-translation me-2">
+          apartment
+        </span>
+        <p className="text-uppercase mb-0">{title}</p>
       </div>
-    </div>
 
-    {/* Body */}
-    <div role="rowgroup">
-      <div className="row me-0 ms-0 border-bottom border-start border-end">
-        {/* Left Side: Items Block (SNo + Facility) */}
-        <div className="col-lg-5 col-md-12 p-0">
-          {members.map((m, idx) => (
-            <div
-              key={idx}
-              className={`row mx-0 border-bottom ${idx === members.length - 1 ? "border-bottom-0" : ""}`}
-            >
-              <div className="col-lg-2 col-md-2 py-3 px-1 border-end d-flex align-items-center justify-content-center">
-                <p className="mb-0">{m.SrNo}</p>
-              </div>
-              <div className="col-lg-10 col-md-10 py-3 px-1 d-flex align-items-center justify-content-center text-center">
-                <p className="mb-0">{m.facility}</p>
+      {/* Desktop View - Table (hidden on mobile) */}
+      <div className="d-none d-lg-block">
+        {/* Header */}
+        <div className="row me-0 ms-0 our-team-list-subheader fw-bold">
+          <div className="col-lg-1 text-center px-1">S.No.</div>
+          <div className="col-lg-4 text-center px-1">Facilities Provided</div>
+          <div className="col-lg-4 text-center px-1">Tariff</div>
+          <div className="col-lg-3 text-center px-1">Timing</div>
+        </div>
+
+        {/* Body */}
+        <div role="rowgroup">
+          <div className="row me-0 ms-0 border-bottom border-start border-end flex-column flex-lg-row">
+            {/* Left Side: Items Block (SNo + Facility) */}
+            <div className="col-lg-5 col-md-12 p-0">
+              {members.map((m, idx) => (
+                <div
+                  key={idx}
+                  className={`row mx-0 border-bottom ${idx === members.length - 1 ? "border-bottom-0" : ""}`}
+                >
+                  <div className="col-lg-2 col-md-2 py-3 px-1 border-end d-flex align-items-center justify-content-center">
+                    <p className="mb-0">{m.SrNo}</p>
+                  </div>
+                  <div className="col-lg-10 col-md-10 py-3 px-1 d-flex align-items-center justify-content-center text-center">
+                    <p className="mb-0">
+                      {m.facility.includes("Catering Charges") ? (
+                        <>
+                          {m.facility.replace("Catering Charges", "")}
+                          <span
+                            className="text-primary text-decoration-underline pointer"
+                            onClick={() => onCateringClick("Catering Charges", m.pdfUrl || "")}
+                          >
+                            Catering Charges
+                          </span>
+                        </>
+                      ) : (
+                        m.facility
+                      )}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Side: Common Columns (Tariff & Timing) */}
+            <div className="col-lg-4 col-md-12 border-start border-end d-flex align-items-center justify-content-center text-center py-3 bg-light-subtle">
+              <div>
+                <p className="mb-1">
+                  <strong>Full Tariff:</strong>
+                  <br /> {tariff?.full}
+                </p>
+                <hr className="w-50 mx-auto my-2" />
+                <p className="mb-0">
+                  <strong>Half Tariff:</strong>
+                  <br />{tariff?.half}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Right Side: Common Columns (Tariff & Timing) */}
-        <div className="col-lg-4 col-md-12 border-start border-end d-flex align-items-center justify-content-center text-center py-3 bg-light-subtle">
-          <div>
-            <p className="mb-1">
-              <strong>Full Tariff:</strong>
-              <br /> {tariff?.full}
-            </p>
-            <hr className="w-50 mx-auto my-2" />
-            <p className="mb-0">
-              <strong>Half Tariff:</strong>
-              <br />{tariff?.half}
-            </p>
-          </div>
-        </div>
+            <div className="col-lg-3 col-md-12 d-flex align-items-center justify-content-center text-center py-3">
+              <div>
+                <p className="fw-bold mb-1">Full-Day Slots</p>
+                <p className="mb-2" style={{ whiteSpace: "pre-line" }}>{timing?.full}</p>
 
-        <div className="col-lg-3 col-md-12 d-flex align-items-center justify-content-center text-center py-3">
-          <div>
-            <p className="fw-bold mb-1">Full-Day Slots</p>
-            <p className="mb-2" style={{ whiteSpace: "pre-line" }}>{timing?.full}</p>
+                <hr className="w-50 mx-auto my-2" />
 
-            <hr className="w-50 mx-auto my-2" />
-
-            <p className="fw-bold mb-1">Half-Day Slots</p>
-            <p className="mb-0" style={{ whiteSpace: "pre-line" }}>{timing?.half}</p>
+                <p className="fw-bold mb-1">Half-Day Slots</p>
+                <p className="mb-0" style={{ whiteSpace: "pre-line" }}>{timing?.half}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile View - Accordion (shown on mobile) */}
+      <div className="d-block d-lg-none">
+        {/* Pricing & Timing Summary Card */}
+        <div className="card mb-4 border shadow-sm">
+          <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h6 className="mb-0">Pricing & Timing</h6>
+            <span className="material-symbols-outlined">
+              event
+            </span>
+          </div>
+          <div className="card-body">
+            <div className="row">
+              <div className="col-12 mb-3">
+                <div className="p-3 bg-light rounded">
+                  <h6 className="text-primary mb-3">Tariff Details</h6>
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="text-center p-2 border-end">
+                        <small className="text-muted d-block mb-1">Full Tariff</small>
+                        <strong>{tariff?.full}</strong>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="text-center p-2">
+                        <small className="text-muted d-block mb-1">Half Tariff</small>
+                        <strong>{tariff?.half}</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-12">
+                <div className="p-3 bg-light rounded">
+                  <h6 className="text-primary mb-3">Timing Slots</h6>
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="p-2 border-end">
+                        <small className="text-muted d-block mb-1">Full-Day</small>
+                        <div style={{ whiteSpace: "pre-line", fontSize: "0.85rem" }}>
+                          {timing?.full}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="p-2">
+                        <small className="text-muted d-block mb-1">Half-Day</small>
+                        <div style={{ whiteSpace: "pre-line", fontSize: "0.85rem" }}>
+                          {timing?.half}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Facilities Accordion */}
+        <div className="accordion" id={`accordion-${title.replace(/\s+/g, '-')}`}>
+          <div className="mb-3">
+            <h5 className="mb-0">Facilities ({members.length})</h5>
+          </div>
+
+          {members.map((member, index) => (
+            <AccordionItem
+              key={index}
+              srNo={member.SrNo}
+              facility={
+                member.facility.includes("Catering Charges") ? (
+                  <>
+                    {member.facility.replace("Catering Charges", "")}
+                    <span
+                      className="text-primary text-decoration-underline pointer"
+                      onClick={() => onCateringClick("Catering Charges", member.pdfUrl || "")}
+                    >
+                      Catering Charges
+                    </span>
+                  </>
+                ) : (
+                  member.facility
+                )
+              }
+              isOpen={openItems.includes(index)}
+              onToggle={() => toggleItem(index)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 /* ===============================
    CORRECTED SAFE IMAGE COMPONENT
 ================================ */
 const SafeImage = ({ src, alt }: { src: string; alt: string }) => {
   const [imageError, setImageError] = useState(false);
-  
+
   // Check if it's a local or external image
   const isExternalImage = src.startsWith('http');
-  
+
   // For local images, use Next.js Image with fixed dimensions
   if (!isExternalImage) {
     return (
-      <div style={{ 
-        position: 'relative', 
-        width: '100%', 
+      <div style={{
+        position: 'relative',
+        width: '100%',
         height: '250px',
         borderRadius: '8px',
         overflow: 'hidden',
@@ -2305,7 +2513,7 @@ const SafeImage = ({ src, alt }: { src: string; alt: string }) => {
       </div>
     );
   }
-  
+
   // For external images, use regular img tag
   return (
     <img
@@ -2330,7 +2538,7 @@ const SafeImage = ({ src, alt }: { src: string; alt: string }) => {
 /* ===============================
    HALL SECTION
 ================================ */
-const HallSection = ({ hallName, images, description, tables }: HallSectionProps) => (
+const HallSection = ({ hallName, images, description, tables, onCateringClick }: HallSectionProps) => (
   <div className="row py-5 px-3 mb-5 bg-light rounded">
     {images.map((img, index) => (
       <div key={index} className="col-md-4 mb-3">
@@ -2348,8 +2556,74 @@ const HallSection = ({ hallName, images, description, tables }: HallSectionProps
     <div className="col-12 mt-3">
       <h2 className="text-center mb-4">{hallName}</h2>
       {tables.map((tbl, idx) => (
-        <TableLayout key={idx} title={tbl.title} members={tbl.members} tariff={tbl.tariff} timing={tbl.timing} />
+        <TableLayout key={idx} title={tbl.title} members={tbl.members} tariff={tbl.tariff} timing={tbl.timing} onCateringClick={onCateringClick} />
       ))}
+    </div>
+  </div>
+);
+
+/* ===============================
+   CONTACT INFORMATION COMPONENT
+================================ */
+const ContactInformation = () => (
+  <div className="row mt-5 mb-5">
+    <div className="col-12">
+      <div className="card border-0 shadow-sm">
+        <div className="card-header bg-primary text-white">
+          <h4 className="mb-0">For more details, Contact:</h4>
+        </div>
+        <div className="card-body">
+          <div className="row">
+            {/* First Contact */}
+            <div className="col-md-6 mb-4">
+              <div className="contact-card p-4 border rounded h-100">
+                <h5 className="text-primary mb-3">Sh. Amitava Ray</h5>
+                <p className="text-muted mb-3">
+                  <strong>Group Head (Admin)</strong>
+                </p>
+                <div className="contact-details">
+                  <div className="d-flex align-items-center mb-2">
+                    <span className="material-symbols-outlined text-primary me-2">
+                      location_on
+                    </span>
+                    <span>011-24607369 (office)</span>
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <span className="material-symbols-outlined text-primary me-2">
+                      mail
+                    </span>
+                    <span>amitava[dot]ray[at]npcindia[dot]gov[dot]in</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Second Contact */}
+            <div className="col-md-6 mb-4">
+              <div className="contact-card p-4 border rounded h-100">
+                <h5 className="text-primary mb-3">Sh. Yadu Kumar Yadav</h5>
+                <p className="text-muted mb-3">
+                  <strong>Deputy Director</strong>
+                </p>
+                <div className="contact-details">
+                  <div className="d-flex align-items-center mb-2">
+                    <span className="material-symbols-outlined text-primary me-2">
+                      location_on
+                    </span>
+                    <span>011-24607371 (office)</span>
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <span className="material-symbols-outlined text-primary me-2">
+                      mail
+                    </span>
+                    <span>yk[dot]yadav[at]npcindia[dot]gov[dot]in</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -2358,6 +2632,16 @@ const HallSection = ({ hallName, images, description, tables }: HallSectionProps
    MAIN PAGE
 ================================ */
 export default function AboutUs() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState("");
+  const [pdfTitle, setPdfTitle] = useState("");
+
+  const handleCateringClick = (title: string, url: string) => {
+    setPdfTitle(title);
+    setPdfUrl(url);
+    setIsModalOpen(true);
+  };
+
   const halls = [
     {
       hallName: "Sangam Conference Hall",
@@ -2394,9 +2678,19 @@ export default function AboutUs() {
 
       <div className="container py-5">
         {halls.map((hall, index) => (
-          <HallSection key={index} {...hall} />
+          <HallSection key={index} {...hall} onCateringClick={handleCateringClick} />
         ))}
+        
+        {/* Add Contact Information below the last table */}
+        <ContactInformation />
       </div>
+
+      <DocumentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        pdfUrl={pdfUrl}
+        title={pdfTitle}
+      />
     </>
   );
 }
