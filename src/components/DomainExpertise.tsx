@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const DomainExpertise = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(4);
+    const [windowWidth, setWindowWidth] = useState(1200); // Default for SSR
 
     const services = [
         {
@@ -151,6 +152,7 @@ const DomainExpertise = () => {
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
+            setWindowWidth(width);
             if (width < 640) {
                 setItemsPerPage(1); // Mobile
             } else if (width < 1024) {
@@ -190,7 +192,7 @@ const DomainExpertise = () => {
         <div style={{
             width: "100%",
             background: "#FAFAFA",
-            padding: window.innerWidth < 640 ? "40px 15px 80px" : window.innerWidth < 1024 ? "60px 20px 100px" : "80px 20px 120px",
+            padding: windowWidth < 640 ? "40px 15px 80px" : windowWidth < 1024 ? "60px 20px 100px" : "80px 20px 120px",
             overflow: "hidden",
             position: "relative"
         }}>

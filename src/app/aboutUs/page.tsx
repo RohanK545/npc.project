@@ -165,7 +165,7 @@ export default function AboutUs() {
                   {/* Vision */}
                   <div className="col-lg-6 col-md-12">
                     <div className="h-100 p-4 shadow-sm rounded bg-white border-start border-4 border-primary">
-                      <h2 className="fw-bold text-primary mb-3">Vision</h2>
+                      <h2 className="">Vision</h2>
                       <p className="text-justify mb-0">
                         NPC to be the knowledge leader in productivity to provide
                         state of our services to the Indian economy to become globally
@@ -177,7 +177,7 @@ export default function AboutUs() {
                   {/* Mission */}
                   <div className="col-lg-6 col-md-12">
                     <div className="h-100 p-4 shadow-sm rounded bg-white border-start border-4 border-success">
-                      <h2 className="fw-bold text-success mb-3">Mission</h2>
+                      <h3 className="">Mission</h3>
                       <p className="text-justify mb-0">
                         Contribute to the sustainable, inclusive socioeconomic
                         development of the country by enhancing productivity.

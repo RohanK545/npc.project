@@ -85,6 +85,8 @@
 //   );
 // }
 
+
+
 "use client";
 
 import React, { useState } from "react";
@@ -513,7 +515,7 @@ export default function Header() {
                           className="btn d-block d-md-none"
                           onClick={() => setIsOpen(true)}
                         >
-                          {/* <Image src="/images/icons/Menu_Icon.svg" alt="Menu" /> */}
+                          <Image src="/images/icons/Menu_Icon.svg" width={24} height={24} alt="Menu" />
                         </button>
                       </li>
                     </ul>
@@ -767,8 +769,8 @@ export default function Header() {
                       >
                         <Image
                           src="/images/icons/expand_more-.svg"
-                          width={300}
-                          height={300}
+                          width={30}
+                          height={30}
                           alt="expand"
                         />
                       </span>

@@ -111,7 +111,7 @@ export default function AboutUs() {
         {/* Title */}
         <div className="our-team-list-header d-flex align-items-center mb-2">
           <span className="material-symbols-outlined bhashini-skip-translation me-2">
-            apartment
+            
           </span>
           <p className="text-uppercase mb-0">{title}</p>
         </div>
