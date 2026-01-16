@@ -84,73 +84,76 @@ export default function AboutUs() {
           ))}
         </div>
 
-        <div className="row">
-          <div className="">
-            <h1 className="py-4"></h1>
-            <ul>
-              <p>
-                The executive hostel facilities include 27 single and 4 double
-                air-conditioned rooms furnished with TV and provisioned with
-                supply of hot and cold water and attached with a modern Dining &
-                Kitchen Hall facility with seating capacity of 30 the executive
-                hostel provides serene and green ambience for seminars,
-                trainings and workshops.
-              </p>
-              <p>
-                The training facilities include air-conditioned conference and
-                lecture rooms with audio-visual facilities. An air conditioned
-                auditorium with a seating capacity of 80 is available.
-              </p>
-            </ul>
-            <h3>
-              Institutions and organizations can avail these facilities at the
-              following rates:
-            </h3>
+       <div className="row">
+  <div className="col-12">
+    <div className="mb-4">
+      <p>
+        The executive hostel facilities include 27 single and 4 double
+        air-conditioned rooms furnished with TV and provisioned with
+        supply of hot and cold water and attached with a modern Dining &
+        Kitchen Hall facility with seating capacity of 30 the executive
+        hostel provides serene and green ambience for seminars,
+        trainings and workshops.
+      </p>
+      <p>
+        The training facilities include air-conditioned conference and
+        lecture rooms with audio-visual facilities. An air conditioned
+        auditorium with a seating capacity of 80 is available.
+      </p>
+    </div>
 
-            {/* ===== Charges Footer Section ===== */}
-            <div className="row mt-5 mb-4">
-              {/* Executive Hostel Charges */}
-              <div className="col-12 col-md-6 mb-4">
-                <div
-                  style={{
-                    background: "#f8f9fa",
-                    padding: "20px",
-                    borderRadius: "10px",
-                    height: "100%",
-                  }}
-                >
-                  <h5 className="mb-3">Executive Hostel Charges</h5>
-                  <ul style={{ fontSize: "20px", paddingLeft: "24px" }}>
-                    <li>Single Occupancy Room – ₹XXXX per day</li>
-                    <li>Double Occupancy Room – ₹XXXX per day</li>
-                    <li>Dining Facility (30 persons capacity)</li>
-                    <li>AC Rooms with TV & Hot/Cold Water</li>
-                  </ul>
-                </div>
-              </div>
+    <h3 className="mb-4">
+      Institutions and organizations can avail these facilities at the
+      following rates:
+    </h3>
 
-              {/* Lecture & Conference Room Charges */}
-              <div className="col-12 col-md-6 mb-4">
-                <div
-                  style={{
-                    background: "#f8f9fa",
-                    padding: "20px",
-                    borderRadius: "10px",
-                    height: "100%",
-                  }}
-                >
-                  <h5 className="mb-3">Lecture & Conference Room Charges</h5>
-                  <ul style={{ fontSize: "20px", paddingLeft: "24px" }}>
-                    <li>Conference Room (30 persons) – ₹XXXX</li>
-                    <li>Auditorium (80 persons) – ₹XXXX</li>
-                    <li>AC Rooms with Audio-Visual Facilities</li>
-                    <li>Ideal for Training, Seminars & Workshops</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* ===== Charges Footer Section ===== */}
+    <div className="row mt-3 mb-4">
+      {/* Executive Hostel Charges */}
+      <div className="col-12 col-md-6 mb-4">
+        <div
+          style={{
+            background: "#f8f9fa",
+            padding: "20px",
+            borderRadius: "10px",
+            height: "100%",
+          }}
+        >
+          <h4 className="mb-3">Executive Hostel Charges</h4>
+          <ul style={{ fontSize: "13px", paddingLeft: "24px" }}>
+            <li>Single Occupancy: Rs1300/ + 12% GST</li>
+            <li>Double Occupancy: Rs 2000/ + 12% GST</li>
+            <li>Dining Kitchen hall: Rs 5000 + 18% GST</li>
+          </ul>
         </div>
+      </div>
+
+      {/* Lecture & Conference Room Charges */}
+      <div className="col-12 col-md-6 mb-4">
+        <div
+          style={{
+            background: "#f8f9fa",
+            padding: "20px",
+            borderRadius: "10px",
+            height: "100%",
+          }}
+        >
+          <h4 className="mb-3">Lecture & Conference Room Charges</h4>
+          <ul style={{ fontSize: "13px", paddingLeft: "24px" }}>
+            <li>Upto 25 persons Capacity : Rs 8000 + 18% GST</li>
+            <li>Upto 40 persons Capacity : Rs 8000+ 18% GST</li>
+            <li>Upto 80 persons capacity : Rs 10000 + 18% GST</li>
+          </ul>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
       </div>
     </div>
   );

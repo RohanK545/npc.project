@@ -17,32 +17,6 @@ export default function AboutUs() {
             <div className="d-flex" style={{ gap: "80px" }}>
               {/* First Column */}
               <div style={{ position: "relative", width: "344px", height: "900px" }}>
-                <div>
-                  <i style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "176px",
-                    background: "rgb(153, 153, 153)",
-                    transform: "translate(172px, 175px)",
-                    pointerEvents: "none",
-                  }}></i>
-                  <i style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "176px",
-                    background: "rgb(153, 153, 153)",
-                    transform: "translate(172px, 350px)",
-                    pointerEvents: "none",
-                  }}></i>
-                  <i style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "176px",
-                    background: "rgb(153, 153, 153)",
-                    transform: "translate(172px, 525px)",
-                    pointerEvents: "none",
-                  }}></i>
-                </div>
                 <div className="d-grid" style={{
                   gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
                   gap: "40px",
@@ -100,32 +74,6 @@ export default function AboutUs() {
 
               {/* Second Column */}
               <div style={{ position: "relative", width: "344px", height: "900px" }}>
-                <div>
-                  <i style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "176px",
-                    background: "rgb(153, 153, 153)",
-                    transform: "translate(172px, 175px)",
-                    pointerEvents: "none",
-                  }}></i>
-                  <i style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "176px",
-                    background: "rgb(153, 153, 153)",
-                    transform: "translate(172px, 350px)",
-                    pointerEvents: "none",
-                  }}></i>
-                  <i style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "176px",
-                    background: "rgb(153, 153, 153)",
-                    transform: "translate(172px, 525px)",
-                    pointerEvents: "none",
-                  }}></i>
-                </div>
                 <div className="d-grid" style={{
                   gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
                   gap: "40px",

@@ -2,8 +2,22 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Services from "@/components/Services";
-import DomainExpertise from "@/components/DomainExpertise";
-import AboutSection from "@/components/AboutSection";
+import dynamic from "next/dynamic";
+
+const DomainExpertise = dynamic(
+  () => import("@/components/DomainExpertise"),
+  { ssr: false }
+);
+
+const AboutSection = dynamic(
+  () => import("@/components/AboutSection"),
+  { ssr: false }
+);
+
+const LatestNews = dynamic(
+  () => import("@/components/LatestNews"),
+  { ssr: false }
+);
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -33,7 +47,7 @@ export default function Home() {
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
   };
-   const services = [
+  const services = [
     {
       title: "Consultancy",
       gradient: "from-purple-600 to-blue-600",
@@ -327,17 +341,17 @@ export default function Home() {
                 borderRadius: "50%",
               }}
             >
-              {/* <Image
+              <Image
                 src="https://www.dpiit.gov.in/static/uploads/2025/06/a6d342f52e8462b0d187a7654c97529a.png"
                 alt="Pm Image"
                 height={300}
                 width={300}
-                // style={{
-                //   width: "260px",
-                //   height: "260px",
-                //   objectFit: "cover",
-                // }}
-              /> */}
+                style={{
+                  width: "260px",
+                  height: "260px",
+                  objectFit: "cover",
+                }}
+              />
             </div>
           </div>
 
@@ -367,7 +381,9 @@ export default function Home() {
                   fontStyle: "normal",
                   fontWeight: "normal",
                   letterSpacing: "-.12px",
-                  width: "125%",
+                  width: "100%", // Changed from 125% to 100%
+                  maxWidth: "100%", // Added to ensure it doesn't overflow
+                  wordWrap: "break-word", // Added for long words
                 }}
               >
                 India offers the three Ds for business to thrive – Democracy,
@@ -379,7 +395,7 @@ export default function Home() {
             {/* LINE */}
             <div
               style={{
-                width: "125%",
+                width: "100%",
                 height: "2px",
                 background: "#162f6a",
                 margin: "20px 0",
@@ -452,7 +468,7 @@ export default function Home() {
                   className="material-symbols-outlined bhashini-skip-translation"
                   style={{ fontSize: "15px", backgroundColor: "#FFFFFF" }}
                 >
-                  open_in_new
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24 " viewBox="0 -960 960 960" width="24" fill="#2d2d2d" ><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h249q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H180v600h600v-249q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v249q0 24-18 42t-42 18H180Zm600-617L403-360q-9 9-21 8.5t-21-9.5q-9-9-9-21t9-21l377-377H549q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h261q12.75 0 21.38 8.62Q840-822.75 840-810v261q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-188Z" fill="#162F6A"/></svg>
                 </span>
                 View Event
               </a>
@@ -460,10 +476,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-        <AboutSection />
-        <Services />
-        <DomainExpertise />
+
+      <AboutSection />
+      <Services />
+      <DomainExpertise />
+      <LatestNews />
     </div>
   );
 }
