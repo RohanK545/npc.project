@@ -21,20 +21,20 @@ interface Table {
 export default function Offices() {
   const [HeadQuartertables, setHeadQuarterTables] = useState<Table[]>([]);
   const [Officetables, setOfficeTables] = useState<Table[]>([]);
-  console.log("this is backend url",process.env.NEXT_PUBLIC_API_BASE_URL);
+  console.log("this is backend url", process.env.NEXT_PUBLIC_API_BASE_URL);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [hqRes, officeRes] = await Promise.all([
           // axios.get("/api/aboutUs/getHeadquarters"),
           axios.get(
-  `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/aboutUs/getHeadquarters` // https://npc.rajyoggroup.in/api
-),
-axios.get(
-  `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/aboutUs/getOffices` // https://npc.rajyoggroup.in/api
-)
-// ,
-//           axios.get("/api/aboutUs/getOffices"),
+            `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/aboutUs/getHeadquarters` // https://npc.rajyoggroup.in/api
+          ),
+          axios.get(
+            `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/aboutUs/getOffices` // https://npc.rajyoggroup.in/api
+          ),
+          // ,
+          //           axios.get("/api/aboutUs/getOffices"),
         ]);
         console.log("this is res", hqRes);
 
@@ -145,8 +145,8 @@ axios.get(
         navItems={navigationConfig["aboutUs"].navItems}
         pageTilte="Offices"
       />
-      <section className="maincontent">
-        <div className="container">
+      <section className="">
+        <div className="">
           <h2>HEADQUARTER</h2>
           {HeadQuartertables.map((tbl, idx) => (
             <InfoTable key={idx} title={tbl.title} members={tbl.members} />

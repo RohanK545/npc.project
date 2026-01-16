@@ -50,8 +50,7 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "./globals.scss";
 import Script from "next/script";
-// import "../styles/SCSS.scss";
-import "../styles/CSS.css";
+import "../../styles/CSS.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {

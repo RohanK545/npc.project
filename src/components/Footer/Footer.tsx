@@ -195,7 +195,7 @@ export default function Footer() {
                     </span>{" "}
                     Contact Us
                   </li>
-                  {/* <li>
+                  <li>
                     <span className="material-symbols-outlined me-2">
                       <svg
                         width="12"
@@ -211,7 +211,7 @@ export default function Footer() {
                       </svg>
                     </span>{" "}
                     <a href="/admin">Admin Panel</a>
-                  </li> */}
+                  </li>
                 </ul>
               </div>
             </div>
