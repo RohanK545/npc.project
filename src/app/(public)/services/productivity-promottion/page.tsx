@@ -186,14 +186,12 @@ export default function AboutUs() {
       />
 
       <section className="maincontent">
+        <div className="container">
         <div style={{
-          marginLeft: 270
+         
         }}>
           <h1 className="pghdng2" style={{
-            fontSize: "24px",
-            fontWeight: "bold",
-            color: "#000",
-            marginBottom: "20px"
+           
           }}>
             Productivity Week Celebration 2025
           </h1>
@@ -203,36 +201,28 @@ export default function AboutUs() {
           </div>
 
           <div style={{
-            marginBottom: "15px"
+           
           }}>
             <b style={{
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "#000"
+              
             }}>Productivity Week Theme 2025</b>
           </div>
 
           <div style={{
-            marginBottom: "15px"
+           
           }}>
             <h5 style={{
-              fontSize: "14px",
-              fontWeight: "bold",
-              margin: "0 0 5px 0",
-              color: "#000"
+              
             }}>
               <b>THEME IN ENGLISH:</b>
             </h5>
             <h5 style={{
-              fontSize: "14px",
-              margin: "0",
-              color: "#0066cc"
+              
             }}>
               <a
                 href="https://www.npcindia.gov.in/NPC/Uploads/productivity%20week/Ideas%20to%20Impact%20PW%20theme%202025.pdf"
                 style={{
-                  color: "#0066cc",
-                  textDecoration: "none"
+                
                 }}
 
               >
@@ -261,6 +251,7 @@ export default function AboutUs() {
         {tables.map((tbl, idx) => (
           <InfoTable key={idx} title={tbl.title} members={tbl.members} />
         ))}
+        </div>
       </section>
     </div>
   );
