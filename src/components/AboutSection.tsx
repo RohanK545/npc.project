@@ -40,13 +40,15 @@ export default function AboutSection() {
         </h2>
 
         {/* LEFT CONTENT */}
-        <div className="col-xl-8 col-lg-12 col-md-12 mb-auto aboutHeadingSpacing">
-          <div className="d-flex flex-column justify-content-between about-section-left">
-            <div className="layout4-about-content text-justify">
-              National Productivity Council of India (NPC), established in the year 1958, is an autonomous organization under Department for Promotion of Industry & Internal Trade, Ministry of Commerce and Industry, Government of India. Besides undertaking research in the area of productivity, NPC has been providing consultancy and training services in areas of Industrial Engineering, Agri-Business, Economic Services, Quality Management, Human Resources Management, Information Technology, Technology Management, Energy Management, Environmental Management etc., to the Government and Public & Private sector organizations. NPC is a constituent of the Tokyo-based Asian Productivity Organisation (APO), an Inter-Governmental Body of which the Government of India is a founding member.
-            </div>
-          </div>
-        </div>
+       <div className="col-xl-8 col-lg-12 col-md-12 mb-auto aboutHeadingSpacing">
+  <div className="d-flex flex-column justify-content-between about-section-left">
+    <div className="container px-3 px-md-0"> {/* Add this container */}
+      <div className=" text-justify">
+        National Productivity Council of India (NPC), established in the year 1958, is an autonomous organization under Department for Promotion of Industry & Internal Trade, Ministry of Commerce and Industry, Government of India. Besides undertaking research in the area of productivity, NPC has been providing consultancy and training services in areas of Industrial Engineering, Agri-Business, Economic Services, Quality Management, Human Resources Management, Information Technology, Technology Management, Energy Management, Environmental Management etc., to the Government and Public & Private sector organizations. NPC is a constituent of the Tokyo-based Asian Productivity Organisation (APO), an Inter-Governmental Body of which the Government of India is a founding member.
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* RIGHT SIDE IMAGES */}
         <div className="col-xl-4 col-lg-12 col-md-12 mb-auto our-team-section-right">
