@@ -4,11 +4,11 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
-import "./globals.scss";
 import Script from "next/script";
 // import "../styles/SCSS.scss";
 import "../styles/CSS.css";
 import Link from "next/link";
+import "../app/(public)/globals.scss"
 
 export const metadata: Metadata = {
   title: "Ministry of Skill Development and Entrepreneurship",
