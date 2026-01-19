@@ -332,7 +332,8 @@ export default function OrganizationStructure() {
                                                                         aria-label="View Profile HON’BLE MINISTER"
                                                                         role="link"
                                                                     >
-                                                                        <small className="text-uppercase">
+                                                                        <small className="text-uppercasenpm run dev
+                                                                        ">
                                                                             Minister of and Industry & President
                                                                         </small>
                                                                         <p className="h4">Sh. Piyush Goyal</p>

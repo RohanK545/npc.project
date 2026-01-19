@@ -289,101 +289,231 @@ export default function AboutUs() {
           <p className="text-uppercase mb-0">{title}</p>
         </div>
 
-        {/* Header Row */}
-        <div role="rowgroup">
-          <div className="row row-gap-4 me-0 ms-0 our-team-list-subheader fw-bold">
-            <div className="col-lg-1 col-sm-12 ">S.No.</div>
-            <div className="col-lg-2 col-sm-12 ps-1">Project Title</div>
-            <div className="col-lg-2 col-sm-12 ps-1">Type of Study</div>
-            <div className="col-lg-2 col-sm-12 ps-1">Client Name</div>
-            <div className="col-lg-1 col-sm-12 ps-1">Client Type</div>
-            <div className="col-lg-1 col-sm-12 ps-1">Year of Study</div>
-            <div className="col-lg-1 col-sm-12">Name of Group/RD</div>
-            <div className="col-lg-1 col-sm-12">Area</div>
-            <div className="col-lg-1 col-sm-12">Scope of Study</div>
+        {/* Desktop Table - Hidden on Mobile */}
+        <div className="d-none d-lg-block">
+          {/* Header Row */}
+          <div role="rowgroup">
+            <div className="row row-gap-4 me-0 ms-0 our-team-list-subheader fw-bold">
+              <div className="col-lg-1">S.No.</div>
+              <div className="col-lg-2 ps-1">Project Title</div>
+              <div className="col-lg-2 ps-1">Type of Study</div>
+              <div className="col-lg-2 ps-1">Client Name</div>
+              <div className="col-lg-1 ps-1">Client Type</div>
+              <div className="col-lg-1 ps-1">Year of Study</div>
+              <div className="col-lg-1">Name of Group/RD</div>
+              <div className="col-lg-1">Area</div>
+              <div className="col-lg-1">Scope of Study</div>
+            </div>
+          </div>
+          {/* Members */}
+          <div role="rowgroup">
+            {paginatedData.map((m, idx) => (
+              <div
+                key={idx}
+                role="row"
+                className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
+              >
+                <div className="col-lg-1">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">{m.SrNo}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="name mb-0">
+                        {highlightText(m.projectTitle, search)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">
+                        {highlightText(m.typeOfStudy, search)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">
+                        {highlightText(m.clientName, search)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-1">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">
+                        {highlightText(m.clientType, search)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-1">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">{m.yearOfStudy}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-1">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">{m.nameOfGroup}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-1">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">{m.area}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-1">
+                  <div className="d-flex gap-2 align-items-center">
+                    <div className="d-flex flex-column">
+                      <p className="mb-0">{m.Scope}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        {/* Members */}
-        <div role="rowgroup">
+
+        {/* Mobile Card Layout - Visible only on Mobile */}
+        <div className="d-lg-none">
           {paginatedData.map((m, idx) => (
             <div
               key={idx}
-              role="row"
-              className="row row-gap-4 me-0 ms-0 our-team-list-subheader-list"
+              className="mobile-project-card p-3 mb-3"
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "8px",
+                backgroundColor: "#fff",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+              }}
             >
-              {/* Name & Designation */}
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.SrNo}</p>
-                  </div>
-                </div>
+              {/* Header: Serial Number and Year */}
+              <div className="mb-3 d-flex justify-content-between align-items-center">
+                <span
+                  className="badge"
+                  style={{
+                    backgroundColor: "#162F6A",
+                    fontSize: "14px",
+                    padding: "6px 12px",
+                    fontWeight: "600",
+                  }}
+                >
+                  #{m.SrNo}
+                </span>
+                <span
+                  className="text-muted"
+                  style={{ fontSize: "13px", fontWeight: "500" }}
+                >
+                  {m.yearOfStudy}
+                </span>
               </div>
-              <div className="col-lg-2 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="name mb-0">
-                      {highlightText(m.projectTitle, search)}
+
+              {/* Project Title */}
+              <div className="mb-3">
+                <h6
+                  className="fw-bold mb-0"
+                  style={{ color: "#162F6A", fontSize: "15px", lineHeight: "1.4" }}
+                >
+                  {highlightText(m.projectTitle, search)}
+                </h6>
+              </div>
+
+              {/* Project Details */}
+              <div className="project-details">
+                {/* Type of Study */}
+                <div className="mb-2">
+                  <p
+                    className="text-muted mb-1"
+                    style={{ fontSize: "12px", fontWeight: "600" }}
+                  >
+                    Type of Study:
+                  </p>
+                  <p className="mb-0" style={{ fontSize: "14px", color: "#333" }}>
+                    {highlightText(m.typeOfStudy, search)}
+                  </p>
+                </div>
+
+                {/* Client Name */}
+                <div className="mb-2">
+                  <p
+                    className="text-muted mb-1"
+                    style={{ fontSize: "12px", fontWeight: "600" }}
+                  >
+                    Client Name:
+                  </p>
+                  <p className="mb-0" style={{ fontSize: "14px", color: "#333" }}>
+                    {highlightText(m.clientName, search)}
+                  </p>
+                </div>
+
+                {/* Client Type */}
+                <div className="mb-2">
+                  <p
+                    className="text-muted mb-1"
+                    style={{ fontSize: "12px", fontWeight: "600" }}
+                  >
+                    Client Type:
+                  </p>
+                  <p className="mb-0" style={{ fontSize: "14px", color: "#333" }}>
+                    {highlightText(m.clientType, search)}
+                  </p>
+                </div>
+
+                {/* Name of Group/RD */}
+                <div className="mb-2">
+                  <p
+                    className="text-muted mb-1"
+                    style={{ fontSize: "12px", fontWeight: "600" }}
+                  >
+                    Name of Group/RD:
+                  </p>
+                  <p className="mb-0" style={{ fontSize: "14px", color: "#333" }}>
+                    {m.nameOfGroup}
+                  </p>
+                </div>
+
+                {/* Area */}
+                <div className="mb-2">
+                  <p
+                    className="text-muted mb-1"
+                    style={{ fontSize: "12px", fontWeight: "600" }}
+                  >
+                    Area:
+                  </p>
+                  <p className="mb-0" style={{ fontSize: "14px", color: "#333" }}>
+                    {m.area}
+                  </p>
+                </div>
+
+                {/* Scope of Study (if exists) */}
+                {m.Scope && (
+                  <div className="mb-0">
+                    <p
+                      className="text-muted mb-1"
+                      style={{ fontSize: "12px", fontWeight: "600" }}
+                    >
+                      Scope of Study:
+                    </p>
+                    <p className="mb-0" style={{ fontSize: "14px", color: "#333" }}>
+                      {m.Scope}
                     </p>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">
-                      {" "}
-                      {highlightText(m.typeOfStudy, search)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">
-                      {" "}
-                      {highlightText(m.clientName, search)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">
-                      {highlightText(m.clientType, search)}{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.yearOfStudy}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.nameOfGroup}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.area}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-1 col-md-12">
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="d-flex flex-column">
-                    <p className="mb-0">{m.Scope}</p>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           ))}
@@ -756,9 +886,8 @@ export default function AboutUs() {
                       onClick={() => setPage(num)}
                     >
                       <span
-                        className={`${
-                          page === num ? "active" : "false"
-                        } page-link pointer hover`}
+                        className={`${page === num ? "active" : "false"
+                          } page-link pointer hover`}
                       >
                         {num}
                       </span>
