@@ -3,6 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import "../../styles/CSS.css";
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -37,11 +38,12 @@ export default function AdminLogin() {
         localStorage.setItem("token", data.token); // store JWT token
 
         // Redirect to admin dashboard
-        router.push("/admin/pages/");
+        // router.push("/admin/pages/");
+        router.push("/admin/dashboard");
       } else {
         setError("Login failed: No token received.");
       }
-    } catch (error: any) {
+    } catch (error) {
       // Log error securely or send to monitoring service
       // Avoid exposing sensitive details to user
       if (error.response?.data?.message) {
@@ -53,61 +55,67 @@ export default function AdminLogin() {
       setLoading(false);
     }
   };
+  const GoBack = () => {
+    router.push("/");
+  };
 
   return (
-    <section className="maincontent py-5">
-      <div className="container d-flex justify-content-center">
-        <div
-          className="card p-4 shadow"
-          style={{ maxWidth: "400px", width: "100%" }}
-        >
-          <h1 className="card-title text-center mb-4">Admin Login</h1>
+    <section className="maincontent ">
+      <div className="container ">
+        <div className="d-flex justify-content-center align-items-center vh-100">
+          <div className="card p-4 shadow col-11 col-sm-8 col-md-6 col-lg-4">
+            <h1 className="card-title text-center mb-4">Admin Login</h1>
 
-          {error && (
-            <div className="alert alert-danger" role="alert">
-              {error}
-            </div>
-          )}
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
 
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label fw-semibold">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="form-control"
-                placeholder="admin@example.com"
-              />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label fw-semibold">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="form-control"
+                  placeholder="admin@example.com"
+                />
+              </div>
 
-            <div className="mb-4">
-              <label htmlFor="password" className="form-label fw-semibold">
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="form-control"
-                placeholder="Enter your password"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn btn-primary w-100"
-            >
-              {loading ? "Logging in..." : "Login"}
-            </button>
-          </form>
+              <div className="mb-4">
+                <label htmlFor="password" className="form-label fw-semibold">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="form-control"
+                  placeholder="Enter your password"
+                />
+              </div>
+              <div className="d-flex justify-content-end gap-3 me-4">
+                <button className="btn btn-secondary" onClick={() => GoBack()}>
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn btn-primary w-100"
+                >
+                  {loading ? "Logging in..." : "Login"}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>

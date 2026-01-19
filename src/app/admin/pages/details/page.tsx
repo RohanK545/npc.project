@@ -36,14 +36,8 @@ export default function PagesList() {
     }
     fetchPages();
   }, []);
-  const goToDetails = () => {
-    router.push("/admin/pages/details");
-  };
   const GoBack = () => {
-    router.push("/admin/dashboard");
-  };
-  const goToEdit = (id: number) => {
-    router.push(`/admin/pages/edit?id=${id}`);
+    router.push("/admin/pages");
   };
 
   if (loading) return <div>Loading pages...</div>;
@@ -58,12 +52,11 @@ export default function PagesList() {
             <th>ID</th>
             <th>Title</th>
             <th>Slug</th>
-            {/* <th>Meta Title</th>
-            <th>Meta Description</th> */}
+            <th>Meta Title</th>
+            <th>Meta Description</th>
             <th>Published</th>
             <th>Created On</th>
-            {/* <th>Updated On</th> */}
-            <th>Actions</th>
+            <th>Updated On</th>
           </tr>
         </thead>
         <tbody>
@@ -79,40 +72,18 @@ export default function PagesList() {
                 <td>{page.id}</td>
                 <td>{page.title}</td>
                 <td>{page.slug}</td>
-                {/* <td>{page.metaTitle ?? "-"}</td>
-                <td>{page.metaDescription ?? "-"}</td> */}
+                <td>{page.metaTitle ?? "-"}</td>
+                <td>{page.metaDescription ?? "-"}</td>
                 <td>{page.isPublished ? "Yes" : "No"}</td>
-                {/* <td>
+                <td>
                   {page.createdAt
                     ? new Date(page.createdAt).toLocaleDateString()
                     : "-"}
-                </td> */}
+                </td>
                 <td>
                   {page.updatedAt
                     ? new Date(page.updatedAt).toLocaleDateString()
                     : "-"}
-                </td>
-                <td className="text-center">
-                  <div className="d-flex justify-content-center gap-2">
-                    <button
-                      className="btn btn-sm btn-outline-secondary"
-                      onClick={goToDetails}
-                    >
-                      Details
-                    </button>
-                    <button className="btn btn-sm btn-outline-secondary">
-                      View
-                    </button>
-
-                    <button
-                      className="btn btn-sm btn-primary"
-                      onClick={() => goToEdit(page.id)}
-                    >
-                      Edit
-                    </button>
-
-                    <button className="btn btn-sm btn-danger">Delete</button>
-                  </div>
                 </td>
               </tr>
             ))
