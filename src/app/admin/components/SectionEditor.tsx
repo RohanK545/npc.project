@@ -20,7 +20,7 @@ export default function SectionEditor({ section, onChange }: Props) {
 
     onChange({
       ...section,
-      contentBlocks: blocks,
+      sectionValue: JSON.stringify(blocks),
     });
   };
 

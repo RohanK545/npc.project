@@ -118,4 +118,4 @@ export const editorTools: EditorJS.EditorConfig["tools"] = {
       },
     },
   },
-};
+}as any;
