@@ -3,7 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Services from "@/components/Services";
 import dynamic from "next/dynamic";
-
+import SocialMediaSection from "@/components/SocialMediaSection";
+import PartnerLogoCarousel from "@/components/PartnerLogoCarousel";
 const DomainExpertise = dynamic(() => import("@/components/DomainExpertise"), {
   ssr: false,
 });
@@ -378,14 +379,32 @@ export default function Home() {
                   fontStyle: "normal",
                   fontWeight: "normal",
                   letterSpacing: "-.12px",
-                  width: "100%", // Changed from 125% to 100%
-                  maxWidth: "100%", // Added to ensure it doesn't overflow
-                  wordWrap: "break-word", // Added for long words
+                  width: "100%",
+                  maxWidth: "100%",
+                  wordWrap: "break-word",
                 }}
               >
-                India offers the three Ds for business to thrive – Democracy,
-                Demography, and Demand. We are committed to making India the
-                most investment-friendly country in the world.
+                The world trusts India, the world believes in India, and the
+                world is ready to build the semiconductor future with India.
+              </p>
+
+              <p
+                style={{
+                  color: "#162f6a",
+                  fontSize: "2.4rem",
+                  lineHeight: "1.6",
+                  margin: "2rem 0 0 0", // Added top margin for spacing
+                  fontStyle: "normal",
+                  fontWeight: "normal",
+                  letterSpacing: "-.12px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  wordWrap: "break-word",
+                }}
+              >
+                We are creating a complete ecosystem, an ecosystem where
+                designing, manufacturing, packaging and high-tech devices,
+                everything is available right here in India.
               </p>
             </blockquote>
 
@@ -422,7 +441,7 @@ export default function Home() {
                     fontStyle: "normal",
                   }}
                 >
-                  Vibrant Gujarat Summit
+                  SEMICON India 2025
                 </p>
                 <p
                   style={{
@@ -433,13 +452,13 @@ export default function Home() {
                     textTransform: "uppercase",
                   }}
                 >
-                  17.04.2015
+                  02.10.2025
                 </p>
               </div>
 
               {/* BUTTON */}
               <a
-                href="https://www.pib.gov.in/PressReleseDetail.aspx?PRID=1500021"
+                href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163000&reg=3&lang=2"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -485,9 +504,11 @@ export default function Home() {
         </div>
       </section>
 
-      <AboutSection />
+      {/* <AboutSection /> */}
       <Services />
       <DomainExpertise />
+      <SocialMediaSection />
+      <PartnerLogoCarousel />
       <LatestNews />
     </div>
   );
