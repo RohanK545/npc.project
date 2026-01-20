@@ -236,9 +236,9 @@ body .type-size small {
 }
 
 header {
-  /* padding: 12px 24px 0px 24px; */
-    padding: 2rem 10rem;
-  /* position: sticky; */
+  padding: 12px 24px 0px 24px;
+    /* padding: 2rem 10rem; */
+  position: sticky;
   top: 0;
   z-index: 99;
   background: #ffffff;

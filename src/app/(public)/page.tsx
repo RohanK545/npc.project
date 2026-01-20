@@ -4,20 +4,17 @@ import { useEffect, useState } from "react";
 import Services from "@/components/Services";
 import dynamic from "next/dynamic";
 
-const DomainExpertise = dynamic(
-  () => import("@/components/DomainExpertise"),
-  { ssr: false }
-);
+const DomainExpertise = dynamic(() => import("@/components/DomainExpertise"), {
+  ssr: false,
+});
 
-const AboutSection = dynamic(
-  () => import("@/components/AboutSection"),
-  { ssr: false }
-);
+const AboutSection = dynamic(() => import("@/components/AboutSection"), {
+  ssr: false,
+});
 
-const LatestNews = dynamic(
-  () => import("@/components/LatestNews"),
-  { ssr: false }
-);
+const LatestNews = dynamic(() => import("@/components/LatestNews"), {
+  ssr: false,
+});
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -41,7 +38,7 @@ export default function Home() {
 
   const goToPrevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + bannerImages.length) % bannerImages.length
+      (prev) => (prev - 1 + bannerImages.length) % bannerImages.length,
     );
   };
   const goToNextSlide = () => {
@@ -51,23 +48,23 @@ export default function Home() {
     {
       title: "Consultancy",
       gradient: "from-purple-600 to-blue-600",
-      icon: "💼"
+      icon: "💼",
     },
     {
       title: "Productivity Promotion",
       gradient: "from-pink-600 to-purple-600",
-      icon: "📈"
+      icon: "📈",
     },
     {
       title: "Training",
       gradient: "from-blue-600 to-purple-700",
-      icon: "🎓"
+      icon: "🎓",
     },
     {
       title: "International Services",
       gradient: "from-purple-700 to-indigo-700",
-      icon: "🌐"
-    }
+      icon: "🌐",
+    },
   ];
   return (
     <div className="w-100">
@@ -92,8 +89,8 @@ export default function Home() {
                 fill
                 // style={{ objectFit: "cover" }}
                 unoptimized
-              // width={300}
-              // height={300}
+                // width={300}
+                // height={300}
               />
             </div>
           ))}
@@ -468,7 +465,18 @@ export default function Home() {
                   className="material-symbols-outlined bhashini-skip-translation"
                   style={{ fontSize: "15px", backgroundColor: "#FFFFFF" }}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24 " viewBox="0 -960 960 960" width="24" fill="#2d2d2d" ><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h249q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H180v600h600v-249q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v249q0 24-18 42t-42 18H180Zm600-617L403-360q-9 9-21 8.5t-21-9.5q-9-9-9-21t9-21l377-377H549q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h261q12.75 0 21.38 8.62Q840-822.75 840-810v261q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-188Z" fill="#162F6A"/></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24 "
+                    viewBox="0 -960 960 960"
+                    width="24"
+                    fill="#2d2d2d"
+                  >
+                    <path
+                      d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h249q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H180v600h600v-249q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v249q0 24-18 42t-42 18H180Zm600-617L403-360q-9 9-21 8.5t-21-9.5q-9-9-9-21t9-21l377-377H549q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h261q12.75 0 21.38 8.62Q840-822.75 840-810v261q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-188Z"
+                      fill="#162F6A"
+                    />
+                  </svg>
                 </span>
                 View Event
               </a>
