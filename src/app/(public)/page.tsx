@@ -3,7 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Services from "@/components/Services";
 import dynamic from "next/dynamic";
-
+import SocialMediaSection from "@/components/SocialMediaSection";
+import PartnerLogoCarousel from "@/components/PartnerLogoCarousel";
 const DomainExpertise = dynamic(
   () => import("@/components/DomainExpertise"),
   { ssr: false }
@@ -381,14 +382,29 @@ export default function Home() {
                   fontStyle: "normal",
                   fontWeight: "normal",
                   letterSpacing: "-.12px",
-                  width: "100%", // Changed from 125% to 100%
-                  maxWidth: "100%", // Added to ensure it doesn't overflow
-                  wordWrap: "break-word", // Added for long words
+                  width: "100%",
+                  maxWidth: "100%",
+                  wordWrap: "break-word",
                 }}
               >
-                India offers the three Ds for business to thrive – Democracy,
-                Demography, and Demand. We are committed to making India the
-                most investment-friendly country in the world.
+                The world trusts India, the world believes in India, and the world is ready to build the semiconductor future with India.
+              </p>
+
+              <p
+                style={{
+                  color: "#162f6a",
+                  fontSize: "2.4rem",
+                  lineHeight: "1.6",
+                  margin: "2rem 0 0 0", // Added top margin for spacing
+                  fontStyle: "normal",
+                  fontWeight: "normal",
+                  letterSpacing: "-.12px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  wordWrap: "break-word",
+                }}
+              >
+                We are creating a complete ecosystem, an ecosystem where designing, manufacturing, packaging and high-tech devices, everything is available right here in India.
               </p>
             </blockquote>
 
@@ -425,7 +441,7 @@ export default function Home() {
                     fontStyle: "normal",
                   }}
                 >
-                  Vibrant Gujarat Summit
+                  SEMICON India 2025
                 </p>
                 <p
                   style={{
@@ -436,13 +452,13 @@ export default function Home() {
                     textTransform: "uppercase",
                   }}
                 >
-                  17.04.2015
+                  02.10.2025
                 </p>
               </div>
 
               {/* BUTTON */}
               <a
-                href="https://www.pib.gov.in/PressReleseDetail.aspx?PRID=1500021"
+                href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163000&reg=3&lang=2"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -468,7 +484,7 @@ export default function Home() {
                   className="material-symbols-outlined bhashini-skip-translation"
                   style={{ fontSize: "15px", backgroundColor: "#FFFFFF" }}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24 " viewBox="0 -960 960 960" width="24" fill="#2d2d2d" ><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h249q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H180v600h600v-249q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v249q0 24-18 42t-42 18H180Zm600-617L403-360q-9 9-21 8.5t-21-9.5q-9-9-9-21t9-21l377-377H549q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h261q12.75 0 21.38 8.62Q840-822.75 840-810v261q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-188Z" fill="#162F6A"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24 " viewBox="0 -960 960 960" width="24" fill="#2d2d2d" ><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h249q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H180v600h600v-249q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v249q0 24-18 42t-42 18H180Zm600-617L403-360q-9 9-21 8.5t-21-9.5q-9-9-9-21t9-21l377-377H549q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h261q12.75 0 21.38 8.62Q840-822.75 840-810v261q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-188Z" fill="#162F6A" /></svg>
                 </span>
                 View Event
               </a>
@@ -477,9 +493,11 @@ export default function Home() {
         </div>
       </section>
 
-      <AboutSection />
+      {/* <AboutSection /> */}
       <Services />
       <DomainExpertise />
+      <SocialMediaSection />
+      <PartnerLogoCarousel />
       <LatestNews />
     </div>
   );
