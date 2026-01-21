@@ -113,9 +113,9 @@ export const editorTools: EditorJS.EditorConfig["tools"] = {
     class: ImageTool,
     config: {
       endpoints: {
-        byFile: "/api/upload/image",        // Your backend file upload endpoint
+        byFile: "/api/upload/image", // Your backend file upload endpoint
         byUrl: "/api/upload/image-by-url", // Your backend URL upload endpoint
       },
     },
   },
-}as any;
+} as any;

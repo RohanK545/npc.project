@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Services from "@/components/Services";
 import dynamic from "next/dynamic";
 import SocialMediaSection from "@/components/SocialMediaSection";
@@ -19,6 +19,8 @@ const LatestNews = dynamic(() => import("@/components/LatestNews"), {
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isPausedAnnouncement, setIsPausedAnnouncement] = useState(false);
+  const marqueeRef = useRef<HTMLDivElement>(null);
 
   const bannerImages = [
     "/images/banner1.png",
@@ -45,6 +47,40 @@ export default function Home() {
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
   };
+  const announcements = [
+    {
+      text: "Invitation for applications for empanelment from eligible OEMs of APCDs for installation in industrial units in Delhi-NCR",
+      href: "/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf",
+      targetBlank: false,
+    },
+    {
+      text: "Two‑Day National Boiler Workshop on “Optimizing Boilers for Sustainable Industry Growth”, scheduled on 12th–13th February 2026 at Hyderabad. | Partner with NPC for the National Boiler Workshop 2026",
+      href: "/static/uploads/2025/01/5ff397f9e8152d5562ed4cef1a6b767b.pdf",
+      targetBlank: false,
+    },
+  ];
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
+
+    let scrollAmount = 0;
+    const speed = 1; // pixels per tick
+    const interval = 20; // ms
+
+    const ticker = setInterval(() => {
+      if (!isPausedAnnouncement && marquee) {
+        scrollAmount += speed;
+        if (scrollAmount >= marquee.scrollWidth / 2) {
+          scrollAmount = 0; // loop
+        }
+        marquee.scrollLeft = scrollAmount;
+      }
+    }, interval);
+
+    return () => clearInterval(ticker);
+  }, [isPausedAnnouncement]);
+
   const services = [
     {
       title: "Consultancy",
@@ -215,6 +251,7 @@ export default function Home() {
           width: "100%",
         }}
       >
+        {/* Announcements Title + Icon */}
         <div
           style={{
             display: "flex",
@@ -257,17 +294,18 @@ export default function Home() {
                 width="24"
                 height="24"
                 fill="#D9D9D9"
-              ></rect>
+              />
             </mask>
             <g mask="url(#mask0_5630_196823)">
               <path
                 d="M16.3005 13.2497V11.7497H19.9158V13.2497H16.3005ZM17.4428 19.9805L14.5505 17.8112L15.462 16.6152L18.3542 18.7842L17.4428 19.9805ZM15.4235 8.34597L14.512 7.14972L17.4043 4.98047L18.3158 6.17672L15.4235 8.34597ZM4.03125 14.9997V9.99972H7.74275L12.0312 5.71147V19.288L7.74275 14.9997H4.03125ZM10.5312 9.34972L8.38125 11.4997H5.53125V13.4997H8.38125L10.5312 15.6497V9.34972Z"
                 fill="#13406C"
-              ></path>
+              />
             </g>
           </svg>
         </div>
 
+        {/* Marquee */}
         <div
           style={{
             width: "100%",
@@ -276,12 +314,37 @@ export default function Home() {
           }}
           aria-live="polite"
           aria-atomic="true"
+          ref={marqueeRef}
         >
-          <div className="marquee"></div>
+          <div
+            style={{
+              display: "inline-flex",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {[...announcements, ...announcements].map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target={item.targetBlank ? "_blank" : "_self"}
+                rel={item.targetBlank ? "noopener noreferrer" : undefined}
+                className="h3 pointer"
+                style={{
+                  marginRight: "50px",
+                  textDecoration: "none",
+                  color: "#150202",
+                }}
+              >
+                {item.text}
+              </a>
+            ))}
+          </div>
         </div>
 
+        {/* Play/Pause */}
         <button
-          aria-label="Pause"
+          aria-label={isPausedAnnouncement ? "Play" : "Pause"}
+          onClick={() => setIsPausedAnnouncement(!isPausedAnnouncement)}
           style={{
             marginLeft: "20px",
             background: "transparent",
@@ -295,7 +358,7 @@ export default function Home() {
             aria-hidden="true"
             className="material-symbols-outlined bhashini-skip-translation"
           >
-            pause
+            {isPausedAnnouncement ? "play_arrow" : "pause"}
           </span>
         </button>
       </section>

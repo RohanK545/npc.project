@@ -26,7 +26,7 @@ export default function SectionEditor({ section, onChange }: Props) {
 
   useEffect(() => {
     let mounted = true;
-    setLoading(true);
+    // setLoading(true);
 
     axios
       .get<ContentBlock[]>(
@@ -40,11 +40,10 @@ export default function SectionEditor({ section, onChange }: Props) {
         // 🔑 sync with parent
         onChange({
           ...section,
-          contentBlocks: res.data,
         });
       })
       .finally(() => {
-        if (mounted) setLoading(false);
+        // if (mounted) setLoading(false);
       });
 
     return () => {

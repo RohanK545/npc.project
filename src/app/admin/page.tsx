@@ -28,7 +28,7 @@ export default function AdminLogin() {
 
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/Auth/login`,
-        payload
+        payload,
       );
 
       // Successful response assumed
@@ -43,14 +43,16 @@ export default function AdminLogin() {
       } else {
         setError("Login failed: No token received.");
       }
-    } catch (error) {
-      // Log error securely or send to monitoring service
-      // Avoid exposing sensitive details to user
-      if (error.response?.data?.message) {
-        setError(error.response.data.message);
-      } else {
-        setError("Login failed. Please check your credentials and try again.");
+    } catch (err: unknown) {
+      let errorMessage =
+        "Login failed. Please check your credentials and try again.";
+
+      if (axios.isAxiosError(err) && err.response?.data?.message) {
+        // now TypeScript knows 'err' is AxiosError
+        errorMessage = err.response.data.message;
       }
+
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
