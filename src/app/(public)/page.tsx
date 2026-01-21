@@ -23,9 +23,11 @@ export default function Home() {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
   const bannerImages = [
-    "/images/banner1.png",
-    "/images/banner2.png",
-    "/images/banner3.png",
+    "/images/homebanner/headerBanner1.png",
+    "/images/homebanner/headerBanner2.png",
+    "/images/homebanner/headerBanner3.png",
+    "/images/homebanner/headerBanner4.png",
+    "/images/homebanner/headerBanner5.png",
   ];
 
   // Auto slide
@@ -81,28 +83,6 @@ export default function Home() {
     return () => clearInterval(ticker);
   }, [isPausedAnnouncement]);
 
-  const services = [
-    {
-      title: "Consultancy",
-      gradient: "from-purple-600 to-blue-600",
-      icon: "💼",
-    },
-    {
-      title: "Productivity Promotion",
-      gradient: "from-pink-600 to-purple-600",
-      icon: "📈",
-    },
-    {
-      title: "Training",
-      gradient: "from-blue-600 to-purple-700",
-      icon: "🎓",
-    },
-    {
-      title: "International Services",
-      gradient: "from-purple-700 to-indigo-700",
-      icon: "🌐",
-    },
-  ];
   return (
     <div className="w-100">
       <section

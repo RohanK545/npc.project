@@ -56,6 +56,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Ministry of Skill Development and Entrepreneurship",
   description: "Government of India - Skill Development Initiatives",
+  icons: {
+    icon: "/vercel.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
