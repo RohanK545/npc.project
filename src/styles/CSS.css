@@ -474,6 +474,8 @@ header .menuright .menutop li .skipcontent {
   padding-right: 4px;
   background: transparent;
   border: 0;
+  cursor: "pointer"
+
 }
 header .menuright .menutop li .skipcontent svg {
   transform: translateY(-1px);

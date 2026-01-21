@@ -23,9 +23,11 @@ export default function Home() {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
   const bannerImages = [
-    "/images/banner1.png",
-    "/images/banner2.png",
-    "/images/banner3.png",
+    "/images/homebanner/headerBanner1.png",
+    "/images/homebanner/headerBanner2.png",
+    "/images/homebanner/headerBanner3.png",
+    "/images/homebanner/headerBanner4.png",
+    "/images/homebanner/headerBanner5.png",
   ];
 
   // Auto slide

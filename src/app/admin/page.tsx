@@ -86,7 +86,7 @@ export default function AdminLogin() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="form-control"
-                  placeholder="admin@example.com"
+                  placeholder="Enter your email"
                 />
               </div>
 
@@ -111,7 +111,7 @@ export default function AdminLogin() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn btn-primary w-100"
+                  className="btn btn-primary "
                 >
                   {loading ? "Logging in..." : "Login"}
                 </button>
