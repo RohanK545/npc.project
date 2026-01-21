@@ -214,114 +214,156 @@ const SocialMediaSection = () => {
               <div className="social-card">
                 <div className="social-card-header">X</div>
                 <div className="social-card-body">
-                  <div className="twitter-container">
-                    <blockquote className="twitter-tweet">
-                      <p lang="en" dir="ltr">
-                        Sample tweet content here...
-                      </p>
-                      <a href="https://twitter.com/example">View on X</a>
-                    </blockquote>
-                  </div>
+                  {/* First Tweet */}
+                  <iframe
+                    src="https://twitframe.com/show?url=https://x.com/npc_india_gov/status/1690000000000000000"
+                    width="400"
+                    height="200"
+                    frameBorder="0"
+                    scrolling="no"
+                    style={{ border: 'none', overflow: 'hidden', width: '100%', marginBottom: '16px' }}
+                    title="X Tweet 1"
+                  ></iframe>
+
+                  {/* Second Tweet */}
+                  <iframe
+                    src="https://twitframe.com/show?url=https://x.com/npc_india_gov/status/1690000000000000001"
+                    width="400"
+                    height="200"
+                    frameBorder="0"
+                    scrolling="no"
+                    style={{ border: 'none', overflow: 'hidden', width: '100%', marginBottom: '16px' }}
+                    title="X Tweet 2"
+                  ></iframe>
+
+                  {/* Third Tweet */}
+                  <iframe
+                    src="https://twitframe.com/show?url=https://x.com/npc_india_gov/status/1690000000000000002"
+                    width="400"
+                    height="200"
+                    frameBorder="0"
+                    scrolling="no"
+                    style={{ border: 'none', overflow: 'hidden', width: '100%' }}
+                    title="X Tweet 3"
+                  ></iframe>
                 </div>
               </div>
             </div>
-
             {/* YouTube */}
             <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div className="social-card">
                 <div className="social-card-header">Youtube</div>
                 <div className="social-card-body">
-                  <div className="embed-container">
+                  <div
+                    className="embed-container"
+                    style={{ position: 'relative', cursor: 'pointer' }}
+                    onClick={() => window.open('https://www.youtube.com/channel/UC2M-aNqWOSOyTeAgmYKNGjA', '_blank')}
+                  >
                     <iframe
                       className="youtube-embed"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                      title="YouTube video 1"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <div className="embed-container">
-                    <iframe
-                      className="youtube-embed"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      src="https://www.youtube.com/embed/Z8DFFC6Fv3w"
                       title="YouTube video 2"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      style={{ pointerEvents: 'none' }}
                     />
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: 'transparent'
+                    }} />
                   </div>
-                  <div className="embed-container">
+                  <div
+                    className="embed-container"
+                    style={{ position: 'relative', cursor: 'pointer' }}
+                    onClick={() => window.open('https://www.youtube.com/channel/UC2M-aNqWOSOyTeAgmYKNGjA', '_blank')}
+                  >
                     <iframe
                       className="youtube-embed"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                      title="YouTube video 3"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      src="https://www.youtube.com/embed/tDycG2X9bTs"
+                      title="YouTube video 1"
+                      style={{ pointerEvents: 'none' }}
                     />
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: 'transparent'
+                    }} />
+                  </div>
+                  <div
+                    className="embed-container"
+                    style={{ position: 'relative', cursor: 'pointer' }}
+                    onClick={() => window.open('https://www.youtube.com/channel/UC2M-aNqWOSOyTeAgmYKNGjA', '_blank')}
+                  >
+                    <iframe
+                      className="youtube-embed"
+                      src="https://www.youtube.com/embed/HeBLeOeaflQ"
+                      title="YouTube video 3"
+                      style={{ pointerEvents: 'none' }}
+                    />
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: 'transparent'
+                    }} />
                   </div>
                 </div>
               </div>
             </div>
-
             {/* Facebook */}
             <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div className="social-card">
                 <div className="social-card-header">Facebook</div>
                 <div className="social-card-body">
-                  <div className="embed-container">
-                    <iframe
-                      className="facebook-embed"
-                      src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/facebook&show_text=true&width=500"
-                      title="Facebook post 1"
-                      scrolling="no"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    />
-                  </div>
-                  <div className="embed-container">
-                    <iframe
-                      className="facebook-embed"
-                      src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/facebook&show_text=true&width=500"
-                      title="Facebook post 2"
-                      scrolling="no"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    />
-                  </div>
+                  <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNational-Productivity-Council-1707778476113423%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                    width="340"
+                    height="500"
+                    style={{ border: 'none', overflow: 'hidden' }}
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    title="Facebook Page"
+                  ></iframe>
                 </div>
               </div>
             </div>
-
             {/* Instagram */}
             <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div className="social-card">
                 <div className="social-card-header">Instagram</div>
                 <div className="social-card-body">
-                  <div className="embed-container">
-                    <blockquote
-                      className="instagram-media"
-                      data-instgrm-permalink="https://www.instagram.com/p/example/"
-                      data-instgrm-version="14"
-                      style={{
-                        background: '#FFF',
-                        border: '0',
-                        borderRadius: '3px',
-                        boxShadow: '0 0 1px 0 rgba(0,0,0,0.5)',
-                        margin: '1px',
-                        padding: '0',
-                        width: '99.375%',
-                      }}
-                    >
-                      <div style={{ padding: '16px' }}>
-                        <a
-                          href="https://www.instagram.com/p/example/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          View this post on Instagram
-                        </a>
-                      </div>
-                    </blockquote>
-                  </div>
+                  {/* First Instagram post */}
+                  <iframe
+                    src="https://www.instagram.com/p/B3Bms1VjlXU/embed"
+                    width="400"
+                    height="480"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency={true}
+                    title="Instagram Post 1"
+                    style={{ border: 'none', overflow: 'hidden', width: '100%', height: '480px', marginBottom: '16px' }}
+                  ></iframe>
+
+                  {/* Second Instagram post */}
+                  <iframe
+                    src="https://www.instagram.com/p/DTjxaRWEnN8/embed"
+                    width="400"
+                    height="480"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency={true}
+                    title="Instagram Post 2"
+                    style={{ border: 'none', overflow: 'hidden', width: '100%', height: '480px' }}
+                  ></iframe>
                 </div>
               </div>
             </div>

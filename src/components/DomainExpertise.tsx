@@ -9,141 +9,240 @@ const DomainExpertise = () => {
         {
             title: "Agri Business Group",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <circle cx="60" cy="50" r="25" fill="#E8F5E9" />
-                    <path d="M60 30 Q50 35 50 45 L50 60" stroke="#4CAF50" strokeWidth="3" fill="none" />
-                    <path d="M60 30 Q70 35 70 45 L70 60" stroke="#66BB6A" strokeWidth="3" fill="none" />
-                    <ellipse cx="50" cy="45" rx="8" ry="12" fill="#81C784" />
-                    <ellipse cx="70" cy="45" rx="8" ry="12" fill="#81C784" />
-                    <circle cx="60" cy="35" r="6" fill="#FDD835" />
-                    <rect x="58" y="60" width="4" height="20" fill="#8D6E63" rx="1" />
-                    <path d="M35 80 Q45 75 60 80 Q75 75 85 80" stroke="#795548" strokeWidth="2" fill="none" />
-                    <g opacity="0.4">
-                        <circle cx="40" cy="45" r="2" fill="#AED581" />
-                        <circle cx="80" cy="50" r="2" fill="#AED581" />
-                        <circle cx="45" cy="65" r="1.5" fill="#C5E1A5" />
-                    </g>
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <circle cx="60" cy="50" r="25" fill="#E8F5E9" />
+                        <path d="M60 30 Q50 35 50 45 L50 60" stroke="#4CAF50" strokeWidth="3" fill="none" />
+                        <path d="M60 30 Q70 35 70 45 L70 60" stroke="#66BB6A" strokeWidth="3" fill="none" />
+                        <ellipse cx="50" cy="45" rx="8" ry="12" fill="#81C784" />
+                        <ellipse cx="70" cy="45" rx="8" ry="12" fill="#81C784" />
+                        <circle cx="60" cy="35" r="6" fill="#FDD835" />
+                        <rect x="58" y="60" width="4" height="20" fill="#8D6E63" rx="1" />
+                        <path d="M35 80 Q45 75 60 80 Q75 75 85 80" stroke="#795548" strokeWidth="2" fill="none" />
+                        <g opacity="0.4">
+                            <circle cx="40" cy="45" r="2" fill="#AED581" />
+                            <circle cx="80" cy="50" r="2" fill="#AED581" />
+                            <circle cx="45" cy="65" r="1.5" fill="#C5E1A5" />
+                        </g>
+                    </svg>
+                </div>
             ),
-            link: "domainExpertise"
+            link: "domainExpertise",
         },
         {
             title: "Economic Services & Productivity Promotion",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <rect x="35" y="40" width="50" height="45" fill="#E3F2FD" rx="3" />
-                    <path d="M45 70 L50 60 L55 65 L60 50 L65 55 L70 45 L75 50" stroke="#2196F3" strokeWidth="3" fill="none" />
-                    <circle cx="50" cy="60" r="3" fill="#1976D2" />
-                    <circle cx="60" cy="50" r="3" fill="#1976D2" />
-                    <circle cx="70" cy="45" r="3" fill="#1976D2" />
-                    <path d="M50 35 L60 25 L70 35" fill="none" stroke="#4CAF50" strokeWidth="3" />
-                    <circle cx="60" cy="28" r="4" fill="#66BB6A" />
-                    <rect x="48" y="75" width="24" height="3" fill="#FFD54F" rx="1.5" />
-                    <g opacity="0.3">
-                        <circle cx="40" cy="50" r="2" fill="#64B5F6" />
-                        <circle cx="80" cy="55" r="2" fill="#64B5F6" />
-                        <rect x="38" cy="70" width="3" height="3" fill="#90CAF9" />
-                    </g>
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <rect x="35" y="40" width="50" height="45" fill="#E3F2FD" rx="3" />
+                        <path
+                            d="M45 70 L50 60 L55 65 L60 50 L65 55 L70 45 L75 50"
+                            stroke="#2196F3"
+                            strokeWidth="3"
+                            fill="none"
+                        />
+                        <circle cx="50" cy="60" r="3" fill="#1976D2" />
+                        <circle cx="60" cy="50" r="3" fill="#1976D2" />
+                        <circle cx="70" cy="45" r="3" fill="#1976D2" />
+                        <path
+                            d="M50 35 L60 25 L70 35"
+                            fill="none"
+                            stroke="#4CAF50"
+                            strokeWidth="3"
+                        />
+                        <circle cx="60" cy="28" r="4" fill="#66BB6A" />
+                        <rect x="48" y="75" width="24" height="3" fill="#FFD54F" rx="1.5" />
+                        <g opacity="0.3">
+                            <circle cx="40" cy="50" r="2" fill="#64B5F6" />
+                            <circle cx="80" cy="55" r="2" fill="#64B5F6" />
+                            <rect x="38" y="70" width="3" height="3" fill="#90CAF9" />
+                        </g>
+                    </svg>
+                </div>
             ),
             link: "domainExpertise/economic-service"
         },
         {
             title: "Energy Management",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <circle cx="60" cy="55" r="22" fill="#FFF9C4" />
-                    <path d="M60 35 L55 50 L65 50 L60 65" fill="#FFA726" stroke="#F57C00" strokeWidth="2" />
-                    <g opacity="0.5">
-                        <circle cx="60" cy="55" r="28" fill="none" stroke="#FFD54F" strokeWidth="2" />
-                        <circle cx="60" cy="55" r="33" fill="none" stroke="#FFE082" strokeWidth="1.5" />
-                    </g>
-                    <rect x="40" y="75" width="8" height="3" fill="#4CAF50" rx="1.5" />
-                    <rect x="52" y="75" width="16" height="3" fill="#66BB6A" rx="1.5" />
-                    <rect x="72" y="75" width="8" height="3" fill="#81C784" rx="1.5" />
-                    <circle cx="35" cy="40" r="2" fill="#8BC34A" />
-                    <circle cx="85" cy="45" r="2" fill="#8BC34A" />
-                    <g opacity="0.3">
-                        <circle cx="45" cy="30" r="1.5" fill="#FFEB3B" />
-                        <circle cx="75" cy="32" r="1.5" fill="#FFEB3B" />
-                    </g>
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <circle cx="60" cy="55" r="22" fill="#FFF9C4" />
+                        <path
+                            d="M60 35 L55 50 L65 50 L60 65"
+                            fill="#FFA726"
+                            stroke="#F57C00"
+                            strokeWidth="2"
+                        />
+                        <g opacity="0.5">
+                            <circle cx="60" cy="55" r="28" fill="none" stroke="#FFD54F" strokeWidth="2" />
+                            <circle cx="60" cy="55" r="33" fill="none" stroke="#FFE082" strokeWidth="1.5" />
+                        </g>
+                        <rect x="40" y="75" width="8" height="3" fill="#4CAF50" rx="1.5" />
+                        <rect x="52" y="75" width="16" height="3" fill="#66BB6A" rx="1.5" />
+                        <rect x="72" y="75" width="8" height="3" fill="#81C784" rx="1.5" />
+                        <circle cx="35" cy="40" r="2" fill="#8BC34A" />
+                        <circle cx="85" cy="45" r="2" fill="#8BC34A" />
+                        <g opacity="0.3">
+                            <circle cx="45" cy="30" r="1.5" fill="#FFEB3B" />
+                            <circle cx="75" cy="32" r="1.5" fill="#FFEB3B" />
+                        </g>
+                    </svg>
+                </div>
             ),
             link: "domainExpertise/energy-management"
         },
         {
             title: "Environment and Climate Action Group",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <circle cx="60" cy="55" r="25" fill="#E8F5E9" />
-                    <circle cx="60" cy="55" r="20" fill="#4CAF50" opacity="0.3" />
-                    <path d="M45 55 Q45 40 60 35 Q75 40 75 55" fill="#81C784" />
-                    <ellipse cx="50" cy="50" rx="6" ry="10" fill="#66BB6A" />
-                    <ellipse cx="70" cy="50" rx="6" ry="10" fill="#66BB6A" />
-                    <ellipse cx="60" cy="48" rx="5" ry="8" fill="#AED581" />
-                    <rect x="58" y="60" width="4" height="15" fill="#795548" rx="1" />
-                    <path d="M40 75 Q50 72 60 75 Q70 72 80 75" stroke="#8D6E63" strokeWidth="2" fill="none" />
-                    <circle cx="35" cy="40" r="8" fill="#81D4FA" opacity="0.6" />
-                    <circle cx="85" cy="45" r="6" fill="#81D4FA" opacity="0.6" />
-                    <g opacity="0.4">
-                        <path d="M30 42 L32 38 L34 42" stroke="#64B5F6" strokeWidth="1.5" fill="none" />
-                        <path d="M82 47 L84 43 L86 47" stroke="#64B5F6" strokeWidth="1.5" fill="none" />
-                    </g>
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <circle cx="60" cy="55" r="25" fill="#E8F5E9" />
+                        <circle cx="60" cy="55" r="20" fill="#4CAF50" opacity="0.3" />
+                        <path d="M45 55 Q45 40 60 35 Q75 40 75 55" fill="#81C784" />
+                        <ellipse cx="50" cy="50" rx="6" ry="10" fill="#66BB6A" />
+                        <ellipse cx="70" cy="50" rx="6" ry="10" fill="#66BB6A" />
+                        <ellipse cx="60" cy="48" rx="5" ry="8" fill="#AED581" />
+                        <rect x="58" y="60" width="4" height="15" fill="#795548" rx="1" />
+                        <path
+                            d="M40 75 Q50 72 60 75 Q70 72 80 75"
+                            stroke="#8D6E63"
+                            strokeWidth="2"
+                            fill="none"
+                        />
+                        <circle cx="35" cy="40" r="8" fill="#81D4FA" opacity="0.6" />
+                        <circle cx="85" cy="45" r="6" fill="#81D4FA" opacity="0.6" />
+                        <g opacity="0.4">
+                            <path d="M30 42 L32 38 L34 42" stroke="#64B5F6" strokeWidth="1.5" fill="none" />
+                            <path d="M82 47 L84 43 L86 47" stroke="#64B5F6" strokeWidth="1.5" fill="none" />
+                        </g>
+                    </svg>
+                </div>
             ),
             link: "domainExpertise/environment-climate"
         },
         {
             title: "Information Technology",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <rect x="35" y="35" width="50" height="40" fill="#E3F2FD" rx="3" stroke="#2196F3" strokeWidth="2" />
-                    <circle cx="45" cy="50" r="3" fill="#1976D2" />
-                    <circle cx="60" cy="50" r="3" fill="#1976D2" />
-                    <circle cx="75" cy="50" r="3" fill="#1976D2" />
-                    <line x1="45" y1="50" x2="60" y2="50" stroke="#64B5F6" strokeWidth="2" />
-                    <line x1="60" y1="50" x2="75" y2="50" stroke="#64B5F6" strokeWidth="2" />
-                    <circle cx="60" cy="62" r="4" fill="#FFA726" />
-                    <line x1="60" y1="50" x2="60" y2="62" stroke="#64B5F6" strokeWidth="2" />
-                    <rect x="40" y="43" width="8" height="3" fill="#90CAF9" rx="1" />
-                    <rect x="70" y="43" width="8" height="3" fill="#90CAF9" rx="1" />
-                    <rect x="50" y="75" width="20" height="3" fill="#9E9E9E" rx="1.5" />
-                    <path d="M45 78 L60 83 L75 78" fill="#BDBDBD" />
-                    <g opacity="0.3">
-                        <circle cx="30" cy="45" r="2" fill="#42A5F5" />
-                        <circle cx="90" cy="50" r="2" fill="#42A5F5" />
-                    </g>
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <rect
+                            x="35"
+                            y="35"
+                            width="50"
+                            height="40"
+                            fill="#E3F2FD"
+                            rx="3"
+                            stroke="#2196F3"
+                            strokeWidth="2"
+                        />
+                        <circle cx="45" cy="50" r="3" fill="#1976D2" />
+                        <circle cx="60" cy="50" r="3" fill="#1976D2" />
+                        <circle cx="75" cy="50" r="3" fill="#1976D2" />
+                        <line x1="45" y1="50" x2="60" y2="50" stroke="#64B5F6" strokeWidth="2" />
+                        <line x1="60" y1="50" x2="75" y2="50" stroke="#64B5F6" strokeWidth="2" />
+                        <circle cx="60" cy="62" r="4" fill="#FFA726" />
+                        <line x1="60" y1="50" x2="60" y2="62" stroke="#64B5F6" strokeWidth="2" />
+                        <rect x="40" y="43" width="8" height="3" fill="#90CAF9" rx="1" />
+                        <rect x="70" y="43" width="8" height="3" fill="#90CAF9" rx="1" />
+                        <rect x="50" y="75" width="20" height="3" fill="#9E9E9E" rx="1.5" />
+                        <path d="M45 78 L60 83 L75 78" fill="#BDBDBD" />
+                        <g opacity="0.3">
+                            <circle cx="30" cy="45" r="2" fill="#42A5F5" />
+                            <circle cx="90" cy="50" r="2" fill="#42A5F5" />
+                        </g>
+                    </svg>
+                </div>
             ),
             link: "domainExpertise/information-technology"
         },
         {
             title: "Industrial Engineering",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <rect x="35" y="40" width="50" height="35" fill="#FFE0B2" rx="3" stroke="#FF9800" strokeWidth="2" />
-                    <path d="M40 55 L80 55" stroke="#F57C00" strokeWidth="2" />
-                    <path d="M40 62 L70 62" stroke="#F57C00" strokeWidth="2" />
-                    <circle cx="45" cy="30" r="6" fill="#FFB74D" />
-                    <circle cx="60" cy="30" r="6" fill="#FFB74D" />
-                    <circle cx="75" cy="30" r="6" fill="#FFB74D" />
-                    <rect x="45" y="78" width="30" height="4" fill="#4CAF50" rx="2" />
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <rect
+                            x="35"
+                            y="40"
+                            width="50"
+                            height="35"
+                            fill="#FFE0B2"
+                            rx="3"
+                            stroke="#FF9800"
+                            strokeWidth="2"
+                        />
+                        <path d="M40 55 L80 55" stroke="#F57C00" strokeWidth="2" />
+                        <path d="M40 62 L70 62" stroke="#F57C00" strokeWidth="2" />
+                        <circle cx="45" cy="30" r="6" fill="#FFB74D" />
+                        <circle cx="60" cy="30" r="6" fill="#FFB74D" />
+                        <circle cx="75" cy="30" r="6" fill="#FFB74D" />
+                        <rect x="45" y="78" width="30" height="4" fill="#4CAF50" rx="2" />
+                    </svg>
+                </div>
             ),
             link: "domainExpertise/industrial-engineering"
         },
         {
             title: "Human Resource Management",
             icon: (
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <circle cx="45" cy="40" r="8" fill="#BA68C8" />
-                    <circle cx="75" cy="40" r="8" fill="#BA68C8" />
-                    <circle cx="60" cy="30" r="6" fill="#CE93D8" />
-                    <rect x="40" y="50" width="40" height="25" rx="4" fill="#E1BEE7" />
-                    <circle cx="60" cy="58" r="6" fill="#FFF9C4" />
-                    <path d="M56 58 L59 61 L65 54" stroke="#9C27B0" strokeWidth="2" fill="none" />
-                    <rect x="45" y="80" width="30" height="4" fill="#81C784" rx="2" />
-                </svg>
+                <div style={{ width: "120px", height: "120px", overflow: "hidden" }}>
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="10 0 120 120"
+                        fill="none"
+                        style={{ transform: "scale(1.25)", transformOrigin: "center" }}
+                    >
+                        <circle cx="45" cy="40" r="8" fill="#BA68C8" />
+                        <circle cx="75" cy="40" r="8" fill="#BA68C8" />
+                        <circle cx="60" cy="30" r="6" fill="#CE93D8" />
+                        <rect x="40" y="50" width="40" height="25" rx="4" fill="#E1BEE7" />
+                        <circle cx="60" cy="58" r="6" fill="#FFF9C4" />
+                        <path
+                            d="M56 58 L59 61 L65 54"
+                            stroke="#9C27B0"
+                            strokeWidth="2"
+                            fill="none"
+                        />
+                        <rect x="45" y="80" width="30" height="4" fill="#81C784" rx="2" />
+                    </svg>
+                </div>
             ),
             link: "domainExpertise/human-resource-management"
         }
