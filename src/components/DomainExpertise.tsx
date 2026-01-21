@@ -206,13 +206,23 @@ const DomainExpertise = () => {
                     marginBottom: window.innerWidth < 640 ? "40px" : "60px"
                 }}>
                     <span style={{
-                        fontSize: window.innerWidth < 640 ? "11px" : "13px",
-                        fontWeight: "700",
-                        letterSpacing: window.innerWidth < 640 ? "2px" : "3px",
+                        fontFamily: "'Noto Sans', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "inherit",
+                        textAlign: "center",
+                        boxSizing: "border-box",
+                        whiteSpace: "normal",
+                        border: 0,
+                        fontStyle: "inherit",
+                        padding: 0,
+                        verticalAlign: "baseline",
+                        textDecoration: "none",
+                        outline: "none",
+                        margin: "0 0 25px",
+                        color: "#29136C",
                         textTransform: "uppercase",
-                        color: "#000",
                         display: "block",
-                        marginBottom: "12px"
+                        position: "relative"
                     }}>AREAS OF EXPERTISE</span>
                     <div style={{
                         height: "3px",
@@ -221,11 +231,15 @@ const DomainExpertise = () => {
                         margin: "0 auto 15px"
                     }} />
                     <h2 style={{
-                        fontSize: window.innerWidth < 640 ? "28px" : window.innerWidth < 1024 ? "36px" : "42px",
-                        fontWeight: "800",
-                        margin: "0",
-                        color: "#000",
-                        letterSpacing: "-0.5px"
+                        fontFamily: "'Noto Sans', sans-serif",
+                        fontSize: "2em",
+                        fontWeight: 600,
+                        textAlign: "center",
+                        margin: "0 0 12px",
+                        color: "#150202",
+                        whiteSpace: "normal",
+                        boxSizing: "border-box",
+                        lineHeight: "1.2",
                     }}>Domain Expertise</h2>
                 </div>
 
