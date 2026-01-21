@@ -52,6 +52,7 @@ import "./globals.scss";
 import Script from "next/script";
 import "../../styles/CSS.css";
 import Link from "next/link";
+import BackToTop from "@/components/Footer/BackToTop";
 
 export const metadata: Metadata = {
   title: "Ministry of Skill Development and Entrepreneurship",
@@ -78,9 +79,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Footer />
 
         <BootstrapClient />
+        <BackToTop />
 
         {/* Your compiled DBIM/Bootstrap JS */}
         <Script src="/js/compiled.bundle.min.js" strategy="beforeInteractive" />
+        <script async src="https://www.instagram.com/embed.js"></script>
       </body>
     </html>
   );

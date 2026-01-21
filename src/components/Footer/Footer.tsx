@@ -251,7 +251,7 @@ export default function Footer() {
                 </h4>
                 <div className="d-flex gap-3 align-items-center flex-wrap justify-content-center">
                   <a
-                    href="https://twitter.com"
+                    href="https://x.com/npc_india_gov"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -272,7 +272,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/National-Productivity-Council-1707778476113423/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -293,7 +293,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://youtube.com"
+                    href="https://www.youtube.com/channel/UC2M-aNqWOSOyTeAgmYKNGjA"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -314,7 +314,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/p/B3Bms1VjlXU/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

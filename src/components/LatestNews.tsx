@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 interface TrainingItem {
   id: number;
   title: string;
@@ -244,6 +244,7 @@ const LatestNews = () => {
   const [selectedItem, setSelectedItem] = useState<TrainingItem | null>(null);
   const [showAllNational, setShowAllNational] = useState(false);
   const [showAllInternational, setShowAllInternational] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (selectedItem !== null) {
@@ -337,6 +338,7 @@ const LatestNews = () => {
                 ></path>
               </svg>
               {/* Core Services */}
+              Upcoming Training Programmes
             </h2>
           </div>
         </div>
@@ -397,7 +399,7 @@ const LatestNews = () => {
                 {nationalTrainings.length > 5 && (
                   <div className="text-center mt-3">
                     <button
-                      onClick={() => setShowAllNational(!showAllNational)}
+                      onClick={() => router.push("/Helper/upcomingTraining")}
                       className="btn  px-4 py-2"
                       style={{ borderColor: "#162f6a", color: "#162f6a" }}
                     >

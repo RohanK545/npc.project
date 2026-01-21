@@ -193,14 +193,11 @@ const PartnerLogoCarousel = () => {
               onClick={handleNext}
               disabled={currentIndex === maxIndex}
               aria-label="Next slide"
-              className=" translate-middle-y border-0 bg-transparent"
+              className="translate-middle-y border-0 bg-transparent"
               style={{
                 zIndex: 10,
-                cursor: currentIndex === 0 ? "not-allowed" : "pointer",
-                fontSize: "36px",
-                color: currentIndex === 0 ? "#ccc" : "#333",
-                left: "-40px",
-                opacity: currentIndex === 0 ? 0.5 : 1,
+                cursor: currentIndex === maxIndex ? "not-allowed" : "pointer",
+                opacity: currentIndex === maxIndex ? 0.5 : 1,
               }}
             >
               <svg
