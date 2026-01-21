@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 interface TrainingItem {
@@ -16,94 +16,202 @@ interface TrainingItem {
 const nationalTrainings: TrainingItem[] = [
   {
     id: 1,
-    title: "Preventive Vigilance, E- Procurement and Key to Good Governance",
-    location: "Munnar",
-    dateRange: "09-Mar-26 - 13-Mar-26",
-    link: "#",
+    title: "NEW LABOUR CODES",
+    location: "Sri Vijaya Puram (Port Blair)",
+    dateRange: "02-Feb-26 - 06-Feb-26",
+    link: "../Uploads/training_head/Headquater/New Labor Codes - Port Blair437221.pdf",
     description:
-      "This comprehensive residential training programme focuses on the crucial aspects of preventive vigilance and the implementation of e-procurement systems to enhance transparency and efficiency in governance. Participants will explore strategies for identifying potential risks and establishing robust mechanisms for sustainable good governance practices.",
+      "Details about New Labour Codes training at Sri Vijaya Puram (Port Blair).",
   },
   {
     id: 2,
-    title:
-      "Work Life Balance & Stress Management: Focus on Personal Balance Scorecard",
-    location: "Manali",
-    dateRange: "16-Mar-26 - 20-Mar-26",
-    link: "#",
+    title: "Finance for Non-Finance Executives",
+    location: "Kodaikanal",
+    dateRange: "02-Feb-26 - 06-Feb-26",
+    link: "../Uploads/training_head/Headquater/Finance for Non Finance Executives 2025-26 (1)145399.pdf",
     description:
-      "Designed for modern professionals, this programme introduces the 'Personal Balance Scorecard' concept. It provides practical tools and techniques to manage work-related stress, achieve a healthy work-life integration, and improve overall personal well-being while maintaining high productivity levels.",
+      "Training program on finance for non-finance executives at Kodaikanal.",
   },
   {
     id: 3,
-    title: "WORKLIFE BALANCE & STRESS MANAGEMENT",
-    location: "Sri Vijaya Puram (Port Blair)",
-    dateRange: "16-Mar-26 - 20-Mar-26",
-    link: "#",
+    title:
+      "Advance Course on Digital Workplace Management – (E-office, PFMS, E-Procurement, & Related GFR)",
+    location: "Goa",
+    dateRange: "09-Feb-26 - 13-Feb-26",
+    link: "../Uploads/training_head/Headquater/Final Brochure - Advance Course on Digital Workplace Management 9-13 February 2026138397.pdf",
     description:
-      "Set in the scenic environment of Port Blair, this intensive workshop focuses on psychological and organizational aspects of stress. Participants will learn effective coping mechanisms, time management strategies, and mindful practices to maintain professional excellence without compromising personal life.",
+      "Advanced training on digital workplace management including E-office, PFMS, and more.",
   },
   {
     id: 4,
-    title: "Transitioning India to Net-Zero: Strategies and Best Practices",
-    location: "Gangtok (Sikkim)",
-    dateRange: "16-Mar-26 - 20-Mar-26",
-    link: "#",
+    title:
+      "Systematic Problem Solving, Conflict resolution and change Management",
+    location: "Goa",
+    dateRange: "09-Feb-26 - 13-Feb-26",
+    link: "../Uploads/training_head/Headquater/Systematic Problem Solving  Conflict resolution and change Management233109.pdf",
     description:
-      "This pioneering programme discusses India's path toward Net-Zero emissions. It covers sustainable industrial practices, climate change mitigation strategies, and the role of innovation in achieving carbon neutrality. A MUST for environmental managers and policy makers.",
+      "Program focused on systematic problem solving and change management.",
   },
   {
     id: 5,
     title: "Improving Leadership, Managerial and Administrative Skills",
     location: "Sri Vijaya Puram (Port Blair)",
-    dateRange: "23-Mar-26 - 27-Mar-26",
-    link: "#",
+    dateRange: "09-Feb-26 - 13-Feb-26",
+    link: "../Uploads/training_head/Headquater/5. Improving leadership, managerial skills and administrative skills396415.pdf",
     description:
-      "A leadership development initiative aimed at senior administrators and managers. The curriculum includes advanced decision-making modules, team dynamics management, and strategic administrative planning to navigate complex organizational challenges effectively.",
+      "Training to improve leadership, managerial, and administrative skills.",
   },
   {
     id: 6,
-    title: "Advanced Project Management for Government Officials",
-    location: "Shimla",
-    dateRange: "30-Mar-26 - 03-Apr-26",
-    link: "#",
-    description:
-      "This programme equips government officials with modern project management methodologies including Agile and PRINCE2. Participants will learn resource allocation, risk management, and stakeholder engagement techniques specific to public sector projects.",
+    title: "Preventive Vigilance & Disciplinary Proceedings",
+    location: "Goa",
+    dateRange: "09-Feb-26 - 13-Feb-26",
+    link: "../Uploads/training_head/Headquater/Preventive Vigilance  Disciplinary Proceedings (1)161846.pdf",
+    description: "Focus on preventive vigilance and disciplinary proceedings.",
   },
   {
     id: 7,
-    title: "Digital Transformation in Public Administration",
-    location: "Bangalore",
-    dateRange: "06-Apr-26 - 10-Apr-26",
-    link: "#",
-    description:
-      "Explore the latest digital technologies transforming public service delivery. Topics include AI in governance, blockchain for transparency, cloud computing, and cybersecurity essentials for government systems.",
+    title: "Leadership Skill Development",
+    location: "Goa",
+    dateRange: "16-Feb-26 - 20-Feb-26",
+    link: "../Uploads/training_head/Headquater/Final Brochure - Training on Leadership Skill Development  16-20 February  2026365410.pdf",
+    description: "Program on developing leadership skills.",
   },
   {
     id: 8,
-    title: "Financial Management and Budget Planning",
-    location: "Jaipur",
-    dateRange: "13-Apr-26 - 17-Apr-26",
-    link: "#",
-    description:
-      "A comprehensive course on financial planning, budget preparation, and fiscal management for public sector organizations. Learn about treasury operations, audit compliance, and financial reporting standards.",
+    title: "Fundamentals of Cyber Law & Cyber Security for Public Offices",
+    location: "Udaipur",
+    dateRange: "16-Feb-26 - 20-Feb-26",
+    link: "../Uploads/training_head/Headquater/Brochure_Cyber Security_Feb 2026 (2)61827.pdf",
+    description: "Cyber law and security fundamentals for public offices.",
   },
   {
     id: 9,
-    title: "Effective Communication Skills for Leaders",
-    location: "Guwahati",
-    dateRange: "20-Apr-26 - 24-Apr-26",
-    link: "#",
-    description:
-      "Develop advanced communication skills essential for leadership roles. This programme covers public speaking, crisis communication, media relations, and interpersonal communication strategies for organizational success.",
+    title: "Working with Micro Data Analysis Using SPSS",
+    location: "Goa",
+    dateRange: "16-Feb-26 - 20-Feb-26",
+    link: "../Uploads/training_head/Headquater/T2526IEG05339025 Feb 2026426568.pdf",
+    description: "Training on micro data analysis using SPSS.",
   },
   {
     id: 10,
-    title: "Sustainable Development Goals Implementation",
-    location: "Dehradun",
-    dateRange: "27-Apr-26 - 01-May-26",
-    link: "#",
+    title:
+      "Advance Course on Right to Information Act, 2005 and Modern HR Practices",
+    location: "Goa",
+    dateRange: "23-Feb-26 - 27-Feb-26",
+    link: "../Uploads/training_head/Headquater/Trg Prog on RTI  Modern HR Practices (2)269645.pdf",
+    description: "Training on RTI Act and modern HR practices.",
+  },
+  {
+    id: 11,
+    title: "Personal & Organisational Cyber Security Essentials",
+    location: "Shimla",
+    dateRange: "23-Feb-26 - 27-Feb-26",
+    link: "../Uploads/training_head/Headquater/Personal and Organisational Cyber Security Essentials (2)251722.pdf",
+    description: "Cyber security essentials for individuals and organizations.",
+  },
+  {
+    id: 12,
+    title:
+      "Developing Competencies of Executive Secretaries, Personal Assistants and Office Staff for Better Performance",
+    location: "Srinagar",
+    dateRange: "23-Feb-26 - 27-Feb-26",
+    link: "../Uploads/training_head/Headquater/2026 PAsPsT2526IEG03386146.pdf",
     description:
-      "Learn how to align organizational strategies with UN Sustainable Development Goals. This training covers SDG framework, monitoring mechanisms, and best practices for integrating sustainability into policy-making and operations.",
+      "Competency development for executive secretaries and assistants.",
+  },
+  {
+    id: 13,
+    title: "PROCUREMENT MANAGEMENT & FINANCIAL MANAGEMENT",
+    location: "Sri Vijaya Puram (Port Blair)",
+    dateRange: "23-Feb-26 - 27-Feb-26",
+    link: "../Uploads/training_head/Headquater/Brochure-Feb 26281873.pdf",
+    description: "Procurement and financial management training.",
+  },
+  {
+    id: 14,
+    title:
+      "Advance course on e-Procurement through GeM (Cost Optimization Techniques & Contract Management) based on GFR",
+    location: "Goa",
+    dateRange: "23-Feb-26 - 27-Feb-26",
+    link: "../Uploads/training_head/Headquater/T2526ITS09117365.pdf",
+    description: "E-Procurement and contract management training.",
+  },
+  {
+    id: 15,
+    title: "Team Building & Leadership",
+    location: "Port Blair",
+    dateRange: "02-Mar-26 - 06-Mar-26",
+    link: "../Uploads/training_head/Headquater/Team Building  Leadership 2025-2691136.pdf",
+    description: "Team building and leadership skills training.",
+  },
+  {
+    id: 16,
+    title:
+      "Administrative Effectiveness, Focus: Preventive Vigilance, Right to Information Act 2005 & POSH",
+    location: "Mount Abu",
+    dateRange: "09-Mar-26 - 13-Mar-26",
+    link: "../Uploads/training_head/Headquater/Brochure_PV _RTI_March 2025497032.pdf",
+    description:
+      "Administrative effectiveness and preventive vigilance training.",
+  },
+  {
+    id: 17,
+    title: "Managerial Leadership & Team Building",
+    location: "Jaisalmer",
+    dateRange: "09-Mar-26 - 13-Mar-26",
+    link: "../Uploads/training_head/Headquater/Managerial Leadership  Team Building (1)381029.pdf",
+    description: "Training on managerial leadership and team building.",
+  },
+  {
+    id: 18,
+    title: "Preventive Vigilance, E- Procurement and Key to Good Governance",
+    location: "Munnar",
+    dateRange: "09-Mar-26 - 13-Mar-26",
+    link: "../Uploads/training_head/Headquater/T2526ITS10385858.pdf",
+    description:
+      "Training focusing on preventive vigilance and good governance.",
+  },
+  {
+    id: 19,
+    title:
+      "Work Life Balance & Stress Management: Focus on Personal Balance Scorecard",
+    location: "Manali",
+    dateRange: "16-Mar-26 - 20-Mar-26",
+    link: "../Uploads/training_head/Headquater/Training Brochure-RD Chandigarh288341.pdf",
+    description: "Work-life balance and stress management program.",
+  },
+  {
+    id: 20,
+    title: "WORKLIFE BALANCE & STRESS MANAGEMENT",
+    location: "Sri Vijaya Puram (Port Blair)",
+    dateRange: "16-Mar-26 - 20-Mar-26",
+    link: "../Uploads/training_head/Headquater/Worklife Balance  Stress Management73809.pdf",
+    description: "Training on worklife balance and stress management.",
+  },
+  {
+    id: 21,
+    title: "Transitioning India to Net-Zero: Strategies and Best Practices",
+    location: "Gangtok (Sikkim)",
+    dateRange: "16-Mar-26 - 20-Mar-26",
+    link: "../Uploads/training_head/Headquater/T2526ECA0129825.pdf",
+    description: "Training on India's net-zero transition strategies.",
+  },
+  {
+    id: 22,
+    title: "Improving Leadership, Managerial and Administrative Skills",
+    location: "Sri Vijaya Puram (Port Blair)",
+    dateRange: "23-Mar-26 - 27-Mar-26",
+    link: "../Uploads/training_head/Headquater/6. Improving leadership, managerial skills and administrative skills462183.pdf",
+    description: "Improving leadership and administrative skills.",
+  },
+  {
+    id: 23,
+    title: "Conflict Resolution and Strategic Financial Management",
+    location: "Gangtok",
+    dateRange: "23-Mar-26 - 27-Mar-26",
+    link: "../Uploads/training_head/Headquater/Brochure-Mar 2026150398.pdf",
+    description: "Training on conflict resolution and financial management.",
   },
 ];
 
@@ -111,103 +219,24 @@ const internationalTrainings: TrainingItem[] = [
   {
     id: 1,
     title:
-      "Conference on Role of Green Productivity in Transition to Cleaner Energy",
-    type: "Online",
-    dateRange: "15 December 2025 - 15 December 2025",
-    link: "#",
-    description:
-      "An international online forum bringing together global experts to discuss how 'Green Productivity' (GP) can drive the transition to sustainable energy sources. Focus areas include circular economy, energy-efficient manufacturing, and renewable energy integration.",
+      "Training Course on Upskilling and Reskilling the Public-sector Workforce",
+    location: "Face to Face (India, Chennai)",
+    dateRange: "2 February 2026 - 6 February 2026",
+    link: "https://www.npcindia.gov.in/NPC/User/InternationalServices",
   },
   {
     id: 2,
-    title:
-      "Training Course on Upskilling and Reskilling the Public-sector Workforce",
-    type: "Face to Face",
-    location: "India, Chennai",
-    dateRange: "2 February 2026 - 6 February 2026",
-    link: "#",
-    description:
-      "This APO-sponsored course addresses the evolving needs of the public sector. It focuses on identifying skill gaps, implementing digital literacy programmes, and establishing a culture of continuous learning to future-proof the public workforce.",
+    title: "Conference on AI 2.0 to Boost Productivity",
+    location: "Face to Face (Malaysia, Kuala Lumpur)",
+    dateRange: "21 April 2026 - 22 April 2026",
+    link: "https://www.npcindia.gov.in/NPC/User/InternationalServices",
   },
   {
     id: 3,
-    title: "Workshop on Human Capital Management in SMEs",
-    type: "Face to Face",
-    location: "Pakistan, Karachi",
-    dateRange: "27 January 2026 - 30 January 2026",
-    link: "#",
-    description:
-      "Specifically tailored for Small and Medium Enterprises (SMEs), this workshop provides insights into effective talent recruitment, retention strategies, and performance management systems that are scalable and cost-effective for smaller businesses.",
-  },
-  {
-    id: 4,
-    title:
-      "Multicountry Observational Study Mission on Productivity Gainsharing in Agriculture",
-    type: "F2F",
-    location: "Nepal",
-    dateRange: "07 Jan 2026 - 09 Jan 2026",
-    link: "#",
-    description:
-      "A collaborative mission to study successful agricultural productivity models in Nepal. Participants will examine community-based gainsharing, modern farming techniques, and cooperative structures that empower local farmers and increase yield.",
-  },
-  {
-    id: 5,
-    title: "APO Multicountry Mission on Agricultural Innovation",
-    type: "F2F",
-    location: "Nepal",
-    dateRange: "07 Jan 2026 - 09 Jan 2026",
-    link: "#",
-    description:
-      "Focused on the intersection of technology and farming, this mission explores innovations like precision agriculture, AI in crop monitoring, and sustainable water management practices across participating Asian nations.",
-  },
-  {
-    id: 6,
-    title: "International Workshop on Industry 4.0 and Smart Manufacturing",
-    type: "Face to Face",
-    location: "Singapore",
-    dateRange: "15 February 2026 - 19 February 2026",
-    link: "#",
-    description:
-      "Explore the future of manufacturing with Industry 4.0 technologies. This workshop covers IoT integration, robotics, additive manufacturing, and data analytics for optimizing production processes in the digital age.",
-  },
-  {
-    id: 7,
-    title: "Global Conference on Circular Economy Practices",
-    type: "Online",
-    dateRange: "25 February 2026 - 26 February 2026",
-    link: "#",
-    description:
-      "Join international experts in discussing circular economy models that minimize waste and maximize resource efficiency. Topics include sustainable supply chains, product lifecycle management, and waste-to-value innovations.",
-  },
-  {
-    id: 8,
-    title: "Training on Quality Management Systems and ISO Standards",
-    type: "Face to Face",
-    location: "Malaysia, Kuala Lumpur",
-    dateRange: "10 March 2026 - 14 March 2026",
-    link: "#",
-    description:
-      "Comprehensive training on implementing and maintaining ISO 9001, ISO 14001, and other international quality standards. Learn audit techniques, documentation requirements, and continuous improvement methodologies.",
-  },
-  {
-    id: 9,
-    title: "Workshop on Digital Marketing for Export Promotion",
-    type: "Face to Face",
-    location: "Thailand, Bangkok",
-    dateRange: "20 March 2026 - 24 March 2026",
-    link: "#",
-    description:
-      "Master digital marketing strategies for international trade. This workshop covers e-commerce platforms, social media marketing, SEO for global markets, and data-driven customer acquisition techniques for exporters.",
-  },
-  {
-    id: 10,
-    title: "International Seminar on Public-Private Partnerships",
-    type: "Face to Face",
-    location: "Japan, Tokyo",
-    dateRange: "05 April 2026 - 09 April 2026",
-    link: "#",
-    description:
-      "Learn best practices in structuring and managing PPP projects. This seminar covers risk allocation, contract management, financing models, and case studies from successful infrastructure and service delivery partnerships worldwide.",
+    title: "Training Course on AI in Agriculture",
+    location: "Face to Face (Sendai, Japan)",
+    dateRange: "23 March 2026 - 27 March 2026",
+    link: "https://www.npcindia.gov.in/NPC/User/InternationalServices",
   },
 ];
 
@@ -216,14 +245,27 @@ const LatestNews = () => {
   const [showAllNational, setShowAllNational] = useState(false);
   const [showAllInternational, setShowAllInternational] = useState(false);
 
+  useEffect(() => {
+    if (selectedItem !== null) {
+      // Modal opened - disable scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Modal closed - enable scroll
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup if component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedItem]);
+
   const openModal = (item: TrainingItem) => {
     setSelectedItem(item);
-    document.body.style.overflow = "hidden"; // Prevent scrolling
   };
 
   const closeModal = () => {
     setSelectedItem(null);
-    document.body.style.overflow = "auto";
   };
 
   // Get visible trainings based on state
@@ -500,9 +542,9 @@ const LatestNews = () => {
                   <i className="bi bi-calendar-event"></i>
                   <h5>{selectedItem.dateRange}</h5>
                 </span>
-                <h2 className="h4 fw-bold mt-2" style={{ color: "#162f6a" }}>
+                <h3 className="fw-bold mt-2" style={{ color: "#162f6a" }}>
                   {selectedItem.id}. {selectedItem.title}
-                </h2>
+                </h3>
                 <p className="text-secondary fw-medium mb-0">
                   <i className="bi bi-geo-alt me-2"></i>
                   {selectedItem.location || selectedItem.type}
@@ -510,7 +552,7 @@ const LatestNews = () => {
               </div>
 
               <div className="mb-4">
-                <h4
+                {/* <h4
                   className=" fw-bold text-uppercase text-muted mb-2 ls-1"
                   // style={{ fontSize: "0.8rem" }}
                 >
@@ -519,7 +561,7 @@ const LatestNews = () => {
                 <p className="text-dark mb-4" style={{ lineHeight: "1.7" }}>
                   {selectedItem.description ||
                     "Detailed description for this training programme will be available shortly. Please check back for updates regarding curriculum and faculty."}
-                </p>
+                </p> */}
 
                 <h4
                   className="  fw-bold text-uppercase text-muted mb-2 ls-1"

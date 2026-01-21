@@ -55,6 +55,13 @@ export default function Footer() {
                     under Section 80G of the Income Tax Act, 1961.
                   </h4>
                 </div>
+                <h4
+                  style={{ textTransform: "none" }}
+                  role="heading"
+                  className="footer-below-text mt-4"
+                >
+                  Last Updated On: 21.01.2026
+                </h4>
               </div>
               <div className="col-md-4 text-md-end mt-3 mt-md-0">
                 <h3 role="heading">SUBSCRIBE FOR UPDATES</h3>
@@ -149,10 +156,6 @@ export default function Footer() {
                     />
                   </div>
                 </div>
-
-                <h4 role="heading" className="footer-below-text mt-4">
-                  Last Updated On: 21.01.2026
-                </h4>
               </div>
             </div>
 
