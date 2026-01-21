@@ -415,13 +415,13 @@ export default function Header() {
             <div className="col-lg-4 px-4 col-md-12 d-none d-md-flex align-items-center justify-content-center order-2 order-lg-3">
               <div className="row">
                 <div className="col-5 d-flex align-items-center">
-                  <a href="#" className=" ms-5 text-black text-decoration-none">
+                  <a href="#" className="  text-black text-decoration-none">
                     {/* Logo - stays on the LEFT */}
                     <Image
                       src="/images/emblems/Swachh_Bharat.svg"
                       alt="Swachh Bharat Logo"
-                      width={90}
-                      height={90}
+                      width={140}
+                      height={140}
                       className="img-fluid"
                       style={{ maxWidth: "150px", minWidth: "100px" }}
                       priority

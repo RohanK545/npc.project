@@ -356,18 +356,18 @@ const LatestNews = () => {
                   <div className="text-center mt-3">
                     <button
                       onClick={() => setShowAllNational(!showAllNational)}
-                      className="btn btn-outline-primary px-4 py-2"
+                      className="btn  px-4 py-2"
                       style={{ borderColor: "#162f6a", color: "#162f6a" }}
                     >
                       {showAllNational ? (
                         <>
                           <i className="bi bi-chevron-up me-2"></i>
-                          Show Less
+                          <h4>Show Less</h4>
                         </>
                       ) : (
                         <>
-                          <i className="bi bi-chevron-down me-2"></i>
-                          View All ({nationalTrainings.length})
+                          <i className="bi bi-chevron-down "></i>
+                          <h4>View All ({nationalTrainings.length})</h4>
                         </>
                       )}
                     </button>
@@ -435,18 +435,18 @@ const LatestNews = () => {
                       onClick={() =>
                         setShowAllInternational(!showAllInternational)
                       }
-                      className="btn btn-outline-primary px-4 py-2"
+                      className="btn  px-4 py-2"
                       style={{ borderColor: "#162f6a", color: "#162f6a" }}
                     >
                       {showAllInternational ? (
                         <>
                           <i className="bi bi-chevron-up me-2"></i>
-                          Show Less
+                          <h4>Show Less</h4>
                         </>
                       ) : (
                         <>
-                          <i className="bi bi-chevron-down me-2"></i>
-                          View All ({internationalTrainings.length})
+                          <i className="bi bi-chevron-down"></i>
+                          <h4>View All ({internationalTrainings.length})</h4>
                         </>
                       )}
                     </button>
@@ -482,7 +482,7 @@ const LatestNews = () => {
               className="px-4 py-3 d-flex justify-content-between align-items-center"
               style={{ backgroundColor: "#162f6a", color: "#fff" }}
             >
-              <h3 className="h5 mb-0 fw-bold">Training Details</h3>
+              <h3 className=" mb-0 ">Training Details</h3>
               <button
                 onClick={closeModal}
                 className="btn-close btn-close-white"
@@ -494,11 +494,11 @@ const LatestNews = () => {
             <div className="p-4">
               <div className="mb-4">
                 <span
-                  className="badge mb-2 px-3 py-2 fs-6"
-                  style={{ backgroundColor: "#e7f1ff", color: "#0d6efd" }}
+                  className="badge  mb-3"
+                  style={{ backgroundColor: "#e7f1ff", color: "#162f6a" }}
                 >
-                  <i className="bi bi-calendar-event me-2"></i>
-                  {selectedItem.dateRange}
+                  <i className="bi bi-calendar-event"></i>
+                  <h5>{selectedItem.dateRange}</h5>
                 </span>
                 <h2 className="h4 fw-bold mt-2" style={{ color: "#162f6a" }}>
                   {selectedItem.id}. {selectedItem.title}
@@ -511,8 +511,8 @@ const LatestNews = () => {
 
               <div className="mb-4">
                 <h4
-                  className="h6 fw-bold text-uppercase text-muted mb-2 ls-1"
-                  style={{ fontSize: "0.8rem" }}
+                  className=" fw-bold text-uppercase text-muted mb-2 ls-1"
+                  // style={{ fontSize: "0.8rem" }}
                 >
                   Description
                 </h4>
@@ -522,13 +522,13 @@ const LatestNews = () => {
                 </p>
 
                 <h4
-                  className="h6 fw-bold text-uppercase text-muted mb-2 ls-1"
-                  style={{ fontSize: "0.8rem" }}
+                  className="  fw-bold text-uppercase text-muted mb-2 ls-1"
+                  // style={{ fontSize: "0.8rem" }}
                 >
                   Reference Links
                 </h4>
                 <div className="d-flex align-items-center gap-2">
-                  <i className="bi bi-link-45deg fs-5 text-primary"></i>
+                  <i className="bi bi-link-45deg  text-primary"></i>
                   <a
                     href={selectedItem.link}
                     target="_blank"
@@ -544,10 +544,10 @@ const LatestNews = () => {
               <div className="d-flex gap-3 pt-3 border-top justify-content-end">
                 <button
                   onClick={closeModal}
-                  className="btn btn-primary px-5 py-2"
+                  className="btn text-white px-5 py-2"
                   style={{ backgroundColor: "#162f6a" }}
                 >
-                  Close
+                  <h4>Close</h4>
                 </button>
               </div>
             </div>

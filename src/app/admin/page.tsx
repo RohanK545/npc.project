@@ -104,16 +104,19 @@ export default function AdminLogin() {
                   placeholder="Enter your password"
                 />
               </div>
-              <div className="d-flex justify-content-end gap-3 me-4">
+              <div className="d-flex justify-content-end gap-3 pt-1 ">
                 <button className="btn btn-secondary" onClick={() => GoBack()}>
-                  Back
+                  <h4 className="mt-1">Back</h4>
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
                   className="btn btn-primary "
                 >
-                  {loading ? "Logging in..." : "Login"}
+                  <h4 className="mt-1">
+                    {" "}
+                    {loading ? "Logging in..." : "Login"}
+                  </h4>
                 </button>
               </div>
             </form>
