@@ -105,7 +105,7 @@ const Services = () => {
     if (isTablet) return "60px 24px";
     if (isNestHubMax) return "60px 32px"; // Special padding for Nest Hub Max
     if (isDesktop) return "80px 32px";
-    return "100px 40px";
+    return "60px 20px";
   };
 
   const getTitleFontSize = () => {
@@ -149,7 +149,7 @@ const Services = () => {
       padding: getContainerPadding(),
       overflow: "hidden",
       boxSizing: "border-box",
-      minHeight: "100vh",
+      minHeight: "50vh",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center"

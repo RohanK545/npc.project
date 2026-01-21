@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const PartnerLogoCarousel = () => {
-  const [translateX, setTranslateX] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const logos = [
@@ -19,14 +19,13 @@ const PartnerLogoCarousel = () => {
     { src: "https://www.meity.gov.in/static/uploads/2024/02/4fc564cabf33578830242d185d1533ec.png", alt: "STQC Logo" }
   ];
 
-  // Create triple logos array for infinite scroll effect
-  const tripleLogos = [...logos, ...logos, ...logos];
-  const itemWidth = 20; // percentage width of each item (5 items visible)
+  const cardsToShow = 5;
+  const maxIndex = logos.length - cardsToShow;
 
   const handlePrev = () => {
     if (!isAnimating) {
       setIsAnimating(true);
-      setTranslateX((prev) => prev + itemWidth);
+      setCurrentIndex(prev => prev === 0 ? maxIndex : prev - 1);
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
@@ -34,67 +33,68 @@ const PartnerLogoCarousel = () => {
   const handleNext = () => {
     if (!isAnimating) {
       setIsAnimating(true);
-      setTranslateX((prev) => prev - itemWidth);
+      setCurrentIndex(prev => prev === maxIndex ? 0 : prev + 1);
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
 
-  // Reset position when reaching boundaries for infinite effect
-  React.useEffect(() => {
-    if (translateX >= 0) {
-      setTimeout(() => {
-        setTranslateX(-logos.length * itemWidth);
-      }, 500);
-    } else if (translateX <= -(logos.length * 2 * itemWidth)) {
-      setTimeout(() => {
-        setTranslateX(-logos.length * itemWidth);
-      }, 500);
-    }
-  }, [translateX]);
-
   return (
-    <div className="row pt-5 justify-content-center align-items-center" 
-        style={{ marginLeft: '14%', marginRight: '14%' }}
-         role="region" 
-         aria-label="Footer partner logo carousel">
-      <div className="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7 mx-auto">
-        <div className="position-relative">
+    <div className="row pt-5 justify-content-center align-items-center"
+      style={{ marginLeft: '14%', marginRight: '14%' }}
+      role="region"
+      aria-label="Footer partner logo carousel">
+      <div className="col-12 col-sm-11 col-md-10 col-lg-9 col-xl-8 mx-auto">
+        <div className="position-relative d-flex align-items-center" style={{ gap: '20px' }}>
           {/* Previous Button */}
           <button
             className="position-absolute start-0 top-50 translate-middle-y border-0 bg-transparent"
             onClick={handlePrev}
-            style={{ 
-              zIndex: 10, 
-              cursor: 'pointer',
+            disabled={currentIndex === 0}
+            style={{
+              zIndex: 10,
+              cursor: currentIndex === 0 ? 'not-allowed' : 'pointer',
               fontSize: '36px',
-              color: '#333',
+              color: currentIndex === 0 ? '#ccc' : '#333',
               left: '-40px',
+              opacity: currentIndex === 0 ? 0.5 : 1
             }}
             aria-label="Previous slide"
           >
-            <span style={{ fontFamily: 'Material Symbols Outlined' }}>‹</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 64 64"
+              fill="none"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <path
+                d="M28.8001 32L39.2001 42.4C39.689 42.8889 39.9335 43.5111 39.9335 44.2666C39.9335 45.0222 39.689 45.6444 39.2001 46.1333C38.7112 46.6222 38.089 46.8666 37.3335 46.8666C36.5779 46.8666 35.9557 46.6222 35.4668 46.1333L23.2001 33.8666C22.9335 33.6 22.7446 33.3111 22.6335 33C22.5224 32.6889 22.4668 32.3555 22.4668 32C22.4668 31.6444 22.5224 31.3111 22.6335 31C22.7446 30.6889 22.9335 30.4 23.2001 30.1333L35.4668 17.8666C35.9557 17.3777 36.5779 17.1333 37.3335 17.1333C38.089 17.1333 38.7112 17.3777 39.2001 17.8666C39.689 18.3555 39.9335 18.9777 39.9335 19.7333C39.9335 20.4889 39.689 21.1111 39.2001 21.6L28.8001 32Z"
+                fill={currentIndex === 0 ? '#ccc' : '#162F6A'}
+              />
+            </svg>
           </button>
 
           {/* Carousel Content */}
-          <div className="overflow-hidden" style={{ paddingLeft: '60px', paddingRight: '60px' }}>
-            <div 
+          <div className="overflow-hidden" style={{ paddingLeft: '5px', paddingRight: '5px' }}>
+            <div
               className="d-flex"
               style={{
-                transform: `translateX(calc(${translateX}% - ${translateX * 0.8}px))`,
+                transform: `translateX(calc(-${currentIndex * (100 / cardsToShow)}% - ${currentIndex * 24}px))`,
                 transition: isAnimating ? 'transform 0.5s ease-in-out' : 'none',
                 gap: '24px'
               }}
             >
-              {tripleLogos.map((logo, idx) => (
-                <div 
+              {logos.map((logo, idx) => (
+                <div
                   key={idx}
                   className="flex-shrink-0"
-                  style={{ 
+                  style={{
                     width: 'calc(20% - 19.2px)',
                     marginBottom: '40px'
                   }}
                 >
-                  <div 
+                  <div
                     className="card d-flex justify-content-center align-items-center"
                     style={{
                       backgroundColor: '#fff',
@@ -104,7 +104,7 @@ const PartnerLogoCarousel = () => {
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                       boxShadow: '0 2px 4px rgba(0,0,0,0.08)',
-                      padding: '30px'
+                      padding: '10px'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
@@ -117,11 +117,11 @@ const PartnerLogoCarousel = () => {
                     role="button"
                     tabIndex={0}
                   >
-                    <img 
+                    <img
                       src={logo.src}
                       alt={logo.alt}
                       className="img-fluid"
-                      style={{ 
+                      style={{
                         maxWidth: '100%',
                         maxHeight: '70px',
                         objectFit: 'contain'
@@ -135,19 +135,36 @@ const PartnerLogoCarousel = () => {
 
           {/* Next Button */}
           <button
-            className="position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent"
+            type="button"
             onClick={handleNext}
-            style={{ 
-              zIndex: 10, 
-              cursor: 'pointer',
-              fontSize: '36px',
-              color: '#333',
-              right: '-40px'
-            }}
+            disabled={currentIndex === maxIndex}
             aria-label="Next slide"
+            className="position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent"
+            style={{
+              zIndex: 10,
+              cursor: currentIndex === maxIndex ? 'not-allowed' : 'pointer',
+              right: "-40px",
+              padding: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              opacity: currentIndex === maxIndex ? 0.5 : 1
+            }}
           >
-            <span style={{ fontFamily: 'Material Symbols Outlined' }}>›</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 64 64"
+              fill="none"
+            >
+              <path
+                d="M33.6001 32L23.2001 21.6C22.7112 21.1111 22.4668 20.4889 22.4668 19.7333C22.4668 18.9777 22.7112 18.3555 23.2001 17.8666C23.689 17.3777 24.3112 17.1333 25.0668 17.1333C25.8224 17.1333 26.4446 17.3777 26.9335 17.8666L39.2001 30.1333C39.4668 30.4 39.6557 30.6889 39.7668 31C39.8779 31.3111 39.9335 31.6444 39.9335 32C39.9335 32.3555 39.8779 32.6889 39.7668 33C39.6557 33.3111 39.4668 33.6 39.2001 33.8666L26.9335 46.1333C26.4446 46.6222 25.8224 46.8666 25.0668 46.8666C24.3112 46.8666 23.689 46.6222 23.2001 46.1333C22.7112 45.6444 22.4668 45.0222 22.4668 44.2666C22.4668 43.5111 22.7112 42.8889 23.2001 42.4L33.6001 32Z"
+                fill={currentIndex === maxIndex ? '#ccc' : '#29136C'}
+              />
+            </svg>
           </button>
+
         </div>
       </div>
 
