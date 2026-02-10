@@ -25,7 +25,7 @@ export default function PagesList() {
     async function fetchPages() {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/cms/pages`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/cms/pages`,
         );
         setPages(res.data);
       } catch (err) {
@@ -94,24 +94,26 @@ export default function PagesList() {
                 </td>
                 <td className="text-center">
                   <div className="d-flex justify-content-center gap-2">
-                    <button
+                    {/* <button
                       className="btn btn-sm btn-outline-secondary"
                       onClick={goToDetails}
                     >
                       Details
-                    </button>
+                    </button> */}
                     <button className="btn btn-sm btn-outline-secondary">
-                      View
+                      <h4>View</h4>
                     </button>
 
                     <button
                       className="btn btn-sm btn-primary"
                       onClick={() => goToEdit(page.id)}
                     >
-                      Edit
+                      <h4>Edit</h4>
                     </button>
 
-                    <button className="btn btn-sm btn-danger">Delete</button>
+                    <button className="btn btn-sm btn-danger">
+                      <h4>Delete</h4>
+                    </button>
                   </div>
                 </td>
               </tr>

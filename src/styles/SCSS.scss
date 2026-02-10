@@ -184,7 +184,11 @@ body {
   }
 
   .material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 300,
+      "GRAD" 0,
+      "opsz" 24;
   }
 
   .material-symbols-outlined {
@@ -291,7 +295,7 @@ body {
 
 //Header
 header {
-    padding: 2rem 10rem;
+  padding: 2rem 10rem;
   // position: sticky;
   top: 0;
   z-index: 99;
@@ -1847,7 +1851,11 @@ footer {
 
     .material-symbols-outlined {
       color: $deep-blue;
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 300,
+        "GRAD" 0,
+        "opsz" 24;
     }
 
     p {
@@ -3764,7 +3772,6 @@ footer {
     border-color: $powder-blue;
     cursor: pointer;
 
-
     .input-group-text {
       background: transparent;
       border-color: inherit;
@@ -3936,7 +3943,11 @@ footer {
       }
 
       color: $eagle-green;
-      font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 24;
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 700,
+        "GRAD" 0,
+        "opsz" 24;
     }
   }
 
@@ -3991,52 +4002,84 @@ footer {
 
 @-webkit-keyframes l5 {
   0% {
-    -webkit-box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
-    box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
+    -webkit-box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
+    box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
     background: $eagle-green;
   }
 
   33% {
-    -webkit-box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
-    box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
+    -webkit-box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
+    box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
     background: #0002;
   }
 
   66% {
-    -webkit-box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
-    box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
+    -webkit-box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
     background: #0002;
   }
 
   100% {
-    -webkit-box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
-    box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
+    -webkit-box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
     background: $eagle-green;
   }
 }
 
 @keyframes l5 {
   0% {
-    -webkit-box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
-    box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
+    -webkit-box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
+    box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
     background: $eagle-green;
   }
 
   33% {
-    -webkit-box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
-    box-shadow: 20px 0 $eagle-green, -20px 0 #0002;
+    -webkit-box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
+    box-shadow:
+      20px 0 $eagle-green,
+      -20px 0 #0002;
     background: #0002;
   }
 
   66% {
-    -webkit-box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
-    box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
+    -webkit-box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
     background: #0002;
   }
 
   100% {
-    -webkit-box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
-    box-shadow: 20px 0 #0002, -20px 0 $eagle-green;
+    -webkit-box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 $eagle-green;
     background: $eagle-green;
   }
 }
@@ -5871,7 +5914,7 @@ footer {
 }
 
 .carousel-img {
-    height: 400px;
+  height: 400px;
 }
 
 .slide {
@@ -6216,7 +6259,11 @@ button.filterClearBtn:focus-visible {
 
 .on {
   .material-symbols-outlined {
-    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 300,
+      "GRAD" 0,
+      "opsz" 24;
     color: $eagle-green;
   }
 }
@@ -6657,7 +6704,10 @@ button.filterClearBtn:focus-visible {
     }
 
     .video-share-panel-link {
-      font: 23px Roboto, Arial, sans-serif;
+      font:
+        23px Roboto,
+        Arial,
+        sans-serif;
       display: block;
       height: 28px;
       margin-top: 18px;
