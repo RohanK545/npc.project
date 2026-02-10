@@ -3,6 +3,7 @@ import EditPageClient from "./EditPageClient";
 
 export default function Page() {
   return (
+    <>
     <div className="container-fluid">
       {/* HEADER */}
       <div className="d-flex justify-content-between align-items-center mb-3">
@@ -105,5 +106,6 @@ export default function Page() {
     <Suspense fallback={<div>Loading editor...</div>}>
       <EditPageClient />
     </Suspense>
+    </>
   );
 }
