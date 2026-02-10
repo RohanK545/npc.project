@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-import ContentEditor from "../../components/ContentEditor";
 import PageSettings from "../../components/PageSettings";
 import { PageEditor, PageSection } from "../../utils";
 import axios from "axios";
@@ -251,7 +250,7 @@ export default function EditPage() {
                 sections.find((s) => s.sectionId === modalSectionId)
                   ?.sectionValue || "{}",
               )}
-              onChange={(data) => handleChange(modalSectionId, data)}
+              onChange={(data) => handleChange(modalSectionId, JSON.stringify(data))}
             />
           )}
         </LightweightModal>

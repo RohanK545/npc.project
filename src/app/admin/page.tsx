@@ -46,11 +46,11 @@ export default function AdminLogin() {
     } catch (error) {
       // Log error securely or send to monitoring service
       // Avoid exposing sensitive details to user
-      if (error.response?.data?.message) {
-        setError(error.response.data.message);
-      } else {
-        setError("Login failed. Please check your credentials and try again.");
-      }
+      // if (error.response?.data?.message) {
+      //   setError(error.response.data.message);
+      // } else {
+      //   setError("Login failed. Please check your credentials and try again.");
+      // }
     } finally {
       setLoading(false);
     }
